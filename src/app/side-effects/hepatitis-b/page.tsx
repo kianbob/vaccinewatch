@@ -8,13 +8,13 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'MMR Vaccine Side Effects — Measles, Mumps & Rubella | VaccineWatch',
-  description: 'Complete VAERS analysis of MMR vaccine side effects. 89,000+ adverse event reports covering measles, mumps, and rubella vaccination.',
+  title: 'Hepatitis B Vaccine Side Effects — VAERS Data Analysis | VaccineWatch',
+  description: 'VAERS analysis of hepatitis B vaccine side effects. 73,000+ reports analyzed — given at birth, this vaccine generates reports across all ages.',
 }
 
-export default function MmrSideEffectsPage() {
+export default function HepatitisBSideEffectsPage() {
   const vaccineIndex = readJsonFile('vaccine-index.json')
-  const types = ["MMR","MMRV"]
+  const types = ["HEP","HBHEPB"]
   const vaccines = vaccineIndex.filter((v: any) => types.includes(v.type))
 
   let totalReports = 0, totalDeaths = 0, totalHosp = 0, totalER = 0
@@ -22,7 +22,7 @@ export default function MmrSideEffectsPage() {
     totalReports += v.reports; totalDeaths += v.died; totalHosp += v.hosp; totalER += v.er || 0
   })
 
-  const mainVax = vaccineIndex.find((v: any) => v.type === 'MMR')
+  const mainVax = vaccineIndex.find((v: any) => v.type === 'HEP')
   const topSymptoms = mainVax?.symptoms?.slice(0, 12) || []
 
   return (
@@ -30,19 +30,19 @@ export default function MmrSideEffectsPage() {
       <DisclaimerBanner />
       <Breadcrumbs items={[
         { label: 'Vaccine Side Effects', href: '/side-effects' },
-        { label: 'MMR Vaccine' }
+        { label: 'Hepatitis B Vaccine' }
       ]} />
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
-          <div className="text-xs font-medium text-primary uppercase tracking-wider">7 min read</div>
-          <ShareButtons title="MMR Vaccine Side Effects — Measles, Mumps & Rubella | VaccineWatch" />
+          <div className="text-xs font-medium text-primary uppercase tracking-wider">5 min read</div>
+          <ShareButtons title="Hepatitis B Vaccine Side Effects — VAERS Data Analysis | VaccineWatch" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
-          MMR Vaccine Side Effects
+          Hepatitis B Vaccine Side Effects
         </h1>
         <p className="text-xl text-gray-600 mb-6">
-          The MMR (measles, mumps, rubella) vaccine is one of the most widely studied vaccines in history. Given to virtually every child in the U.S., it generates a substantial number of VAERS reports — but context is essential for interpreting this data.
+          The hepatitis B vaccine is one of the first vaccines given to newborns (within 24 hours of birth) and is also given to healthcare workers and other at-risk adults. Its long history in VAERS spans all age groups.
         </p>
       </div>
 
@@ -74,7 +74,7 @@ export default function MmrSideEffectsPage() {
         {topSymptoms.map((s: any, i: number) => (
           <Link
             key={s.name}
-            href={`/vaccines/mmr/symptoms/${slugify(s.name)}`}
+            href={`/vaccines/hep/symptoms/${slugify(s.name)}`}
             className="flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-3 hover:shadow-md transition-all"
           >
             <div className="flex items-center gap-3">
@@ -88,35 +88,33 @@ export default function MmrSideEffectsPage() {
 
       <div className="prose prose-lg max-w-none mb-12">
         
-        <h2 className={playfairDisplay.className}>MMR and Autism: The Data</h2>
+        <h2 className={playfairDisplay.className}>Why Vaccinate at Birth?</h2>
         <p>
-          The claimed link between MMR and autism has been extensively studied and debunked. 
-          The original 1998 study was retracted and its author lost his medical license for 
-          fraud. Multiple large-scale studies involving millions of children have found no 
-          connection between MMR vaccination and autism.
+          Hepatitis B can be transmitted from mother to infant during birth. Babies infected at 
+          birth have a 90% chance of developing chronic infection, which can lead to liver cancer 
+          and liver failure. Vaccination at birth provides immediate protection.
         </p>
         <p>
-          VAERS does contain reports mentioning autism after MMR vaccination, but VAERS 
-          reports are unverified and cannot establish causation. The timing of MMR vaccination 
-          (12-15 months) coincides with when autism symptoms typically become noticeable, 
-          creating a temporal correlation that is not causal.
+          Some VAERS reports for hepatitis B involve very young infants, which can include health 
+          events that coincide with the neonatal period rather than being caused by the vaccine.
         </p>
 
         <h2 className={playfairDisplay.className}>Expected Side Effects</h2>
-        <p><strong>Common (usually mild, resolve in days):</strong></p>
+        <p><strong>Common:</strong></p>
         <ul>
-          <li>Fever (up to 1 in 6 children)</li>
-          <li>Mild rash</li>
-          <li>Swelling of glands in cheeks or neck</li>
-          <li>Soreness and redness at injection site</li>
-          <li>Joint pain/stiffness (more common in adult women)</li>
+          <li>Soreness at injection site</li>
+          <li>Mild fever</li>
+          <li>Fatigue</li>
         </ul>
-        <p><strong>Rare but serious:</strong></p>
+        <p><strong>Rare:</strong></p>
         <ul>
-          <li>Febrile seizures (about 1 in 3,000)</li>
-          <li>Temporary low platelet count (about 1 in 25,000)</li>
           <li>Allergic reaction (very rare)</li>
+          <li>Temporary joint pain</li>
         </ul>
+        <p>
+          Hepatitis B vaccine is considered one of the safest and best-studied vaccines available. 
+          It has been administered billions of times worldwide since its introduction in 1982.
+        </p>
       </div>
 
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800 mb-12">
@@ -128,7 +126,7 @@ export default function MmrSideEffectsPage() {
       <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Explore This Data</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          {[{"href":"/vaccines/mmr","title":"MMR Vaccine Detail Page","desc":"Full VAERS profile with charts"},{"href":"/analysis/pediatric","title":"Pediatric Analysis","desc":"Childhood vaccine patterns"},{"href":"/side-effects/covid","title":"COVID Vaccine Side Effects","desc":"Compare to COVID data"}].map((p: any) => (
+          {[{"href":"/vaccines/hep","title":"Hep B Vaccine Detail","desc":"Full VAERS profile"},{"href":"/analysis/pediatric","title":"Pediatric Analysis","desc":"Childhood vaccine data"},{"href":"/analysis/death-reports","title":"Death Reports Analysis","desc":"Understanding mortality data"}].map((p: any) => (
             <Link key={p.href} href={p.href} className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
               <div className="font-medium text-gray-900">{p.title} →</div>
               <div className="text-sm text-gray-500">{p.desc}</div>

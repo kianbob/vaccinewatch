@@ -8,19 +8,22 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Shingles Vaccine Side Effects (Shingrix) — VAERS Data | VaccineWatch',
-  description: 'Analysis of shingles vaccine (Shingrix/Zostavax) side effects from VAERS. Known for strong reactogenicity — here\'s the data on arm pain, fever, and more.',
+  title: 'Shingles Vaccine Side Effects — Zostavax & Shingrix VAERS Data | VaccineWatch',
+  description: 'VAERS analysis of shingles vaccine side effects for both Zostavax and Shingrix. 140,000+ reports analyzed with context.',
 }
 
 export default function ShinglesSideEffectsPage() {
   const vaccineIndex = readJsonFile('vaccine-index.json')
-  const varzos = vaccineIndex.find((v: any) => v.type === 'VARZOS')
+  const types = ["VARZOS"]
+  const vaccines = vaccineIndex.filter((v: any) => types.includes(v.type))
 
-  const totalReports = varzos?.reports || 0
-  const totalDeaths = varzos?.died || 0
-  const totalHosp = varzos?.hosp || 0
-  const topSymptoms = varzos?.symptoms?.slice(0, 12) || []
-  const ageGroups = varzos?.ageGroups || {}
+  let totalReports = 0, totalDeaths = 0, totalHosp = 0, totalER = 0
+  vaccines.forEach((v: any) => {
+    totalReports += v.reports; totalDeaths += v.died; totalHosp += v.hosp; totalER += v.er || 0
+  })
+
+  const mainVax = vaccineIndex.find((v: any) => v.type === 'VARZOS')
+  const topSymptoms = mainVax?.symptoms?.slice(0, 12) || []
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -32,16 +35,14 @@ export default function ShinglesSideEffectsPage() {
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
-          <div className="text-xs font-medium text-primary uppercase tracking-wider">5 min read</div>
-          <ShareButtons title="Shingles Vaccine Side Effects (Shingrix) — VaccineWatch" />
+          <div className="text-xs font-medium text-primary uppercase tracking-wider">6 min read</div>
+          <ShareButtons title="Shingles Vaccine Side Effects — Zostavax & Shingrix VAERS Data | VaccineWatch" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Shingles Vaccine Side Effects
         </h1>
         <p className="text-xl text-gray-600 mb-6">
-          The shingles vaccine (Shingrix) is known for having more noticeable side effects than 
-          most vaccines — particularly after the second dose. Here&apos;s what VAERS data shows, 
-          with important context about why this vaccine feels &quot;rougher.&quot;
+          Shingles vaccines are given to older adults to prevent herpes zoster (shingles). The older Zostavax (live vaccine) has been largely replaced by Shingrix (recombinant). Shingrix is known for causing more noticeable — but generally harmless — side effects.
         </p>
       </div>
 
@@ -49,11 +50,6 @@ export default function ShinglesSideEffectsPage() {
         <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
           <div className="text-2xl font-bold text-gray-900">{formatNumber(totalReports)}</div>
           <div className="text-sm text-primary">Total Reports</div>
-        </div>
-        <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
-          <div className="text-2xl font-bold text-gray-900">50+</div>
-          <div className="text-sm text-primary">Age Group</div>
-          <div className="text-xs text-gray-400">Recommended</div>
         </div>
         <div className="bg-white border border-red-200 rounded-xl p-4 text-center">
           <div className="text-2xl font-bold text-red-600">{formatNumber(totalDeaths)}</div>
@@ -63,23 +59,15 @@ export default function ShinglesSideEffectsPage() {
           <div className="text-2xl font-bold text-amber-600">{formatNumber(totalHosp)}</div>
           <div className="text-xs text-amber-500">Hospitalizations</div>
         </div>
+        <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
+          <div className="text-2xl font-bold text-gray-900">{formatNumber(totalER)}</div>
+          <div className="text-xs text-gray-500">ER Visits</div>
+        </div>
       </div>
 
       <div className="prose prose-lg max-w-none mb-12">
-        <h2 className={playfairDisplay.className}>Why Shingrix Feels &quot;Rougher&quot;</h2>
-        <p>
-          Shingrix is a recombinant vaccine with an adjuvant (AS01B) specifically designed to 
-          produce a strong immune response in older adults whose immune systems are weaker. 
-          This strong immune stimulation is what makes it effective (~90% effective at preventing 
-          shingles) — but it also causes more noticeable side effects than many other vaccines.
-        </p>
-        <p>
-          In clinical trials, about <strong>78% of participants</strong> reported injection site 
-          reactions and <strong>44%</strong> reported systemic side effects (fever, fatigue, etc.). 
-          These rates are higher than most vaccines but are expected and well-documented.
-        </p>
-
         <h2 className={playfairDisplay.className}>Most Commonly Reported Side Effects</h2>
+        <p>The following symptoms are most frequently reported after vaccination:</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-12">
@@ -90,7 +78,7 @@ export default function ShinglesSideEffectsPage() {
             className="flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-3 hover:shadow-md transition-all"
           >
             <div className="flex items-center gap-3">
-              <span className="text-sm font-bold text-primary/60 w-6">#{i + 1}</span>
+              <span className="text-sm font-bold text-primary/60 w-6">#{'{'}i + 1{'}'}</span>
               <span className="font-medium text-gray-900">{s.name}</span>
             </div>
             <span className="text-sm text-gray-500 font-mono">{formatNumber(s.count)}</span>
@@ -99,58 +87,56 @@ export default function ShinglesSideEffectsPage() {
       </div>
 
       <div className="prose prose-lg max-w-none mb-12">
-        <h2 className={playfairDisplay.className}>Expected Side Effects</h2>
-        <p><strong>Very common (day 1-3 after vaccination):</strong></p>
+        
+        <h2 className={playfairDisplay.className}>Zostavax vs Shingrix</h2>
         <ul>
-          <li>Pain, redness, and swelling at injection site (most common)</li>
-          <li>Muscle pain (myalgia)</li>
-          <li>Fatigue</li>
-          <li>Headache</li>
-          <li>Shivering</li>
-          <li>Fever</li>
-          <li>Gastrointestinal symptoms</li>
+          <li><strong>Zostavax (VARZOS):</strong> Live attenuated vaccine, single dose, discontinued in U.S. (2020)</li>
+          <li><strong>Shingrix:</strong> Recombinant adjuvanted vaccine, 2 doses, current standard</li>
         </ul>
         <p>
-          These typically last 2-3 days and are more pronounced after the <strong>second dose</strong>. 
-          Many people report being unable to use the arm where the vaccine was given for 1-2 days — 
-          this is normal and not a cause for concern.
+          Shingrix is known for more pronounced side effects than most vaccines — this is partly 
+          because it contains a strong adjuvant (AS01B) designed to boost immune response in older adults. 
+          The side effects are a sign the immune system is responding.
         </p>
 
-        <h2 className={playfairDisplay.className}>Shingrix vs Zostavax</h2>
+        <h2 className={playfairDisplay.className}>Expected Side Effects</h2>
+        <p><strong>Very common with Shingrix (expected in most recipients):</strong></p>
+        <ul>
+          <li>Pain and swelling at injection site (up to 78% of recipients)</li>
+          <li>Fatigue and muscle pain (up to 45%)</li>
+          <li>Headache (up to 38%)</li>
+          <li>Shivering and fever (up to 27%)</li>
+          <li>GI symptoms (nausea, stomach pain)</li>
+        </ul>
         <p>
-          The VAERS code &quot;VARZOS&quot; includes both Shingrix (current, recombinant) and 
-          Zostavax (discontinued 2020, live vaccine). Shingrix generates more side effect reports 
-          due to its stronger adjuvant, but is also significantly more effective (90% vs 51%).
+          These side effects are notably more common than with most vaccines but typically 
+          resolve within 2-3 days. The second dose tends to cause more side effects than the first.
         </p>
 
-        <h2 className={playfairDisplay.className}>Age Context</h2>
+        <h2 className={playfairDisplay.className}>Why So Many Reports?</h2>
         <p>
-          Shingles vaccine recipients are older adults (50+), a population with higher baseline 
-          health event rates. Some VAERS reports may reflect coincidental health events in this 
-          age group rather than vaccine effects.
+          The high VAERS report count for shingles vaccines reflects both the strong reactogenicity 
+          of Shingrix and the older age of recipients. Older adults may be more likely to seek medical 
+          attention for side effects, and healthcare providers may be more likely to report events 
+          in elderly patients.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-12">
-        {Object.entries(ageGroups).map(([group, count]) => (
-          <div key={group} className="bg-white border border-gray-200 rounded-xl p-4 text-center">
-            <div className="text-sm text-gray-500 mb-1">{group}</div>
-            <div className="text-xl font-bold text-gray-900">{formatNumber(count as number)}</div>
-          </div>
-        ))}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800 mb-12">
+        <strong>⚠️ Remember:</strong> VAERS reports show correlation, not causation. A report filed 
+        after vaccination doesn&apos;t mean the vaccine caused the reported event. Always consult 
+        your healthcare provider for medical advice.
       </div>
 
       <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">Explore Shingles Vaccine Data</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <Link href="/vaccines/varzos" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
-            <div className="font-medium text-gray-900">Full VAERS Profile →</div>
-            <div className="text-sm text-gray-500">Charts, symptoms, yearly data</div>
-          </Link>
-          <Link href="/analysis/elderly" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
-            <div className="font-medium text-gray-900">Elderly Vaccine Analysis →</div>
-            <div className="text-sm text-gray-500">Age 65+ adverse event patterns</div>
-          </Link>
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Explore This Data</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {[{"href":"/vaccines/varzos","title":"Zoster/Shingles Vaccine Detail","desc":"Full VAERS profile"},{"href":"/analysis/elderly","title":"Elderly Analysis","desc":"Vaccination patterns in 65+"},{"href":"/tools/severity-profile","title":"Severity Profile Tool","desc":"Compare vaccine outcomes"}].map((p: any) => (
+            <Link key={p.href} href={p.href} className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+              <div className="font-medium text-gray-900">{p.title} →</div>
+              <div className="text-sm text-gray-500">{p.desc}</div>
+            </Link>
+          ))}
         </div>
       </div>
 
@@ -165,9 +151,9 @@ export default function ShinglesSideEffectsPage() {
             <div className="font-medium text-gray-900">COVID-19 Side Effects</div>
             <div className="text-sm text-gray-500">1.1M+ reports analyzed</div>
           </Link>
-          <Link href="/side-effects/flu" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-            <div className="font-medium text-gray-900">Flu Vaccine Side Effects</div>
-            <div className="text-sm text-gray-500">Influenza vaccine data</div>
+          <Link href="/dashboard" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Full Dashboard</div>
+            <div className="text-sm text-gray-500">All 104 vaccines compared</div>
           </Link>
         </div>
       </div>
