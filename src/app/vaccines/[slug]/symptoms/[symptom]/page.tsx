@@ -57,7 +57,7 @@ export async function generateMetadata({
     const match = symptoms.find(s => s.slug === symptom)
 
     if (!match) {
-      return { title: 'Not Found' }
+      notFound()
     }
 
     let vaccineName = slug.toUpperCase()
@@ -75,7 +75,7 @@ export async function generateMetadata({
       description: `${formatNumber(match.count)} reports of ${match.name} following ${vaccineName} vaccination in VAERS (${pct}% of all reports). Deaths: ${formatNumber(match.died)}, Hospitalizations: ${formatNumber(match.hosp)}.`
     }
   } catch {
-    return { title: 'Not Found' }
+    notFound()
   }
 }
 

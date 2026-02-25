@@ -47,10 +47,7 @@ export async function generateMetadata({
       description: `${formatNumber(symptom.reports)} reports of ${symptom.name} after vaccination in VAERS. Severity rate: ${symptom.reports > 0 ? Math.min((symptom.died + symptom.hosp) / symptom.reports * 100, 100).toFixed(1) : '0'}%. View associated vaccines and yearly trends.`
     }
   } catch {
-    return {
-      title: 'Symptom Not Found',
-      description: 'The requested symptom data could not be found.'
-    }
+    notFound()
   }
 }
 

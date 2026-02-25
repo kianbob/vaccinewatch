@@ -72,10 +72,7 @@ export async function generateMetadata({
       description: `Explore ${formatNumber(vaccine.reports)} adverse event reports for ${getCleanVaccineName(vaccine.name)} in VAERS. View yearly trends, top symptoms, death reports (${formatNumber(vaccine.died)}), and hospitalization data (${formatNumber(vaccine.hosp)}).`
     }
   } catch {
-    return {
-      title: 'Vaccine Not Found',
-      description: 'The requested vaccine data could not be found.'
-    }
+    notFound()
   }
 }
 

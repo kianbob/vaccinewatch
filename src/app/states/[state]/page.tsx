@@ -101,7 +101,7 @@ export async function generateMetadata({
   const stateData = stateMap.get(abbr)
 
   if (!stateData) {
-    return { title: 'State Not Found' }
+    notFound()
   }
 
   return {

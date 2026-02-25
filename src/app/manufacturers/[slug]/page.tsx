@@ -42,7 +42,7 @@ export async function generateMetadata({
   const mfr = manufacturers.find(m => slugify(m.name) === slug)
 
   if (!mfr) {
-    return { title: 'Manufacturer Not Found' }
+    notFound()
   }
 
   return {

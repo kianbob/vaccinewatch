@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Safety — What VAERS Data Shows About Vaccine Safety',
+  title: 'Vaccine Safety — What 1.98 Million VAERS Reports Show',
   description: 'Comprehensive look at vaccine safety through VAERS data. 1.98 million reports analyzed across 104 vaccines with full context on what the data means and doesn\'t mean.',
 }
 
