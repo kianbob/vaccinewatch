@@ -100,6 +100,33 @@ const tools = [
     color: 'accent',
     readTime: 4,
   },
+  {
+    slug: 'birth-defects',
+    title: 'Birth Defects Explorer',
+    subtitle: 'Birth defect reports by vaccine',
+    description: 'Explore birth defect reports in VAERS by vaccine type. Includes critical context about background rates and reporting limitations.',
+    icon: '👶',
+    color: 'danger',
+    readTime: 3,
+  },
+  {
+    slug: 'recovery-explorer',
+    title: 'Recovery Explorer',
+    subtitle: 'Do side effects go away?',
+    description: 'Interactive explorer of recovery status across all vaccines. Compare recovery rates, understand what "not recovered" really means.',
+    icon: '💚',
+    color: 'primary',
+    readTime: 4,
+  },
+  {
+    slug: 'hospital-duration',
+    title: 'Hospital Duration Explorer',
+    subtitle: 'How long are vaccine hospitalizations?',
+    description: 'Explore hospitalization duration data across all vaccines. Most stays are 1-3 days. Compare patterns by vaccine type.',
+    icon: '🏥',
+    color: 'accent',
+    readTime: 3,
+  },
 ]
 
 const colorClasses: Record<string, string> = {
