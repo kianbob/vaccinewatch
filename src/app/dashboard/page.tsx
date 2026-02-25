@@ -38,6 +38,24 @@ export default function DashboardPage() {
 
       <DashboardClient />
 
+      {/* SEO Content */}
+      <div className="mt-8 prose prose-lg max-w-none text-gray-600">
+        <h2 className={playfairDisplay.className}>How to Use This Dashboard</h2>
+        <p>
+          Click any column header to sort by that metric. Use the search box to filter by vaccine name.
+          <strong> Important context:</strong> Higher numbers don&apos;t mean a vaccine is more dangerous.
+          COVID-19 vaccines top nearly every category because hundreds of millions of doses were administered,
+          generating far more reports than any other vaccine in history. Always consider the{' '}
+          <Link href="/analysis/denominator-problem">denominator</Link> before drawing conclusions.
+        </p>
+        <p>
+          Death and hospitalization <strong>rates</strong> (per 1,000 reports) provide a better comparison than
+          raw counts, though even these are imperfect — different vaccines are given to different populations
+          (infants, elderly, immunocompromised), and{' '}
+          <Link href="/analysis/reporting-bias">reporting rates vary</Link> by era and vaccine type.
+        </p>
+      </div>
+
       {/* Related links */}
       <div className="mt-12 border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related</h3>
