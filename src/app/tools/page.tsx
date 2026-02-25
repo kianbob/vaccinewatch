@@ -82,6 +82,24 @@ const tools = [
     color: 'primary',
     readTime: 3,
   },
+  {
+    slug: 'dose-explorer',
+    title: 'Dose Series Explorer',
+    subtitle: '1st vs 2nd vs 3rd dose breakdown',
+    description: 'Compare adverse event reports across dose numbers for any vaccine. See how patterns change from first dose through boosters.',
+    icon: '💉',
+    color: 'danger',
+    readTime: 3,
+  },
+  {
+    slug: 'severity-profile',
+    title: 'Severity Profile',
+    subtitle: 'Vaccine outcome breakdown vs average',
+    description: 'See the complete severity profile for any vaccine — death rates, hospitalization rates, recovery outcomes — compared to the all-vaccine average.',
+    icon: '📋',
+    color: 'accent',
+    readTime: 4,
+  },
 ]
 
 const colorClasses: Record<string, string> = {
