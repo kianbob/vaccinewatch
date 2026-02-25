@@ -104,7 +104,7 @@ export default function Footer() {
             {/* Legal Links */}
             <div className="flex flex-col md:flex-row md:items-center md:space-x-6 space-y-2 md:space-y-0 text-sm">
               <Link href="/about" className="hover:text-white transition-colors">About</Link>
-              <Link href="/about" className="hover:text-white transition-colors">Methodology</Link>
+              <Link href="/about#methodology" className="hover:text-white transition-colors">Methodology</Link>
               <Link href="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
               <Link href="/feed.xml" className="hover:text-white transition-colors">RSS Feed</Link>
               <div className="text-gray-500">

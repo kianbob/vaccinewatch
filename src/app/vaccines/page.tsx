@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
-import { formatNumber, slugify } from '@/lib/utils'
+import { formatNumber, slugify, getCleanVaccineName } from '@/lib/utils'
 import VaccinesList from './VaccinesList'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -97,7 +97,7 @@ export default function VaccinesPage() {
                 href={`/vaccines/${vaccine.type.toLowerCase()}`}
                 className="bg-white p-4 rounded-lg border border-gray-200 hover:border-primary/30 hover:shadow-sm transition-all"
               >
-                <div className="font-medium text-gray-900 mb-1">{vaccine.name}</div>
+                <div className="font-medium text-gray-900 mb-1">{getCleanVaccineName(vaccine.name)}</div>
                 <div className="text-sm text-gray-500 mb-2">{vaccine.type}</div>
                 <div className="text-sm">
                   <span className="font-semibold text-primary">{formatNumber(vaccine.reports)}</span>

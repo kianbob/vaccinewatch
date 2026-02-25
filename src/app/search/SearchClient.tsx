@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
+import { getCleanVaccineName } from '@/lib/utils'
 
 interface VaccineResult {
   name: string

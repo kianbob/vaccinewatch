@@ -5,7 +5,7 @@ import { readdirSync, existsSync } from 'fs'
 import { join } from 'path'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
-import { formatNumber, slugify } from '@/lib/utils'
+import { formatNumber, slugify, getCleanVaccineName } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -67,8 +67,8 @@ export async function generateMetadata({
     const vaccine: VaccineData = readJsonFile(`vaccines/${slug}.json`)
     
     return {
-      title: `${vaccine.name} VAERS Reports & Safety Data`,
-      description: `Explore ${formatNumber(vaccine.reports)} adverse event reports for ${vaccine.name} in VAERS. View yearly trends, top symptoms, death reports (${formatNumber(vaccine.died)}), and hospitalization data (${formatNumber(vaccine.hosp)}).`
+      title: `${getCleanVaccineName(vaccine.name)} VAERS Reports & Safety Data`,
+      description: `Explore ${formatNumber(vaccine.reports)} adverse event reports for ${getCleanVaccineName(vaccine.name)} in VAERS. View yearly trends, top symptoms, death reports (${formatNumber(vaccine.died)}), and hospitalization data (${formatNumber(vaccine.hosp)}).`
     }
   } catch {
     return {
@@ -93,6 +93,7 @@ export default async function VaccineDetailPage({
     notFound()
   }
 
+  const cleanName = getCleanVaccineName(vaccine.name)
   const stats = readJsonFile('stats.json') as { totalReports: number }
   const percentOfAll = stats.totalReports > 0 ? (vaccine.reports / stats.totalReports * 100).toFixed(1) : '0.0'
 
@@ -132,14 +133,14 @@ export default async function VaccineDetailPage({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
 
-      <Breadcrumbs items={[{ label: 'Vaccines', href: '/vaccines' }, { label: vaccine.name }]} />
+      <Breadcrumbs items={[{ label: 'Vaccines', href: '/vaccines' }, { label: cleanName }]} />
 
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-start justify-between mb-4">
           <div>
             <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-2 ${playfairDisplay.className}`}>
-              {vaccine.name}
+              {cleanName}
             </h1>
             <div className="flex flex-wrap items-center gap-4 text-lg text-gray-600">
               <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
@@ -199,7 +200,7 @@ export default async function VaccineDetailPage({
 
       {/* Yearly Trend Chart */}
       <div className="mb-8">
-        <VaccineYearlyChart data={vaccine.yearly} vaccineName={vaccine.name} />
+        <VaccineYearlyChart data={vaccine.yearly} vaccineName={cleanName} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -208,11 +209,11 @@ export default async function VaccineDetailPage({
           {/* About This Vaccine */}
           <div className="bg-white rounded-lg border border-gray-200 p-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              About {vaccine.name}
+              About {cleanName}
             </h2>
             <div className="prose prose-lg text-gray-600">
               <p>
-                <strong>{vaccine.name}</strong> has{' '}
+                <strong>{cleanName}</strong> has{' '}
                 <strong>{formatNumber(vaccine.reports)}</strong> reports in VAERS spanning from 1990 to 2026.
               </p>
               <p>
@@ -396,6 +397,15 @@ export default async function VaccineDetailPage({
                   </Link>
                 </>
               )}
+              <Link href="/analysis/denominator-problem" className="block text-sm text-primary hover:text-primary/80">
+                The Denominator Problem
+              </Link>
+              <Link href="/analysis/reporting-bias" className="block text-sm text-primary hover:text-primary/80">
+                Understanding Reporting Bias
+              </Link>
+              <Link href="/analysis/onset-timing" className="block text-sm text-primary hover:text-primary/80">
+                When Do Side Effects Start?
+              </Link>
               <Link href="/analysis/death-reports" className="block text-sm text-primary hover:text-primary/80">
                 Death Reports Deep Dive
               </Link>
@@ -404,12 +414,6 @@ export default async function VaccineDetailPage({
               </Link>
               <Link href="/analysis/top-symptoms" className="block text-sm text-primary hover:text-primary/80">
                 Most Common Symptoms
-              </Link>
-              <Link href="/analysis/reporting-trends" className="block text-sm text-primary hover:text-primary/80">
-                Reporting Trends Over Time
-              </Link>
-              <Link href="/analysis/age-patterns" className="block text-sm text-primary hover:text-primary/80">
-                Age-Based Patterns
               </Link>
             </div>
           </div>

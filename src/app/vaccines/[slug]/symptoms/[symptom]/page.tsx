@@ -5,7 +5,7 @@ import { readdirSync, existsSync } from 'fs'
 import { join } from 'path'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
-import { formatNumber } from '@/lib/utils'
+import { formatNumber, getCleanVaccineName } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -64,7 +64,7 @@ export async function generateMetadata({
     let vaccineReports = 0
     try {
       const vaccine = readJsonFile(`vaccines/${slug}.json`)
-      vaccineName = vaccine.name
+      vaccineName = getCleanVaccineName(vaccine.name)
       vaccineReports = vaccine.reports
     } catch { /* use slug */ }
 
@@ -103,7 +103,7 @@ export default async function VaccineSymptomPage({
   let vaccineReports = 0
   try {
     const vaccine = readJsonFile(`vaccines/${slug}.json`)
-    vaccineName = vaccine.name
+    vaccineName = getCleanVaccineName(vaccine.name)
     vaccineReports = vaccine.reports
   } catch { /* use slug */ }
 

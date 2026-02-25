@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { playfairDisplay } from '@/lib/fonts'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import { getCleanVaccineName } from '@/lib/utils'
 
 const CompareCharts = dynamic(() => import('@/components/CompareCharts'), {
   ssr: false,
@@ -77,7 +78,7 @@ export default function CompareClient() {
                 key={v.type}
                 className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
               >
-                {v.name.length > 40 ? v.name.substring(0, 40) + '...' : v.name}
+                {getCleanVaccineName(v.name)}
                 <button
                   onClick={() => handleRemove(v.type)}
                   className="ml-2 text-primary/60 hover:text-primary font-bold"
@@ -229,7 +230,7 @@ function VaccineSelector({
                 isSelected ? 'bg-primary/10 text-primary' : isDisabled ? 'opacity-40 cursor-not-allowed' : 'hover:bg-gray-50'
               }`}
             >
-              <span>{v.name}</span>
+              <span>{getCleanVaccineName(v.name)}</span>
               <span className="text-xs text-gray-400">{v.reports.toLocaleString()} reports</span>
             </button>
           )

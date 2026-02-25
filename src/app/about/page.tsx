@@ -97,7 +97,7 @@ export default function AboutPage() {
 
       {/* Data Methodology */}
       <section className="prose prose-lg max-w-none mb-12">
-        <h2 className={`text-2xl font-bold text-gray-900 ${playfairDisplay.className}`}>Data Methodology</h2>
+        <h2 id="methodology" className={`text-2xl font-bold text-gray-900 ${playfairDisplay.className}`}>Data Methodology</h2>
         <p>
           VaccineWatch processes raw VAERS data files published by the CDC/FDA. Our methodology includes:
         </p>

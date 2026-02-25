@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import { getCleanVaccineName } from '@/lib/utils'
 
 interface Vaccine {
   name: string
@@ -78,7 +79,7 @@ export default function VaccinesList({ vaccines }: { vaccines: Vaccine[] }) {
               <tr key={v.type} className="hover:bg-gray-50">
                 <td className="px-6 py-4 text-sm">
                   <Link href={`/vaccines/${v.type.toLowerCase()}`} className="text-primary hover:underline font-medium">
-                    {v.name.split('(')[0].trim()}
+                    {getCleanVaccineName(v.name)}
                   </Link>
                   <span className="block text-xs text-gray-400">{v.type}</span>
                 </td>

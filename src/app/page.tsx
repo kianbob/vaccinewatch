@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
-import { formatNumber } from '@/lib/utils'
+import { formatNumber, getCleanVaccineName } from '@/lib/utils'
 
 interface VaccineIndex {
   name: string
@@ -243,7 +243,7 @@ export default function HomePage() {
                 className="bg-white border border-gray-200 rounded-lg p-4 hover:border-primary/30 hover:shadow-md transition-all"
               >
                 <div className="text-xs text-gray-400 mb-1">#{i + 1}</div>
-                <div className="font-medium text-gray-900 text-sm mb-1 truncate">{v.name.split('(')[0].trim()}</div>
+                <div className="font-medium text-gray-900 text-sm mb-1 truncate">{getCleanVaccineName(v.name)}</div>
                 <div className="text-xs text-gray-500 mb-2">{v.type}</div>
                 <div className="text-sm font-semibold text-primary">{formatNumber(v.reports)}</div>
                 <div className="text-xs text-gray-400">reports</div>
