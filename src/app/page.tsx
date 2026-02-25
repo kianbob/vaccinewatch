@@ -114,6 +114,7 @@ export default function HomePage() {
           <p className="text-lg text-gray-400 mb-10 max-w-3xl mx-auto">
             Transparent access to 35 years of VAERS data (1990–2026).
             We present the numbers with context, not conclusions.
+            <span className="block mt-2 text-sm text-gray-500">Data updated through February 2026 · Source: CDC/FDA VAERS</span>
           </p>
 
           {/* Hero stat pills with animated numbers */}

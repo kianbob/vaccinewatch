@@ -13,7 +13,7 @@ const BASE_URL = 'https://www.vaccinewatch.org'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'VaccineWatch - VAERS Data Analysis',
+    default: 'VaccineWatch — Vaccine Adverse Event Reports',
     template: '%s | VaccineWatch'
   },
   description: '1.98 Million Vaccine Adverse Event Reports. Exposed. Explored. Explained. Transparent access to VAERS data for informed decision-making.',
