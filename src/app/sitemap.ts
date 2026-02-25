@@ -85,7 +85,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     try {
       const years = readJson(`vaccine-years/${slug}.json`)
       for (const y of years) {
-        if (y.reports >= 5) {
+        if (y.reports >= 1) {
           vaccineYearPages.push({
             url: `${baseUrl}/vaccines/${slug}/${y.year}`,
             lastModified: new Date(),
@@ -106,9 +106,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     try {
       const symptoms = readJson(`vaccine-symptoms/${slug}.json`)
       const top = symptoms
-        .filter((s: any) => s.count >= 10)
+        .filter((s: any) => s.count >= 3)
         .sort((a: any, b: any) => b.count - a.count)
-        .slice(0, 50)
+        .slice(0, 500)
       for (const s of top) {
         vaccineSymptomPages.push({
           url: `${baseUrl}/vaccines/${slug}/symptoms/${s.slug}`,

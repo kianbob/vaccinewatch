@@ -28,7 +28,7 @@ export async function generateStaticParams() {
     try {
       const years: YearData[] = readJsonFile(`vaccine-years/${slug}.json`)
       for (const y of years) {
-        if (y.reports >= 5) {
+        if (y.reports >= 1) {
           params.push({ slug, year: String(y.year) })
         }
       }
@@ -93,14 +93,14 @@ export default async function VaccineYearPage({
   } catch { /* use slug */ }
 
   // Compare with other years
-  const validYears = years.filter(y => y.reports >= 5).sort((a, b) => b.reports - a.reports)
+  const validYears = years.filter(y => y.reports >= 1).sort((a, b) => b.reports - a.reports)
   const rank = validYears.findIndex(y => y.year === yearNum) + 1
   const avgReports = validYears.length > 0 ? Math.round(validYears.reduce((s, y) => s + y.reports, 0) / validYears.length) : 0
   const percentOfTotal = totalVaccineReports > 0 ? (match.reports / totalVaccineReports * 100).toFixed(1) : '—'
 
   // Previous and next years
-  const prevYear = years.find(y => y.year === yearNum - 1 && y.reports >= 5)
-  const nextYear = years.find(y => y.year === yearNum + 1 && y.reports >= 5)
+  const prevYear = years.find(y => y.year === yearNum - 1 && y.reports >= 1)
+  const nextYear = years.find(y => y.year === yearNum + 1 && y.reports >= 1)
 
   const changeFromPrev = prevYear ? ((match.reports - prevYear.reports) / prevYear.reports * 100).toFixed(0) : null
 

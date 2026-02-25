@@ -27,9 +27,9 @@ export async function generateStaticParams() {
     try {
       const symptoms: VaccineSymptom[] = readJsonFile(`vaccine-symptoms/${slug}.json`)
       const top = symptoms
-        .filter(s => s.count >= 10)
+        .filter(s => s.count >= 3)
         .sort((a, b) => b.count - a.count)
-        .slice(0, 50)
+        .slice(0, 500)
       for (const s of top) {
         params.push({ slug, symptom: s.slug })
       }
