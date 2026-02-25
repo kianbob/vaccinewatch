@@ -169,6 +169,8 @@ export async function GET() {
     { path: '/side-effects/meningococcal', title: 'Meningococcal Vaccine Side Effects', description: 'Menactra and Menveo VAERS data covering MenACWY and MenB vaccines.', date: '2026-02-25' },
     { path: '/side-effects/rotavirus', title: 'Rotavirus Vaccine Side Effects', description: 'RotaTeq and Rotarix VAERS data with intussusception context.', date: '2026-02-25' },
     { path: '/vaccine-safety', title: 'Vaccine Safety — What VAERS Data Shows', description: 'A data-driven look at vaccine safety through 1.98 million VAERS reports.', date: '2026-02-25' },
+    { path: '/adverse-events', title: 'Vaccine Adverse Events — What VAERS Reports Show', description: 'Explore 1.98 million vaccine adverse event reports. What are adverse events, how they\'re reported, and what the data shows.', date: '2026-02-25' },
+    { path: '/report-adverse-event', title: 'How to Report a Vaccine Adverse Event to VAERS', description: 'Step-by-step guide to reporting a vaccine adverse event. Who can report, what to include, and what happens after.', date: '2026-02-25' },
   ]
 
   const analysisItems = articles.map(a => `    <item>

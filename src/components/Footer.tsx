@@ -87,7 +87,9 @@ export default function Footer() {
               <li><Link href="/side-effects" className="hover:text-white transition-colors">Side Effects Guide</Link></li>
               <li><Link href="/vaccine-schedule" className="hover:text-white transition-colors">Vaccine Schedule</Link></li>
               <li><Link href="/vaccine-safety" className="hover:text-white transition-colors">Vaccine Safety</Link></li>
+              <li><Link href="/adverse-events" className="hover:text-white transition-colors">Adverse Events</Link></li>
               <li><Link href="/is-vaers-reliable" className="hover:text-white transition-colors">Is VAERS Reliable?</Link></li>
+              <li><Link href="/report-adverse-event" className="hover:text-white transition-colors">Report an Event</Link></li>
               <li><Link href="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link></li>
               <li><a href="https://vaers.hhs.gov" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">VAERS Official Site ↗</a></li>
             </ul>
