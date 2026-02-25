@@ -283,6 +283,14 @@ export default function SideEffectsPage() {
             <div className="font-bold text-gray-900 mb-1">Hepatitis B Vaccine</div>
             <div className="text-sm text-gray-500">Given at birth · 73K+ reports</div>
           </Link>
+          <Link href="/side-effects/pneumonia" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="font-bold text-gray-900 mb-1">Pneumonia Vaccine</div>
+            <div className="text-sm text-gray-500">Pneumovax &amp; Prevnar</div>
+          </Link>
+          <Link href="/side-effects/polio" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="font-bold text-gray-900 mb-1">Polio Vaccine</div>
+            <div className="text-sm text-gray-500">IPV &amp; historical OPV</div>
+          </Link>
           <Link href="/dashboard" className="bg-primary/5 border border-primary/20 rounded-xl p-5 hover:shadow-md transition-all">
             <div className="font-bold text-primary mb-1">View All 104 Vaccines →</div>
             <div className="text-sm text-gray-500">Interactive sortable dashboard</div>
