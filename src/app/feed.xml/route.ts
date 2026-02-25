@@ -196,9 +196,9 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>VaccineWatch Analysis</title>
+    <title>VaccineWatch — VAERS Data Analysis &amp; Guides</title>
     <link>${baseUrl}</link>
-    <description>Data-driven analysis of VAERS vaccine adverse event reports</description>
+    <description>Analysis, guides, and tools for exploring 1.98 million VAERS vaccine adverse event reports</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml"/>
