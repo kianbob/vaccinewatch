@@ -5,7 +5,7 @@ interface BreadcrumbItem {
   href?: string
 }
 
-const BASE_URL = 'https://vaccinewatch.org'
+const BASE_URL = 'https://www.vaccinewatch.org'
 
 export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
   // Build JSON-LD BreadcrumbList

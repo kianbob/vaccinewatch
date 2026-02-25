@@ -28,7 +28,7 @@ export default function MultiVaccinePage() {
         their associated outcomes.
       </p>
 
-      <ShareButtons title="Multi-Vaccine Interaction Explorer" url="https://vaccinewatch.org/tools/multi-vaccine" />
+      <ShareButtons title="Multi-Vaccine Interaction Explorer" url="https://www.vaccinewatch.org/tools/multi-vaccine" />
 
       <MultiVaccineClient />
 

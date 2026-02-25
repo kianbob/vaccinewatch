@@ -1,5 +1,5 @@
 export async function GET() {
-  const baseUrl = 'https://vaccinewatch.org'
+  const baseUrl = 'https://www.vaccinewatch.org'
 
   const articles = [
     // New analysis articles

@@ -8,7 +8,7 @@ import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
-const BASE_URL = 'https://vaccinewatch.org'
+const BASE_URL = 'https://www.vaccinewatch.org'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

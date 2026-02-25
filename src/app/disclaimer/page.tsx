@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Disclaimer',
   description: 'Important disclaimer about the limitations of VAERS data presented on VaccineWatch.',
   alternates: {
-    canonical: 'https://vaccinewatch.org/disclaimer',
+    canonical: 'https://www.vaccinewatch.org/disclaimer',
   },
 }
 

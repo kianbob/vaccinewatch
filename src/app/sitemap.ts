@@ -8,7 +8,7 @@ function readJson(filename: string): any {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://vaccinewatch.org'
+  const baseUrl = 'https://www.vaccinewatch.org'
 
   // Static pages
   const staticPages = [

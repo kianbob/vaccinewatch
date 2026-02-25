@@ -27,7 +27,7 @@ export default function AdminRoutesPage() {
         the distribution of administration settings and vaccine delivery routes across all reports.
       </p>
 
-      <ShareButtons title="Administration Routes Explorer" url="https://vaccinewatch.org/tools/admin-routes" />
+      <ShareButtons title="Administration Routes Explorer" url="https://www.vaccinewatch.org/tools/admin-routes" />
 
       <AdminRoutesClient />
 
