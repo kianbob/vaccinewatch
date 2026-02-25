@@ -1,10 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Analysis - Data-Driven VAERS Insights',
-  description: 'In-depth analysis articles exploring trends, patterns, and context in VAERS vaccine adverse event data.'
+  title: 'VAERS Data Analysis — In-Depth Vaccine Safety Insights',
+  description: 'In-depth analysis of VAERS data: COVID-19 impact, myocarditis trends, age patterns, death reports, geographic analysis, and more. Context-rich data journalism.'
 }
 
 const articles = [
@@ -129,6 +130,7 @@ const badgeClasses: Record<string, string> = {
 export default function AnalysisIndexPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <Breadcrumbs items={[{ label: 'Analysis' }]} />
       <div className="mb-12">
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Data Analysis

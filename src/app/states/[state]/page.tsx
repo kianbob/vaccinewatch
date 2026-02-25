@@ -6,6 +6,7 @@ import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 const STATE_NAMES: Record<string, string> = {
   AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California',
@@ -62,8 +63,8 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${name} - VAERS Adverse Event Reports`,
-    description: `${formatNumber(stateData.reports)} VAERS reports from ${name}. Deaths: ${formatNumber(stateData.died)}, Hospitalizations: ${formatNumber(stateData.hosp)}.`
+    title: `Vaccine Adverse Events in ${name}`,
+    description: `${formatNumber(stateData.reports)} vaccine adverse event reports from ${name} in VAERS. Explore top vaccines reported, death data (${formatNumber(stateData.died)}), and hospitalization stats.`
   }
 }
 
@@ -103,15 +104,7 @@ export default async function StateDetailPage({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
 
-      <nav className="mb-6" aria-label="Breadcrumb">
-        <ol className="flex items-center space-x-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-primary">Home</Link></li>
-          <li>→</li>
-          <li><Link href="/states" className="hover:text-primary">States</Link></li>
-          <li>→</li>
-          <li className="text-gray-900 font-medium">{name}</li>
-        </ol>
-      </nav>
+      <Breadcrumbs items={[{ label: 'States', href: '/states' }, { label: name }]} />
 
       <div className="mb-8">
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-2 ${playfairDisplay.className}`}>
@@ -238,6 +231,11 @@ export default async function StateDetailPage({
           <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Explore Further</h3>
             <div className="space-y-3">
+              {vaccines.length > 0 && (
+                <Link href={`/vaccines/${vaccines[0].type.toLowerCase()}`} className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                  Top Vaccine: {vaccines[0].type}
+                </Link>
+              )}
               <Link href="/states" className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                 All States
               </Link>

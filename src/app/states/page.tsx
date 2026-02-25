@@ -4,10 +4,11 @@ import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
 import StatesList from './StatesList'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'VAERS Reports by State',
-  description: 'Vaccine adverse event reports broken down by U.S. state. Explore geographic patterns in VAERS reporting.'
+  title: 'Vaccine Adverse Events by State — Geographic VAERS Data',
+  description: 'Vaccine adverse event reports by U.S. state and territory. See per-capita rates, top reporting states, and geographic patterns in VAERS data.'
 }
 
 const STATE_NAMES: Record<string, string> = {
@@ -74,6 +75,7 @@ export default function StatesPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <Breadcrumbs items={[{ label: 'States' }]} />
 
       {/* Header */}
       <div className="mb-8">

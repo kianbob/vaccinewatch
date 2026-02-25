@@ -16,15 +16,50 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import { YearlyTrendChartClient as YearlyTrendChart } from '@/components/ClientCharts'
 
 export const metadata: Metadata = {
-  title: 'VaccineWatch - 1.98 Million VAERS Reports Analyzed',
-  description: 'Comprehensive analysis of 1.98 million vaccine adverse event reports from VAERS. Transparent data, neutral analysis, informed decisions.'
+  title: 'VaccineWatch — VAERS Adverse Event Reports Exposed, Explored, Explained',
+  description: 'Comprehensive analysis of 1.98 million vaccine adverse event reports from VAERS. Transparent data on 104 vaccines, 500 symptoms, and 35 years of reporting history.',
 }
+
+const recentArticles = [
+  {
+    slug: 'covid-impact',
+    title: 'The COVID-19 Impact on VAERS',
+    subtitle: 'How the pandemic changed vaccine adverse event reporting forever',
+    readTime: 8,
+  },
+  {
+    slug: 'myocarditis',
+    title: 'Myocarditis Deep Dive',
+    subtitle: 'Understanding the most closely-watched vaccine safety signal',
+    readTime: 7,
+  },
+  {
+    slug: 'death-reports',
+    title: 'Understanding Death Reports in VAERS',
+    subtitle: 'What "death reported to VAERS" actually means — and doesn\'t mean',
+    readTime: 8,
+  },
+  {
+    slug: 'serious-outcomes',
+    title: 'Serious vs Non-Serious Outcomes',
+    subtitle: 'Understanding the spectrum of adverse event severity',
+    readTime: 7,
+  },
+]
 
 export default function HomePage() {
   const stats = readJsonFile('stats.json')
   const yearlyStats = readJsonFile('yearly-stats.json')
   const vaccines: VaccineIndex[] = readJsonFile('vaccine-index.json')
   const topVaccines = [...vaccines].sort((a, b) => b.reports - a.reports).slice(0, 10)
+
+  // Quick Stats: COVID vs all other vaccines
+  const covidVaccines = vaccines.filter(v => v.type.startsWith('COVID'))
+  const otherVaccines = vaccines.filter(v => !v.type.startsWith('COVID'))
+  const covidReports = covidVaccines.reduce((s, v) => s + v.reports, 0)
+  const covidDeaths = covidVaccines.reduce((s, v) => s + v.died, 0)
+  const otherReports = otherVaccines.reduce((s, v) => s + v.reports, 0)
+  const otherDeaths = otherVaccines.reduce((s, v) => s + v.died, 0)
 
   return (
     <div className="min-h-screen">
@@ -42,7 +77,7 @@ export default function HomePage() {
             <span className="text-gray-900 font-semibold">Explained.</span>
           </p>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-            Transparent access to 35 years of VAERS data (1990-2026). 
+            Transparent access to 35 years of VAERS data (1990–2026).
             We present the numbers with context, not conclusions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -70,39 +105,39 @@ export default function HomePage() {
               Key Numbers at a Glance
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              These are the raw numbers from VAERS. Remember: reports don&apos;t prove causation, 
+              These are the raw numbers from VAERS. Remember: reports don&apos;t prove causation,
               but transparency is essential for informed decision-making.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            <StatCard 
-              title="Total Reports" 
-              value={stats.totalReports} 
+            <StatCard
+              title="Total Reports"
+              value={stats.totalReports}
               subtitle="Since 1990"
               color="primary"
             />
-            <StatCard 
-              title="Deaths Reported" 
-              value={stats.totalDied} 
+            <StatCard
+              title="Deaths Reported"
+              value={stats.totalDied}
               subtitle="Correlation ≠ causation"
               color="danger"
             />
-            <StatCard 
-              title="Hospitalizations" 
-              value={stats.totalHospitalized} 
+            <StatCard
+              title="Hospitalizations"
+              value={stats.totalHospitalized}
               subtitle="Serious adverse events"
               color="accent"
             />
-            <StatCard 
-              title="ER Visits" 
-              value={stats.totalER} 
+            <StatCard
+              title="ER Visits"
+              value={stats.totalER}
               subtitle="Emergency department"
               color="gray"
             />
-            <StatCard 
-              title="Disabilities" 
-              value={stats.totalDisabled} 
+            <StatCard
+              title="Disabilities"
+              value={stats.totalDisabled}
               subtitle="Reported disabilities"
               color="gray"
             />
@@ -110,15 +145,65 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Yearly Trend */}
+      {/* Quick Stats: COVID vs All Other Vaccines */}
       <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
+              COVID-19 vs All Other Vaccines
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              COVID-19 vaccines fundamentally changed VAERS reporting. Here&apos;s the scale of the difference.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+              <div className="text-sm font-semibold text-danger uppercase tracking-wide mb-4">COVID-19 Vaccines</div>
+              <div className="space-y-4">
+                <div>
+                  <div className="text-3xl font-bold text-gray-900">{formatNumber(covidReports)}</div>
+                  <div className="text-sm text-gray-500">total reports ({(covidReports / stats.totalReports * 100).toFixed(0)}% of all)</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-danger">{formatNumber(covidDeaths)}</div>
+                  <div className="text-sm text-gray-500">death reports</div>
+                </div>
+                <div className="text-sm text-gray-500">{covidVaccines.length} vaccine products</div>
+              </div>
+              <Link href="/analysis/covid-impact" className="mt-4 inline-block text-sm text-primary font-medium hover:text-primary/80">
+                Read the COVID impact analysis →
+              </Link>
+            </div>
+            <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+              <div className="text-sm font-semibold text-primary uppercase tracking-wide mb-4">All Other Vaccines</div>
+              <div className="space-y-4">
+                <div>
+                  <div className="text-3xl font-bold text-gray-900">{formatNumber(otherReports)}</div>
+                  <div className="text-sm text-gray-500">total reports ({(otherReports / stats.totalReports * 100).toFixed(0)}% of all)</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-danger">{formatNumber(otherDeaths)}</div>
+                  <div className="text-sm text-gray-500">death reports</div>
+                </div>
+                <div className="text-sm text-gray-500">{otherVaccines.length} vaccine products (1990–2026)</div>
+              </div>
+              <Link href="/analysis/covid-vs-flu" className="mt-4 inline-block text-sm text-primary font-medium hover:text-primary/80">
+                Compare COVID vs flu vaccines →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Yearly Trend */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
               35 Years of VAERS Reporting
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              See how adverse event reporting has changed over time. 
+              See how adverse event reporting has changed over time.
               Note the dramatic spike in 2021 with COVID-19 vaccine rollout.
             </p>
           </div>
@@ -127,7 +212,7 @@ export default function HomePage() {
       </section>
 
       {/* Top 10 Vaccines */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
@@ -143,7 +228,7 @@ export default function HomePage() {
               <Link
                 key={v.type}
                 href={`/vaccines/${v.type.toLowerCase()}`}
-                className="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-primary/30 hover:shadow-sm transition-all"
+                className="bg-white border border-gray-200 rounded-lg p-4 hover:border-primary/30 hover:shadow-md transition-all"
               >
                 <div className="text-xs text-gray-400 mb-1">#{i + 1}</div>
                 <div className="font-medium text-gray-900 text-sm mb-1 truncate">{v.name.split('(')[0].trim()}</div>
@@ -164,6 +249,40 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Recent Analysis */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
+              Recent Analysis
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              In-depth articles exploring trends and patterns in VAERS data with full context.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {recentArticles.map((article) => (
+              <Link
+                key={article.slug}
+                href={`/analysis/${article.slug}`}
+                className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md hover:border-primary/30 transition-all"
+              >
+                <h3 className={`text-lg font-bold text-gray-900 mb-2 ${playfairDisplay.className}`}>
+                  {article.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-3">{article.subtitle}</p>
+                <span className="text-xs text-gray-400">{article.readTime} min read</span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/analysis" className="text-primary font-semibold hover:text-primary/80">
+              View all analysis articles →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* What is VAERS? */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -174,16 +293,16 @@ export default function HomePage() {
               </h2>
               <div className="prose prose-lg text-gray-600">
                 <p>
-                  The <strong>Vaccine Adverse Event Reporting System (VAERS)</strong> is a passive surveillance system 
+                  The <strong>Vaccine Adverse Event Reporting System (VAERS)</strong> is a passive surveillance system
                   jointly managed by the CDC and FDA. It accepts reports of adverse events following vaccination.
                 </p>
                 <p>
-                  <strong>Anyone can report to VAERS</strong> — healthcare providers, vaccine manufacturers, patients, 
-                  or family members. This openness is both a strength (captures a wide range of potential signals) 
+                  <strong>Anyone can report to VAERS</strong> — healthcare providers, vaccine manufacturers, patients,
+                  or family members. This openness is both a strength (captures a wide range of potential signals)
                   and a limitation (reports aren&apos;t verified).
                 </p>
                 <p>
-                  <strong>Key limitations:</strong> Reports alone don&apos;t prove causation. They might be coincidental, 
+                  <strong>Key limitations:</strong> Reports alone don&apos;t prove causation. They might be coincidental,
                   incomplete, or inaccurate. But they&apos;re still valuable for safety signal detection.
                 </p>
               </div>
@@ -230,14 +349,14 @@ export default function HomePage() {
               Explore the Data
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Dive deep into vaccines, symptoms, and analysis. Every number tells a story, 
+              Dive deep into vaccines, symptoms, and analysis. Every number tells a story,
               but context is everything.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link 
-              href="/vaccines" 
+            <Link
+              href="/vaccines"
               className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -249,8 +368,8 @@ export default function HomePage() {
               <p className="text-gray-600">From COVID-19 to measles, explore adverse event reports for every vaccine in VAERS.</p>
             </Link>
 
-            <Link 
-              href="/symptoms" 
+            <Link
+              href="/symptoms"
               className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200"
             >
               <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
@@ -262,8 +381,8 @@ export default function HomePage() {
               <p className="text-gray-600">Which symptoms get reported most? Discover patterns in adverse event descriptions.</p>
             </Link>
 
-            <Link 
-              href="/analysis" 
+            <Link
+              href="/analysis"
               className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200"
             >
               <div className="w-12 h-12 bg-gray-500/10 rounded-lg flex items-center justify-center mb-4">
@@ -286,9 +405,9 @@ export default function HomePage() {
             <h3 className="text-lg font-bold text-amber-800">Important Reminder</h3>
           </div>
           <p className="text-amber-700 leading-relaxed">
-            This website presents VAERS data for transparency and education. 
-            <strong> Reports in VAERS do not prove that vaccines caused the reported adverse events.</strong> 
-            Always consult healthcare professionals for medical decisions. 
+            This website presents VAERS data for transparency and education.
+            <strong> Reports in VAERS do not prove that vaccines caused the reported adverse events.</strong>
+            Always consult healthcare professionals for medical decisions.
             Our goal is informed transparency, not medical advice.
           </p>
         </div>

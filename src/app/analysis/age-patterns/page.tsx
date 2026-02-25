@@ -4,6 +4,7 @@ import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { AgeChartsClient as AgeCharts } from '@/components/ClientCharts'
 
 export const metadata: Metadata = {
@@ -24,13 +25,7 @@ export default function AgePatternsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
-
-      {/* Breadcrumb */}
-      <div className="mb-6 text-sm text-gray-500">
-        <Link href="/analysis" className="hover:text-primary">Analysis</Link>
-        <span className="mx-2">/</span>
-        <span className="text-gray-900">Age Patterns</span>
-      </div>
+      <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Age Patterns in VAERS Reports' }]} />
 
       {/* Hero */}
       <div className="mb-12">

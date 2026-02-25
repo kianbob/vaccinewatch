@@ -4,11 +4,12 @@ import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
 import ManufacturersList from './ManufacturersList'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { ManufacturerBarChartClient as ManufacturerBarChart, ManufacturerPieChartClient as ManufacturerPieChart } from '@/components/ClientCharts'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Manufacturers - VAERS Reports by Company',
-  description: 'VAERS adverse event reports broken down by vaccine manufacturer. See which companies have the most reports and market share analysis.'
+  title: 'Vaccine Manufacturers — VAERS Safety Reports by Company',
+  description: 'VAERS adverse event reports by vaccine manufacturer. Compare Pfizer, Moderna, Merck, and more. Market share analysis, death reports, and hospitalization data.'
 }
 
 interface Manufacturer {
@@ -28,6 +29,7 @@ export default function ManufacturersPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <Breadcrumbs items={[{ label: 'Manufacturers' }]} />
 
       {/* Header */}
       <div className="mb-8">

@@ -4,6 +4,7 @@ import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { TopSymptomsChartClient as TopSymptomsChart } from '@/components/ClientCharts'
 
 export const metadata: Metadata = {
@@ -30,12 +31,7 @@ export default function TopSymptomsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
-
-      <div className="mb-6 text-sm text-gray-500">
-        <Link href="/analysis" className="hover:text-primary">Analysis</Link>
-        <span className="mx-2">/</span>
-        <span className="text-gray-900">Top Symptoms</span>
-      </div>
+      <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Most Reported Symptoms' }]} />
 
       <div className="mb-12">
         <div className="text-xs font-medium text-accent uppercase tracking-wider mb-2">5 min read</div>

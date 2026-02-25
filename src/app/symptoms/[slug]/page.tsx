@@ -6,6 +6,7 @@ import { join } from 'path'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber, slugify } from '@/lib/utils'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import { SymptomVaccinesChartClient as SymptomVaccinesChart, SymptomYearlyChartClient as SymptomYearlyChart } from '@/components/ClientCharts'
@@ -25,7 +26,7 @@ export const dynamicParams = true
 export async function generateStaticParams() {
   const symptoms = readJsonFile('symptom-index.json')
   
-  return symptoms.map((symptom: any) => ({
+  return symptoms.slice(0, 200).map((symptom: any) => ({
     slug: slugify(symptom.name)
   }))
 }
@@ -41,8 +42,8 @@ export async function generateMetadata({
     const symptom: SymptomData = readJsonFile(`symptoms/${slug}.json`)
     
     return {
-      title: `${symptom.name} - VAERS Symptom Analysis`,
-      description: `${formatNumber(symptom.reports)} reports of ${symptom.name} in VAERS. Deaths: ${formatNumber(symptom.died)}, Hospitalizations: ${formatNumber(symptom.hosp)}.`
+      title: `${symptom.name} After Vaccination — VAERS Reports`,
+      description: `${formatNumber(symptom.reports)} reports of ${symptom.name} after vaccination in VAERS. Severity rate: ${symptom.reports > 0 ? ((symptom.died + symptom.hosp) / symptom.reports * 100).toFixed(1) : '0'}%. View associated vaccines and yearly trends.`
     }
   } catch {
     return {
@@ -85,16 +86,7 @@ export default async function SymptomDetailPage({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
 
-      {/* Breadcrumb */}
-      <nav className="mb-6" aria-label="Breadcrumb">
-        <ol className="flex items-center space-x-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-primary">Home</Link></li>
-          <li>→</li>
-          <li><Link href="/symptoms" className="hover:text-primary">Symptoms</Link></li>
-          <li>→</li>
-          <li className="text-gray-900 font-medium">{symptom.name}</li>
-        </ol>
-      </nav>
+      <Breadcrumbs items={[{ label: 'Symptoms', href: '/symptoms' }, { label: symptom.name }]} />
 
       {/* Header */}
       <div className="mb-8">
@@ -256,12 +248,29 @@ export default async function SymptomDetailPage({
                     </div>
                   ))}
               </div>
-              <Link 
+              <Link
                 href={`/vaccines?symptom=${slugify(symptom.name)}`}
                 className="text-sm text-primary hover:text-primary/80 font-medium mt-4 inline-block"
               >
                 View all vaccines →
               </Link>
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <h4 className="text-sm font-semibold text-gray-700 mb-2">Detailed Breakdowns</h4>
+                <div className="space-y-2">
+                  {symptom.vaccines
+                    .sort((a, b) => b.count - a.count)
+                    .slice(0, 3)
+                    .map((vaccine) => (
+                      <Link
+                        key={vaccine.type}
+                        href={`/vaccines/${vaccine.type.toLowerCase()}/symptoms/${slug}`}
+                        className="block text-xs text-primary hover:text-primary/80"
+                      >
+                        {symptom.name} × {vaccine.type} →
+                      </Link>
+                    ))}
+                </div>
+              </div>
             </div>
           )}
 

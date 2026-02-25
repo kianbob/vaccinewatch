@@ -108,7 +108,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const top = symptoms
         .filter((s: any) => s.count >= 3)
         .sort((a: any, b: any) => b.count - a.count)
-        .slice(0, 500)
+        .slice(0, 200)
       for (const s of top) {
         vaccineSymptomPages.push({
           url: `${baseUrl}/vaccines/${slug}/symptoms/${s.slug}`,

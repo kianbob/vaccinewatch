@@ -8,6 +8,7 @@ import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 interface VaccineSymptom {
   name: string
@@ -32,7 +33,7 @@ export async function generateStaticParams() {
       const top = symptoms
         .filter(s => s.count >= 3)
         .sort((a, b) => b.count - a.count)
-        .slice(0, 200)
+        .slice(0, 20)
       for (const s of top) {
         params.push({ slug, symptom: s.slug })
       }
@@ -59,16 +60,19 @@ export async function generateMetadata({
       return { title: 'Not Found' }
     }
 
-    // Get vaccine name
     let vaccineName = slug.toUpperCase()
+    let vaccineReports = 0
     try {
       const vaccine = readJsonFile(`vaccines/${slug}.json`)
       vaccineName = vaccine.name
+      vaccineReports = vaccine.reports
     } catch { /* use slug */ }
 
+    const pct = vaccineReports > 0 ? (match.count / vaccineReports * 100).toFixed(1) : '0'
+
     return {
-      title: `${match.name} Reports for ${vaccineName} - VAERS Data`,
-      description: `${formatNumber(match.count)} reports of ${match.name} associated with ${vaccineName} vaccine in VAERS. Deaths: ${formatNumber(match.died)}, Hospitalizations: ${formatNumber(match.hosp)}.`
+      title: `${match.name} Reports for ${vaccineName} Vaccine`,
+      description: `${formatNumber(match.count)} reports of ${match.name} following ${vaccineName} vaccination in VAERS (${pct}% of all reports). Deaths: ${formatNumber(match.died)}, Hospitalizations: ${formatNumber(match.hosp)}.`
     }
   } catch {
     return { title: 'Not Found' }
@@ -118,17 +122,7 @@ export default async function VaccineSymptomPage({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
 
-      <nav className="mb-6" aria-label="Breadcrumb">
-        <ol className="flex items-center space-x-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-primary">Home</Link></li>
-          <li>→</li>
-          <li><Link href="/vaccines" className="hover:text-primary">Vaccines</Link></li>
-          <li>→</li>
-          <li><Link href={`/vaccines/${slug}`} className="hover:text-primary">{vaccineName}</Link></li>
-          <li>→</li>
-          <li className="text-gray-900 font-medium">{match.name}</li>
-        </ol>
-      </nav>
+      <Breadcrumbs items={[{ label: 'Vaccines', href: '/vaccines' }, { label: vaccineName, href: `/vaccines/${slug}` }, { label: match.name }]} />
 
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -176,6 +170,9 @@ export default async function VaccineSymptomPage({
                 {match.name} is the <strong>#{rank}</strong> most frequently reported symptom for {vaccineName} out of {symptoms.length} total symptoms.
               </p>
             </div>
+            <p className="text-sm text-gray-500 mt-4 border-t border-gray-200 pt-4">
+              <strong>Disclaimer:</strong> VAERS reports describe events that occurred after vaccination but do not establish that the vaccine caused the event. Many reported symptoms may be coincidental or related to underlying conditions.
+            </p>
           </div>
 
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">

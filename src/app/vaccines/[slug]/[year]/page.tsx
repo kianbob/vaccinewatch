@@ -8,6 +8,7 @@ import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 interface YearData {
   year: number
@@ -29,7 +30,7 @@ export async function generateStaticParams() {
     try {
       const years: YearData[] = readJsonFile(`vaccine-years/${slug}.json`)
       for (const y of years) {
-        if (y.reports >= 1) {
+        if (y.reports >= 50) {
           params.push({ slug, year: String(y.year) })
         }
       }
@@ -55,8 +56,8 @@ export async function generateMetadata({
   } catch { /* use slug */ }
 
   return {
-    title: `${vaccineName} in ${year} - VAERS Reports`,
-    description: `VAERS adverse event reports for ${vaccineName} vaccine in ${year}. Detailed breakdown of outcomes and reporting data.`
+    title: `${vaccineName} VAERS Reports in ${year}`,
+    description: `${year} adverse event reports for ${vaccineName} vaccine in VAERS. View deaths, hospitalizations, ER visits, and year-over-year comparison data.`
   }
 }
 
@@ -94,14 +95,14 @@ export default async function VaccineYearPage({
   } catch { /* use slug */ }
 
   // Compare with other years
-  const validYears = years.filter(y => y.reports >= 1).sort((a, b) => b.reports - a.reports)
+  const validYears = years.filter(y => y.reports >= 50).sort((a, b) => b.reports - a.reports)
   const rank = validYears.findIndex(y => y.year === yearNum) + 1
   const avgReports = validYears.length > 0 ? Math.round(validYears.reduce((s, y) => s + y.reports, 0) / validYears.length) : 0
   const percentOfTotal = totalVaccineReports > 0 ? (match.reports / totalVaccineReports * 100).toFixed(1) : '—'
 
   // Previous and next years
-  const prevYear = years.find(y => y.year === yearNum - 1 && y.reports >= 1)
-  const nextYear = years.find(y => y.year === yearNum + 1 && y.reports >= 1)
+  const prevYear = years.find(y => y.year === yearNum - 1 && y.reports >= 50)
+  const nextYear = years.find(y => y.year === yearNum + 1 && y.reports >= 50)
 
   const changeFromPrev = prevYear ? ((match.reports - prevYear.reports) / prevYear.reports * 100).toFixed(0) : null
 
@@ -109,17 +110,7 @@ export default async function VaccineYearPage({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
 
-      <nav className="mb-6" aria-label="Breadcrumb">
-        <ol className="flex items-center space-x-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-primary">Home</Link></li>
-          <li>→</li>
-          <li><Link href="/vaccines" className="hover:text-primary">Vaccines</Link></li>
-          <li>→</li>
-          <li><Link href={`/vaccines/${slug}`} className="hover:text-primary">{vaccineName}</Link></li>
-          <li>→</li>
-          <li className="text-gray-900 font-medium">{year}</li>
-        </ol>
-      </nav>
+      <Breadcrumbs items={[{ label: 'Vaccines', href: '/vaccines' }, { label: vaccineName, href: `/vaccines/${slug}` }, { label: year }]} />
 
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -278,12 +269,22 @@ export default async function VaccineYearPage({
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Related Pages</h3>
             <div className="space-y-3">
               <Link href={`/vaccines/${slug}`} className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                 {vaccineName} Overview
               </Link>
+              {prevYear && (
+                <Link href={`/vaccines/${slug}/${prevYear.year}`} className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                  ← {prevYear.year} Reports
+                </Link>
+              )}
+              {nextYear && (
+                <Link href={`/vaccines/${slug}/${nextYear.year}`} className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                  {nextYear.year} Reports →
+                </Link>
+              )}
               <Link href="/analysis/reporting-trends" className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                 35 Years of Reporting
               </Link>

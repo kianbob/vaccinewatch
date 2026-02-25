@@ -5,10 +5,11 @@ import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber, slugify } from '@/lib/utils'
 import SymptomsList from './SymptomsList'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'All Symptoms - VAERS Adverse Event Reports',
-  description: 'Complete list of 500 symptoms reported in VAERS. Sortable by total reports, deaths, hospitalizations, and severity.'
+  title: 'All 500 Symptoms Reported After Vaccination — VAERS Data',
+  description: 'Browse all 500 symptoms reported in VAERS after vaccination. Sortable by frequency, deaths, hospitalizations, and severity rate. From pyrexia to myocarditis.'
 }
 
 interface Symptom {
@@ -28,6 +29,7 @@ export default function SymptomsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <Breadcrumbs items={[{ label: 'Symptoms' }]} />
 
       {/* Header */}
       <div className="mb-8">

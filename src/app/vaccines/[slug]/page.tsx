@@ -8,6 +8,7 @@ import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber, slugify } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { VaccineYearlyChartClient as VaccineYearlyChart } from '@/components/ClientCharts'
 
 const STATE_NAMES: Record<string, string> = {
@@ -66,8 +67,8 @@ export async function generateMetadata({
     const vaccine: VaccineData = readJsonFile(`vaccines/${slug}.json`)
     
     return {
-      title: `${vaccine.name} - VAERS Adverse Event Reports`,
-      description: `${formatNumber(vaccine.reports)} adverse event reports for ${vaccine.name} vaccine in VAERS. Deaths: ${formatNumber(vaccine.died)}, Hospitalizations: ${formatNumber(vaccine.hosp)}.`
+      title: `${vaccine.name} VAERS Reports & Safety Data`,
+      description: `Explore ${formatNumber(vaccine.reports)} adverse event reports for ${vaccine.name} in VAERS. View yearly trends, top symptoms, death reports (${formatNumber(vaccine.died)}), and hospitalization data (${formatNumber(vaccine.hosp)}).`
     }
   } catch {
     return {
@@ -91,6 +92,9 @@ export default async function VaccineDetailPage({
   } catch {
     notFound()
   }
+
+  const stats = readJsonFile('stats.json') as { totalReports: number }
+  const percentOfAll = stats.totalReports > 0 ? (vaccine.reports / stats.totalReports * 100).toFixed(1) : '0.0'
 
   // Load state distribution data
   let stateData: Array<{ state: string; reports: number; died: number; hosp: number }> = []
@@ -128,16 +132,7 @@ export default async function VaccineDetailPage({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
 
-      {/* Breadcrumb */}
-      <nav className="mb-6" aria-label="Breadcrumb">
-        <ol className="flex items-center space-x-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-primary">Home</Link></li>
-          <li>→</li>
-          <li><Link href="/vaccines" className="hover:text-primary">Vaccines</Link></li>
-          <li>→</li>
-          <li className="text-gray-900 font-medium">{vaccine.name}</li>
-        </ol>
-      </nav>
+      <Breadcrumbs items={[{ label: 'Vaccines', href: '/vaccines' }, { label: vaccine.name }]} />
 
       {/* Header */}
       <div className="mb-8">
@@ -230,6 +225,9 @@ export default async function VaccineDetailPage({
                   This vaccine is manufactured by: <strong>{vaccine.manufacturers.map(m => m.name).join(', ')}</strong>.
                 </p>
               )}
+              <p>
+                This vaccine accounts for <strong>{percentOfAll}%</strong> of all {formatNumber(stats.totalReports)} reports in the VAERS database.
+              </p>
             </div>
           </div>
 
@@ -292,12 +290,21 @@ export default async function VaccineDetailPage({
               <div className="space-y-3">
                 {vaccineSymptoms.slice(0, 10).map((symptom, index) => (
                   <div key={symptom.name} className="flex items-center justify-between">
-                    <Link
-                      href={`/vaccines/${slug}/symptoms/${symptom.slug}`}
-                      className="text-sm text-primary hover:text-primary/80 font-medium truncate mr-2"
-                    >
-                      {index + 1}. {symptom.name}
-                    </Link>
+                    <div className="flex items-center truncate mr-2">
+                      <Link
+                        href={`/vaccines/${slug}/symptoms/${symptom.slug}`}
+                        className="text-sm text-primary hover:text-primary/80 font-medium truncate"
+                      >
+                        {index + 1}. {symptom.name}
+                      </Link>
+                      <Link
+                        href={`/symptoms/${symptom.slug}`}
+                        className="ml-1.5 text-xs text-gray-400 hover:text-primary flex-shrink-0"
+                        title={`View all ${symptom.name} reports`}
+                      >
+                        (all)
+                      </Link>
+                    </div>
                     <span className="text-sm text-gray-500 flex-shrink-0">
                       {formatNumber(symptom.count)}
                     </span>
@@ -366,6 +373,43 @@ export default async function VaccineDetailPage({
                 className="block w-full text-center bg-primary text-white rounded-lg py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors"
               >
                 Read Analysis Articles
+              </Link>
+            </div>
+          </div>
+
+          {/* Related Analysis */}
+          <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Related Analysis
+            </h3>
+            <div className="space-y-2">
+              {vaccine.type.startsWith('COVID') && (
+                <>
+                  <Link href="/analysis/covid-impact" className="block text-sm text-primary hover:text-primary/80">
+                    COVID-19 Vaccine Impact Analysis
+                  </Link>
+                  <Link href="/analysis/covid-vs-flu" className="block text-sm text-primary hover:text-primary/80">
+                    COVID vs Flu Vaccine Comparison
+                  </Link>
+                  <Link href="/analysis/myocarditis" className="block text-sm text-primary hover:text-primary/80">
+                    Myocarditis After COVID Vaccination
+                  </Link>
+                </>
+              )}
+              <Link href="/analysis/death-reports" className="block text-sm text-primary hover:text-primary/80">
+                Death Reports Deep Dive
+              </Link>
+              <Link href="/analysis/serious-outcomes" className="block text-sm text-primary hover:text-primary/80">
+                Serious Outcomes Analysis
+              </Link>
+              <Link href="/analysis/top-symptoms" className="block text-sm text-primary hover:text-primary/80">
+                Most Common Symptoms
+              </Link>
+              <Link href="/analysis/reporting-trends" className="block text-sm text-primary hover:text-primary/80">
+                Reporting Trends Over Time
+              </Link>
+              <Link href="/analysis/age-patterns" className="block text-sm text-primary hover:text-primary/80">
+                Age-Based Patterns
               </Link>
             </div>
           </div>

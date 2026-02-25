@@ -4,6 +4,7 @@ import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { GeographicChartsClient as GeographicCharts } from '@/components/ClientCharts'
 
 export const metadata: Metadata = {
@@ -73,12 +74,7 @@ export default function GeographicPatternsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
-
-      <div className="mb-6 text-sm text-gray-500">
-        <Link href="/analysis" className="hover:text-primary">Analysis</Link>
-        <span className="mx-2">/</span>
-        <span className="text-gray-900">Geographic Patterns</span>
-      </div>
+      <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Geographic Patterns' }]} />
 
       <div className="mb-12">
         <div className="text-xs font-medium text-primary uppercase tracking-wider mb-2">6 min read</div>
