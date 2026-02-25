@@ -106,6 +106,42 @@ export async function GET() {
       description: 'The 20 most commonly reported adverse symptoms. Pyrexia (fever) leads with 276,779 reports.',
       date: '2026-02-25',
     },
+    {
+      slug: 'pediatric',
+      title: 'Pediatric Adverse Events in VAERS',
+      description: 'Analysis of vaccine adverse events in children under 18. Childhood vaccination schedules in context.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'elderly',
+      title: 'Elderly Adverse Events in VAERS',
+      description: 'Analysis of vaccine adverse events in adults 65+. Higher background mortality rates require context.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'covid-vs-flu',
+      title: 'COVID-19 vs Flu Vaccines in VAERS',
+      description: 'Side-by-side comparison of COVID-19 and influenza vaccine reports with dose-adjusted context.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'manufacturer-landscape',
+      title: 'Vaccine Manufacturer Landscape',
+      description: 'Which manufacturers produce the most-reported vaccines and how market share affects report counts.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'geographic-patterns',
+      title: 'Geographic Patterns in VAERS Reporting',
+      description: 'State-by-state analysis of reporting rates and population-adjusted patterns.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'serious-outcomes',
+      title: 'Serious vs Non-Serious Outcomes',
+      description: 'Understanding the spectrum of adverse event severity in VAERS reports.',
+      date: '2026-02-25',
+    },
   ]
 
   const items = articles.map(a => `    <item>
