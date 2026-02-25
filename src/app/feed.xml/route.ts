@@ -2,6 +2,68 @@ export async function GET() {
   const baseUrl = 'https://vaccinewatch.org'
 
   const articles = [
+    // New analysis articles
+    {
+      slug: 'denominator-problem',
+      title: 'Why Raw VAERS Numbers Can Be Misleading',
+      description: 'The most critical limitation: raw numbers are meaningless without context. 670+ million COVID doses analyzed.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'reporting-bias',
+      title: 'Understanding VAERS Reporting Bias',
+      description: 'Stimulated reporting, awareness bias, and media influence. 2021 saw a 25x spike in reports.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'onset-timing',
+      title: 'When Do Vaccine Side Effects Start?',
+      description: 'Analysis of onset timing patterns. 73% of adverse events occur within 3 days of vaccination.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'dose-comparison',
+      title: 'First Dose vs Second Dose vs Booster',
+      description: 'Comparing adverse event patterns across doses. Second doses generate 130% more reports.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'recovery-rates',
+      title: 'Do Vaccine Side Effects Go Away?',
+      description: 'Analysis of recovery status in VAERS reports. 68% indicate recovery, but context is essential.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'lot-analysis',
+      title: 'Understanding Vaccine Lot Numbers in VAERS',
+      description: 'Why lot analysis is misleading without context. 4,414 COVID lots analyzed with heavy disclaimers.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'multi-vaccine',
+      title: 'When Multiple Vaccines Are Given Together',
+      description: 'Co-administration patterns and safety. 1,514 vaccine combinations reflecting standard practice.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'birth-defects',
+      title: 'Birth Defect Reports in VAERS',
+      description: 'Prenatal vaccination analysis. 41 vaccines with reports, but 3-4% background rate provides context.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'hospital-stays',
+      title: 'How Long Are Vaccine-Related Hospitalizations?',
+      description: 'Hospitalization duration patterns. 72% of stays last 3 days or fewer.',
+      date: '2026-02-25',
+    },
+    {
+      slug: 'who-reports',
+      title: 'Who Files VAERS Reports?',
+      description: 'Understanding reporting sources. Private practice dominates, reflecting vaccination patterns.',
+      date: '2026-02-25',
+    },
+    // Original analysis articles
     {
       slug: 'covid-impact',
       title: 'The COVID-19 Impact on VAERS',

@@ -43,26 +43,8 @@ const tools = [
     subtitle: 'Put VAERS numbers in perspective',
     description: 'Transform raw VAERS numbers into meaningful rates and compare to background risks.',
     icon: '⚖️',
-    color: 'success',
-    readTime: 5,
-  },
-  {
-    slug: 'compare',
-    title: 'Vaccine Comparison',
-    subtitle: 'Side-by-side vaccine analysis',
-    description: 'Compare adverse event patterns between different vaccine types with detailed statistics.',
-    icon: '⚖️',
     color: 'primary',
-    readTime: 4,
-  },
-  {
-    slug: 'search',
-    title: 'VAERS Search',
-    subtitle: 'Search vaccines, symptoms, and data',
-    description: 'Comprehensive search tool for exploring VAERS data by vaccine type, symptom, or keyword.',
-    icon: '🔎',
-    color: 'accent',
-    readTime: 3,
+    readTime: 5,
   },
 ]
 
@@ -145,8 +127,22 @@ export default function ToolsIndexPage() {
       </div>
 
       <div className="mt-8 border-t border-gray-200 pt-8">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">Related Resources</h3>
+        <h3 className="text-lg font-bold text-gray-900 mb-4">More Tools</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link href="/compare" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-2">
+              <span>⚖️</span>
+              <div className="font-medium text-gray-900">Vaccine Comparison</div>
+            </div>
+            <div className="text-sm text-gray-500">Side-by-side vaccine analysis</div>
+          </Link>
+          <Link href="/search" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-2">
+              <span>🔎</span>
+              <div className="font-medium text-gray-900">VAERS Search</div>
+            </div>
+            <div className="text-sm text-gray-500">Search vaccines, symptoms, and data</div>
+          </Link>
           <Link href="/analysis" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Analysis Articles</div>
             <div className="text-sm text-gray-500">In-depth analysis and context</div>
