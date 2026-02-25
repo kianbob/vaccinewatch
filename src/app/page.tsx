@@ -13,6 +13,8 @@ interface VaccineIndex {
 }
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import AnimatedNumber from '@/components/AnimatedNumber'
+import ScrollReveal from '@/components/ScrollReveal'
 import { YearlyTrendChartClient as YearlyTrendChart } from '@/components/ClientCharts'
 
 export const metadata: Metadata = {
@@ -112,22 +114,30 @@ export default function HomePage() {
             We present the numbers with context, not conclusions.
           </p>
 
-          {/* Hero stat pills */}
+          {/* Hero stat pills with animated numbers */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-10">
             <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3 text-center">
-              <div className="text-2xl md:text-3xl font-bold text-white">{formatNumber(stats.totalReports)}</div>
+              <div className="text-2xl md:text-3xl font-bold text-white">
+                <AnimatedNumber value={stats.totalReports} duration={2000} />
+              </div>
               <div className="text-xs text-gray-400 mt-1">Total Reports</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3 text-center">
-              <div className="text-2xl md:text-3xl font-bold text-red-400">{formatNumber(stats.totalDied)}</div>
+              <div className="text-2xl md:text-3xl font-bold text-red-400">
+                <AnimatedNumber value={stats.totalDied} duration={1800} />
+              </div>
               <div className="text-xs text-gray-400 mt-1">Deaths Reported</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3 text-center">
-              <div className="text-2xl md:text-3xl font-bold text-cyan-400">{formatNumber(stats.totalHospitalized)}</div>
+              <div className="text-2xl md:text-3xl font-bold text-cyan-400">
+                <AnimatedNumber value={stats.totalHospitalized} duration={1800} />
+              </div>
               <div className="text-xs text-gray-400 mt-1">Hospitalizations</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3 text-center">
-              <div className="text-2xl md:text-3xl font-bold text-white">104</div>
+              <div className="text-2xl md:text-3xl font-bold text-white">
+                <AnimatedNumber value={104} duration={1200} />
+              </div>
               <div className="text-xs text-gray-400 mt-1">Vaccines Tracked</div>
             </div>
           </div>
@@ -156,7 +166,7 @@ export default function HomePage() {
       </section>
 
       {/* How VAERS Works — Visual Explainer */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white section-gradient-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
@@ -169,42 +179,48 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Step 1 */}
-            <div className="relative text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">📋</span>
+            <ScrollReveal delay={0}>
+              <div className="relative text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">📋</span>
+                </div>
+                <div className="absolute top-8 left-[calc(50%+40px)] hidden md:block w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-primary/30 to-primary/10" />
+                <div className="bg-primary text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center mx-auto mb-3">1</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Report Filed</h3>
+                <p className="text-sm text-gray-600">
+                  Anyone — doctors, patients, family members, or manufacturers — can submit a report of an adverse event after vaccination.
+                </p>
               </div>
-              <div className="absolute top-8 left-[calc(50%+40px)] hidden md:block w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-primary/30 to-primary/10" />
-              <div className="bg-primary text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center mx-auto mb-3">1</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Report Filed</h3>
-              <p className="text-sm text-gray-600">
-                Anyone — doctors, patients, family members, or manufacturers — can submit a report of an adverse event after vaccination.
-              </p>
-            </div>
+            </ScrollReveal>
 
             {/* Step 2 */}
-            <div className="relative text-center">
-              <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🔬</span>
+            <ScrollReveal delay={150}>
+              <div className="relative text-center">
+                <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">🔬</span>
+                </div>
+                <div className="absolute top-8 left-[calc(50%+40px)] hidden md:block w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-accent/30 to-accent/10" />
+                <div className="bg-accent text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center mx-auto mb-3">2</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">CDC/FDA Reviews</h3>
+                <p className="text-sm text-gray-600">
+                  Reports are collected by CDC and FDA. Serious reports may trigger follow-up investigations and safety signal analysis.
+                </p>
               </div>
-              <div className="absolute top-8 left-[calc(50%+40px)] hidden md:block w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-accent/30 to-accent/10" />
-              <div className="bg-accent text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center mx-auto mb-3">2</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">CDC/FDA Reviews</h3>
-              <p className="text-sm text-gray-600">
-                Reports are collected by CDC and FDA. Serious reports may trigger follow-up investigations and safety signal analysis.
-              </p>
-            </div>
+            </ScrollReveal>
 
             {/* Step 3 */}
-            <div className="relative text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">📊</span>
+            <ScrollReveal delay={300}>
+              <div className="relative text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">📊</span>
+                </div>
+                <div className="bg-gray-800 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center mx-auto mb-3">3</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Data Published</h3>
+                <p className="text-sm text-gray-600">
+                  Raw data is published publicly. We process it into searchable, contextualized analysis — that&apos;s what you see here.
+                </p>
               </div>
-              <div className="bg-gray-800 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center mx-auto mb-3">3</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Data Published</h3>
-              <p className="text-sm text-gray-600">
-                Raw data is published publicly. We process it into searchable, contextualized analysis — that&apos;s what you see here.
-              </p>
-            </div>
+            </ScrollReveal>
           </div>
 
           <div className="mt-8 text-center">
@@ -265,8 +281,9 @@ export default function HomePage() {
       </section>
 
       {/* Quick Stats: COVID vs All Other Vaccines */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white section-gradient-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
           <div className="text-center mb-12">
             <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
               COVID-19 vs All Other Vaccines
@@ -311,6 +328,7 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </section>
 

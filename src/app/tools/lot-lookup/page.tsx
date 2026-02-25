@@ -45,6 +45,22 @@ export default function LotLookupPage() {
         </p>
       </div>
 
+      {/* Context stats */}
+      <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="bg-red-50 border border-red-100 rounded-xl p-4 text-center">
+          <div className="text-2xl font-bold text-red-600">4,414</div>
+          <div className="text-xs text-gray-600 mt-1">COVID lots tracked</div>
+        </div>
+        <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center">
+          <div className="text-2xl font-bold text-gray-800">670M+</div>
+          <div className="text-xs text-gray-600 mt-1">total doses administered</div>
+        </div>
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+          <div className="text-2xl font-bold text-amber-600">⚠️</div>
+          <div className="text-xs text-gray-600 mt-1">lot sizes unknown</div>
+        </div>
+      </div>
+
       <LotLookupClient />
 
       <div className="mt-8 bg-red-50 border border-red-200 rounded-lg p-4">

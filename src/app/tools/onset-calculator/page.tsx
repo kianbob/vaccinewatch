@@ -28,6 +28,22 @@ export default function OnsetCalculatorPage() {
         </p>
       </div>
 
+      {/* Quick context */}
+      <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="bg-primary/5 border border-primary/10 rounded-xl p-4 text-center">
+          <div className="text-2xl font-bold text-primary">73%</div>
+          <div className="text-xs text-gray-600 mt-1">of events within 3 days</div>
+        </div>
+        <div className="bg-accent/5 border border-accent/10 rounded-xl p-4 text-center">
+          <div className="text-2xl font-bold text-accent">Day 0</div>
+          <div className="text-xs text-gray-600 mt-1">most common onset day</div>
+        </div>
+        <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center">
+          <div className="text-2xl font-bold text-gray-800">104</div>
+          <div className="text-xs text-gray-600 mt-1">vaccines to explore</div>
+        </div>
+      </div>
+
       <OnsetCalculatorClient />
 
       <div className="mt-8 bg-amber-50 border border-amber-200 rounded-lg p-4">

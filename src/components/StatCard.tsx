@@ -32,12 +32,12 @@ export default function StatCard({
   }
 
   return (
-    <div className={`rounded-xl border p-6 transition-shadow hover:shadow-sm ${colorClasses[color]} ${className}`}>
+    <div className={`rounded-xl border p-5 sm:p-6 transition-all hover:shadow-md hover:-translate-y-0.5 ${colorClasses[color]} ${className}`}>
       {icon && <div className="mb-2">{icon}</div>}
-      <div className="text-2xl font-bold text-gray-900">
+      <div className="text-2xl font-bold text-gray-900 tabular-nums">
         {formatNumber(value)}
       </div>
-      <div className={`text-sm font-medium ${textColorClasses[color]}`}>
+      <div className={`text-sm font-medium mt-1 ${textColorClasses[color]}`}>
         {title}
       </div>
       {subtitle && (

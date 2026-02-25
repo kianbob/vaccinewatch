@@ -28,6 +28,15 @@ export default function RiskContextPage() {
         </p>
       </div>
 
+      {/* Quick context */}
+      <div className="mb-8 bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-6">
+        <h3 className="font-semibold text-gray-900 mb-2">💡 Example</h3>
+        <p className="text-sm text-gray-600">
+          27,732 death reports sounds alarming — but with 670+ million COVID doses, that&apos;s ~41 per million doses.
+          The U.S. background death rate is ~26,000 per million people per year. Context transforms raw numbers into understanding.
+        </p>
+      </div>
+
       <RiskContextClient />
 
       <div className="mt-8 bg-green-50 border border-green-200 rounded-lg p-4">

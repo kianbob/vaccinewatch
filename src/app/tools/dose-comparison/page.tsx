@@ -28,6 +28,22 @@ export default function DoseComparisonPage() {
         </p>
       </div>
 
+      {/* Quick context */}
+      <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="bg-primary/5 border border-primary/10 rounded-xl p-4 text-center">
+          <div className="text-2xl font-bold text-primary">130%</div>
+          <div className="text-xs text-gray-600 mt-1">more 2nd dose reports</div>
+        </div>
+        <div className="bg-accent/5 border border-accent/10 rounded-xl p-4 text-center">
+          <div className="text-2xl font-bold text-accent">Expected</div>
+          <div className="text-xs text-gray-600 mt-1">stronger immune response</div>
+        </div>
+        <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center">
+          <div className="text-2xl font-bold text-gray-800">3 doses</div>
+          <div className="text-xs text-gray-600 mt-1">compared side-by-side</div>
+        </div>
+      </div>
+
       <DoseComparisonClient />
 
       <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-4">
