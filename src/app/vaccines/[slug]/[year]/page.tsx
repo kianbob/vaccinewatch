@@ -7,6 +7,7 @@ import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber, getCleanVaccineName } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
+import ShareButtons from '@/components/ShareButtons'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
@@ -128,10 +129,18 @@ export default async function VaccineYearPage({
           {formatNumber(match.reports)} adverse event reports
           {changeFromPrev && (
             <span className={parseInt(changeFromPrev) > 0 ? 'text-danger' : 'text-green-600'}>
-              {' '}({parseInt(changeFromPrev) > 0 ? '+' : ''}{changeFromPrev}% vs {yearNum - 1})
+              {' '}({parseInt(changeFromPrev) > 0 ? '+' : ''}{Math.abs(parseInt(changeFromPrev)) > 999 ? '999' : changeFromPrev}% vs {yearNum - 1})
+              {Math.abs(parseInt(changeFromPrev)) > 999 && (
+                <span className="text-xs text-gray-400 ml-1" title={`Actual change: ${changeFromPrev}%`}>
+                  (first full year of widespread reporting)
+                </span>
+              )}
             </span>
           )}
         </p>
+        <div className="mt-3">
+          <ShareButtons title={`${vaccineName} VAERS Reports in ${year}`} />
+        </div>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
@@ -175,6 +184,42 @@ export default async function VaccineYearPage({
               {avgReports > 0 && (
                 <p>
                   Compared to the average of <strong>{formatNumber(avgReports)}</strong> reports per year for this vaccine, {year} was <strong>{match.reports > avgReports ? 'above' : 'below'} average</strong> ({match.reports > avgReports ? '+' : ''}{((match.reports - avgReports) / avgReports * 100).toFixed(0)}%).
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* What This Means */}
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-amber-900 mb-3">💡 What This Means</h3>
+            <div className="text-amber-800 space-y-2 text-sm">
+              {match.reports > 10000 && (
+                <p>
+                  <strong>High report volume:</strong> {formatNumber(match.reports)} reports in a single year is significant.
+                  This typically reflects large-scale vaccination campaigns rather than increased risk per dose.
+                  Without knowing total doses administered in {year}, raw report counts cannot indicate safety rates.
+                </p>
+              )}
+              {match.died > 1000 && (
+                <p>
+                  <strong>Death reports require context:</strong> {formatNumber(match.died)} death reports does not mean the vaccine caused {formatNumber(match.died)} deaths.
+                  VAERS accepts all reports regardless of causation. Many recipients are elderly or have comorbidities,
+                  and background mortality rates must be considered.
+                </p>
+              )}
+              {changeFromPrev && Math.abs(parseInt(changeFromPrev)) > 200 && (
+                <p>
+                  <strong>Year-over-year change:</strong> The large change from {yearNum - 1} likely reflects
+                  {parseInt(changeFromPrev) > 0
+                    ? ' a ramp-up in vaccination (e.g., new vaccine rollout or expanded eligibility) rather than a change in per-dose risk.'
+                    : ' reduced vaccination volume or the natural decline in reporting after initial rollout.'}
+                </p>
+              )}
+              {match.reports <= 10000 && match.died <= 1000 && (!changeFromPrev || Math.abs(parseInt(changeFromPrev)) <= 200) && (
+                <p>
+                  In {year}, reporting for {vaccineName} was within typical ranges.
+                  As always, VAERS data reflects reports filed, not confirmed adverse events.
+                  Trends should be interpreted alongside vaccination volume and population health data.
                 </p>
               )}
             </div>
