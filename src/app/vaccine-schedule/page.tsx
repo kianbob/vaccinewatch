@@ -20,32 +20,32 @@ const schedule = [
   {
     age: '2 Months',
     vaccines: [
-      { name: 'DTaP (1st dose)', slug: 'dtap', sideEffects: null },
+      { name: 'DTaP (1st dose)', slug: 'dtap', sideEffects: '/side-effects/dtap' },
       { name: 'IPV / Polio (1st dose)', slug: 'ipv', sideEffects: '/side-effects/polio' },
       { name: 'Hib (1st dose)', slug: 'hibv', sideEffects: null },
       { name: 'PCV13 / Pneumococcal (1st dose)', slug: 'pnc13', sideEffects: '/side-effects/pneumonia' },
-      { name: 'Rotavirus (1st dose)', slug: 'rv5', sideEffects: null },
+      { name: 'Rotavirus (1st dose)', slug: 'rv5', sideEffects: '/side-effects/rotavirus' },
       { name: 'Hepatitis B (2nd dose)', slug: 'hep', sideEffects: '/side-effects/hepatitis-b' },
     ],
   },
   {
     age: '4 Months',
     vaccines: [
-      { name: 'DTaP (2nd dose)', slug: 'dtap', sideEffects: null },
+      { name: 'DTaP (2nd dose)', slug: 'dtap', sideEffects: '/side-effects/dtap' },
       { name: 'IPV / Polio (2nd dose)', slug: 'ipv', sideEffects: '/side-effects/polio' },
       { name: 'Hib (2nd dose)', slug: 'hibv', sideEffects: null },
       { name: 'PCV13 (2nd dose)', slug: 'pnc13', sideEffects: '/side-effects/pneumonia' },
-      { name: 'Rotavirus (2nd dose)', slug: 'rv5', sideEffects: null },
+      { name: 'Rotavirus (2nd dose)', slug: 'rv5', sideEffects: '/side-effects/rotavirus' },
     ],
   },
   {
     age: '6 Months',
     vaccines: [
-      { name: 'DTaP (3rd dose)', slug: 'dtap', sideEffects: null },
+      { name: 'DTaP (3rd dose)', slug: 'dtap', sideEffects: '/side-effects/dtap' },
       { name: 'IPV / Polio (3rd dose)', slug: 'ipv', sideEffects: '/side-effects/polio' },
       { name: 'Hib (3rd dose, some brands)', slug: 'hibv', sideEffects: null },
       { name: 'PCV13 (3rd dose)', slug: 'pnc13', sideEffects: '/side-effects/pneumonia' },
-      { name: 'Rotavirus (3rd dose, some brands)', slug: 'rv5', sideEffects: null },
+      { name: 'Rotavirus (3rd dose, some brands)', slug: 'rv5', sideEffects: '/side-effects/rotavirus' },
       { name: 'Hepatitis B (3rd dose)', slug: 'hep', sideEffects: '/side-effects/hepatitis-b' },
       { name: 'Influenza (annual, from 6 months)', slug: 'flu3', sideEffects: '/side-effects/flu' },
     ],
@@ -54,8 +54,8 @@ const schedule = [
     age: '12–15 Months',
     vaccines: [
       { name: 'MMR (1st dose)', slug: 'mmr', sideEffects: '/side-effects/mmr' },
-      { name: 'Varicella / Chickenpox (1st dose)', slug: 'varcel', sideEffects: null },
-      { name: 'Hepatitis A (1st dose)', slug: 'hepa', sideEffects: null },
+      { name: 'Varicella / Chickenpox (1st dose)', slug: 'varcel', sideEffects: '/side-effects/varicella' },
+      { name: 'Hepatitis A (1st dose)', slug: 'hepa', sideEffects: '/side-effects/hepatitis-a' },
       { name: 'Hib (final dose)', slug: 'hibv', sideEffects: null },
       { name: 'PCV13 (final dose)', slug: 'pnc13', sideEffects: '/side-effects/pneumonia' },
     ],
@@ -63,16 +63,16 @@ const schedule = [
   {
     age: '15–18 Months',
     vaccines: [
-      { name: 'DTaP (4th dose)', slug: 'dtap', sideEffects: null },
+      { name: 'DTaP (4th dose)', slug: 'dtap', sideEffects: '/side-effects/dtap' },
     ],
   },
   {
     age: '4–6 Years',
     vaccines: [
-      { name: 'DTaP (5th dose)', slug: 'dtap', sideEffects: null },
+      { name: 'DTaP (5th dose)', slug: 'dtap', sideEffects: '/side-effects/dtap' },
       { name: 'IPV / Polio (4th dose)', slug: 'ipv', sideEffects: '/side-effects/polio' },
       { name: 'MMR (2nd dose)', slug: 'mmr', sideEffects: '/side-effects/mmr' },
-      { name: 'Varicella (2nd dose)', slug: 'varcel', sideEffects: null },
+      { name: 'Varicella (2nd dose)', slug: 'varcel', sideEffects: '/side-effects/varicella' },
     ],
   },
   {
@@ -80,13 +80,13 @@ const schedule = [
     vaccines: [
       { name: 'Tdap', slug: 'tdap', sideEffects: '/side-effects/tdap' },
       { name: 'HPV (2 doses)', slug: 'hpv9', sideEffects: '/side-effects/hpv' },
-      { name: 'Meningococcal (MenACWY)', slug: 'mnq', sideEffects: null },
+      { name: 'Meningococcal (MenACWY)', slug: 'mnq', sideEffects: '/side-effects/meningococcal' },
     ],
   },
   {
     age: '16 Years',
     vaccines: [
-      { name: 'Meningococcal (booster)', slug: 'mnq', sideEffects: null },
+      { name: 'Meningococcal (booster)', slug: 'mnq', sideEffects: '/side-effects/meningococcal' },
     ],
   },
   {
