@@ -1,0 +1,1498 @@
+[
+  {
+    "name": "PFIZER\\BIONTECH",
+    "reports": 559257,
+    "died": 12677,
+    "hosp": 67668,
+    "vaccines": [
+      {
+        "type": "COVID19",
+        "count": 534546
+      },
+      {
+        "type": "COVID19-2",
+        "count": 24711
+      }
+    ]
+  },
+  {
+    "name": "MODERNA",
+    "reports": 514569,
+    "died": 11510,
+    "hosp": 47956,
+    "vaccines": [
+      {
+        "type": "COVID19",
+        "count": 496269
+      },
+      {
+        "type": "COVID19-2",
+        "count": 18235
+      },
+      {
+        "type": "RSV",
+        "count": 65
+      }
+    ]
+  },
+  {
+    "name": "MERCK & CO. INC.",
+    "reports": 479971,
+    "died": 4153,
+    "hosp": 28968,
+    "vaccines": [
+      {
+        "type": "VARCEL",
+        "count": 90115
+      },
+      {
+        "type": "MMR",
+        "count": 84688
+      },
+      {
+        "type": "PPV",
+        "count": 62209
+      },
+      {
+        "type": "VARZOS",
+        "count": 46008
+      },
+      {
+        "type": "HPV4",
+        "count": 44434
+      },
+      {
+        "type": "HEP",
+        "count": 31585
+      },
+      {
+        "type": "HPV9",
+        "count": 26909
+      },
+      {
+        "type": "RV5",
+        "count": 25020
+      },
+      {
+        "type": "MMRV",
+        "count": 23189
+      },
+      {
+        "type": "HEPA",
+        "count": 18681
+      },
+      {
+        "type": "HIBV",
+        "count": 15486
+      },
+      {
+        "type": "HBHEPB",
+        "count": 6777
+      },
+      {
+        "type": "PNC21",
+        "count": 1543
+      },
+      {
+        "type": "PNC15",
+        "count": 1188
+      },
+      {
+        "type": "RUB",
+        "count": 937
+      },
+      {
+        "type": "MEA",
+        "count": 663
+      },
+      {
+        "type": "MER",
+        "count": 195
+      },
+      {
+        "type": "MU",
+        "count": 146
+      },
+      {
+        "type": "EBZR",
+        "count": 66
+      },
+      {
+        "type": "MM",
+        "count": 60
+      },
+      {
+        "type": "UNK",
+        "count": 37
+      },
+      {
+        "type": "MUR",
+        "count": 35
+      }
+    ]
+  },
+  {
+    "name": "SANOFI PASTEUR",
+    "reports": 254751,
+    "died": 2999,
+    "hosp": 18549,
+    "vaccines": [
+      {
+        "type": "FLU3",
+        "count": 59263
+      },
+      {
+        "type": "IPV",
+        "count": 32206
+      },
+      {
+        "type": "TDAP",
+        "count": 28622
+      },
+      {
+        "type": "FLU4",
+        "count": 27273
+      },
+      {
+        "type": "DTAP",
+        "count": 26494
+      },
+      {
+        "type": "MNQ",
+        "count": 24613
+      },
+      {
+        "type": "HIBV",
+        "count": 16774
+      },
+      {
+        "type": "DTAPIPVHIB",
+        "count": 11520
+      },
+      {
+        "type": "FLU(H1N1)",
+        "count": 5193
+      },
+      {
+        "type": "TD",
+        "count": 5189
+      },
+      {
+        "type": "TYP",
+        "count": 4889
+      },
+      {
+        "type": "YF",
+        "count": 3905
+      },
+      {
+        "type": "DTAPIPV",
+        "count": 2247
+      },
+      {
+        "type": "RAB",
+        "count": 1565
+      },
+      {
+        "type": "MEN",
+        "count": 1253
+      },
+      {
+        "type": "TTOX",
+        "count": 1053
+      },
+      {
+        "type": "DT",
+        "count": 651
+      },
+      {
+        "type": "DTAPH",
+        "count": 587
+      },
+      {
+        "type": "FLUX",
+        "count": 493
+      },
+      {
+        "type": "JEV",
+        "count": 345
+      },
+      {
+        "type": "DTP",
+        "count": 273
+      },
+      {
+        "type": "HEP",
+        "count": 71
+      },
+      {
+        "type": "DF",
+        "count": 67
+      },
+      {
+        "type": "BCG",
+        "count": 61
+      },
+      {
+        "type": "DTPHIB",
+        "count": 51
+      },
+      {
+        "type": "DTPIPV",
+        "count": 51
+      },
+      {
+        "type": "6VAX-F",
+        "count": 32
+      },
+      {
+        "type": "H5N1",
+        "count": 6
+      },
+      {
+        "type": "RUB",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "GLAXOSMITHKLINE BIOLOGICALS",
+    "reports": 234457,
+    "died": 1990,
+    "hosp": 11266,
+    "vaccines": [
+      {
+        "type": "VARZOS",
+        "count": 82585
+      },
+      {
+        "type": "HEPA",
+        "count": 24062
+      },
+      {
+        "type": "TDAP",
+        "count": 20978
+      },
+      {
+        "type": "FLU4",
+        "count": 18759
+      },
+      {
+        "type": "HEP",
+        "count": 16691
+      },
+      {
+        "type": "DTAP",
+        "count": 14975
+      },
+      {
+        "type": "DTAPHEPBIP",
+        "count": 14862
+      },
+      {
+        "type": "DTAPIPV",
+        "count": 11538
+      },
+      {
+        "type": "FLU3",
+        "count": 10900
+      },
+      {
+        "type": "RSV",
+        "count": 6292
+      },
+      {
+        "type": "HEPAB",
+        "count": 4986
+      },
+      {
+        "type": "RV1",
+        "count": 3859
+      },
+      {
+        "type": "HIBV",
+        "count": 1440
+      },
+      {
+        "type": "MMR",
+        "count": 880
+      },
+      {
+        "type": "LYME",
+        "count": 690
+      },
+      {
+        "type": "HPV2",
+        "count": 309
+      },
+      {
+        "type": "VARCEL",
+        "count": 195
+      },
+      {
+        "type": "DT",
+        "count": 84
+      },
+      {
+        "type": "FLU(H1N1)",
+        "count": 63
+      },
+      {
+        "type": "TD",
+        "count": 63
+      },
+      {
+        "type": "6VAX-F",
+        "count": 47
+      },
+      {
+        "type": "PNC10",
+        "count": 45
+      },
+      {
+        "type": "TTOX",
+        "count": 35
+      },
+      {
+        "type": "DTAPIPVHIB",
+        "count": 34
+      },
+      {
+        "type": "MNQHIB",
+        "count": 22
+      },
+      {
+        "type": "MNP",
+        "count": 20
+      },
+      {
+        "type": "DTPHEP",
+        "count": 16
+      },
+      {
+        "type": "TDAPIPV",
+        "count": 11
+      },
+      {
+        "type": "HEPATYP",
+        "count": 8
+      },
+      {
+        "type": "MENHIB",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "PFIZER\\WYETH",
+    "reports": 148809,
+    "died": 4987,
+    "hosp": 19597,
+    "vaccines": [
+      {
+        "type": "PNC13",
+        "count": 33058
+      },
+      {
+        "type": "PNC",
+        "count": 27970
+      },
+      {
+        "type": "OPV",
+        "count": 25646
+      },
+      {
+        "type": "HIBV",
+        "count": 17111
+      },
+      {
+        "type": "PNC20",
+        "count": 7154
+      },
+      {
+        "type": "DTPHIB",
+        "count": 6719
+      },
+      {
+        "type": "FLU3",
+        "count": 4973
+      },
+      {
+        "type": "MENB",
+        "count": 4442
+      },
+      {
+        "type": "DTAP",
+        "count": 4409
+      },
+      {
+        "type": "SMALL",
+        "count": 3952
+      },
+      {
+        "type": "PPV",
+        "count": 3421
+      },
+      {
+        "type": "RSV",
+        "count": 2870
+      },
+      {
+        "type": "FLUX",
+        "count": 2129
+      },
+      {
+        "type": "TD",
+        "count": 1506
+      },
+      {
+        "type": "RV",
+        "count": 1389
+      },
+      {
+        "type": "TYP",
+        "count": 882
+      },
+      {
+        "type": "TTOX",
+        "count": 347
+      },
+      {
+        "type": "HBPV",
+        "count": 255
+      },
+      {
+        "type": "DT",
+        "count": 217
+      },
+      {
+        "type": "IPV",
+        "count": 151
+      },
+      {
+        "type": "MNP",
+        "count": 77
+      },
+      {
+        "type": "CHOL",
+        "count": 77
+      },
+      {
+        "type": "DTP",
+        "count": 32
+      },
+      {
+        "type": "TBE",
+        "count": 11
+      },
+      {
+        "type": "ADEN",
+        "count": 10
+      },
+      {
+        "type": "MNC",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "UNKNOWN MANUFACTURER",
+    "reports": 137360,
+    "died": 2202,
+    "hosp": 10937,
+    "vaccines": [
+      {
+        "type": "FLUX",
+        "count": 30179
+      },
+      {
+        "type": "UNK",
+        "count": 29623
+      },
+      {
+        "type": "VARZOS",
+        "count": 11719
+      },
+      {
+        "type": "COVID19",
+        "count": 8178
+      },
+      {
+        "type": "DTAP",
+        "count": 5594
+      },
+      {
+        "type": "PPV",
+        "count": 5527
+      },
+      {
+        "type": "HEP",
+        "count": 4758
+      },
+      {
+        "type": "MMR",
+        "count": 4408
+      },
+      {
+        "type": "HIBV",
+        "count": 3606
+      },
+      {
+        "type": "IPV",
+        "count": 3448
+      },
+      {
+        "type": "TDAP",
+        "count": 3246
+      },
+      {
+        "type": "HEPA",
+        "count": 3019
+      },
+      {
+        "type": "VARCEL",
+        "count": 2816
+      },
+      {
+        "type": "FLUX(H1N1)",
+        "count": 2265
+      },
+      {
+        "type": "DTP",
+        "count": 2165
+      },
+      {
+        "type": "MEN",
+        "count": 2011
+      },
+      {
+        "type": "TD",
+        "count": 1939
+      },
+      {
+        "type": "RVX",
+        "count": 1617
+      },
+      {
+        "type": "TTOX",
+        "count": 1509
+      },
+      {
+        "type": "OPV",
+        "count": 1443
+      },
+      {
+        "type": "ANTH",
+        "count": 1347
+      },
+      {
+        "type": "HPVX",
+        "count": 1294
+      },
+      {
+        "type": "TYP",
+        "count": 1147
+      },
+      {
+        "type": "SMALL",
+        "count": 710
+      },
+      {
+        "type": "YF",
+        "count": 411
+      },
+      {
+        "type": "MMRV",
+        "count": 373
+      },
+      {
+        "type": "DT",
+        "count": 355
+      },
+      {
+        "type": "RAB",
+        "count": 344
+      },
+      {
+        "type": "DPP",
+        "count": 203
+      },
+      {
+        "type": "DTAPHEPBIP",
+        "count": 179
+      },
+      {
+        "type": "DTAPIPV",
+        "count": 172
+      },
+      {
+        "type": "HEPAB",
+        "count": 165
+      },
+      {
+        "type": "DTAPH",
+        "count": 164
+      },
+      {
+        "type": "6VAX-F",
+        "count": 147
+      },
+      {
+        "type": "MNQ",
+        "count": 128
+      },
+      {
+        "type": "DTPHIB",
+        "count": 122
+      },
+      {
+        "type": "RSV",
+        "count": 103
+      },
+      {
+        "type": "BCG",
+        "count": 101
+      },
+      {
+        "type": "DTAPIPVHIB",
+        "count": 98
+      },
+      {
+        "type": "DTOX",
+        "count": 87
+      },
+      {
+        "type": "RUB",
+        "count": 77
+      },
+      {
+        "type": "MEA",
+        "count": 66
+      },
+      {
+        "type": "JEVX",
+        "count": 64
+      },
+      {
+        "type": "DTPIHI",
+        "count": 62
+      },
+      {
+        "type": "DTPPHIB",
+        "count": 62
+      },
+      {
+        "type": "PER",
+        "count": 45
+      },
+      {
+        "type": "DTPIPV",
+        "count": 45
+      },
+      {
+        "type": "CHOL",
+        "count": 36
+      },
+      {
+        "type": "DTIPV",
+        "count": 32
+      },
+      {
+        "type": "DTPHEP",
+        "count": 27
+      },
+      {
+        "type": "HBPV",
+        "count": 27
+      },
+      {
+        "type": "MU",
+        "count": 25
+      },
+      {
+        "type": "HBHEPB",
+        "count": 16
+      },
+      {
+        "type": "MM",
+        "count": 13
+      },
+      {
+        "type": "MENHIB",
+        "count": 12
+      },
+      {
+        "type": "ADEN",
+        "count": 6
+      },
+      {
+        "type": "MER",
+        "count": 5
+      },
+      {
+        "type": "SSEV",
+        "count": 4
+      },
+      {
+        "type": "PLAGUE",
+        "count": 4
+      },
+      {
+        "type": "LYME",
+        "count": 3
+      },
+      {
+        "type": "MUR",
+        "count": 3
+      },
+      {
+        "type": "TBE",
+        "count": 3
+      },
+      {
+        "type": "DPIPV",
+        "count": 1
+      },
+      {
+        "type": "CEE",
+        "count": 1
+      },
+      {
+        "type": "TDAPIPV",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "JANSSEN",
+    "reports": 81533,
+    "died": 2676,
+    "hosp": 10511,
+    "vaccines": [
+      {
+        "type": "COVID19",
+        "count": 81533
+      }
+    ]
+  },
+  {
+    "name": "NOVARTIS VACCINES AND DIAGNOSTICS",
+    "reports": 49884,
+    "died": 183,
+    "hosp": 2210,
+    "vaccines": [
+      {
+        "type": "FLU3",
+        "count": 20638
+      },
+      {
+        "type": "MNQ",
+        "count": 11408
+      },
+      {
+        "type": "MENB",
+        "count": 6881
+      },
+      {
+        "type": "FLU(H1N1)",
+        "count": 3741
+      },
+      {
+        "type": "FLUA3",
+        "count": 3167
+      },
+      {
+        "type": "RAB",
+        "count": 2328
+      },
+      {
+        "type": "FLUC3",
+        "count": 1689
+      },
+      {
+        "type": "DPP",
+        "count": 24
+      },
+      {
+        "type": "FLUX",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "CONNAUGHT LABORATORIES",
+    "reports": 37429,
+    "died": 989,
+    "hosp": 4232,
+    "vaccines": [
+      {
+        "type": "DTP",
+        "count": 10542
+      },
+      {
+        "type": "DTAP",
+        "count": 7385
+      },
+      {
+        "type": "TD",
+        "count": 5889
+      },
+      {
+        "type": "HIBV",
+        "count": 5868
+      },
+      {
+        "type": "FLU3",
+        "count": 5057
+      },
+      {
+        "type": "YF",
+        "count": 680
+      },
+      {
+        "type": "DT",
+        "count": 674
+      },
+      {
+        "type": "MEN",
+        "count": 432
+      },
+      {
+        "type": "TYP",
+        "count": 342
+      },
+      {
+        "type": "TTOX",
+        "count": 323
+      },
+      {
+        "type": "JEV",
+        "count": 229
+      },
+      {
+        "type": "UNK",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "SMITHKLINE BEECHAM",
+    "reports": 29747,
+    "died": 690,
+    "hosp": 2413,
+    "vaccines": [
+      {
+        "type": "HEP",
+        "count": 17745
+      },
+      {
+        "type": "DTAP",
+        "count": 7749
+      },
+      {
+        "type": "HEPA",
+        "count": 2332
+      },
+      {
+        "type": "LYME",
+        "count": 1835
+      },
+      {
+        "type": "HEPAB",
+        "count": 86
+      }
+    ]
+  },
+  {
+    "name": "SEQIRUS, INC.",
+    "reports": 22370,
+    "died": 130,
+    "hosp": 859,
+    "vaccines": [
+      {
+        "type": "FLUC4",
+        "count": 8852
+      },
+      {
+        "type": "FLU4",
+        "count": 6079
+      },
+      {
+        "type": "FLUA4",
+        "count": 4184
+      },
+      {
+        "type": "FLU3",
+        "count": 3255
+      }
+    ]
+  },
+  {
+    "name": "MEDIMMUNE VACCINES, INC.",
+    "reports": 13362,
+    "died": 84,
+    "hosp": 925,
+    "vaccines": [
+      {
+        "type": "FLUN3",
+        "count": 6739
+      },
+      {
+        "type": "FLUN4",
+        "count": 3467
+      },
+      {
+        "type": "FLUN(H1N1)",
+        "count": 3156
+      }
+    ]
+  },
+  {
+    "name": "LEDERLE LABORATORIES",
+    "reports": 12319,
+    "died": 437,
+    "hosp": 1418,
+    "vaccines": [
+      {
+        "type": "DTP",
+        "count": 9038
+      },
+      {
+        "type": "TD",
+        "count": 2438
+      },
+      {
+        "type": "DT",
+        "count": 409
+      },
+      {
+        "type": "TTOX",
+        "count": 291
+      },
+      {
+        "type": "FLU3",
+        "count": 137
+      },
+      {
+        "type": "CHOL",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "EMERGENT BIOSOLUTIONS",
+    "reports": 12308,
+    "died": 99,
+    "hosp": 1791,
+    "vaccines": [
+      {
+        "type": "ANTH",
+        "count": 8080
+      },
+      {
+        "type": "SMALL",
+        "count": 4106
+      },
+      {
+        "type": "PER",
+        "count": 108
+      },
+      {
+        "type": "TTOX",
+        "count": 6
+      },
+      {
+        "type": "RAB",
+        "count": 4
+      },
+      {
+        "type": "DTP",
+        "count": 2
+      },
+      {
+        "type": "DT",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "CSL LIMITED",
+    "reports": 9844,
+    "died": 40,
+    "hosp": 502,
+    "vaccines": [
+      {
+        "type": "FLU3",
+        "count": 9522
+      },
+      {
+        "type": "FLU(H1N1)",
+        "count": 315
+      },
+      {
+        "type": "FLUX",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "CONNAUGHT LTD.",
+    "reports": 7060,
+    "died": 387,
+    "hosp": 1186,
+    "vaccines": [
+      {
+        "type": "IPV",
+        "count": 6876
+      },
+      {
+        "type": "MEN",
+        "count": 78
+      },
+      {
+        "type": "RAB",
+        "count": 58
+      },
+      {
+        "type": "DT",
+        "count": 48
+      }
+    ]
+  },
+  {
+    "name": "MICHIGAN DEPT PUB HLTH",
+    "reports": 3735,
+    "died": 30,
+    "hosp": 256,
+    "vaccines": [
+      {
+        "type": "ANTH",
+        "count": 2195
+      },
+      {
+        "type": "DTP",
+        "count": 1249
+      },
+      {
+        "type": "RAB",
+        "count": 119
+      },
+      {
+        "type": "TD",
+        "count": 105
+      },
+      {
+        "type": "DT",
+        "count": 65
+      },
+      {
+        "type": "TTOX",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "PROTEIN SCIENCES CORPORATION",
+    "reports": 3721,
+    "died": 10,
+    "hosp": 90,
+    "vaccines": [
+      {
+        "type": "FLUR4",
+        "count": 3407
+      },
+      {
+        "type": "FLUR3",
+        "count": 314
+      }
+    ]
+  },
+  {
+    "name": "BERNA BIOTECH, LTD.",
+    "reports": 3313,
+    "died": 4,
+    "hosp": 97,
+    "vaccines": [
+      {
+        "type": "TYP",
+        "count": 3270
+      },
+      {
+        "type": "TTOX",
+        "count": 40
+      },
+      {
+        "type": "DTPIPV",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "PASTEUR MERIEUX INST.",
+    "reports": 2922,
+    "died": 91,
+    "hosp": 272,
+    "vaccines": [
+      {
+        "type": "IPV",
+        "count": 1566
+      },
+      {
+        "type": "RAB",
+        "count": 1354
+      },
+      {
+        "type": "DTIPV",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "DYNAVAX TECHNOLOGIES CORPORATION",
+    "reports": 2416,
+    "died": 3,
+    "hosp": 28,
+    "vaccines": [
+      {
+        "type": "HEP",
+        "count": 2416
+      }
+    ]
+  },
+  {
+    "name": "MSP VACCINE COMPANY",
+    "reports": 2414,
+    "died": 30,
+    "hosp": 99,
+    "vaccines": [
+      {
+        "type": "DTPPVHBHPB",
+        "count": 2414
+      }
+    ]
+  },
+  {
+    "name": "AVENTIS PASTEUR",
+    "reports": 2404,
+    "died": 17,
+    "hosp": 167,
+    "vaccines": [
+      {
+        "type": "TD",
+        "count": 1729
+      },
+      {
+        "type": "FLU3",
+        "count": 675
+      }
+    ]
+  },
+  {
+    "name": "BAVARIAN NORDIC",
+    "reports": 2306,
+    "died": 5,
+    "hosp": 31,
+    "vaccines": [
+      {
+        "type": "SMALLMNK",
+        "count": 2292
+      },
+      {
+        "type": "CHIK",
+        "count": 14
+      }
+    ]
+  },
+  {
+    "name": "EVANS VACCINES",
+    "reports": 2205,
+    "died": 27,
+    "hosp": 157,
+    "vaccines": [
+      {
+        "type": "FLU3",
+        "count": 2205
+      }
+    ]
+  },
+  {
+    "name": "MASS. PUB HLTH BIOL LAB",
+    "reports": 2056,
+    "died": 28,
+    "hosp": 115,
+    "vaccines": [
+      {
+        "type": "TD",
+        "count": 1359
+      },
+      {
+        "type": "DTP",
+        "count": 549
+      },
+      {
+        "type": "TTOX",
+        "count": 74
+      },
+      {
+        "type": "DT",
+        "count": 73
+      },
+      {
+        "type": "UNK",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "PARKE-DAVIS",
+    "reports": 1508,
+    "died": 58,
+    "hosp": 198,
+    "vaccines": [
+      {
+        "type": "FLU3",
+        "count": 1508
+      }
+    ]
+  },
+  {
+    "name": "MEDEVA PHARMA, LTD.",
+    "reports": 984,
+    "died": 45,
+    "hosp": 133,
+    "vaccines": [
+      {
+        "type": "FLU3",
+        "count": 978
+      },
+      {
+        "type": "TTOX",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "NOVAVAX",
+    "reports": 862,
+    "died": 7,
+    "hosp": 82,
+    "vaccines": [
+      {
+        "type": "COVID19",
+        "count": 862
+      }
+    ]
+  },
+  {
+    "name": "INTERCELL AG",
+    "reports": 605,
+    "died": 1,
+    "hosp": 69,
+    "vaccines": [
+      {
+        "type": "JEV1",
+        "count": 605
+      }
+    ]
+  },
+  {
+    "name": "PARKDALE PHARMACEUTICALS",
+    "reports": 584,
+    "died": 6,
+    "hosp": 42,
+    "vaccines": [
+      {
+        "type": "FLU3",
+        "count": 584
+      }
+    ]
+  },
+  {
+    "name": "TEVA PHARMACEUTICALS",
+    "reports": 278,
+    "died": 5,
+    "hosp": 54,
+    "vaccines": [
+      {
+        "type": "ADEN_4_7",
+        "count": 278
+      }
+    ]
+  },
+  {
+    "name": "SCLAVO",
+    "reports": 251,
+    "died": 1,
+    "hosp": 12,
+    "vaccines": [
+      {
+        "type": "TD",
+        "count": 149
+      },
+      {
+        "type": "DT",
+        "count": 66
+      },
+      {
+        "type": "TTOX",
+        "count": 36
+      }
+    ]
+  },
+  {
+    "name": "PAXVAX",
+    "reports": 127,
+    "died": 1,
+    "hosp": 4,
+    "vaccines": [
+      {
+        "type": "CHOL",
+        "count": 127
+      }
+    ]
+  },
+  {
+    "name": "PASTEUR MERIEUX CONNAUGHT",
+    "reports": 113,
+    "died": 0,
+    "hosp": 7,
+    "vaccines": [
+      {
+        "type": "IPV",
+        "count": 113
+      }
+    ]
+  },
+  {
+    "name": "VALNEVA USA, INC.",
+    "reports": 88,
+    "died": 0,
+    "hosp": 15,
+    "vaccines": [
+      {
+        "type": "CHIK",
+        "count": 88
+      }
+    ]
+  },
+  {
+    "name": "ORGANON-TEKNIKA",
+    "reports": 70,
+    "died": 0,
+    "hosp": 1,
+    "vaccines": [
+      {
+        "type": "BCG",
+        "count": 70
+      }
+    ]
+  },
+  {
+    "name": "BSI",
+    "reports": 70,
+    "died": 0,
+    "hosp": 4,
+    "vaccines": [
+      {
+        "type": "DT",
+        "count": 70
+      }
+    ]
+  },
+  {
+    "name": "NORTH AMERICAN VACCINES",
+    "reports": 65,
+    "died": 4,
+    "hosp": 8,
+    "vaccines": [
+      {
+        "type": "DTAP",
+        "count": 65
+      }
+    ]
+  },
+  {
+    "name": "BAXTER HEALTHCARE CORP.",
+    "reports": 43,
+    "died": 0,
+    "hosp": 2,
+    "vaccines": [
+      {
+        "type": "DTAP",
+        "count": 43
+      }
+    ]
+  },
+  {
+    "name": "MILES LABORATORIES",
+    "reports": 16,
+    "died": 2,
+    "hosp": 3,
+    "vaccines": [
+      {
+        "type": "PLAGUE",
+        "count": 16
+      }
+    ]
+  },
+  {
+    "name": "VBI VACCINES",
+    "reports": 14,
+    "died": 0,
+    "hosp": 0,
+    "vaccines": [
+      {
+        "type": "HEP",
+        "count": 14
+      }
+    ]
+  },
+  {
+    "name": "LEDERLE PRAXSIS",
+    "reports": 13,
+    "died": 0,
+    "hosp": 2,
+    "vaccines": [
+      {
+        "type": "HIBV",
+        "count": 13
+      }
+    ]
+  },
+  {
+    "name": "GREER LABORATORIES, INC.",
+    "reports": 11,
+    "died": 1,
+    "hosp": 2,
+    "vaccines": [
+      {
+        "type": "PLAGUE",
+        "count": 11
+      }
+    ]
+  },
+  {
+    "name": "BERNA BIOTECH, LTD",
+    "reports": 10,
+    "died": 0,
+    "hosp": 0,
+    "vaccines": [
+      {
+        "type": "TYP",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "BURROUGHS WELLCOME",
+    "reports": 3,
+    "died": 0,
+    "hosp": 0,
+    "vaccines": [
+      {
+        "type": "RUB",
+        "count": 3
+      }
+    ]
+  }
+]

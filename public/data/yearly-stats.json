@@ -1,0 +1,335 @@
+[
+  {
+    "year": 1990,
+    "reports": 2214,
+    "died": 82,
+    "hospitalized": 272,
+    "er": 353,
+    "disabled": 88,
+    "lifeThreatening": 34
+  },
+  {
+    "year": 1991,
+    "reports": 10287,
+    "died": 185,
+    "hospitalized": 1073,
+    "er": 3339,
+    "disabled": 188,
+    "lifeThreatening": 153
+  },
+  {
+    "year": 1992,
+    "reports": 11137,
+    "died": 247,
+    "hospitalized": 1112,
+    "er": 4037,
+    "disabled": 150,
+    "lifeThreatening": 227
+  },
+  {
+    "year": 1993,
+    "reports": 10646,
+    "died": 246,
+    "hospitalized": 1073,
+    "er": 4310,
+    "disabled": 191,
+    "lifeThreatening": 195
+  },
+  {
+    "year": 1994,
+    "reports": 10837,
+    "died": 265,
+    "hospitalized": 1162,
+    "er": 4398,
+    "disabled": 256,
+    "lifeThreatening": 227
+  },
+  {
+    "year": 1995,
+    "reports": 10611,
+    "died": 159,
+    "hospitalized": 1106,
+    "er": 4543,
+    "disabled": 183,
+    "lifeThreatening": 238
+  },
+  {
+    "year": 1996,
+    "reports": 11292,
+    "died": 146,
+    "hospitalized": 907,
+    "er": 4166,
+    "disabled": 198,
+    "lifeThreatening": 214
+  },
+  {
+    "year": 1997,
+    "reports": 11724,
+    "died": 162,
+    "hospitalized": 864,
+    "er": 4217,
+    "disabled": 205,
+    "lifeThreatening": 206
+  },
+  {
+    "year": 1998,
+    "reports": 10533,
+    "died": 150,
+    "hospitalized": 805,
+    "er": 3761,
+    "disabled": 215,
+    "lifeThreatening": 212
+  },
+  {
+    "year": 1999,
+    "reports": 12944,
+    "died": 175,
+    "hospitalized": 1134,
+    "er": 5107,
+    "disabled": 319,
+    "lifeThreatening": 352
+  },
+  {
+    "year": 2000,
+    "reports": 14914,
+    "died": 166,
+    "hospitalized": 939,
+    "er": 6508,
+    "disabled": 335,
+    "lifeThreatening": 247
+  },
+  {
+    "year": 2001,
+    "reports": 14149,
+    "died": 214,
+    "hospitalized": 1044,
+    "er": 6366,
+    "disabled": 410,
+    "lifeThreatening": 243
+  },
+  {
+    "year": 2002,
+    "reports": 14694,
+    "died": 207,
+    "hospitalized": 981,
+    "er": 6564,
+    "disabled": 432,
+    "lifeThreatening": 251
+  },
+  {
+    "year": 2003,
+    "reports": 17347,
+    "died": 237,
+    "hospitalized": 1278,
+    "er": 7385,
+    "disabled": 313,
+    "lifeThreatening": 314
+  },
+  {
+    "year": 2004,
+    "reports": 15982,
+    "died": 241,
+    "hospitalized": 980,
+    "er": 6578,
+    "disabled": 319,
+    "lifeThreatening": 273
+  },
+  {
+    "year": 2005,
+    "reports": 16256,
+    "died": 161,
+    "hospitalized": 1032,
+    "er": 6880,
+    "disabled": 322,
+    "lifeThreatening": 261
+  },
+  {
+    "year": 2006,
+    "reports": 17987,
+    "died": 156,
+    "hospitalized": 1206,
+    "er": 8409,
+    "disabled": 340,
+    "lifeThreatening": 336
+  },
+  {
+    "year": 2007,
+    "reports": 29509,
+    "died": 202,
+    "hospitalized": 2010,
+    "er": 14199,
+    "disabled": 591,
+    "lifeThreatening": 623
+  },
+  {
+    "year": 2008,
+    "reports": 30989,
+    "died": 227,
+    "hospitalized": 2078,
+    "er": 12201,
+    "disabled": 615,
+    "lifeThreatening": 622
+  },
+  {
+    "year": 2009,
+    "reports": 34449,
+    "died": 288,
+    "hospitalized": 2414,
+    "er": 12438,
+    "disabled": 614,
+    "lifeThreatening": 729
+  },
+  {
+    "year": 2010,
+    "reports": 33180,
+    "died": 256,
+    "hospitalized": 2322,
+    "er": 11311,
+    "disabled": 568,
+    "lifeThreatening": 708
+  },
+  {
+    "year": 2011,
+    "reports": 26763,
+    "died": 219,
+    "hospitalized": 1820,
+    "er": 9528,
+    "disabled": 421,
+    "lifeThreatening": 542
+  },
+  {
+    "year": 2012,
+    "reports": 28188,
+    "died": 202,
+    "hospitalized": 1613,
+    "er": 9291,
+    "disabled": 412,
+    "lifeThreatening": 481
+  },
+  {
+    "year": 2013,
+    "reports": 30916,
+    "died": 164,
+    "hospitalized": 1492,
+    "er": 9174,
+    "disabled": 390,
+    "lifeThreatening": 482
+  },
+  {
+    "year": 2014,
+    "reports": 35825,
+    "died": 155,
+    "hospitalized": 1528,
+    "er": 9201,
+    "disabled": 544,
+    "lifeThreatening": 487
+  },
+  {
+    "year": 2015,
+    "reports": 48369,
+    "died": 181,
+    "hospitalized": 1608,
+    "er": 10098,
+    "disabled": 514,
+    "lifeThreatening": 515
+  },
+  {
+    "year": 2016,
+    "reports": 50812,
+    "died": 204,
+    "hospitalized": 1515,
+    "er": 10441,
+    "disabled": 548,
+    "lifeThreatening": 498
+  },
+  {
+    "year": 2017,
+    "reports": 43831,
+    "died": 153,
+    "hospitalized": 1355,
+    "er": 7104,
+    "disabled": 640,
+    "lifeThreatening": 422
+  },
+  {
+    "year": 2018,
+    "reports": 51886,
+    "died": 183,
+    "hospitalized": 2134,
+    "er": 5614,
+    "disabled": 921,
+    "lifeThreatening": 423
+  },
+  {
+    "year": 2019,
+    "reports": 50742,
+    "died": 198,
+    "hospitalized": 2063,
+    "er": 5040,
+    "disabled": 1115,
+    "lifeThreatening": 343
+  },
+  {
+    "year": 2020,
+    "reports": 51002,
+    "died": 180,
+    "hospitalized": 1704,
+    "er": 5086,
+    "disabled": 998,
+    "lifeThreatening": 355
+  },
+  {
+    "year": 2021,
+    "reports": 768706,
+    "died": 11352,
+    "hospitalized": 50676,
+    "er": 95571,
+    "disabled": 12792,
+    "lifeThreatening": 12215
+  },
+  {
+    "year": 2022,
+    "reports": 251988,
+    "died": 6725,
+    "hospitalized": 29542,
+    "er": 26815,
+    "disabled": 5700,
+    "lifeThreatening": 3359
+  },
+  {
+    "year": 2023,
+    "reports": 108363,
+    "died": 2182,
+    "hospitalized": 16060,
+    "er": 7785,
+    "disabled": 2484,
+    "lifeThreatening": 1424
+  },
+  {
+    "year": 2024,
+    "reports": 52928,
+    "died": 865,
+    "hospitalized": 2783,
+    "er": 4357,
+    "disabled": 1443,
+    "lifeThreatening": 789
+  },
+  {
+    "year": 2025,
+    "reports": 40283,
+    "died": 573,
+    "hospitalized": 1870,
+    "er": 3817,
+    "disabled": 1353,
+    "lifeThreatening": 647
+  },
+  {
+    "year": 2026,
+    "reports": 977,
+    "died": 24,
+    "hospitalized": 98,
+    "er": 131,
+    "disabled": 58,
+    "lifeThreatening": 39
+  }
+]

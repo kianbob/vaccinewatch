@@ -1,0 +1,821 @@
+[
+  {
+    "abbreviation": "UNK",
+    "reports": 307638,
+    "died": 7694,
+    "hosp": 27248,
+    "er": 37915
+  },
+  {
+    "abbreviation": "CA",
+    "reports": 175812,
+    "died": 1387,
+    "hosp": 8270,
+    "er": 30707
+  },
+  {
+    "abbreviation": "TX",
+    "reports": 104020,
+    "died": 1350,
+    "hosp": 6754,
+    "er": 18802
+  },
+  {
+    "abbreviation": "NY",
+    "reports": 95974,
+    "died": 800,
+    "hosp": 5876,
+    "er": 18444
+  },
+  {
+    "abbreviation": "FL",
+    "reports": 93008,
+    "died": 929,
+    "hosp": 7975,
+    "er": 16375
+  },
+  {
+    "abbreviation": "PA",
+    "reports": 76613,
+    "died": 703,
+    "hosp": 4357,
+    "er": 15887
+  },
+  {
+    "abbreviation": "MI",
+    "reports": 73012,
+    "died": 1132,
+    "hosp": 14273,
+    "er": 12757
+  },
+  {
+    "abbreviation": "OH",
+    "reports": 60996,
+    "died": 582,
+    "hosp": 4134,
+    "er": 12775
+  },
+  {
+    "abbreviation": "IL",
+    "reports": 57180,
+    "died": 578,
+    "hosp": 4194,
+    "er": 11631
+  },
+  {
+    "abbreviation": "NJ",
+    "reports": 50969,
+    "died": 393,
+    "hosp": 3173,
+    "er": 8980
+  },
+  {
+    "abbreviation": "NC",
+    "reports": 49687,
+    "died": 378,
+    "hosp": 2831,
+    "er": 10425
+  },
+  {
+    "abbreviation": "VA",
+    "reports": 47941,
+    "died": 327,
+    "hosp": 2394,
+    "er": 10239
+  },
+  {
+    "abbreviation": "WA",
+    "reports": 47405,
+    "died": 381,
+    "hosp": 2420,
+    "er": 8908
+  },
+  {
+    "abbreviation": "MA",
+    "reports": 46103,
+    "died": 296,
+    "hosp": 2429,
+    "er": 8914
+  },
+  {
+    "abbreviation": "GA",
+    "reports": 45920,
+    "died": 615,
+    "hosp": 2782,
+    "er": 9577
+  },
+  {
+    "abbreviation": "IN",
+    "reports": 45517,
+    "died": 301,
+    "hosp": 1750,
+    "er": 6117
+  },
+  {
+    "abbreviation": "CO",
+    "reports": 41154,
+    "died": 256,
+    "hosp": 1955,
+    "er": 6530
+  },
+  {
+    "abbreviation": "MN",
+    "reports": 38015,
+    "died": 735,
+    "hosp": 5650,
+    "er": 7447
+  },
+  {
+    "abbreviation": "AZ",
+    "reports": 37323,
+    "died": 292,
+    "hosp": 1907,
+    "er": 6439
+  },
+  {
+    "abbreviation": "MD",
+    "reports": 36577,
+    "died": 381,
+    "hosp": 2214,
+    "er": 7075
+  },
+  {
+    "abbreviation": "WI",
+    "reports": 34033,
+    "died": 679,
+    "hosp": 2573,
+    "er": 7437
+  },
+  {
+    "abbreviation": "MO",
+    "reports": 31436,
+    "died": 406,
+    "hosp": 2395,
+    "er": 6397
+  },
+  {
+    "abbreviation": "TN",
+    "reports": 29428,
+    "died": 1780,
+    "hosp": 2158,
+    "er": 5952
+  },
+  {
+    "abbreviation": "OR",
+    "reports": 26267,
+    "died": 219,
+    "hosp": 1121,
+    "er": 4855
+  },
+  {
+    "abbreviation": "KY",
+    "reports": 25737,
+    "died": 1273,
+    "hosp": 3812,
+    "er": 4809
+  },
+  {
+    "abbreviation": "CT",
+    "reports": 22583,
+    "died": 154,
+    "hosp": 1138,
+    "er": 4249
+  },
+  {
+    "abbreviation": "SC",
+    "reports": 21109,
+    "died": 176,
+    "hosp": 1197,
+    "er": 4587
+  },
+  {
+    "abbreviation": "OK",
+    "reports": 16852,
+    "died": 229,
+    "hosp": 1358,
+    "er": 3109
+  },
+  {
+    "abbreviation": "AL",
+    "reports": 16819,
+    "died": 191,
+    "hosp": 1021,
+    "er": 3307
+  },
+  {
+    "abbreviation": "IA",
+    "reports": 16599,
+    "died": 364,
+    "hosp": 1288,
+    "er": 3201
+  },
+  {
+    "abbreviation": "KS",
+    "reports": 15855,
+    "died": 165,
+    "hosp": 914,
+    "er": 3115
+  },
+  {
+    "abbreviation": "LA",
+    "reports": 15228,
+    "died": 180,
+    "hosp": 1051,
+    "er": 3335
+  },
+  {
+    "abbreviation": "UT",
+    "reports": 14090,
+    "died": 101,
+    "hosp": 602,
+    "er": 2745
+  },
+  {
+    "abbreviation": "NV",
+    "reports": 13067,
+    "died": 122,
+    "hosp": 747,
+    "er": 2368
+  },
+  {
+    "abbreviation": "NM",
+    "reports": 12895,
+    "died": 120,
+    "hosp": 512,
+    "er": 2394
+  },
+  {
+    "abbreviation": "AR",
+    "reports": 12745,
+    "died": 213,
+    "hosp": 1580,
+    "er": 2632
+  },
+  {
+    "abbreviation": "ME",
+    "reports": 10933,
+    "died": 80,
+    "hosp": 498,
+    "er": 2093
+  },
+  {
+    "abbreviation": "ID",
+    "reports": 10812,
+    "died": 87,
+    "hosp": 445,
+    "er": 2185
+  },
+  {
+    "abbreviation": "NE",
+    "reports": 10501,
+    "died": 98,
+    "hosp": 613,
+    "er": 2002
+  },
+  {
+    "abbreviation": "NH",
+    "reports": 10459,
+    "died": 256,
+    "hosp": 495,
+    "er": 2252
+  },
+  {
+    "abbreviation": "MS",
+    "reports": 9002,
+    "died": 154,
+    "hosp": 540,
+    "er": 2087
+  },
+  {
+    "abbreviation": "WV",
+    "reports": 8847,
+    "died": 131,
+    "hosp": 819,
+    "er": 2109
+  },
+  {
+    "abbreviation": "PR",
+    "reports": 8323,
+    "died": 127,
+    "hosp": 322,
+    "er": 1449
+  },
+  {
+    "abbreviation": "MT",
+    "reports": 7696,
+    "died": 164,
+    "hosp": 919,
+    "er": 1355
+  },
+  {
+    "abbreviation": "HI",
+    "reports": 7495,
+    "died": 76,
+    "hosp": 421,
+    "er": 1415
+  },
+  {
+    "abbreviation": "RI",
+    "reports": 6619,
+    "died": 42,
+    "hosp": 352,
+    "er": 1339
+  },
+  {
+    "abbreviation": "AK",
+    "reports": 6442,
+    "died": 65,
+    "hosp": 266,
+    "er": 1393
+  },
+  {
+    "abbreviation": "DE",
+    "reports": 5616,
+    "died": 39,
+    "hosp": 317,
+    "er": 1178
+  },
+  {
+    "abbreviation": "DC",
+    "reports": 5332,
+    "died": 40,
+    "hosp": 228,
+    "er": 794
+  },
+  {
+    "abbreviation": "VT",
+    "reports": 5237,
+    "died": 43,
+    "hosp": 197,
+    "er": 918
+  },
+  {
+    "abbreviation": "SD",
+    "reports": 4960,
+    "died": 323,
+    "hosp": 457,
+    "er": 1082
+  },
+  {
+    "abbreviation": "ND",
+    "reports": 4840,
+    "died": 61,
+    "hosp": 479,
+    "er": 1011
+  },
+  {
+    "abbreviation": "WY",
+    "reports": 3136,
+    "died": 37,
+    "hosp": 161,
+    "er": 736
+  },
+  {
+    "abbreviation": "VI",
+    "reports": 423,
+    "died": 1,
+    "hosp": 17,
+    "er": 112
+  },
+  {
+    "abbreviation": "GU",
+    "reports": 414,
+    "died": 7,
+    "hosp": 22,
+    "er": 99
+  },
+  {
+    "abbreviation": "AS",
+    "reports": 115,
+    "died": 4,
+    "hosp": 14,
+    "er": 22
+  },
+  {
+    "abbreviation": "MP",
+    "reports": 83,
+    "died": 12,
+    "hosp": 6,
+    "er": 12
+  },
+  {
+    "abbreviation": "FM",
+    "reports": 67,
+    "died": 0,
+    "hosp": 4,
+    "er": 17
+  },
+  {
+    "abbreviation": "MH",
+    "reports": 31,
+    "died": 0,
+    "hosp": 1,
+    "er": 9
+  },
+  {
+    "abbreviation": "ca",
+    "reports": 16,
+    "died": 0,
+    "hosp": 0,
+    "er": 1
+  },
+  {
+    "abbreviation": "ny",
+    "reports": 15,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "pa",
+    "reports": 14,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "in",
+    "reports": 14,
+    "died": 0,
+    "hosp": 1,
+    "er": 1
+  },
+  {
+    "abbreviation": "Tx",
+    "reports": 13,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "tx",
+    "reports": 13,
+    "died": 0,
+    "hosp": 0,
+    "er": 1
+  },
+  {
+    "abbreviation": "XB",
+    "reports": 13,
+    "died": 1,
+    "hosp": 3,
+    "er": 5
+  },
+  {
+    "abbreviation": "va",
+    "reports": 12,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "fl",
+    "reports": 11,
+    "died": 0,
+    "hosp": 0,
+    "er": 2
+  },
+  {
+    "abbreviation": "mi",
+    "reports": 9,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "oh",
+    "reports": 9,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "Ca",
+    "reports": 6,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "il",
+    "reports": 6,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "wa",
+    "reports": 6,
+    "died": 0,
+    "hosp": 0,
+    "er": 1
+  },
+  {
+    "abbreviation": "PW",
+    "reports": 6,
+    "died": 0,
+    "hosp": 0,
+    "er": 1
+  },
+  {
+    "abbreviation": "Fl",
+    "reports": 5,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "ma",
+    "reports": 5,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "mn",
+    "reports": 5,
+    "died": 0,
+    "hosp": 0,
+    "er": 1
+  },
+  {
+    "abbreviation": "mo",
+    "reports": 5,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "Mi",
+    "reports": 4,
+    "died": 1,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "az",
+    "reports": 4,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "nc",
+    "reports": 4,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "ct",
+    "reports": 4,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "ks",
+    "reports": 4,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "nj",
+    "reports": 4,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "md",
+    "reports": 4,
+    "died": 0,
+    "hosp": 0,
+    "er": 1
+  },
+  {
+    "abbreviation": "co",
+    "reports": 4,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "QM",
+    "reports": 4,
+    "died": 0,
+    "hosp": 1,
+    "er": 2
+  },
+  {
+    "abbreviation": "Il",
+    "reports": 3,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "ky",
+    "reports": 3,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "wv",
+    "reports": 3,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "Co",
+    "reports": 3,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "In",
+    "reports": 2,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "al",
+    "reports": 2,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "ga",
+    "reports": 2,
+    "died": 0,
+    "hosp": 0,
+    "er": 1
+  },
+  {
+    "abbreviation": "nh",
+    "reports": 2,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "or",
+    "reports": 2,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "me",
+    "reports": 2,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "wi",
+    "reports": 2,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "la",
+    "reports": 2,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "Ar",
+    "reports": 2,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "Or",
+    "reports": 2,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "Ne",
+    "reports": 2,
+    "died": 1,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "XV",
+    "reports": 2,
+    "died": 0,
+    "hosp": 1,
+    "er": 1
+  },
+  {
+    "abbreviation": "QW",
+    "reports": 2,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "La",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "de",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "Ma",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "Va",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "nm",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "ne",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "mt",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "tn",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "ia",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "ak",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "sc",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "Wa",
+    "reports": 1,
+    "died": 0,
+    "hosp": 0,
+    "er": 0
+  },
+  {
+    "abbreviation": "XL",
+    "reports": 1,
+    "died": 0,
+    "hosp": 1,
+    "er": 0
+  }
+]

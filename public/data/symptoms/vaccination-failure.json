@@ -1,0 +1,1 @@
+{"name":"Vaccination failure","reports":15849,"died":205,"hosp":796,"vaccines":[{"type":"COVID19","count":9161},{"type":"VARZOS","count":9074},{"type":"FLUX","count":367},{"type":"VARCEL","count":211},{"type":"UNK","count":178},{"type":"HEP","count":175},{"type":"MMR","count":143},{"type":"PPV","count":119},{"type":"FLU3","count":108},{"type":"FLU4","count":103}]}

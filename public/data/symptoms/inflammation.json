@@ -1,0 +1,1 @@
+{"name":"Inflammation","reports":9373,"died":57,"hosp":1000,"vaccines":[{"type":"COVID19","count":6815},{"type":"VARZOS","count":865},{"type":"PPV","count":821},{"type":"FLU3","count":810},{"type":"FLU4","count":399},{"type":"TDAP","count":359},{"type":"FLUX","count":284},{"type":"UNK","count":197},{"type":"PNC13","count":196},{"type":"HEPA","count":191}]}

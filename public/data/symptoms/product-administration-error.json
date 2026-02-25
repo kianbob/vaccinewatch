@@ -1,0 +1,1 @@
+{"name":"Product administration error","reports":2531,"died":3,"hosp":10,"vaccines":[{"type":"COVID19","count":1827},{"type":"COVID19-2","count":179},{"type":"FLU4","count":125},{"type":"TYP","count":120},{"type":"SMALLMNK","count":91},{"type":"VARZOS","count":56},{"type":"VARCEL","count":48},{"type":"UNK","count":47},{"type":"HEPA","count":43},{"type":"TDAP","count":42}]}

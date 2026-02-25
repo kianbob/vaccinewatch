@@ -1,0 +1,1 @@
+{"name":"Adverse event","reports":2286,"died":41,"hosp":184,"vaccines":[{"type":"COVID19","count":1412},{"type":"VARZOS","count":334},{"type":"HPV4","count":155},{"type":"PPV","count":98},{"type":"FLU3","count":85},{"type":"UNK","count":82},{"type":"FLUX","count":63},{"type":"MMR","count":48},{"type":"VARCEL","count":42},{"type":"FLU4","count":41}]}

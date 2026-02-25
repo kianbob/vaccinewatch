@@ -1,0 +1,45 @@
+{
+  "ageGroups": [
+    {
+      "group": "0-2",
+      "reports": 149466,
+      "died": 3406,
+      "hospitalized": 15134
+    },
+    {
+      "group": "3-17",
+      "reports": 231796,
+      "died": 486,
+      "hospitalized": 9354
+    },
+    {
+      "group": "18-49",
+      "reports": 558025,
+      "died": 1774,
+      "hospitalized": 27382
+    },
+    {
+      "group": "50-64",
+      "reports": 357371,
+      "died": 3290,
+      "hospitalized": 25540
+    },
+    {
+      "group": "65+",
+      "reports": 398940,
+      "died": 15591,
+      "hospitalized": 57201
+    },
+    {
+      "group": "Unknown",
+      "reports": 287662,
+      "died": 3185,
+      "hospitalized": 9042
+    }
+  ],
+  "gender": {
+    "M": 635545,
+    "F": 1175561,
+    "U": 172154
+  }
+}
