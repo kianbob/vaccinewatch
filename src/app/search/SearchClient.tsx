@@ -190,8 +190,8 @@ export default function SearchClient() {
                   >
                     <div className="flex justify-between items-center">
                       <div>
-                        <div className="font-medium text-gray-900">{v.name}</div>
-                        <div className="text-sm text-gray-500">Type: {v.type}</div>
+                        <div className="font-medium text-gray-900">{getCleanVaccineName(v.type) || v.name}</div>
+                        <div className="text-sm text-gray-500">{v.type}</div>
                       </div>
                       <div className="text-right text-sm">
                         <div className="text-primary font-semibold">{v.reports.toLocaleString()} reports</div>
@@ -238,7 +238,12 @@ export default function SearchClient() {
           {totalResults === 0 && (
             <div className="text-center py-12">
               <p className="text-gray-500 text-lg mb-2">No results found for &quot;{query}&quot;</p>
-              <p className="text-gray-400 text-sm">Try a different search term</p>
+              <p className="text-gray-400 text-sm mb-6">Try a different search term, or browse by category:</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                <Link href="/vaccines" className="px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium hover:bg-primary/20">Browse Vaccines</Link>
+                <Link href="/symptoms" className="px-4 py-2 bg-accent/10 text-accent rounded-lg text-sm font-medium hover:bg-accent/20">Browse Symptoms</Link>
+                <Link href="/dashboard" className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200">Dashboard</Link>
+              </div>
             </div>
           )}
         </div>
