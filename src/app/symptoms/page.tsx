@@ -36,15 +36,20 @@ export default function SymptomsPage() {
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           All Symptoms in VAERS
         </h1>
-        <p className="text-lg text-gray-600 max-w-4xl">
+        <p className="text-lg text-gray-600 max-w-4xl mb-4">
           Complete list of {formatNumber(symptoms.length)} symptoms reported in VAERS adverse event reports.
           Click any symptom to see which vaccines are most associated and detailed analysis.
+        </p>
+        <p className="text-sm text-gray-500 max-w-4xl">
+          Symptoms in VAERS are reported using MedDRA (Medical Dictionary for Regulatory Activities) terms.
+          Common symptoms like headache, fever, and fatigue appear frequently because they are general reactions
+          reported across many vaccine types. Severity rates help distinguish common mild reactions from rare serious events.
         </p>
       </div>
 
       {/* Key Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {formatNumber(symptoms.length)}
           </div>
@@ -52,7 +57,7 @@ export default function SymptomsPage() {
           <div className="text-xs text-gray-500 mt-1">Reported to VAERS</div>
         </div>
 
-        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {formatNumber(totalReports)}
           </div>
@@ -60,7 +65,7 @@ export default function SymptomsPage() {
           <div className="text-xs text-gray-500 mt-1">All symptoms combined</div>
         </div>
 
-        <div className="bg-gradient-to-br from-danger/5 to-danger/10 border border-danger/20 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-danger/5 to-danger/10 border border-danger/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {formatNumber(totalDeaths)}
           </div>
@@ -68,7 +73,7 @@ export default function SymptomsPage() {
           <div className="text-xs text-gray-500 mt-1">With these symptoms</div>
         </div>
 
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {formatNumber(totalHosp)}
           </div>
@@ -86,7 +91,7 @@ export default function SymptomsPage() {
       </div>
 
       {/* Top Symptoms Highlight */}
-      <div className="bg-gray-50 rounded-lg p-8 mb-8">
+      <div className="bg-gray-50 rounded-xl p-8 mb-8">
         <h3 className="text-xl font-bold text-gray-900 mb-4">
           Most Frequently Reported Symptoms
         </h3>
@@ -103,7 +108,7 @@ export default function SymptomsPage() {
               <Link
                 key={symptom.name}
                 href={`/symptoms/${slugify(symptom.name)}`}
-                className="bg-white p-4 rounded-lg border border-gray-200 hover:border-primary/30 hover:shadow-sm transition-all"
+                className="bg-white p-4 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-md transition-all"
               >
                 <div className="flex items-start justify-between mb-2">
                   <div className="font-medium text-gray-900 text-sm leading-tight">{index + 1}. {symptom.name}</div>
@@ -125,7 +130,7 @@ export default function SymptomsPage() {
       </div>
 
       {/* Context Box */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
         <h3 className="text-lg font-semibold text-blue-900 mb-3">
           Understanding Symptom Data
         </h3>

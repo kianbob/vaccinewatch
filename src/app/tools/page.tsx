@@ -70,10 +70,16 @@ export default function ToolsIndexPage() {
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Analysis Tools
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl">
+        <p className="text-xl text-gray-600 max-w-3xl mb-6">
           Interactive tools for exploring VAERS data with proper context and interpretation. 
           Each tool includes important disclaimers and guidance for understanding limitations.
         </p>
+        <div className="bg-gray-50 rounded-xl p-6 text-sm text-gray-600 max-w-3xl">
+          <strong className="text-gray-900">How to use these tools:</strong> Each tool below lets you 
+          interactively explore a specific aspect of VAERS data. All tools include built-in disclaimers 
+          and context to help you interpret results correctly. They&apos;re designed for education and 
+          transparency — not for making medical decisions.
+        </div>
       </div>
 
       <div className="space-y-6">
@@ -81,7 +87,7 @@ export default function ToolsIndexPage() {
           <Link
             key={tool.slug}
             href={`/tools/${tool.slug}`}
-            className={`block border-l-4 rounded-lg p-6 hover:shadow-md transition-shadow ${colorClasses[tool.color]}`}
+            className={`block border-l-4 rounded-xl p-6 hover:shadow-md transition-all hover:translate-x-1 ${colorClasses[tool.color]}`}
           >
             <div className="flex items-start justify-between">
               <div className="flex-1">

@@ -26,9 +26,18 @@ h1, h2, h3 {
 
 /* Smooth transitions for interactive elements */
 a, button {
-  transition-property: color, background-color, border-color, box-shadow;
-  transition-duration: 150ms;
-  transition-timing-function: ease;
+  transition-property: color, background-color, border-color, box-shadow, transform;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 10px -6px rgba(0, 0, 0, 0.05);
 }
 
 /* Table styling consistency */
@@ -60,9 +69,45 @@ tbody tr:nth-child(even) {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Recharts tooltip rounded */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Section dividers */
+.section-divider {
+  position: relative;
+}
+.section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  border-radius: 2px;
+}
+
 /* Print styles */
 @media print {
   nav, footer, .back-to-top {
     display: none !important;
+  }
+}
+
+/* Ensure mobile tables don't overflow */
+@media (max-width: 640px) {
+  table {
+    font-size: 0.8125rem;
+  }
+  
+  .table-scroll-container {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

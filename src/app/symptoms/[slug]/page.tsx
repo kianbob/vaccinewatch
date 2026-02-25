@@ -142,7 +142,7 @@ export default async function SymptomDetailPage({
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-8">
           {/* About This Symptom */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               About {symptom.name} Reports
             </h2>
@@ -164,7 +164,7 @@ export default async function SymptomDetailPage({
           </div>
 
           {/* Clinical Context */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-blue-900 mb-3">
               Understanding {symptom.name} in VAERS
             </h3>
@@ -201,7 +201,7 @@ export default async function SymptomDetailPage({
           </div>
 
           {/* What This Data Shows */}
-          <div className="bg-gray-50 rounded-lg p-6">
+          <div className="bg-gray-50 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">
               What This Data Shows
             </h3>
@@ -226,7 +226,7 @@ export default async function SymptomDetailPage({
         <div className="space-y-6">
           {/* Top Associated Vaccines */}
           {symptom.vaccines && symptom.vaccines.length > 0 && (
-            <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Most Associated Vaccines
               </h3>
@@ -275,7 +275,7 @@ export default async function SymptomDetailPage({
           )}
 
           {/* Key Stats Summary */}
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6">
+          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               Quick Facts
             </h3>
@@ -304,28 +304,28 @@ export default async function SymptomDetailPage({
           </div>
 
           {/* Related Actions */}
-          <div className="bg-gray-50 rounded-lg p-6">
+          <div className="bg-gray-50 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               Explore Further
             </h3>
             <div className="space-y-3">
               <Link
                 href="/symptoms"
-                className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
+                className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
               >
                 Compare with Other Symptoms
               </Link>
               {slug === 'myocarditis' && (
                 <Link
                   href="/analysis/myocarditis"
-                  className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
+                  className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
                 >
                   Myocarditis Deep Dive
                 </Link>
               )}
               <Link
                 href="/analysis/top-symptoms"
-                className="block w-full text-center bg-primary text-white rounded-lg py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors"
+                className="block w-full text-center bg-primary text-white rounded-xl py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors"
               >
                 Read Symptoms Analysis
               </Link>
@@ -333,7 +333,7 @@ export default async function SymptomDetailPage({
           </div>
 
           {/* Data Source */}
-          <div className="bg-gray-50 rounded-lg p-4 text-xs text-gray-600">
+          <div className="bg-gray-50 rounded-xl p-4 text-xs text-gray-600">
             <h4 className="font-semibold text-gray-900 mb-2">Data Source</h4>
             <p>
               This data comes from the{' '}

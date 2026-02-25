@@ -7,10 +7,10 @@ export default function BackToTop() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 300)
+      setIsVisible(window.scrollY > 400)
     }
 
-    window.addEventListener('scroll', toggleVisibility)
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
 
@@ -21,12 +21,12 @@ export default function BackToTop() {
     })
   }
 
-  if (!isVisible) return null
-
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors z-50"
+      className={`fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 hover:shadow-xl transition-all duration-300 z-50 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+      }`}
       aria-label="Back to top"
     >
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

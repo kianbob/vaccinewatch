@@ -1,10 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'About VaccineWatch',
-  description: 'Learn about VaccineWatch, our methodology, data sources, and the limitations of VAERS data.'
+  title: 'About VaccineWatch — Methodology, Data Sources & Mission',
+  description: 'Learn about VaccineWatch, our methodology, data sources, update frequency, and the limitations of VAERS data. Built by TheDataProject.ai for transparent data access.'
 }
 
 const sisterSites = [
@@ -19,6 +20,8 @@ const sisterSites = [
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <Breadcrumbs items={[{ label: 'About' }]} />
+
       {/* Header */}
       <div className="mb-12">
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
@@ -26,8 +29,20 @@ export default function AboutPage() {
         </h1>
         <p className="text-xl text-gray-600">
           Transparent access to VAERS data for informed decision-making.
+          Neither pro-vaccine nor anti-vaccine — pro-transparency.
         </p>
       </div>
+
+      {/* Mission */}
+      <section className="mb-12 bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl p-8">
+        <h2 className={`text-2xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>Our Mission</h2>
+        <p className="text-gray-700 text-lg leading-relaxed">
+          VaccineWatch exists to make publicly available vaccine safety data <strong>accessible</strong>,{' '}
+          <strong>understandable</strong>, and <strong>contextualized</strong>. We believe that data transparency
+          is essential for public trust, and that raw numbers need proper framing to be informative rather
+          than misleading.
+        </p>
+      </section>
 
       {/* What is VAERS */}
       <section className="prose prose-lg max-w-none mb-12">
@@ -49,12 +64,35 @@ export default function AboutPage() {
         </p>
       </section>
 
+      {/* Data Coverage Stats */}
+      <section className="mb-12">
+        <h2 className={`text-2xl font-bold text-gray-900 mb-6 ${playfairDisplay.className}`}>What We Cover</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="bg-white border border-gray-200 rounded-xl p-5 text-center">
+            <div className="text-3xl font-bold text-primary mb-1">1.98M+</div>
+            <div className="text-sm text-gray-600">Total Reports</div>
+          </div>
+          <div className="bg-white border border-gray-200 rounded-xl p-5 text-center">
+            <div className="text-3xl font-bold text-primary mb-1">104</div>
+            <div className="text-sm text-gray-600">Vaccines</div>
+          </div>
+          <div className="bg-white border border-gray-200 rounded-xl p-5 text-center">
+            <div className="text-3xl font-bold text-primary mb-1">500</div>
+            <div className="text-sm text-gray-600">Symptoms Tracked</div>
+          </div>
+          <div className="bg-white border border-gray-200 rounded-xl p-5 text-center">
+            <div className="text-3xl font-bold text-primary mb-1">35</div>
+            <div className="text-sm text-gray-600">Years of Data</div>
+          </div>
+        </div>
+      </section>
+
       {/* How to Use This Site */}
       <section className="mb-12">
         <h2 className={`text-2xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>How to Use This Site</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="font-semibold text-gray-900 mb-2">Explore Vaccines</h3>
+          <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-gray-900 mb-2">🧬 Explore Vaccines</h3>
             <p className="text-gray-600 text-sm">
               Browse all 104 vaccine types in VAERS. See reports, outcomes, yearly trends, and associated symptoms
               for each vaccine.
@@ -63,8 +101,8 @@ export default function AboutPage() {
               Browse Vaccines →
             </Link>
           </div>
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="font-semibold text-gray-900 mb-2">Research Symptoms</h3>
+          <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-gray-900 mb-2">🩺 Research Symptoms</h3>
             <p className="text-gray-600 text-sm">
               Search through 500 reported symptoms. See which vaccines are most associated with each symptom
               and severity statistics.
@@ -73,8 +111,8 @@ export default function AboutPage() {
               Browse Symptoms →
             </Link>
           </div>
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="font-semibold text-gray-900 mb-2">Compare Vaccines</h3>
+          <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-gray-900 mb-2">⚖️ Compare Vaccines</h3>
             <p className="text-gray-600 text-sm">
               Compare 2-3 vaccines side by side. See how their report counts, outcomes, and yearly trends differ.
             </p>
@@ -82,11 +120,11 @@ export default function AboutPage() {
               Compare Tool →
             </Link>
           </div>
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="font-semibold text-gray-900 mb-2">Read Analysis</h3>
+          <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-gray-900 mb-2">📊 Read Analysis</h3>
             <p className="text-gray-600 text-sm">
-              Our in-depth analysis articles provide context-rich exploration of VAERS data, including COVID impact,
-              age patterns, and more.
+              23 in-depth articles provide context-rich exploration of VAERS data, including COVID impact,
+              age patterns, myocarditis, and more.
             </p>
             <Link href="/analysis" className="text-primary font-medium text-sm mt-3 inline-block hover:underline">
               Read Analysis →
@@ -109,10 +147,21 @@ export default function AboutPage() {
           <li><strong>No filtering:</strong> We include all reports as-is. We do not remove or filter any reports</li>
           <li><strong>No interpretation:</strong> We present aggregate counts without making causal claims</li>
         </ul>
+
+        <h3 className={`${playfairDisplay.className}`}>Update Frequency</h3>
         <p>
-          Data is updated periodically as new VAERS data releases become available. The current dataset was
-          last updated on February 25, 2026.
+          The VAERS database is updated approximately quarterly by the CDC/FDA. We process new data releases
+          as they become available. The current dataset was last updated on <strong>February 25, 2026</strong>.
         </p>
+
+        <h3 className={`${playfairDisplay.className}`}>Data Processing Pipeline</h3>
+        <ol>
+          <li><strong>Download</strong> — Raw CSV files from the VAERS website (VAERSDATA, VAERSVAX, VAERSSYMPTOMS)</li>
+          <li><strong>Parse</strong> — Extract and normalize fields, handle encoding issues and inconsistencies</li>
+          <li><strong>Aggregate</strong> — Group by vaccine type, symptom, manufacturer, state, age, gender, year</li>
+          <li><strong>Cross-reference</strong> — Link vaccine-symptom pairs, create relationship maps</li>
+          <li><strong>Publish</strong> — Generate static JSON files for fast, serverless delivery</li>
+        </ol>
       </section>
 
       {/* Limitations — CRITICAL */}
@@ -120,7 +169,7 @@ export default function AboutPage() {
         <h2 className={`text-2xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Limitations of VAERS Data
         </h2>
-        <div className="bg-amber-50 border border-amber-300 rounded-lg p-6 mb-6">
+        <div className="bg-amber-50 border border-amber-300 rounded-xl p-6 mb-6">
           <p className="text-amber-900 font-semibold mb-3">
             Understanding these limitations is essential for interpreting VAERS data correctly.
           </p>
@@ -131,59 +180,40 @@ export default function AboutPage() {
         </div>
 
         <div className="space-y-4">
-          <div className="bg-white border border-gray-200 rounded-lg p-5">
-            <h3 className="font-semibold text-gray-900 mb-2">Reports Do Not Prove Causation</h3>
-            <p className="text-gray-600 text-sm">
-              A VAERS report indicates that an adverse event occurred after vaccination. It does not mean the vaccine
-              caused the event. The event could be coincidental, related to an underlying condition, or caused by
-              something else entirely.
-            </p>
-          </div>
-
-          <div className="bg-white border border-gray-200 rounded-lg p-5">
-            <h3 className="font-semibold text-gray-900 mb-2">Underreporting and Overreporting</h3>
-            <p className="text-gray-600 text-sm">
-              VAERS is a passive reporting system. Not all adverse events are reported (underreporting), and
-              some events may be reported that are unrelated to vaccination. During periods of heightened awareness
-              (like the COVID-19 pandemic), reporting rates may increase significantly (stimulated reporting).
-            </p>
-          </div>
-
-          <div className="bg-white border border-gray-200 rounded-lg p-5">
-            <h3 className="font-semibold text-gray-900 mb-2">Unverified Information</h3>
-            <p className="text-gray-600 text-sm">
-              VAERS reports may contain information that is incomplete, inaccurate, coincidental, or unverifiable.
-              Reports are not verified for accuracy before being accepted into the database.
-            </p>
-          </div>
-
-          <div className="bg-white border border-gray-200 rounded-lg p-5">
-            <h3 className="font-semibold text-gray-900 mb-2">No Denominator Data</h3>
-            <p className="text-gray-600 text-sm">
-              VAERS does not include data on how many people received each vaccine. Without this denominator,
-              you cannot calculate a rate or risk. A vaccine with 10,000 reports and 100 million doses is very
-              different from one with 10,000 reports and 1 million doses.
-            </p>
-          </div>
-
-          <div className="bg-white border border-gray-200 rounded-lg p-5">
-            <h3 className="font-semibold text-gray-900 mb-2">Anyone Can Report</h3>
-            <p className="text-gray-600 text-sm">
-              Reports can be filed by anyone — doctors, patients, family members, lawyers, or anyone else.
-              The quality and accuracy of reports varies widely. Some reports may be submitted to support
-              legal claims or advocacy positions.
-            </p>
-          </div>
-
-          <div className="bg-white border border-gray-200 rounded-lg p-5">
-            <h3 className="font-semibold text-gray-900 mb-2">Duplicate Reports</h3>
-            <p className="text-gray-600 text-sm">
-              The same event may be reported multiple times by different reporters (e.g., a doctor and
-              a family member both report the same event). VAERS attempts to identify duplicates but
-              some may remain in the data.
-            </p>
-          </div>
+          {[
+            { title: 'Reports Do Not Prove Causation', text: 'A VAERS report indicates that an adverse event occurred after vaccination. It does not mean the vaccine caused the event. The event could be coincidental, related to an underlying condition, or caused by something else entirely.' },
+            { title: 'Underreporting and Overreporting', text: 'VAERS is a passive reporting system. Not all adverse events are reported (underreporting), and some events may be reported that are unrelated to vaccination. During periods of heightened awareness (like the COVID-19 pandemic), reporting rates may increase significantly (stimulated reporting).' },
+            { title: 'Unverified Information', text: 'VAERS reports may contain information that is incomplete, inaccurate, coincidental, or unverifiable. Reports are not verified for accuracy before being accepted into the database.' },
+            { title: 'No Denominator Data', text: 'VAERS does not include data on how many people received each vaccine. Without this denominator, you cannot calculate a rate or risk. A vaccine with 10,000 reports and 100 million doses is very different from one with 10,000 reports and 1 million doses.' },
+            { title: 'Anyone Can Report', text: 'Reports can be filed by anyone — doctors, patients, family members, lawyers, or anyone else. The quality and accuracy of reports varies widely. Some reports may be submitted to support legal claims or advocacy positions.' },
+            { title: 'Duplicate Reports', text: 'The same event may be reported multiple times by different reporters (e.g., a doctor and a family member both report the same event). VAERS attempts to identify duplicates but some may remain in the data.' },
+          ].map((item) => (
+            <div key={item.title} className="bg-white border border-gray-200 rounded-xl p-5">
+              <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
+              <p className="text-gray-600 text-sm">{item.text}</p>
+            </div>
+          ))}
         </div>
+      </section>
+
+      {/* Other Safety Monitoring Systems */}
+      <section className="mb-12 bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <h2 className={`text-2xl font-bold text-blue-900 mb-4 ${playfairDisplay.className}`}>
+          VAERS in Context: Other Safety Systems
+        </h2>
+        <p className="text-blue-800 text-sm mb-4">
+          VAERS is just one of several systems used to monitor vaccine safety. Others include:
+        </p>
+        <ul className="text-blue-800 text-sm space-y-2">
+          <li>• <strong>Vaccine Safety Datalink (VSD)</strong> — Active surveillance using electronic health records from 9 healthcare organizations</li>
+          <li>• <strong>Clinical Immunization Safety Assessment (CISA)</strong> — Expert evaluation of complex adverse events</li>
+          <li>• <strong>v-safe</strong> — Smartphone-based active monitoring (used for COVID-19 vaccines)</li>
+          <li>• <strong>Post-licensure studies</strong> — Formal epidemiological studies to investigate safety signals</li>
+        </ul>
+        <p className="text-blue-700 text-sm mt-4">
+          VAERS excels at detecting potential signals quickly but lacks the rigor to confirm causation.
+          That&apos;s by design — it&apos;s an early warning system, not a definitive study.
+        </p>
       </section>
 
       {/* Sister Sites */}
@@ -202,7 +232,7 @@ export default function AboutPage() {
               href={site.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+              className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow"
             >
               <h3 className="font-semibold text-primary mb-1">{site.name}</h3>
               <p className="text-gray-500 text-sm">{site.description}</p>
@@ -212,7 +242,7 @@ export default function AboutPage() {
       </section>
 
       {/* Final Note */}
-      <section className="bg-gray-50 rounded-lg p-8 text-center">
+      <section className="bg-gray-50 rounded-xl p-8 text-center">
         <p className="text-gray-600">
           VaccineWatch is committed to presenting VAERS data transparently and responsibly.
           We are neither pro-vaccine nor anti-vaccine — we are pro-transparency.

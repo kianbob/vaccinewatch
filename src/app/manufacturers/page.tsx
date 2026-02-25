@@ -36,15 +36,20 @@ export default function ManufacturersPage() {
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Vaccine Manufacturers
         </h1>
-        <p className="text-lg text-gray-600 max-w-4xl">
+        <p className="text-lg text-gray-600 max-w-4xl mb-4">
           VAERS adverse event reports broken down by vaccine manufacturer. 
           These numbers reflect reporting patterns and market presence, not relative safety.
+        </p>
+        <p className="text-sm text-gray-500 max-w-4xl">
+          Manufacturer report counts are driven primarily by market share and the types of vaccines produced.
+          Companies producing COVID-19 vaccines dominate recent data due to the unprecedented scale of the
+          vaccination campaign. Comparing manufacturers requires accounting for doses administered, not just raw reports.
         </p>
       </div>
 
       {/* Key Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {manufacturers.length}
           </div>
@@ -52,7 +57,7 @@ export default function ManufacturersPage() {
           <div className="text-xs text-gray-500 mt-1">In VAERS database</div>
         </div>
 
-        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {formatNumber(totalReports)}
           </div>
@@ -60,7 +65,7 @@ export default function ManufacturersPage() {
           <div className="text-xs text-gray-500 mt-1">All manufacturers</div>
         </div>
 
-        <div className="bg-gradient-to-br from-danger/5 to-danger/10 border border-danger/20 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-danger/5 to-danger/10 border border-danger/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {formatNumber(totalDeaths)}
           </div>
@@ -68,7 +73,7 @@ export default function ManufacturersPage() {
           <div className="text-xs text-gray-500 mt-1">All manufacturers</div>
         </div>
 
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {formatNumber(totalHosp)}
           </div>
@@ -92,7 +97,7 @@ export default function ManufacturersPage() {
       </div>
 
       {/* Top Manufacturers Highlight */}
-      <div className="bg-gray-50 rounded-lg p-8 mb-8">
+      <div className="bg-gray-50 rounded-xl p-8 mb-8">
         <h3 className="text-xl font-bold text-gray-900 mb-4">
           Top Manufacturers by Reports
         </h3>
@@ -110,7 +115,7 @@ export default function ManufacturersPage() {
               return (
                 <div
                   key={manufacturer.name}
-                  className="bg-white p-4 rounded-lg border border-gray-200"
+                  className="bg-white p-4 rounded-xl border border-gray-200"
                 >
                   <div className="font-medium text-gray-900 mb-1">
                     {index + 1}. {manufacturer.name}
@@ -134,7 +139,7 @@ export default function ManufacturersPage() {
 
       {/* Context Boxes */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
           <h3 className="text-lg font-semibold text-blue-900 mb-3">
             Understanding Manufacturer Data
           </h3>
@@ -163,7 +168,7 @@ export default function ManufacturersPage() {
           </div>
         </div>
 
-        <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
           <h3 className="text-lg font-semibold text-amber-900 mb-3">
             Market Share vs. Safety
           </h3>

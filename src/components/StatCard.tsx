@@ -6,6 +6,7 @@ interface StatCardProps {
   subtitle?: string
   color?: 'primary' | 'accent' | 'danger' | 'gray'
   className?: string
+  icon?: React.ReactNode
 }
 
 export default function StatCard({ 
@@ -13,7 +14,8 @@ export default function StatCard({
   value, 
   subtitle, 
   color = 'gray', 
-  className = '' 
+  className = '',
+  icon,
 }: StatCardProps) {
   const colorClasses = {
     primary: 'bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20',
@@ -30,7 +32,8 @@ export default function StatCard({
   }
 
   return (
-    <div className={`rounded-lg border p-6 ${colorClasses[color]} ${className}`}>
+    <div className={`rounded-xl border p-6 transition-shadow hover:shadow-sm ${colorClasses[color]} ${className}`}>
+      {icon && <div className="mb-2">{icon}</div>}
       <div className="text-2xl font-bold text-gray-900">
         {formatNumber(value)}
       </div>

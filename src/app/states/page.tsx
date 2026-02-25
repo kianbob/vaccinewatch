@@ -82,41 +82,46 @@ export default function StatesPage() {
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Reports by State
         </h1>
-        <p className="text-lg text-gray-600 max-w-4xl">
+        <p className="text-lg text-gray-600 max-w-4xl mb-4">
           Geographic distribution of VAERS adverse event reports across U.S. states and territories.
           Higher numbers typically reflect larger populations, not higher risk.
+        </p>
+        <p className="text-sm text-gray-500 max-w-4xl">
+          State-level data reveals reporting patterns influenced by population size, healthcare infrastructure,
+          and reporting culture. Per-capita rates help normalize for population differences, though they still
+          don&apos;t account for varying vaccination rates or reporting awareness between states.
         </p>
       </div>
 
       {/* Key Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">{states.length}</div>
           <div className="text-sm font-medium text-primary">States & Territories</div>
         </div>
-        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">{formatNumber(totalReports)}</div>
           <div className="text-sm font-medium text-accent">Total Reports</div>
         </div>
-        <div className="bg-gradient-to-br from-danger/5 to-danger/10 border border-danger/20 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-danger/5 to-danger/10 border border-danger/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">{formatNumber(totalDeaths)}</div>
           <div className="text-sm font-medium text-danger">Deaths Reported</div>
         </div>
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">{formatNumber(totalHosp)}</div>
           <div className="text-sm font-medium text-gray-800">Hospitalizations</div>
         </div>
       </div>
 
       {/* Top States */}
-      <div className="bg-gray-50 rounded-lg p-8 mb-8">
+      <div className="bg-gray-50 rounded-xl p-8 mb-8">
         <h3 className="text-xl font-bold text-gray-900 mb-4">Top 5 Reporting States</h3>
         <p className="text-gray-600 mb-6">
           States with the most VAERS reports. Population size is the primary driver of report volume.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           {topStates.map((state, i) => (
-            <div key={state.abbreviation} className="bg-white p-4 rounded-lg border border-gray-200">
+            <div key={state.abbreviation} className="bg-white p-4 rounded-xl border border-gray-200">
               <div className="font-medium text-gray-900 mb-1">
                 {i + 1}. {state.name}
               </div>
@@ -139,7 +144,7 @@ export default function StatesPage() {
       </div>
 
       {/* Context */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
         <h3 className="text-lg font-semibold text-blue-900 mb-3">Understanding State Data</h3>
         <div className="text-blue-800 space-y-2 text-sm">
           <div className="flex items-start">

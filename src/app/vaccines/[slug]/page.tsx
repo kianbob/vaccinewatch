@@ -152,7 +152,7 @@ export default async function VaccineDetailPage({
         </div>
         
         {vaccine.manufacturers.length > 0 && (
-          <div className="bg-gray-50 rounded-lg p-4">
+          <div className="bg-gray-50 rounded-xl p-4">
             <h3 className="text-sm font-semibold text-gray-900 mb-2">Manufacturers:</h3>
             <div className="flex flex-wrap gap-2">
               {vaccine.manufacturers.map((manufacturer) => (
@@ -207,7 +207,7 @@ export default async function VaccineDetailPage({
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-8">
           {/* About This Vaccine */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               About {cleanName}
             </h2>
@@ -240,7 +240,7 @@ export default async function VaccineDetailPage({
             const firstYear = yearsWithReports[0]?.year
             const lastYear = yearsWithReports[yearsWithReports.length - 1]?.year
             return (
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-5">
                 <h3 className="text-sm font-semibold text-gray-900 mb-2">Reporting Rate</h3>
                 <p className="text-sm text-gray-600">
                   This vaccine averages <strong>{formatNumber(avgPerYear)} reports per year</strong> over {numYears} years of reporting ({firstYear}–{lastYear}).
@@ -250,7 +250,7 @@ export default async function VaccineDetailPage({
           })()}
 
           {/* Reporting Context */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-blue-900 mb-3">
               Understanding These Numbers
             </h3>
@@ -284,7 +284,7 @@ export default async function VaccineDetailPage({
         <div className="space-y-6">
           {/* Top Reported Symptoms */}
           {vaccineSymptoms.length > 0 && (
-            <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Most Reported Symptoms
               </h3>
@@ -317,7 +317,7 @@ export default async function VaccineDetailPage({
 
           {/* Top States */}
           {topStates.length > 0 && (
-            <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Top Reporting States</h3>
               <div className="space-y-3">
                 {topStates.slice(0, 8).map((s, i) => (
@@ -334,7 +334,7 @@ export default async function VaccineDetailPage({
 
           {/* Yearly Sub-Pages */}
           {yearsWithData.length > 0 && (
-            <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Reports by Year</h3>
               <div className="space-y-2">
                 {yearsWithData.slice(0, 10).map(y => (
@@ -350,28 +350,28 @@ export default async function VaccineDetailPage({
           )}
 
           {/* Related Actions */}
-          <div className="bg-gray-50 rounded-lg p-6">
+          <div className="bg-gray-50 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               Explore Further
             </h3>
             <div className="space-y-3">
               <Link
                 href="/compare"
-                className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
+                className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
               >
                 Compare with Other Vaccines
               </Link>
               {vaccine.type.startsWith('COVID') && (
                 <Link
                   href="/analysis/covid-impact"
-                  className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
+                  className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
                 >
                   COVID-19 Impact Analysis
                 </Link>
               )}
               <Link
                 href="/analysis"
-                className="block w-full text-center bg-primary text-white rounded-lg py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors"
+                className="block w-full text-center bg-primary text-white rounded-xl py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors"
               >
                 Read Analysis Articles
               </Link>
@@ -379,7 +379,7 @@ export default async function VaccineDetailPage({
           </div>
 
           {/* Related Analysis */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               Related Analysis
             </h3>
@@ -419,7 +419,7 @@ export default async function VaccineDetailPage({
           </div>
 
           {/* Data Source */}
-          <div className="bg-gray-50 rounded-lg p-4 text-xs text-gray-600">
+          <div className="bg-gray-50 rounded-xl p-4 text-xs text-gray-600">
             <h4 className="font-semibold text-gray-900 mb-2">Data Source</h4>
             <p>
               This data comes from the{' '}

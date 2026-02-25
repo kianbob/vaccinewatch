@@ -59,6 +59,17 @@ const recentArticles = [
   },
 ]
 
+const popularSearches = [
+  { label: 'COVID-19 Vaccine', href: '/vaccines/covid19' },
+  { label: 'Myocarditis', href: '/symptoms/myocarditis' },
+  { label: 'Influenza Vaccine', href: '/vaccines/flu4' },
+  { label: 'Death Reports', href: '/analysis/death-reports' },
+  { label: 'Pfizer', href: '/manufacturers/pfizer-biontech' },
+  { label: 'Headache', href: '/symptoms/headache' },
+  { label: 'MMR Vaccine', href: '/vaccines/mmr' },
+  { label: 'Moderna', href: '/manufacturers/moderna' },
+]
+
 export default function HomePage() {
   const stats = readJsonFile('stats.json')
   const yearlyStats = readJsonFile('yearly-stats.json')
@@ -77,40 +88,136 @@ export default function HomePage() {
     <div className="min-h-screen">
       <DisclaimerBanner />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-accent/10 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className={`text-4xl md:text-6xl font-bold text-gray-900 mb-6 ${playfairDisplay.className}`}>
-            {formatNumber(stats.totalReports)} Vaccine Adverse Event Reports
+      {/* Hero Section — Enhanced with gradient */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-primary/90 py-20 md:py-28">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(13,148,136,0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(8,145,178,0.1),transparent_50%)]" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 ${playfairDisplay.className}`}>
+            {formatNumber(stats.totalReports)}
+            <span className="block text-2xl md:text-4xl lg:text-5xl mt-2 font-normal text-gray-300">
+              Vaccine Adverse Event Reports
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl mb-4 max-w-4xl mx-auto">
             <span className="text-primary font-semibold">Exposed.</span>{' '}
             <span className="text-accent font-semibold">Explored.</span>{' '}
-            <span className="text-gray-900 font-semibold">Explained.</span>
+            <span className="text-white font-semibold">Explained.</span>
           </p>
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-400 mb-10 max-w-3xl mx-auto">
             Transparent access to 35 years of VAERS data (1990–2026).
             We present the numbers with context, not conclusions.
           </p>
+
+          {/* Hero stat pills */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-10">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3 text-center">
+              <div className="text-2xl md:text-3xl font-bold text-white">{formatNumber(stats.totalReports)}</div>
+              <div className="text-xs text-gray-400 mt-1">Total Reports</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3 text-center">
+              <div className="text-2xl md:text-3xl font-bold text-red-400">{formatNumber(stats.totalDied)}</div>
+              <div className="text-xs text-gray-400 mt-1">Deaths Reported</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3 text-center">
+              <div className="text-2xl md:text-3xl font-bold text-cyan-400">{formatNumber(stats.totalHospitalized)}</div>
+              <div className="text-xs text-gray-400 mt-1">Hospitalizations</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3 text-center">
+              <div className="text-2xl md:text-3xl font-bold text-white">104</div>
+              <div className="text-xs text-gray-400 mt-1">Vaccines Tracked</div>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/vaccines"
-              className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+              className="bg-primary text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 hover:shadow-primary/40"
             >
-              Explore Vaccines
+              Explore Vaccines →
             </Link>
             <Link
               href="/analysis"
-              className="bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary/5 transition-colors"
+              className="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-3.5 rounded-xl font-semibold hover:bg-white/20 transition-all"
             >
               Read Analysis
+            </Link>
+            <Link
+              href="/search"
+              className="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-3.5 rounded-xl font-semibold hover:bg-white/20 transition-all"
+            >
+              🔍 Search Data
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Key Statistics */}
+      {/* How VAERS Works — Visual Explainer */}
       <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
+              How VAERS Works
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Understanding the pipeline from adverse event to public data
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Step 1 */}
+            <div className="relative text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-3xl">📋</span>
+              </div>
+              <div className="absolute top-8 left-[calc(50%+40px)] hidden md:block w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-primary/30 to-primary/10" />
+              <div className="bg-primary text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center mx-auto mb-3">1</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Report Filed</h3>
+              <p className="text-sm text-gray-600">
+                Anyone — doctors, patients, family members, or manufacturers — can submit a report of an adverse event after vaccination.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative text-center">
+              <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-3xl">🔬</span>
+              </div>
+              <div className="absolute top-8 left-[calc(50%+40px)] hidden md:block w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-accent/30 to-accent/10" />
+              <div className="bg-accent text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center mx-auto mb-3">2</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">CDC/FDA Reviews</h3>
+              <p className="text-sm text-gray-600">
+                Reports are collected by CDC and FDA. Serious reports may trigger follow-up investigations and safety signal analysis.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-3xl">📊</span>
+              </div>
+              <div className="bg-gray-800 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center mx-auto mb-3">3</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Data Published</h3>
+              <p className="text-sm text-gray-600">
+                Raw data is published publicly. We process it into searchable, contextualized analysis — that&apos;s what you see here.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-500 max-w-2xl mx-auto">
+              ⚠️ <strong>Important:</strong> VAERS reports show temporal associations, not proven causation.
+              A report means something happened <em>after</em> vaccination — not necessarily <em>because of</em> it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Statistics */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
@@ -158,7 +265,7 @@ export default function HomePage() {
       </section>
 
       {/* Quick Stats: COVID vs All Other Vaccines */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
@@ -169,7 +276,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+            <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-sm font-semibold text-danger uppercase tracking-wide mb-4">COVID-19 Vaccines</div>
               <div className="space-y-4">
                 <div>
@@ -186,7 +293,7 @@ export default function HomePage() {
                 Read the COVID impact analysis →
               </Link>
             </div>
-            <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+            <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-sm font-semibold text-primary uppercase tracking-wide mb-4">All Other Vaccines</div>
               <div className="space-y-4">
                 <div>
@@ -208,7 +315,7 @@ export default function HomePage() {
       </section>
 
       {/* Yearly Trend */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
@@ -220,6 +327,37 @@ export default function HomePage() {
             </p>
           </div>
           <YearlyTrendChart data={yearlyStats} />
+        </div>
+      </section>
+
+      {/* Popular Searches / Trending */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
+              Popular Searches
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Quick access to the most frequently explored vaccines, symptoms, and analyses.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {popularSearches.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="bg-gray-50 hover:bg-primary/5 border border-gray-200 hover:border-primary/30 text-gray-700 hover:text-primary px-5 py-2.5 rounded-full text-sm font-medium transition-all"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              href="/search"
+              className="bg-primary/5 hover:bg-primary/10 border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-medium transition-all"
+            >
+              Search all data →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -240,10 +378,10 @@ export default function HomePage() {
               <Link
                 key={v.type}
                 href={`/vaccines/${v.type.toLowerCase()}`}
-                className="bg-white border border-gray-200 rounded-lg p-4 hover:border-primary/30 hover:shadow-md transition-all"
+                className="bg-white border border-gray-200 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all group"
               >
                 <div className="text-xs text-gray-400 mb-1">#{i + 1}</div>
-                <div className="font-medium text-gray-900 text-sm mb-1 truncate">{getCleanVaccineName(v.name)}</div>
+                <div className="font-medium text-gray-900 text-sm mb-1 truncate group-hover:text-primary transition-colors">{getCleanVaccineName(v.name)}</div>
                 <div className="text-xs text-gray-500 mb-2">{v.type}</div>
                 <div className="text-sm font-semibold text-primary">{formatNumber(v.reports)}</div>
                 <div className="text-xs text-gray-400">reports</div>
@@ -277,9 +415,9 @@ export default function HomePage() {
               <Link
                 key={article.slug}
                 href={`/analysis/${article.slug}`}
-                className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md hover:border-primary/30 transition-all"
+                className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md hover:border-primary/30 transition-all group"
               >
-                <h3 className={`text-lg font-bold text-gray-900 mb-2 ${playfairDisplay.className}`}>
+                <h3 className={`text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors ${playfairDisplay.className}`}>
                   {article.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-3">{article.subtitle}</p>
@@ -328,7 +466,7 @@ export default function HomePage() {
                 </svg>
               </Link>
             </div>
-            <div className="bg-gradient-to-br from-accent/5 to-primary/10 p-8 rounded-lg">
+            <div className="bg-gradient-to-br from-accent/5 to-primary/10 p-8 rounded-xl">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Why This Matters</h3>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start">
@@ -369,40 +507,40 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Link
               href="/vaccines"
-              className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200"
+              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-200 hover:border-primary/30 group"
             >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                 <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">104 Vaccines</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">104 Vaccines</h3>
               <p className="text-gray-600">From COVID-19 to measles, explore adverse event reports for every vaccine in VAERS.</p>
             </Link>
 
             <Link
               href="/symptoms"
-              className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200"
+              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-200 hover:border-accent/30 group"
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                 <svg className="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">500 Symptoms</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">500 Symptoms</h3>
               <p className="text-gray-600">Which symptoms get reported most? Discover patterns in adverse event descriptions.</p>
             </Link>
 
             <Link
               href="/analysis"
-              className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200"
+              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-200 hover:border-gray-400 group"
             >
-              <div className="w-12 h-12 bg-gray-500/10 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gray-500/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gray-500/20 transition-colors">
                 <svg className="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Deep Analysis</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">Deep Analysis</h3>
               <p className="text-gray-600">COVID impact, age patterns, myocarditis, and more. Context-rich analysis of the data.</p>
             </Link>
           </div>

@@ -36,15 +36,20 @@ export default function VaccinesPage() {
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           All Vaccines in VAERS
         </h1>
-        <p className="text-lg text-gray-600 max-w-4xl">
+        <p className="text-lg text-gray-600 max-w-4xl mb-4">
           Complete list of {formatNumber(vaccines.length)} vaccines with adverse event reports in VAERS.
           Click any vaccine name to see detailed analysis including yearly trends, age breakdowns, and associated symptoms.
+        </p>
+        <p className="text-sm text-gray-500 max-w-4xl">
+          VAERS tracks every vaccine licensed in the United States. This page shows aggregate report counts — 
+          higher numbers typically reflect widespread use (e.g., COVID-19 and flu vaccines), not higher risk. 
+          Always consider denominators when interpreting these numbers.
         </p>
       </div>
 
       {/* Key Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {formatNumber(vaccines.length)}
           </div>
@@ -52,7 +57,7 @@ export default function VaccinesPage() {
           <div className="text-xs text-gray-500 mt-1">In VAERS database</div>
         </div>
 
-        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {formatNumber(vaccines.reduce((sum, v) => sum + v.reports, 0))}
           </div>
@@ -60,7 +65,7 @@ export default function VaccinesPage() {
           <div className="text-xs text-gray-500 mt-1">All vaccines combined</div>
         </div>
 
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-lg p-6">
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {new Set(vaccines.flatMap(v => v.manufacturers)).size}
           </div>
@@ -78,7 +83,7 @@ export default function VaccinesPage() {
       </div>
 
       {/* Top Vaccines Highlight */}
-      <div className="bg-gray-50 rounded-lg p-8">
+      <div className="bg-gray-50 rounded-xl p-8">
         <h3 className="text-xl font-bold text-gray-900 mb-4">
           Most Reported Vaccines
         </h3>
@@ -95,7 +100,7 @@ export default function VaccinesPage() {
               <Link
                 key={vaccine.name}
                 href={`/vaccines/${vaccine.type.toLowerCase()}`}
-                className="bg-white p-4 rounded-lg border border-gray-200 hover:border-primary/30 hover:shadow-sm transition-all"
+                className="bg-white p-4 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-md transition-all"
               >
                 <div className="font-medium text-gray-900 mb-1">{getCleanVaccineName(vaccine.name)}</div>
                 <div className="text-sm text-gray-500 mb-2">{vaccine.type}</div>
@@ -109,7 +114,7 @@ export default function VaccinesPage() {
       </div>
 
       {/* Context Box */}
-      <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
         <h3 className="text-lg font-semibold text-blue-900 mb-2">
           Understanding the Numbers
         </h3>

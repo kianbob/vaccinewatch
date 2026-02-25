@@ -44,7 +44,7 @@ export default function ManufacturerBarChart({ data }: { data: ManufacturerData[
           <Tooltip
             formatter={(value: number) => [value.toLocaleString(), 'Reports']}
             labelFormatter={(label: string, payload: Array<{ payload?: { fullName?: string } }>) => payload?.[0]?.payload?.fullName || label}
-            contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+            contentStyle={{ borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.1)', padding: '12px 16px' }}
           />
           <Bar dataKey="reports" radius={[0, 4, 4, 0]} maxBarSize={28}>
             {chartData.map((_, index) => (

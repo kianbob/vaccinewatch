@@ -224,10 +224,16 @@ export default function AnalysisIndexPage() {
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Data Analysis
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl">
+        <p className="text-xl text-gray-600 max-w-3xl mb-6">
           In-depth, context-rich analysis of VAERS data. Every article presents the numbers with
           appropriate context, limitations, and nuance. Neither pro-vax nor anti-vax — just transparent data journalism.
         </p>
+        <div className="bg-gray-50 rounded-xl p-6 text-sm text-gray-600 max-w-3xl">
+          <strong className="text-gray-900">Why these articles matter:</strong> Raw numbers from VAERS are frequently
+          misinterpreted. Our {articles.length} analysis articles provide the context needed to understand what the
+          data actually shows — and doesn&apos;t show. Each piece examines a specific aspect of vaccine safety reporting
+          with proper statistical framing, denominator context, and honest acknowledgment of limitations.
+        </div>
       </div>
 
       <div className="space-y-6">
@@ -235,7 +241,7 @@ export default function AnalysisIndexPage() {
           <Link
             key={article.slug}
             href={`/analysis/${article.slug}`}
-            className={`block border-l-4 rounded-lg p-6 hover:shadow-md transition-shadow ${colorClasses[article.color]}`}
+            className={`block border-l-4 rounded-xl p-6 hover:shadow-md transition-all hover:translate-x-1 ${colorClasses[article.color]}`}
           >
             <div className="flex items-start justify-between">
               <div className="flex-1">
