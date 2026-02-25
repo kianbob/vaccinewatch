@@ -262,6 +262,29 @@ export default function AnalysisIndexPage() {
           </Link>
         ))}
       </div>
+
+      {/* Related Resources */}
+      <div className="mt-12 border-t border-gray-200 pt-8">
+        <h3 className={`text-xl font-bold text-gray-900 mb-6 ${playfairDisplay.className}`}>Related Resources</h3>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <Link href="/vaccine-safety" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all">
+            <div className="font-bold text-gray-900 mb-1">Vaccine Safety</div>
+            <div className="text-sm text-gray-500">The big picture on vaccine safety data</div>
+          </Link>
+          <Link href="/is-vaers-reliable" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all">
+            <div className="font-bold text-gray-900 mb-1">Is VAERS Reliable?</div>
+            <div className="text-sm text-gray-500">Honest strengths & limitations</div>
+          </Link>
+          <Link href="/dashboard" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all">
+            <div className="font-bold text-gray-900 mb-1">Dashboard</div>
+            <div className="text-sm text-gray-500">All 104 vaccines at a glance</div>
+          </Link>
+          <Link href="/tools" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all">
+            <div className="font-bold text-gray-900 mb-1">Interactive Tools</div>
+            <div className="text-sm text-gray-500">13 data exploration tools</div>
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }
