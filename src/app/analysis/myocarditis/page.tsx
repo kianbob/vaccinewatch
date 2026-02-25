@@ -35,19 +35,19 @@ export default function MyocarditisPage() {
           Myocarditis (inflammation of the heart muscle) became a major focus of vaccine safety surveillance.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-danger/5 border border-danger/20 rounded-lg p-4 text-center">
+          <div className="bg-danger/5 border border-danger/20 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-danger">{formatNumber(symptomData.reports)}</div>
             <div className="text-xs text-gray-600">Total Reports</div>
           </div>
-          <div className="bg-danger/5 border border-danger/20 rounded-lg p-4 text-center">
+          <div className="bg-danger/5 border border-danger/20 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-danger">{formatNumber(symptomData.died)}</div>
             <div className="text-xs text-gray-600">Death Reports</div>
           </div>
-          <div className="bg-accent/5 border border-accent/20 rounded-lg p-4 text-center">
+          <div className="bg-accent/5 border border-accent/20 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-accent">{formatNumber(symptomData.hosp)}</div>
             <div className="text-xs text-gray-600">Hospitalizations</div>
           </div>
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 text-center">
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-primary">{severityRate}%</div>
             <div className="text-xs text-gray-600">Hospitalization Rate</div>
           </div>
@@ -114,7 +114,7 @@ export default function MyocarditisPage() {
         </p>
       </div>
 
-      <div className="bg-danger/5 border border-danger/20 rounded-lg p-6 mb-12">
+      <div className="bg-danger/5 border border-danger/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
         <ul className="space-y-3 text-gray-700">
           <li className="flex items-start">
@@ -139,11 +139,11 @@ export default function MyocarditisPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">COVID-19 Impact</div>
             <div className="text-sm text-gray-500">The broader COVID effect on VAERS</div>
           </Link>
-          <Link href="/symptoms/myocarditis" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/symptoms/myocarditis" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Myocarditis Symptom Page</div>
             <div className="text-sm text-gray-500">Full data for myocarditis reports</div>
           </Link>

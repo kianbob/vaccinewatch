@@ -85,7 +85,7 @@ export default function WhoReportsPage() {
           Understanding the sources of VAERS reports: healthcare providers, patients, pharmacies, 
           and public health officials. Who reports what, and how reporting mandates influence the data.
         </p>
-        <div className="bg-accent/5 border border-accent/20 rounded-lg p-6">
+        <div className="bg-accent/5 border border-accent/20 rounded-xl p-6">
           <div className="text-3xl font-bold text-accent mb-1">{topAdminType.name}</div>
           <div className="text-gray-700">leads with <strong>{topAdminType.percent}%</strong> of reports ({formatNumber(topAdminType.count)} reports)</div>
         </div>
@@ -108,7 +108,7 @@ export default function WhoReportsPage() {
         <h2 className={playfairDisplay.className}>Breaking Down the Reporting Sources</h2>
         <div className="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
           {sortedAdminByNamed.slice(0, 6).map((item, index) => (
-            <div key={item.type} className="bg-white border border-gray-200 rounded-lg p-4">
+            <div key={item.type} className="bg-white border border-gray-200 rounded-xl p-4">
               <div className="text-xl font-bold text-gray-900">{item.name}</div>
               <div className="text-sm text-gray-500 mb-2">{item.percent}% of reports</div>
               <div className="text-xs text-gray-600">{formatNumber(item.count)} reports</div>
@@ -216,7 +216,7 @@ export default function WhoReportsPage() {
       </div>
 
       {/* Key Takeaways */}
-      <div className="bg-accent/5 border border-accent/20 rounded-lg p-6 mb-12">
+      <div className="bg-accent/5 border border-accent/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
         <ul className="space-y-3 text-gray-700">
           <li className="flex items-start">
@@ -242,11 +242,11 @@ export default function WhoReportsPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/analysis/reporting-bias" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/reporting-bias" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Understanding VAERS Reporting Bias</div>
             <div className="text-sm text-gray-500">How reporting patterns affect data</div>
           </Link>
-          <Link href="/analysis/geographic-patterns" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/geographic-patterns" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Geographic Patterns</div>
             <div className="text-sm text-gray-500">State-level reporting variations</div>
           </Link>

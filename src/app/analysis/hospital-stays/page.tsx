@@ -56,7 +56,7 @@ export default function HospitalStaysPage() {
           Analysis of hospitalization duration for vaccine adverse events in VAERS. The data shows 
           most hospitalizations are brief, with clear patterns across different vaccine types.
         </p>
-        <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
+        <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
           <div className="text-3xl font-bold text-primary mb-1">{shortStaysPercent}%</div>
           <div className="text-gray-700">of hospitalizations last <strong>3 days or fewer</strong> ({formatNumber(shortStays)} of {formatNumber(totalHospitalizations)} hospital reports)</div>
         </div>
@@ -172,7 +172,7 @@ export default function HospitalStaysPage() {
       </div>
 
       {/* Key Takeaways */}
-      <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-12">
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
         <ul className="space-y-3 text-gray-700">
           <li className="flex items-start">
@@ -198,11 +198,11 @@ export default function HospitalStaysPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/analysis/serious-outcomes" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/serious-outcomes" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Serious vs Non-Serious Outcomes</div>
             <div className="text-sm text-gray-500">Understanding severity classifications</div>
           </Link>
-          <Link href="/analysis/recovery-rates" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/recovery-rates" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Do Vaccine Side Effects Go Away?</div>
             <div className="text-sm text-gray-500">Recovery patterns and outcomes</div>
           </Link>

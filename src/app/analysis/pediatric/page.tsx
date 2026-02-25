@@ -51,7 +51,7 @@ export default function PediatricPage() {
           Children ages 0-17 represent a unique population in VAERS reporting. With distinct vaccination
           schedules and physiology, their adverse event profiles differ from adults.
         </p>
-        <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
+        <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
           <div className="text-3xl font-bold text-primary mb-1">{formatNumber(pediatricReports)}</div>
           <div className="text-gray-700">pediatric reports (0-17) — <strong>{pediatricPct}%</strong> of all VAERS reports</div>
         </div>
@@ -93,7 +93,7 @@ export default function PediatricPage() {
         <PediatricCharts ageData={pediatricAgeData} topVaccines={topPediatricVaccines} />
       </div>
 
-      <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-12">
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
         <ul className="space-y-3 text-gray-700">
           <li className="flex items-start">
@@ -118,11 +118,11 @@ export default function PediatricPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/analysis/age-patterns" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/age-patterns" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Age Patterns in VAERS</div>
             <div className="text-sm text-gray-500">Full age group analysis</div>
           </Link>
-          <Link href="/analysis/serious-outcomes" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/serious-outcomes" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Serious Outcomes Analysis</div>
             <div className="text-sm text-gray-500">Severity across all demographics</div>
           </Link>

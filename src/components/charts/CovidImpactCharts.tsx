@@ -56,7 +56,7 @@ function formatYAxis(value: number): string {
 function CustomTooltip({ active, payload, label }: { active?: boolean; payload?: Array<{ value: number; name: string; color: string }>; label?: string }) {
   if (!active || !payload || !payload.length) return null;
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-3 shadow-lg">
+    <div className="bg-white border border-gray-200 rounded-xl p-3 shadow-lg">
       <p className="font-semibold text-gray-900 mb-1">Year: {label}</p>
       {payload.map((entry, i) => (
         <p key={i} className="text-sm" style={{ color: entry.color }}>

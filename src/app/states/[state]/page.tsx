@@ -8,6 +8,7 @@ import { formatNumber } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import ShareButtons from '@/components/ShareButtons'
 
 const STATE_NAMES: Record<string, string> = {
   AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California',
@@ -137,15 +138,22 @@ export default async function StateDetailPage({
       <Breadcrumbs items={[{ label: 'States', href: '/states' }, { label: name }]} />
 
       <div className="mb-8">
-        <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-2 ${playfairDisplay.className}`}>
-          {name}
-        </h1>
-        <div className="flex flex-wrap items-center gap-4 text-lg text-gray-600">
-          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-            {abbr}
-          </span>
-          <span>{formatNumber(stateData.reports)} total reports</span>
-          <span className="text-sm text-gray-500">Rank #{rank} of {states.length}</span>
+        <div className="flex items-start justify-between">
+          <div>
+            <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-2 ${playfairDisplay.className}`}>
+              {name}
+            </h1>
+            <div className="flex flex-wrap items-center gap-4 text-lg text-gray-600">
+              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                {abbr}
+              </span>
+              <span>{formatNumber(stateData.reports)} total reports</span>
+              <span className="text-sm text-gray-500">Rank #{rank} of {states.length}</span>
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <ShareButtons title={`Vaccine Adverse Events in ${name} — VaccineWatch`} />
+          </div>
         </div>
       </div>
 
@@ -158,7 +166,7 @@ export default async function StateDetailPage({
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               About {name} VAERS Data
             </h2>
@@ -178,7 +186,7 @@ export default async function StateDetailPage({
           </div>
 
           {vaccines.length > 0 && (
-            <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Top Vaccines Reported in {name}
               </h2>
@@ -211,7 +219,7 @@ export default async function StateDetailPage({
             </div>
           )}
 
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-blue-900 mb-3">
               Understanding State-Level Data
             </h3>
@@ -233,7 +241,7 @@ export default async function StateDetailPage({
         </div>
 
         <div className="space-y-6">
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6">
+          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Facts</h3>
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">
@@ -275,27 +283,48 @@ export default async function StateDetailPage({
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-6">
+          <div className="bg-gray-50 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Explore Further</h3>
             <div className="space-y-3">
               {vaccines.length > 0 && (
-                <Link href={`/vaccines/${vaccines[0].type.toLowerCase()}`} className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                <Link href={`/vaccines/${vaccines[0].type.toLowerCase()}`} className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                   Top Vaccine: {vaccines[0].type}
                 </Link>
               )}
-              <Link href="/states" className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+              <Link href="/states" className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                 All States
               </Link>
-              <Link href="/analysis/geographic-patterns" className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+              <Link href="/analysis/geographic-patterns" className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                 Geographic Analysis
               </Link>
-              <Link href="/compare" className="block w-full text-center bg-primary text-white rounded-lg py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors">
+              <Link href="/compare" className="block w-full text-center bg-primary text-white rounded-xl py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors">
                 Compare Vaccines
               </Link>
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-4 text-xs text-gray-600">
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Related Analysis</h3>
+            <div className="space-y-2">
+              <Link href="/analysis/geographic-patterns" className="block text-sm text-primary hover:text-primary/80">
+                Geographic Patterns Analysis →
+              </Link>
+              <Link href="/analysis/reporting-trends" className="block text-sm text-primary hover:text-primary/80">
+                35 Years of Reporting Trends →
+              </Link>
+              <Link href="/analysis/covid-impact" className="block text-sm text-primary hover:text-primary/80">
+                COVID-19 Impact on VAERS →
+              </Link>
+              <Link href="/analysis/serious-outcomes" className="block text-sm text-primary hover:text-primary/80">
+                Serious Outcomes Analysis →
+              </Link>
+              <Link href="/analysis/death-reports" className="block text-sm text-primary hover:text-primary/80">
+                Death Reports Deep Dive →
+              </Link>
+            </div>
+          </div>
+
+          <div className="bg-gray-50 rounded-xl p-4 text-xs text-gray-600">
             <h4 className="font-semibold text-gray-900 mb-2">Data Source</h4>
             <p>
               This data comes from the{' '}

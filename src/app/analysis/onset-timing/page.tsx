@@ -51,7 +51,7 @@ export default function OnsetTimingPage() {
           Analysis of onset timing for vaccine adverse events in VAERS. The data reveals clear patterns: 
           most side effects occur within the first few days after vaccination.
         </p>
-        <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
+        <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
           <div className="text-3xl font-bold text-primary mb-1">{within3DaysPercent}%</div>
           <div className="text-gray-700">of all adverse event reports occur within <strong>3 days</strong> of vaccination ({formatNumber(within3Days)} of {formatNumber(totalReports)} reports)</div>
         </div>
@@ -130,7 +130,7 @@ export default function OnsetTimingPage() {
       </div>
 
       {/* Key Takeaways */}
-      <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-12">
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
         <ul className="space-y-3 text-gray-700">
           <li className="flex items-start">
@@ -156,11 +156,11 @@ export default function OnsetTimingPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/analysis/recovery-rates" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/recovery-rates" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Do Vaccine Side Effects Go Away?</div>
             <div className="text-sm text-gray-500">Recovery rate analysis</div>
           </Link>
-          <Link href="/tools/onset-calculator" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/tools/onset-calculator" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Onset Calculator Tool</div>
             <div className="text-sm text-gray-500">Interactive onset timing by vaccine</div>
           </Link>

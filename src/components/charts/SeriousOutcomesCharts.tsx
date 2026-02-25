@@ -7,7 +7,7 @@ const COLORS = ['#ef4444', '#f59e0b', '#2563eb', '#10b981', '#8b5cf6']
 export default function SeriousOutcomesCharts({ outcomeBreakdown, topVaccinesBySeverity }: { outcomeBreakdown: any[]; topVaccinesBySeverity: any[] }) {
   return (
     <div className="space-y-8">
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <div className="bg-white rounded-xl border border-gray-200 p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">Outcome Types Across All Reports</h3>
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
@@ -22,7 +22,7 @@ export default function SeriousOutcomesCharts({ outcomeBreakdown, topVaccinesByS
       </div>
 
       {topVaccinesBySeverity.length > 0 && (
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Vaccines by Serious Outcome Rate</h3>
           <ResponsiveContainer width="100%" height={350}>
             <BarChart data={topVaccinesBySeverity.slice(0, 12)} layout="vertical">

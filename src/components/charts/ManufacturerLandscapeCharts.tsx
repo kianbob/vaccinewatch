@@ -7,7 +7,7 @@ const COLORS = ['#2563eb', '#f59e0b', '#ef4444', '#10b981', '#8b5cf6', '#ec4899'
 export default function ManufacturerLandscapeCharts({ topManufacturers, marketShare }: { topManufacturers: any[]; marketShare: any[] }) {
   return (
     <div className="space-y-8">
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <div className="bg-white rounded-xl border border-gray-200 p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">Top Manufacturers by Report Volume</h3>
         <ResponsiveContainer width="100%" height={350}>
           <BarChart data={topManufacturers.slice(0, 10)} layout="vertical">
@@ -21,7 +21,7 @@ export default function ManufacturerLandscapeCharts({ topManufacturers, marketSh
       </div>
 
       {marketShare.length > 0 && (
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Market Share by Reports</h3>
           <ResponsiveContainer width="100%" height={350}>
             <PieChart>

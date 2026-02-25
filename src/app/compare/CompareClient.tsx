@@ -9,12 +9,12 @@ import { getCleanVaccineName } from '@/lib/utils'
 
 const CompareCharts = dynamic(() => import('@/components/CompareCharts'), {
   ssr: false,
-  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div>
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-xl"></div>
 })
 
 const CompareBarChart = dynamic(() => import('@/components/CompareBarChart'), {
   ssr: false,
-  loading: () => <div className="h-80 bg-gray-100 animate-pulse rounded-lg"></div>
+  loading: () => <div className="h-80 bg-gray-100 animate-pulse rounded-xl"></div>
 })
 
 const QUICK_COMPARISONS = [
@@ -96,7 +96,7 @@ export default function CompareClient() {
                 <button
                   key={qc.label}
                   onClick={() => setSelected(qc.types)}
-                  className="inline-flex items-center px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:border-primary/40 hover:bg-primary/5 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  className="inline-flex items-center px-4 py-2 bg-white border border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-primary/40 hover:bg-primary/5 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 >
                   <svg className="w-4 h-4 mr-1.5 text-primary/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -110,7 +110,7 @@ export default function CompareClient() {
       )}
 
       {/* Selector */}
-      <div className="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+      <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8">
         <h2 className="text-lg font-semibold text-gray-900 mb-3">
           Select Vaccines to Compare (max 3)
         </h2>
@@ -153,7 +153,7 @@ export default function CompareClient() {
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Side-by-Side Comparison</h2>
             <div className="overflow-x-auto">
-              <table className="w-full bg-white rounded-lg border border-gray-200">
+              <table className="w-full bg-white rounded-xl border border-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Metric</th>
@@ -215,7 +215,7 @@ export default function CompareClient() {
           </div>
 
           {/* Context */}
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-amber-900 mb-3">Interpreting This Comparison</h3>
             <div className="text-amber-800 space-y-2 text-sm">
               <div className="flex items-start">
@@ -234,7 +234,7 @@ export default function CompareClient() {
           </div>
         </div>
       ) : (
-        <div className="text-center py-16 bg-gray-50 rounded-lg">
+        <div className="text-center py-16 bg-gray-50 rounded-xl">
           <p className="text-gray-500 text-lg">
             Select at least 2 vaccines above to see a comparison
           </p>

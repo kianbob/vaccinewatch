@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ComparePage() {
   return (
-    <Suspense fallback={<div className="max-w-7xl mx-auto px-4 py-8"><div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div></div>}>
+    <Suspense fallback={<div className="max-w-7xl mx-auto px-4 py-8"><div className="h-96 bg-gray-100 animate-pulse rounded-xl"></div></div>}>
       <CompareClient />
     </Suspense>
   )

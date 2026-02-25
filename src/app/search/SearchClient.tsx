@@ -136,7 +136,7 @@ export default function SearchClient() {
                 <button
                   key={term}
                   onClick={() => setQuery(term)}
-                  className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-lg hover:border-primary/30 hover:bg-primary/5 hover:text-primary transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
+                  className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-xl hover:border-primary/30 hover:bg-primary/5 hover:text-primary transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
                 >
                   <span>{icon}</span>
                   {term}
@@ -147,22 +147,22 @@ export default function SearchClient() {
           <div className="max-w-lg mx-auto mt-8">
             <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Browse by Category</h3>
             <div className="grid grid-cols-2 gap-3">
-              <Link href="/vaccines" className="bg-primary/5 border border-primary/20 rounded-lg p-4 text-center hover:bg-primary/10 transition-colors">
+              <Link href="/vaccines" className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center hover:bg-primary/10 transition-colors">
                 <div className="text-2xl mb-1">💉</div>
                 <div className="text-sm font-medium text-gray-900">All Vaccines</div>
                 <div className="text-xs text-gray-500">104 vaccines</div>
               </Link>
-              <Link href="/symptoms" className="bg-accent/5 border border-accent/20 rounded-lg p-4 text-center hover:bg-accent/10 transition-colors">
+              <Link href="/symptoms" className="bg-accent/5 border border-accent/20 rounded-xl p-4 text-center hover:bg-accent/10 transition-colors">
                 <div className="text-2xl mb-1">🩺</div>
                 <div className="text-sm font-medium text-gray-900">All Symptoms</div>
                 <div className="text-xs text-gray-500">500+ symptoms</div>
               </Link>
-              <Link href="/states" className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:bg-gray-100 transition-colors">
+              <Link href="/states" className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors">
                 <div className="text-2xl mb-1">🗺️</div>
                 <div className="text-sm font-medium text-gray-900">By State</div>
                 <div className="text-xs text-gray-500">50 states + territories</div>
               </Link>
-              <Link href="/analysis" className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:bg-gray-100 transition-colors">
+              <Link href="/analysis" className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors">
                 <div className="text-2xl mb-1">📊</div>
                 <div className="text-sm font-medium text-gray-900">Analysis</div>
                 <div className="text-xs text-gray-500">Deep-dive articles</div>
@@ -186,7 +186,7 @@ export default function SearchClient() {
                   <Link
                     key={v.type}
                     href={`/vaccines/${v.type.toLowerCase()}`}
-                    className="block bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md hover:border-primary/30 transition-all"
+                    className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-primary/30 transition-all"
                   >
                     <div className="flex justify-between items-center">
                       <div>
@@ -218,7 +218,7 @@ export default function SearchClient() {
                   <Link
                     key={s.name}
                     href={`/symptoms/${slugify(s.name)}`}
-                    className="block bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md hover:border-accent/30 transition-all"
+                    className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-accent/30 transition-all"
                   >
                     <div className="flex justify-between items-center">
                       <div className="font-medium text-gray-900">{s.name}</div>

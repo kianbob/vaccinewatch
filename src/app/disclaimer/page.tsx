@@ -23,7 +23,7 @@ export default function DisclaimerPage() {
       </div>
 
       <div className="prose prose-lg max-w-none">
-        <div className="bg-amber-50 border border-amber-300 rounded-lg p-6 mb-8 not-prose">
+        <div className="bg-amber-50 border border-amber-300 rounded-xl p-6 mb-8 not-prose">
           <p className="text-amber-900 font-semibold text-lg mb-3">
             This website is for informational and educational purposes only.
           </p>
@@ -121,7 +121,7 @@ export default function DisclaimerPage() {
           <li>Linking to official CDC/FDA resources for authoritative information</li>
         </ul>
 
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mt-8 not-prose">
+        <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mt-8 not-prose">
           <h3 className="font-semibold text-gray-900 mb-3">Official Resources</h3>
           <ul className="space-y-2 text-sm text-gray-600">
             <li>

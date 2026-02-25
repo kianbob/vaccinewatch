@@ -224,21 +224,21 @@ export default function ReportingBiasCharts({ yearlyData }: ReportingBiasChartsP
       <div>
         <h3 className="text-xl font-bold text-gray-900 mb-4">Evidence of Reporting Bias</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
+          <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-red-700">
               {Math.round(Math.max(...dataWithBias.map(d => d.ratio)))}x
             </div>
             <div className="text-sm text-red-600">Peak Reporting Multiple</div>
             <div className="text-xs text-gray-500 mt-1">vs. historical baseline</div>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-blue-700">
               {((1 - (dataWithBias.find(d => d.year === 2023)?.reports || 0) / Math.max(...dataWithBias.map(d => d.reports))) * 100).toFixed(0)}%
             </div>
             <div className="text-sm text-blue-600">Decline from Peak</div>
             <div className="text-xs text-gray-500 mt-1">Evidence bias was temporary</div>
           </div>
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+          <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-green-700">
               {formatNumber(preCovidAvg)}
             </div>

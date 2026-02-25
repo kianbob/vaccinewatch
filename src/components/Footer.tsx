@@ -24,11 +24,11 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 md:w-72 px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                className="flex-1 md:w-72 px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                 disabled
               />
               <button
-                className="px-6 py-2.5 bg-primary text-white rounded-lg text-sm font-medium opacity-50 cursor-not-allowed"
+                className="px-6 py-2.5 bg-primary text-white rounded-xl text-sm font-medium opacity-50 cursor-not-allowed"
                 disabled
                 title="Coming soon"
               >
@@ -53,7 +53,7 @@ export default function Footer() {
                 href="https://x.com/thedataproject0"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
+                className="w-8 h-8 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gray-700 transition-colors"
                 title="Follow on X"
               >
                 <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
@@ -62,7 +62,7 @@ export default function Footer() {
               </a>
               <Link
                 href="/feed.xml"
-                className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
+                className="w-8 h-8 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gray-700 transition-colors"
                 title="RSS Feed"
               >
                 <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
@@ -158,7 +158,7 @@ export default function Footer() {
           </div>
 
           {/* Important Disclaimer */}
-          <div className="mt-6 p-4 bg-gray-800 rounded-lg">
+          <div className="mt-6 p-4 bg-gray-800 rounded-xl">
             <p className="text-xs text-gray-400 leading-relaxed">
               <strong className="text-gray-300">Important:</strong> VAERS accepts reports of adverse events following vaccination.
               For any given report, there is no certainty that the reported event was caused by the vaccine.

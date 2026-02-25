@@ -63,7 +63,7 @@ export default function LotLookupPage() {
 
       <LotLookupClient />
 
-      <div className="mt-8 bg-red-50 border border-red-200 rounded-lg p-4">
+      <div className="mt-8 bg-red-50 border border-red-200 rounded-xl p-4">
         <h3 className="font-bold text-red-800 mb-2">Critical Understanding Required</h3>
         <ul className="text-sm text-red-700 space-y-1">
           <li>• Higher report numbers usually indicate larger lots or wider distribution</li>

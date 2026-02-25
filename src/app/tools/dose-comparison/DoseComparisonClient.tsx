@@ -32,7 +32,7 @@ export default function DoseComparisonClient() {
       .catch(() => setLoading(false))
   }, [])
 
-  if (loading) return <div className="h-96 bg-gray-100 animate-pulse rounded-lg" />
+  if (loading) return <div className="h-96 bg-gray-100 animate-pulse rounded-xl" />
   if (!doseData) return <div className="text-gray-600">Unable to load dose data.</div>
 
   const vaccines = Object.keys(doseData).sort()
@@ -66,7 +66,7 @@ export default function DoseComparisonClient() {
           id="vaccine-select"
           value={selectedVaccine}
           onChange={e => setSelectedVaccine(e.target.value)}
-          className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+          className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary"
         >
           {vaccines.map(v => (
             <option key={v} value={v}>{v}</option>
@@ -76,7 +76,7 @@ export default function DoseComparisonClient() {
 
       {vaccineData && (
         <>
-          <div className="bg-gray-50 rounded-lg p-4">
+          <div className="bg-gray-50 rounded-xl p-4">
             <p className="text-sm text-gray-600">
               Showing <strong>{formatNumber(totalReports)}</strong> total reports for <strong>{selectedVaccine}</strong> across {doses.length} dose categories.
             </p>
@@ -126,7 +126,7 @@ export default function DoseComparisonClient() {
                   <span className="w-20 text-sm text-gray-600 text-right">{DOSE_LABELS[dose] || dose}</span>
                   <div className="flex-1 bg-gray-100 rounded-full h-6 overflow-hidden">
                     <div
-                      className="h-full bg-teal-500 rounded-full flex items-center justify-end pr-2"
+                      className="h-full bg-primary rounded-full flex items-center justify-end pr-2"
                       style={{ width: `${Math.max(width, 2)}%` }}
                     >
                       {width > 15 && (

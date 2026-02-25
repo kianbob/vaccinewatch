@@ -100,7 +100,7 @@ export default function SortableTable({
   }
 
   return (
-    <div className={`bg-white rounded-lg shadow-sm border ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border ${className}`}>
       {searchable && (
         <div className="p-4 border-b">
           <input

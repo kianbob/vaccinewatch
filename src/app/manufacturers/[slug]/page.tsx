@@ -104,7 +104,7 @@ export default async function ManufacturerDetailPage({
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               About {mfr.name}
             </h2>
@@ -119,7 +119,7 @@ export default async function ManufacturerDetailPage({
           </div>
 
           {vaccines.length > 0 && (
-            <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Vaccines by {mfr.name}
               </h2>
@@ -152,7 +152,7 @@ export default async function ManufacturerDetailPage({
             </div>
           )}
 
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-blue-900 mb-3">
               Understanding Manufacturer Data
             </h3>
@@ -175,7 +175,7 @@ export default async function ManufacturerDetailPage({
 
         <div className="space-y-6">
           {mfr.vaccines.length > 0 && (
-            <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Top Vaccines</h3>
               <div className="space-y-3">
                 {mfr.vaccines
@@ -193,27 +193,27 @@ export default async function ManufacturerDetailPage({
             </div>
           )}
 
-          <div className="bg-gray-50 rounded-lg p-6">
+          <div className="bg-gray-50 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Explore Further</h3>
             <div className="space-y-3">
               {vaccines.length > 0 && (
-                <Link href={`/vaccines/${vaccines[0].type.toLowerCase()}`} className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                <Link href={`/vaccines/${vaccines[0].type.toLowerCase()}`} className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                   Top Vaccine: {vaccines[0].type}
                 </Link>
               )}
-              <Link href="/manufacturers" className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+              <Link href="/manufacturers" className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                 All Manufacturers
               </Link>
-              <Link href="/analysis/manufacturer-landscape" className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+              <Link href="/analysis/manufacturer-landscape" className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                 Manufacturer Landscape
               </Link>
-              <Link href="/compare" className="block w-full text-center bg-primary text-white rounded-lg py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors">
+              <Link href="/compare" className="block w-full text-center bg-primary text-white rounded-xl py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors">
                 Compare Vaccines
               </Link>
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-4 text-xs text-gray-600">
+          <div className="bg-gray-50 rounded-xl p-4 text-xs text-gray-600">
             <h4 className="font-semibold text-gray-900 mb-2">Data Source</h4>
             <p>
               This data comes from the{' '}

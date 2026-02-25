@@ -56,7 +56,7 @@ export default function RiskContextClient() {
       .catch(() => setLoading(false))
   }, [])
 
-  if (loading) return <div className="h-96 bg-gray-100 animate-pulse rounded-lg" />
+  if (loading) return <div className="h-96 bg-gray-100 animate-pulse rounded-xl" />
 
   const selected = vaccineData.find(v => v.slug === selectedVaccine)
   const doseEstimate = DOSE_ESTIMATES[selectedVaccine]
@@ -70,7 +70,7 @@ export default function RiskContextClient() {
           <select
             value={selectedVaccine}
             onChange={e => { setSelectedVaccine(e.target.value); setCustomDoses('') }}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary"
           >
             {vaccineData.map(v => (
               <option key={v.slug} value={v.slug}>{v.name} ({formatNumber(v.reports)} reports)</option>
@@ -86,7 +86,7 @@ export default function RiskContextClient() {
             value={customDoses || (doseEstimate?.doses || '')}
             onChange={e => setCustomDoses(e.target.value)}
             placeholder="Enter estimated total doses"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary"
           />
           {doseEstimate && !customDoses && (
             <p className="text-xs text-gray-500 mt-1">Source: {doseEstimate.source}</p>
@@ -97,7 +97,7 @@ export default function RiskContextClient() {
       {selected && (
         <div className="space-y-6">
           {/* VAERS Numbers */}
-          <div className="bg-gray-50 rounded-lg p-6">
+          <div className="bg-gray-50 rounded-xl p-6">
             <h3 className="text-lg font-bold text-gray-900 mb-4">Raw VAERS Numbers: {selected.name}</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="text-center">
@@ -121,16 +121,16 @@ export default function RiskContextClient() {
 
           {/* With Context */}
           {doses > 0 && (
-            <div className="bg-teal-50 border border-teal-200 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-teal-900 mb-4">
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">
                 With Context: Per Million Doses ({formatNumber(doses)} estimated doses)
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-teal-900">
+                  <div className="text-2xl font-bold text-gray-900">
                     {((selected.reports / doses) * 1_000_000).toFixed(1)}
                   </div>
-                  <div className="text-sm text-teal-700">Reports per 1M doses</div>
+                  <div className="text-sm text-gray-700">Reports per 1M doses</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-red-700">
@@ -151,14 +151,14 @@ export default function RiskContextClient() {
                   <div className="text-sm text-purple-600">Disabilities per 1M</div>
                 </div>
               </div>
-              <p className="text-xs text-teal-600 mt-4">
+              <p className="text-xs text-gray-600 mt-4">
                 ⚠️ These are VAERS report rates, not confirmed causation rates. VAERS accepts all reports regardless of causation.
               </p>
             </div>
           )}
 
           {!doses && (
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
               <p className="text-sm text-yellow-800">
                 Enter estimated doses administered above to calculate rates per million. Without a denominator, raw counts lack context.
               </p>
@@ -168,7 +168,7 @@ export default function RiskContextClient() {
       )}
 
       {/* Background Rates Reference */}
-      <div className="bg-white border border-gray-200 rounded-lg p-6">
+      <div className="bg-white border border-gray-200 rounded-xl p-6">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Background Disease Rates (Reference)</h3>
         <p className="text-sm text-gray-600 mb-4">
           These conditions occur naturally in the population regardless of vaccination status.

@@ -75,7 +75,7 @@ export default function FAQPage() {
 
       <div className="space-y-6">
         {faqs.map((faq, index) => (
-          <div key={index} className="bg-white border border-gray-200 rounded-lg p-6">
+          <div key={index} className="bg-white border border-gray-200 rounded-xl p-6">
             <h2 className={`text-lg font-bold text-gray-900 mb-3 ${playfairDisplay.className}`}>
               {faq.question}
             </h2>
@@ -84,14 +84,30 @@ export default function FAQPage() {
         ))}
       </div>
 
-      <div className="mt-12 bg-primary/5 border border-primary/20 rounded-lg p-6 text-center">
+      {/* Explore More */}
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <Link href="/tools/onset-calculator" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+          <h3 className="font-semibold text-gray-900 mb-1">🧮 Onset Calculator</h3>
+          <p className="text-sm text-gray-600">Explore symptom onset timing patterns after vaccination.</p>
+        </Link>
+        <Link href="/compare" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+          <h3 className="font-semibold text-gray-900 mb-1">⚖️ Compare Vaccines</h3>
+          <p className="text-sm text-gray-600">Compare 2-3 vaccines side by side with charts and stats.</p>
+        </Link>
+        <Link href="/states" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+          <h3 className="font-semibold text-gray-900 mb-1">🗺️ Browse by State</h3>
+          <p className="text-sm text-gray-600">See reporting patterns across all 50 states and territories.</p>
+        </Link>
+      </div>
+
+      <div className="mt-8 bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
         <h3 className="text-lg font-bold text-gray-900 mb-2">Still have questions?</h3>
         <p className="text-gray-600 mb-4">Learn more about our data sources and methodology.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/about" className="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors">
+          <Link href="/about" className="bg-primary text-white px-6 py-2 rounded-xl font-medium hover:bg-primary/90 transition-colors">
             About VaccineWatch
           </Link>
-          <Link href="/about#methodology" className="bg-white text-primary border border-primary px-6 py-2 rounded-lg font-medium hover:bg-primary/5 transition-colors">
+          <Link href="/methodology" className="bg-white text-primary border border-primary px-6 py-2 rounded-xl font-medium hover:bg-primary/5 transition-colors">
             Our Methodology
           </Link>
         </div>

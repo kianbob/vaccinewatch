@@ -72,6 +72,10 @@ export default async function SymptomDetailPage({
   const severityRate = symptom.reports > 0 ? ((symptom.died + symptom.hosp) / symptom.reports * 100) : 0
   const mortalityRate = symptom.reports > 0 ? (symptom.died / symptom.reports * 100) : 0
 
+  // Sensitive symptom detection
+  const sensitiveSymptoms = ['death', 'sudden death', 'stillbirth', 'foetal death', 'sudden infant death syndrome', 'suicide', 'completed suicide']
+  const isSensitive = sensitiveSymptoms.some(s => symptom.name.toLowerCase().includes(s))
+
   // Load yearly trend data if available
   let yearlyData: Array<{ year: number; count: number; died: number; hosp: number }> = []
   const yearlyPath = join(process.cwd(), 'public', 'data', 'symptom-years', `${slug}.json`)
@@ -108,6 +112,40 @@ export default async function SymptomDetailPage({
           </div>
         </div>
       </div>
+
+      {/* Sensitive Content Notice */}
+      {isSensitive && (
+        <div className="mb-8 bg-amber-50 border border-amber-300 rounded-xl p-6">
+          <div className="flex items-start">
+            <span className="text-2xl mr-3 flex-shrink-0">⚠️</span>
+            <div>
+              <h2 className="text-lg font-semibold text-amber-900 mb-2">
+                Sensitive Content — Important Context
+              </h2>
+              <div className="text-amber-800 text-sm space-y-2">
+                <p>
+                  This page contains data about <strong>{symptom.name.toLowerCase()}</strong> reports in VAERS.
+                  This is sensitive information that requires careful interpretation.
+                </p>
+                <p>
+                  <strong>A VAERS report of {symptom.name.toLowerCase()} does not mean a vaccine caused the death.</strong>{' '}
+                  Reports reflect events that occurred <em>after</em> vaccination. Many of these events
+                  may be coincidental, related to underlying conditions, or have other causes entirely.
+                </p>
+                <p>
+                  The background mortality rate in the general population means that deaths will
+                  inevitably occur in the days and weeks following vaccination by coincidence alone,
+                  especially among elderly or medically fragile individuals.
+                </p>
+                <p className="font-medium">
+                  If you or someone you know is affected by a vaccine adverse event,
+                  please contact a healthcare professional immediately.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Key Statistics */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">

@@ -13,7 +13,7 @@ export default function SymptomYearlyChart({ data, symptomName }: { data: Sympto
   if (!data || data.length === 0) return null
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6">
+    <div className="bg-white rounded-xl border border-gray-200 p-6">
       <h3 className="text-lg font-semibold text-gray-900 mb-4">
         {symptomName} Reports by Year
       </h3>

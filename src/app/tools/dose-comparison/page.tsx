@@ -46,7 +46,7 @@ export default function DoseComparisonPage() {
 
       <DoseComparisonClient />
 
-      <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-4">
+      <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-4">
         <h3 className="font-bold text-blue-800 mb-2">Understanding Dose Differences</h3>
         <ul className="text-sm text-blue-700 space-y-1">
           <li>• Second doses often generate more reports due to stronger immune responses</li>

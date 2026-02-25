@@ -119,8 +119,52 @@ tbody tr:nth-child(even) {
 
 /* Print styles */
 @media print {
-  nav, footer, .back-to-top {
+  nav, footer, .back-to-top, .disclaimer-banner, button[aria-label] {
     display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: #000 !important;
+    background: #fff !important;
+  }
+  
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+  
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+  
+  a[href^="/"]::after,
+  a[href^="#"]::after {
+    content: "";
+  }
+  
+  .recharts-wrapper, .recharts-surface {
+    max-width: 100% !important;
+  }
+  
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  table, figure, img {
+    page-break-inside: avoid;
+  }
+  
+  .max-w-7xl, .max-w-4xl {
+    max-width: 100% !important;
+    padding: 0 !important;
   }
 }
 

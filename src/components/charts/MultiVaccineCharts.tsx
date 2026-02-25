@@ -68,7 +68,7 @@ export default function MultiVaccineCharts({ top20Data, pediatricData, covidData
         </div>
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
         <h4 className="font-bold text-blue-800 mb-2">Co-Administration Safety</h4>
         <p className="text-sm text-blue-700">
           Multiple vaccines given together have been extensively studied and are considered safe. 

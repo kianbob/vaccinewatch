@@ -75,11 +75,11 @@ export default function CovidVsFluPage() {
           But the numbers alone don&apos;t tell the full story.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-danger/5 border border-danger/20 rounded-lg p-6">
+          <div className="bg-danger/5 border border-danger/20 rounded-xl p-6">
             <div className="text-2xl font-bold text-danger mb-1">{formatNumber(covidTotal)}</div>
             <div className="text-gray-700">COVID-19 vaccine reports</div>
           </div>
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
             <div className="text-2xl font-bold text-primary mb-1">{formatNumber(fluTotal)}</div>
             <div className="text-gray-700">Influenza vaccine reports</div>
           </div>
@@ -125,7 +125,7 @@ export default function CovidVsFluPage() {
         <CovidVsFluCharts comparisonData={comparisonData} yearlyData={fluYearlyData} />
       </div>
 
-      <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-12">
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
         <ul className="space-y-3 text-gray-700">
           <li className="flex items-start">
@@ -150,11 +150,11 @@ export default function CovidVsFluPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">COVID-19 Impact on VAERS</div>
             <div className="text-sm text-gray-500">The full pandemic story</div>
           </Link>
-          <Link href="/analysis/reporting-trends" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/reporting-trends" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">35 Years of Reporting</div>
             <div className="text-sm text-gray-500">Historical trends</div>
           </Link>

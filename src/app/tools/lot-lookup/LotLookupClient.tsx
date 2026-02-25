@@ -55,7 +55,7 @@ export default function LotLookupClient() {
 
   if (loading) {
     return (
-      <div className="h-64 bg-gray-100 animate-pulse rounded-lg flex items-center justify-center">
+      <div className="h-64 bg-gray-100 animate-pulse rounded-xl flex items-center justify-center">
         <span className="text-gray-500">Loading lot number data...</span>
       </div>
     )
@@ -92,25 +92,25 @@ export default function LotLookupClient() {
 
       {/* Search Results */}
       {searchResult && (
-        <div className="bg-white border border-gray-200 rounded-lg p-6">
+        <div className="bg-white border border-gray-200 rounded-xl p-6">
           <h3 className="text-lg font-bold text-gray-900 mb-4">
             Lot Number: {searchResult.lot}
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
               <div className="text-2xl font-bold text-blue-700">
                 {formatNumber(searchResult.reports)}
               </div>
               <div className="text-sm text-blue-600">Total Reports</div>
             </div>
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
+            <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
               <div className="text-2xl font-bold text-red-700">
                 {formatNumber(searchResult.died)}
               </div>
               <div className="text-sm text-red-600">Death Reports</div>
             </div>
-            <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 text-center">
+            <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 text-center">
               <div className="text-2xl font-bold text-orange-700">
                 {formatNumber(searchResult.hosp)}
               </div>
@@ -118,7 +118,7 @@ export default function LotLookupClient() {
             </div>
           </div>
 
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
             <h4 className="font-bold text-yellow-800 mb-2">⚠️ Critical Context</h4>
             <p className="text-sm text-yellow-700">
               These numbers reflect raw report counts for lot {searchResult.lot}. Without knowing:
@@ -137,7 +137,7 @@ export default function LotLookupClient() {
       )}
 
       {notFound && (
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 text-center">
+        <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center">
           <h3 className="text-lg font-bold text-gray-700 mb-2">
             Lot "{searchTerm}" Not Found
           </h3>
@@ -162,7 +162,7 @@ export default function LotLookupClient() {
           {lotData.slice(0, 6).map((lot) => (
             <div 
               key={lot.lot} 
-              className="bg-gray-50 border border-gray-200 rounded-lg p-4 cursor-pointer hover:bg-gray-100"
+              className="bg-gray-50 border border-gray-200 rounded-xl p-4 cursor-pointer hover:bg-gray-100"
               onClick={() => {
                 setSearchTerm(lot.lot)
                 setSearchResult(lot)

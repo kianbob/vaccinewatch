@@ -28,7 +28,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:bg-primary/90 transition-colors">
+            <div className="w-8 h-8 bg-primary rounded-xl flex items-center justify-center group-hover:bg-primary/90 transition-colors">
               <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clipRule="evenodd" />
               </svg>
@@ -44,7 +44,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                   isActive(item.href)
                     ? 'bg-primary/10 text-primary'
                     : 'text-gray-600 hover:text-primary hover:bg-gray-50'
@@ -55,7 +55,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/search"
-              className={`ml-2 p-2 rounded-lg transition-all duration-200 ${
+              className={`ml-2 p-2 rounded-xl transition-all duration-200 ${
                 isActive('/search')
                   ? 'bg-primary/10 text-primary'
                   : 'text-gray-500 hover:text-primary hover:bg-gray-50'
@@ -71,7 +71,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors"
+            className="md:hidden p-2 rounded-xl text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-4 py-3 rounded-lg font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-xl font-medium transition-colors ${
                     isActive(item.href)
                       ? 'bg-primary/10 text-primary'
                       : 'text-gray-600 hover:text-primary hover:bg-gray-50'
@@ -104,7 +104,7 @@ export default function Navbar() {
               ))}
               <Link
                 href="/search"
-                className={`px-4 py-3 rounded-lg font-medium transition-colors ${
+                className={`px-4 py-3 rounded-xl font-medium transition-colors ${
                   isActive('/search')
                     ? 'bg-primary/10 text-primary'
                     : 'text-gray-600 hover:text-primary hover:bg-gray-50'

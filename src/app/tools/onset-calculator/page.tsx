@@ -46,7 +46,7 @@ export default function OnsetCalculatorPage() {
 
       <OnsetCalculatorClient />
 
-      <div className="mt-8 bg-amber-50 border border-amber-200 rounded-lg p-4">
+      <div className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-4">
         <h3 className="font-bold text-amber-800 mb-2">Important Notes</h3>
         <ul className="text-sm text-amber-700 space-y-1">
           <li>• This tool shows when adverse events are reported, not when they necessarily begin</li>

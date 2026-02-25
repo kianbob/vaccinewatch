@@ -39,7 +39,7 @@ export default function RiskContextPage() {
 
       <RiskContextClient />
 
-      <div className="mt-8 bg-green-50 border border-green-200 rounded-lg p-4">
+      <div className="mt-8 bg-primary/5 border border-primary/20 rounded-xl p-4">
         <h3 className="font-bold text-green-800 mb-2">Why Context Matters</h3>
         <ul className="text-sm text-green-700 space-y-1">
           <li>• Raw VAERS numbers can appear scary without proper denominators</li>

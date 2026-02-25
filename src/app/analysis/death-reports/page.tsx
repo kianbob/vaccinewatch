@@ -31,7 +31,7 @@ export default function DeathReportsPage() {
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Understanding Death Reports in VAERS' }]} />
 
       {/* Strong disclaimer upfront */}
-      <div className="bg-amber-100 border border-amber-400 rounded-lg p-6 mb-8">
+      <div className="bg-amber-100 border border-amber-400 rounded-xl p-6 mb-8">
         <h3 className="text-lg font-semibold text-amber-900 mb-2">Critical Context Before Reading</h3>
         <p className="text-amber-800 text-sm">
           <strong>&quot;Death reported to VAERS&quot; does NOT mean &quot;death caused by a vaccine.&quot;</strong> VAERS
@@ -50,15 +50,15 @@ export default function DeathReportsPage() {
           {formatNumber(totalDeaths)} death reports over 35 years. Context is everything.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-danger/5 border border-danger/20 rounded-lg p-5 text-center">
+          <div className="bg-danger/5 border border-danger/20 rounded-xl p-5 text-center">
             <div className="text-3xl font-bold text-danger">{formatNumber(totalDeaths)}</div>
             <div className="text-gray-700 text-sm">Total Death Reports (1990-2026)</div>
           </div>
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 text-center">
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
             <div className="text-3xl font-bold text-gray-700">{deathRate}%</div>
             <div className="text-gray-700 text-sm">Of all reports mention death</div>
           </div>
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 text-center">
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
             <div className="text-3xl font-bold text-gray-700">{formatNumber(preCovidDeathAvg)}</div>
             <div className="text-gray-700 text-sm">Avg annual deaths (pre-COVID)</div>
           </div>
@@ -129,7 +129,7 @@ export default function DeathReportsPage() {
         </p>
       </div>
 
-      <div className="bg-danger/5 border border-danger/20 rounded-lg p-6 mb-12">
+      <div className="bg-danger/5 border border-danger/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
         <ul className="space-y-3 text-gray-700">
           <li className="flex items-start">
@@ -154,11 +154,11 @@ export default function DeathReportsPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/analysis/age-patterns" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/age-patterns" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Age Patterns</div>
             <div className="text-sm text-gray-500">How age affects outcomes</div>
           </Link>
-          <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">COVID-19 Impact</div>
             <div className="text-sm text-gray-500">The pandemic&apos;s effect on VAERS</div>
           </Link>

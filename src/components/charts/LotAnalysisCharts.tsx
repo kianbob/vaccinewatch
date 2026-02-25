@@ -179,19 +179,19 @@ export default function LotAnalysisCharts({ lotData }: LotAnalysisChartsProps) {
       <div>
         <h3 className="text-xl font-bold text-gray-900 mb-4">Lot Analysis Summary</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-gray-700">
               {formatNumber(lotData.length)}
             </div>
             <div className="text-sm text-gray-600">Total Lots (5+ reports)</div>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-blue-700">
               {formatNumber(lotData.reduce((sum, lot) => sum + lot.reports, 0))}
             </div>
             <div className="text-sm text-blue-600">Total Reports</div>
           </div>
-          <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 text-center">
+          <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-orange-700">
               {Math.round(lotData.reduce((sum, lot) => sum + lot.reports, 0) / lotData.length)}
             </div>

@@ -43,7 +43,7 @@ export default function TopSymptomsPage() {
           The 20 most commonly reported adverse symptoms in VAERS.
           Most of the top symptoms are expected immune responses — fever, headache, pain at the injection site.
         </p>
-        <div className="bg-accent/5 border border-accent/20 rounded-lg p-6">
+        <div className="bg-accent/5 border border-accent/20 rounded-xl p-6">
           <div className="text-3xl font-bold text-accent mb-1">{formatNumber(top20[0]?.reports || 0)}</div>
           <div className="text-gray-700">
             reports for <strong>{top20[0]?.name || 'Pyrexia (Fever)'}</strong> — the most commonly reported symptom, representing a normal immune response to vaccination
@@ -81,7 +81,7 @@ export default function TopSymptomsPage() {
       {/* Top 20 Table */}
       <div className="mb-12">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Top 20 Symptoms</h2>
-        <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
@@ -117,7 +117,7 @@ export default function TopSymptomsPage() {
         </div>
       </div>
 
-      <div className="bg-accent/5 border border-accent/20 rounded-lg p-6 mb-12">
+      <div className="bg-accent/5 border border-accent/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
         <ul className="space-y-3 text-gray-700">
           <li className="flex items-start">
@@ -138,11 +138,11 @@ export default function TopSymptomsPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/analysis/myocarditis" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/myocarditis" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Myocarditis Deep Dive</div>
             <div className="text-sm text-gray-500">A closely-watched safety signal</div>
           </Link>
-          <Link href="/symptoms" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/symptoms" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">All 500 Symptoms</div>
             <div className="text-sm text-gray-500">Browse the complete symptom database</div>
           </Link>

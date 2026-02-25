@@ -66,19 +66,19 @@ export default function SeriousOutcomesPage() {
           mild reactions to serious events — provides essential context for interpreting the data.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-danger/5 border border-danger/20 rounded-lg p-4">
+          <div className="bg-danger/5 border border-danger/20 rounded-xl p-4">
             <div className="text-xl font-bold text-danger">{deathRate}%</div>
             <div className="text-xs text-gray-600">Death rate</div>
           </div>
-          <div className="bg-accent/5 border border-accent/20 rounded-lg p-4">
+          <div className="bg-accent/5 border border-accent/20 rounded-xl p-4">
             <div className="text-xl font-bold text-accent">{hospRate}%</div>
             <div className="text-xs text-gray-600">Hosp. rate</div>
           </div>
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-4">
             <div className="text-xl font-bold text-primary">{erRate}%</div>
             <div className="text-xs text-gray-600">ER visit rate</div>
           </div>
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
             <div className="text-xl font-bold text-gray-800">{disabledRate}%</div>
             <div className="text-xs text-gray-600">Disability rate</div>
           </div>
@@ -126,7 +126,7 @@ export default function SeriousOutcomesPage() {
         <SeriousOutcomesCharts outcomeBreakdown={outcomeBreakdown} topVaccinesBySeverity={topVaccinesBySeverity} />
       </div>
 
-      <div className="bg-danger/5 border border-danger/20 rounded-lg p-6 mb-12">
+      <div className="bg-danger/5 border border-danger/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
         <ul className="space-y-3 text-gray-700">
           <li className="flex items-start">
@@ -151,11 +151,11 @@ export default function SeriousOutcomesPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/analysis/death-reports" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/death-reports" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Understanding Death Reports</div>
             <div className="text-sm text-gray-500">What death reports mean</div>
           </Link>
-          <Link href="/analysis/elderly" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/elderly" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Elderly Analysis</div>
             <div className="text-sm text-gray-500">65+ outcomes deep dive</div>
           </Link>

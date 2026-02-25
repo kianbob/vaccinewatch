@@ -53,7 +53,7 @@ export default function OnsetCalculatorClient() {
 
   if (loading) {
     return (
-      <div className="h-96 bg-gray-100 animate-pulse rounded-lg flex items-center justify-center">
+      <div className="h-96 bg-gray-100 animate-pulse rounded-xl flex items-center justify-center">
         <span className="text-gray-500">Loading onset timing data...</span>
       </div>
     )
@@ -61,7 +61,7 @@ export default function OnsetCalculatorClient() {
 
   if (!onsetData) {
     return (
-      <div className="h-96 bg-red-50 rounded-lg flex items-center justify-center">
+      <div className="h-96 bg-red-50 rounded-xl flex items-center justify-center">
         <span className="text-red-600">Error loading onset timing data</span>
       </div>
     )
@@ -109,15 +109,15 @@ export default function OnsetCalculatorClient() {
       {/* Key Statistics */}
       {totalReports > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 text-center">
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-primary">{formatNumber(totalReports)}</div>
             <div className="text-sm text-gray-600">Total Reports with Timing Data</div>
           </div>
-          <div className="bg-accent/5 border border-accent/20 rounded-lg p-4 text-center">
+          <div className="bg-accent/5 border border-accent/20 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-accent">{within3DaysPercent}%</div>
             <div className="text-sm text-gray-600">Reports Within 3 Days</div>
           </div>
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-gray-700">{formatNumber(within3Days)}</div>
             <div className="text-sm text-gray-600">Reports in First 3 Days</div>
           </div>
@@ -153,14 +153,14 @@ export default function OnsetCalculatorClient() {
           </div>
         </div>
       ) : (
-        <div className="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
+        <div className="h-64 bg-gray-50 rounded-xl flex items-center justify-center">
           <span className="text-gray-500">No timing data available for {selectedVaccine}</span>
         </div>
       )}
 
       {/* Interpretation */}
       {totalReports > 0 && (
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
           <h4 className="font-bold text-blue-800 mb-2">What This Means</h4>
           <p className="text-sm text-blue-700">
             For <strong>{selectedVaccine}</strong> vaccines, {within3DaysPercent}% of adverse events with known timing 

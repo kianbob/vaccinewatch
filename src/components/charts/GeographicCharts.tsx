@@ -5,7 +5,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 export default function GeographicCharts({ topStates, perCapitaStates }: { topStates: any[]; perCapitaStates: any[] }) {
   return (
     <div className="space-y-8">
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <div className="bg-white rounded-xl border border-gray-200 p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">Top States by Total Reports</h3>
         <ResponsiveContainer width="100%" height={350}>
           <BarChart data={topStates.slice(0, 15)} layout="vertical">
@@ -19,7 +19,7 @@ export default function GeographicCharts({ topStates, perCapitaStates }: { topSt
       </div>
 
       {perCapitaStates.length > 0 && (
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Top States by Reports Per 100K Population</h3>
           <ResponsiveContainer width="100%" height={350}>
             <BarChart data={perCapitaStates.slice(0, 15)} layout="vertical">

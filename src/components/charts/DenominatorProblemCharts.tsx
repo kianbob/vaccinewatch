@@ -213,7 +213,7 @@ export default function DenominatorProblemCharts({ vaccineData }: DenominatorPro
             </div>
           </div>
         </div>
-        <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+        <div className="mt-4 p-4 bg-blue-50 rounded-xl">
           <p className="text-sm text-blue-800">
             <strong>The revelation:</strong> Vaccine A was given to 1,000,000 people (0.1% adverse event rate) 
             while Vaccine B was given to 1,000 people (10% adverse event rate). 
@@ -226,21 +226,21 @@ export default function DenominatorProblemCharts({ vaccineData }: DenominatorPro
       <div>
         <h3 className="text-xl font-bold text-gray-900 mb-4">COVID-19 Context: Why Numbers Matter</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
+          <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-red-700">
               {formatNumber(dataWithRates.find(d => d.vaccine === 'COVID-19')?.reports || 0)}
             </div>
             <div className="text-sm text-red-600">COVID-19 VAERS Reports</div>
             <div className="text-xs text-gray-500 mt-1">Looks scary without context</div>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-blue-700">
               {formatDoses(dataWithRates.find(d => d.vaccine === 'COVID-19')?.estimatedDoses || 0)}
             </div>
             <div className="text-sm text-blue-600">Estimated Doses Given</div>
             <div className="text-xs text-gray-500 mt-1">The missing context</div>
           </div>
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+          <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
             <div className="text-2xl font-bold text-green-700">
               {Math.round(dataWithRates.find(d => d.vaccine === 'COVID-19')?.reportsPerMillion || 0)}
             </div>

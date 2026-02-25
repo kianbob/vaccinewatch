@@ -55,7 +55,7 @@ export default function CovidImpactPage() {
           The COVID-19 pandemic fundamentally changed vaccine adverse event reporting.
           In 2021, VAERS received more reports than in the previous decade combined.
         </p>
-        <div className="bg-danger/5 border border-danger/20 rounded-lg p-6">
+        <div className="bg-danger/5 border border-danger/20 rounded-xl p-6">
           <div className="text-3xl font-bold text-danger mb-1">{formatNumber(year2021?.reports || 768706)}</div>
           <div className="text-gray-700">reports in 2021 alone — a <strong>{Math.round((year2021?.reports || 768706) / preCovidAvg)}x</strong> increase over the pre-COVID average of {formatNumber(preCovidAvg)}/year</div>
         </div>
@@ -120,7 +120,7 @@ export default function CovidImpactPage() {
       </div>
 
       {/* Key Takeaways */}
-      <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-12">
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
         <ul className="space-y-3 text-gray-700">
           <li className="flex items-start">
@@ -146,11 +146,11 @@ export default function CovidImpactPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/analysis/reporting-trends" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/reporting-trends" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">35 Years of VAERS Reporting</div>
             <div className="text-sm text-gray-500">The full historical context</div>
           </Link>
-          <Link href="/analysis/death-reports" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/death-reports" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Understanding Death Reports</div>
             <div className="text-sm text-gray-500">What death reports actually mean</div>
           </Link>

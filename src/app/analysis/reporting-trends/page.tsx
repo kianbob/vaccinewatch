@@ -39,15 +39,15 @@ export default function ReportingTrendsPage() {
           From {formatNumber(year1990?.reports || 2214)} reports in 1990 to {formatNumber(year2021?.reports || 768706)} in 2021 — and the journey back to baseline.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-5 text-center">
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-5 text-center">
             <div className="text-2xl font-bold text-primary">{formatNumber(year1990?.reports || 2214)}</div>
             <div className="text-gray-700 text-sm">1990 (first year)</div>
           </div>
-          <div className="bg-danger/5 border border-danger/20 rounded-lg p-5 text-center">
+          <div className="bg-danger/5 border border-danger/20 rounded-xl p-5 text-center">
             <div className="text-2xl font-bold text-danger">{formatNumber(year2021?.reports || 768706)}</div>
             <div className="text-gray-700 text-sm">2021 (peak)</div>
           </div>
-          <div className="bg-accent/5 border border-accent/20 rounded-lg p-5 text-center">
+          <div className="bg-accent/5 border border-accent/20 rounded-xl p-5 text-center">
             <div className="text-2xl font-bold text-accent">{formatNumber(year2025?.reports || 40283)}</div>
             <div className="text-gray-700 text-sm">2025 (declining)</div>
           </div>
@@ -94,7 +94,7 @@ export default function ReportingTrendsPage() {
         </p>
       </div>
 
-      <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-12">
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
         <ul className="space-y-3 text-gray-700">
           <li className="flex items-start">
@@ -115,11 +115,11 @@ export default function ReportingTrendsPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">COVID-19 Impact</div>
             <div className="text-sm text-gray-500">Deeper dive into the pandemic era</div>
           </Link>
-          <Link href="/analysis/top-symptoms" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis/top-symptoms" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Top Symptoms</div>
             <div className="text-sm text-gray-500">Most commonly reported adverse events</div>
           </Link>

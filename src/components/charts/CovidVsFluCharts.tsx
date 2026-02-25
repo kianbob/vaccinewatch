@@ -5,7 +5,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 export default function CovidVsFluCharts({ comparisonData, yearlyData }: { comparisonData: any[]; yearlyData: any[] }) {
   return (
     <div className="space-y-8">
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <div className="bg-white rounded-xl border border-gray-200 p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">COVID-19 vs Influenza: Key Metrics</h3>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={comparisonData}>
@@ -21,7 +21,7 @@ export default function CovidVsFluCharts({ comparisonData, yearlyData }: { compa
       </div>
 
       {yearlyData.length > 0 && (
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Flu Vaccine Reports Over Time</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={yearlyData}>

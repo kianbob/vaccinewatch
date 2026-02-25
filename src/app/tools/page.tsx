@@ -108,7 +108,7 @@ export default function ToolsIndexPage() {
         ))}
       </div>
 
-      <div className="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <div className="mt-12 bg-blue-50 border border-blue-200 rounded-xl p-6">
         <h3 className="text-lg font-bold text-blue-800 mb-3">Using These Tools Responsibly</h3>
         <ul className="text-sm text-blue-700 space-y-2">
           <li className="flex items-start">
@@ -133,25 +133,25 @@ export default function ToolsIndexPage() {
       <div className="mt-8 border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">More Tools</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/compare" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/compare" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="flex items-center gap-2">
               <span>⚖️</span>
               <div className="font-medium text-gray-900">Vaccine Comparison</div>
             </div>
             <div className="text-sm text-gray-500">Side-by-side vaccine analysis</div>
           </Link>
-          <Link href="/search" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/search" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="flex items-center gap-2">
               <span>🔎</span>
               <div className="font-medium text-gray-900">VAERS Search</div>
             </div>
             <div className="text-sm text-gray-500">Search vaccines, symptoms, and data</div>
           </Link>
-          <Link href="/analysis" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/analysis" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Analysis Articles</div>
             <div className="text-sm text-gray-500">In-depth analysis and context</div>
           </Link>
-          <Link href="/about" className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <Link href="/about" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">About VAERS</div>
             <div className="text-sm text-gray-500">Understanding the data source</div>
           </Link>

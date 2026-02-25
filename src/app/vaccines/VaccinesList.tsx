@@ -59,11 +59,11 @@ export default function VaccinesList({ vaccines }: { vaccines: Vaccine[] }) {
           placeholder="Search vaccines by name or type..."
           value={search}
           onChange={e => setSearch(e.target.value)}
-          className="w-full max-w-md px-4 py-2.5 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-full max-w-md px-4 py-2.5 rounded-xl border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         {search && <p className="text-sm text-gray-400 mt-2">{filtered.length} results</p>}
       </div>
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-x-auto">
+      <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-x-auto">
         <table className="w-full">
           <thead className="bg-gray-50">
             <tr>

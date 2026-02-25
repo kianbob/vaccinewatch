@@ -34,7 +34,7 @@ export default function SymptomVaccinesChart({ data, symptomName }: SymptomVacci
   }
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm border">
+    <div className="bg-white p-6 rounded-xl shadow-sm border">
       <div className="mb-4">
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
           Vaccines Most Associated with {symptomName}

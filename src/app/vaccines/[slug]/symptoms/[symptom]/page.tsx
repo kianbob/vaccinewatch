@@ -152,7 +152,7 @@ export default async function VaccineSymptomPage({
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               {match.name} and {vaccineName}
             </h2>
@@ -175,7 +175,7 @@ export default async function VaccineSymptomPage({
             </p>
           </div>
 
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-blue-900 mb-3">
               Important Context
             </h3>
@@ -196,13 +196,13 @@ export default async function VaccineSymptomPage({
           </div>
 
           {nearby.length > 0 && (
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-gray-50 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Similarly Ranked Symptoms
               </h3>
               <div className="space-y-2">
                 {nearby.map(s => (
-                  <Link key={s.slug} href={`/vaccines/${slug}/symptoms/${s.slug}`} className="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200 hover:border-primary/30 transition-colors">
+                  <Link key={s.slug} href={`/vaccines/${slug}/symptoms/${s.slug}`} className="flex items-center justify-between p-3 bg-white rounded-xl border border-gray-200 hover:border-primary/30 transition-colors">
                     <span className="text-sm font-medium text-gray-900">{s.name}</span>
                     <span className="text-sm text-gray-500">{formatNumber(s.count)} reports</span>
                   </Link>
@@ -213,7 +213,7 @@ export default async function VaccineSymptomPage({
         </div>
 
         <div className="space-y-6">
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6">
+          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Facts</h3>
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">
@@ -239,22 +239,22 @@ export default async function VaccineSymptomPage({
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-6">
+          <div className="bg-gray-50 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Related Pages</h3>
             <div className="space-y-3">
-              <Link href={`/vaccines/${slug}`} className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+              <Link href={`/vaccines/${slug}`} className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                 {vaccineName} Overview
               </Link>
-              <Link href={`/symptoms/${symptom}`} className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+              <Link href={`/symptoms/${symptom}`} className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                 {match.name} (All Vaccines)
               </Link>
-              <Link href="/analysis/top-symptoms" className="block w-full text-center bg-primary text-white rounded-lg py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors">
+              <Link href="/analysis/top-symptoms" className="block w-full text-center bg-primary text-white rounded-xl py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors">
                 Top Symptoms Analysis
               </Link>
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-4 text-xs text-gray-600">
+          <div className="bg-gray-50 rounded-xl p-4 text-xs text-gray-600">
             <h4 className="font-semibold text-gray-900 mb-2">Data Source</h4>
             <p>
               This data comes from the{' '}
