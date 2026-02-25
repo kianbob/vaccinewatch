@@ -32,6 +32,7 @@ export default function VaricellaSideEffectsPage() {
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'Varicella (Chickenpox) Vaccine' }
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are common chickenpox vaccine side effects?","acceptedAnswer":{"@type":"Answer","text":"Common side effects include injection site soreness, mild rash (about 4% of children), low-grade fever, and fatigue."}},{"@type":"Question","name":"Can you get chickenpox from the vaccine?","acceptedAnswer":{"@type":"Answer","text":"A mild rash with a few spots is possible but rare. This is much milder than a full chickenpox infection."}},{"@type":"Question","name":"How many chickenpox vaccine reports are in VAERS?","acceptedAnswer":{"@type":"Answer","text":"VAERS contains over 93,000 varicella reports reflecting decades of routine childhood vaccination since 1995."}}]}' }} />
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">

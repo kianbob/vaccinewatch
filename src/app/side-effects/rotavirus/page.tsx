@@ -32,6 +32,7 @@ export default function RotavirusSideEffectsPage() {
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'Rotavirus Vaccine' }
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are common rotavirus vaccine side effects?","acceptedAnswer":{"@type":"Answer","text":"Common side effects include mild diarrhea, vomiting, irritability, and low-grade fever. The oral vaccine is generally well-tolerated."}},{"@type":"Question","name":"Is there a risk of intussusception with rotavirus vaccine?","acceptedAnswer":{"@type":"Answer","text":"A small increased risk exists — about 1-5 extra cases per 100,000 infants, far lower than the risk from natural rotavirus infection."}},{"@type":"Question","name":"Why was RotaShield withdrawn?","acceptedAnswer":{"@type":"Answer","text":"RotaShield (1998) was withdrawn in 1999 due to elevated intussusception risk. Current vaccines (RotaTeq, Rotarix) are much safer."}}]}' }} />
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">

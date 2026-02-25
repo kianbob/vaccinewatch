@@ -32,6 +32,7 @@ export default function DTaPSideEffectsPage() {
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'DTaP Vaccine' }
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are common DTaP vaccine side effects?","acceptedAnswer":{"@type":"Answer","text":"Common side effects include fussiness, fatigue, injection site swelling, decreased appetite, and vomiting — typical for childhood vaccines."}},{"@type":"Question","name":"Why was DTP replaced by DTaP?","acceptedAnswer":{"@type":"Answer","text":"The older whole-cell DTP vaccine had higher rates of fever and fussiness. DTaP uses acellular pertussis for fewer side effects."}},{"@type":"Question","name":"How many DTaP vaccine reports are in VAERS?","acceptedAnswer":{"@type":"Answer","text":"VAERS contains over 66,000 DTaP reports. Many historical reports also reference the older DTP formulation."}}]}' }} />
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">

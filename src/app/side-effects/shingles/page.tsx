@@ -32,6 +32,7 @@ export default function ShinglesSideEffectsPage() {
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'Shingles Vaccine' }
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the most common shingles vaccine side effects?","acceptedAnswer":{"@type":"Answer","text":"The most commonly reported side effects in VAERS for shingles vaccines include injection site pain, redness, swelling, fatigue, headache, and muscle pain. Shingrix tends to cause stronger reactions than the older Zostavax vaccine."}},{"@type":"Question","name":"Is Shingrix safer than Zostavax?","acceptedAnswer":{"@type":"Answer","text":"Shingrix replaced Zostavax in 2020 due to superior efficacy (>90% vs ~51%). While Shingrix has more reactogenicity, it has a better long-term safety profile. Zostavax was withdrawn from the U.S. market."}},{"@type":"Question","name":"How many shingles vaccine reports are in VAERS?","acceptedAnswer":{"@type":"Answer","text":"VAERS contains over 140,000 shingles vaccine reports spanning both Zostavax and Shingrix, reflecting widespread use in adults 50+ years old."}}]}' }} />
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">

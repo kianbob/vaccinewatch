@@ -32,6 +32,7 @@ export default function PolioSideEffectsPage() {
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'Polio Vaccine' }
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are common polio vaccine side effects?","acceptedAnswer":{"@type":"Answer","text":"The inactivated polio vaccine (IPV) typically causes mild injection site redness, swelling, and soreness. Serious reactions are extremely rare."}},{"@type":"Question","name":"Is the oral polio vaccine still used in the US?","acceptedAnswer":{"@type":"Answer","text":"No. The U.S. switched to IPV exclusively in 2000. OPV carried a small risk of vaccine-derived paralysis."}}]}' }} />
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">

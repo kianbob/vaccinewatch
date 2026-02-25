@@ -32,6 +32,7 @@ export default function HepASideEffectsPage() {
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'Hepatitis A Vaccine' }
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are common hepatitis A vaccine side effects?","acceptedAnswer":{"@type":"Answer","text":"Common side effects include injection site soreness, headache, fatigue, and low-grade fever — typically resolving within 1-2 days."}},{"@type":"Question","name":"How many hepatitis A vaccine reports are in VAERS?","acceptedAnswer":{"@type":"Answer","text":"Approximately 48,000 reports. Two main brands are tracked: Havrix and Vaqta, both with similar safety profiles."}}]}' }} />
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">

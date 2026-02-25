@@ -32,6 +32,7 @@ export default function MeningococcalSideEffectsPage() {
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'Meningococcal Vaccine' }
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are common meningococcal vaccine side effects?","acceptedAnswer":{"@type":"Answer","text":"Common side effects include injection site pain, headache, fatigue, and muscle aches."}},{"@type":"Question","name":"What is the difference between MenACWY and MenB?","acceptedAnswer":{"@type":"Answer","text":"MenACWY protects against serogroups A, C, W, Y (routine at 11-12). MenB targets serogroup B (recommended for at-risk teens/young adults)."}}]}' }} />
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">

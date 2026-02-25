@@ -32,6 +32,7 @@ export default function TdapSideEffectsPage() {
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'Tdap Vaccine' }
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the most common Tdap vaccine side effects?","acceptedAnswer":{"@type":"Answer","text":"The most frequently reported Tdap side effects include injection site pain, headache, fatigue, fever, and body aches. These typically resolve within 1-3 days."}},{"@type":"Question","name":"Is Tdap safe during pregnancy?","acceptedAnswer":{"@type":"Answer","text":"CDC recommends Tdap during each pregnancy (weeks 27-36) to protect newborns from whooping cough. VAERS data includes pregnancy reports, though most events are mild."}},{"@type":"Question","name":"What is the difference between Tdap and DTaP?","acceptedAnswer":{"@type":"Answer","text":"DTaP is for children under 7, while Tdap is the booster for adolescents and adults with lower doses of diphtheria and pertussis toxoids."}}]}' }} />
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">

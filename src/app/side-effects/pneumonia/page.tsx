@@ -32,6 +32,7 @@ export default function PneumoniaSideEffectsPage() {
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'Pneumonia Vaccine' }
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are common pneumococcal vaccine side effects?","acceptedAnswer":{"@type":"Answer","text":"Common reported side effects include injection site pain, redness, fatigue, headache, and muscle aches."}},{"@type":"Question","name":"How many pneumonia vaccine types are there?","acceptedAnswer":{"@type":"Answer","text":"Several types exist: PCV13, PCV15 (Vaxneuvance), PCV20 (Prevnar 20), and PPSV23 (Pneumovax). Newer conjugate vaccines are gradually replacing older formulations."}}]}' }} />
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">

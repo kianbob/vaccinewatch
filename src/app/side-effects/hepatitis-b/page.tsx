@@ -32,6 +32,7 @@ export default function HepatitisBSideEffectsPage() {
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'Hepatitis B Vaccine' }
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are common hepatitis B vaccine side effects?","acceptedAnswer":{"@type":"Answer","text":"Common side effects include injection site soreness, fatigue, headache, and low-grade fever. These usually resolve within a day or two."}},{"@type":"Question","name":"Why is hepatitis B vaccine given at birth?","acceptedAnswer":{"@type":"Answer","text":"The first dose is given within 24 hours of birth because hepatitis B can transmit from mother to infant during delivery."}},{"@type":"Question","name":"How many hepatitis B vaccine reports are in VAERS?","acceptedAnswer":{"@type":"Answer","text":"VAERS contains over 73,000 hepatitis B vaccine reports spanning 35 years of universal infant vaccination."}}]}' }} />
 
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
