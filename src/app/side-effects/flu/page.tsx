@@ -41,6 +41,15 @@ export default function FluSideEffectsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What are common flu vaccine side effects?', acceptedAnswer: { '@type': 'Answer', text: 'The most commonly reported flu vaccine side effects in VAERS include injection site soreness, headache, fatigue, muscle aches, and low-grade fever. These are normal immune responses that typically resolve within 1-2 days.' }},
+          { '@type': 'Question', name: 'Can the flu shot cause the flu?', acceptedAnswer: { '@type': 'Answer', text: 'No. Injectable flu vaccines contain inactivated virus and cannot cause influenza. Some people experience mild symptoms after vaccination, which represent normal immune activation, not actual flu infection. The nasal spray (FluMist) contains weakened live virus but also cannot cause actual flu.' }},
+          { '@type': 'Question', name: 'How many types of flu vaccines are there in VAERS?', acceptedAnswer: { '@type': 'Answer', text: 'VAERS tracks 11 different flu vaccine types, including trivalent, quadrivalent, high-dose (for seniors), cell-based, recombinant, adjuvanted, and nasal spray versions, each with different formulations and target populations.' }},
+        ],
+      }) }} />
       <Breadcrumbs items={[
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'Flu Vaccine' }

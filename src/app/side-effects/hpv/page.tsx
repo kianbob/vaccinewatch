@@ -28,6 +28,14 @@ export default function HpvSideEffectsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What are the side effects of the HPV vaccine (Gardasil)?', acceptedAnswer: { '@type': 'Answer', text: 'The most commonly reported HPV vaccine side effects in VAERS include injection site pain, fainting (syncope), dizziness, nausea, and headache. Fainting after HPV vaccination is notably more common than with other vaccines, particularly in adolescents, which is why a 15-minute observation period is recommended.' }},
+          { '@type': 'Question', name: 'Is the HPV vaccine safe?', acceptedAnswer: { '@type': 'Answer', text: 'The HPV vaccine (Gardasil 9) has been extensively studied in clinical trials and post-market surveillance. Over 135 million doses have been distributed in the U.S. The CDC, WHO, and FDA continue to affirm its safety profile. Serious adverse events are rare, and the vaccine prevents several types of cancer caused by HPV.' }},
+        ],
+      }) }} />
       <Breadcrumbs items={[
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'HPV Vaccine' }

@@ -28,6 +28,15 @@ export default function MmrSideEffectsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Does the MMR vaccine cause autism?', acceptedAnswer: { '@type': 'Answer', text: 'No. The original 1998 study claiming a link was retracted by The Lancet and its author lost his medical license for fraud. Multiple large-scale studies involving millions of children have found no connection between the MMR vaccine and autism. The timing coincidence (MMR given around 12-15 months, when autism symptoms often first appear) does not indicate causation.' }},
+          { '@type': 'Question', name: 'What are the most common MMR vaccine side effects?', acceptedAnswer: { '@type': 'Answer', text: 'The most commonly reported side effects in VAERS include fever, rash, injection site reactions, irritability, and upper respiratory symptoms. These are typical immune responses that usually resolve within a few days. Serious adverse events are rare.' }},
+          { '@type': 'Question', name: 'How common are serious MMR vaccine reactions?', acceptedAnswer: { '@type': 'Answer', text: 'Serious adverse events after MMR vaccination are very rare. Febrile seizures occur in about 1 in 3,000 doses and are typically self-limiting. Severe allergic reactions (anaphylaxis) occur in fewer than 1 per million doses. The benefits of preventing measles, mumps, and rubella far outweigh these small risks.' }},
+        ],
+      }) }} />
       <Breadcrumbs items={[
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'MMR Vaccine' }

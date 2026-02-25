@@ -44,6 +44,15 @@ export default function CovidSideEffectsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What are the most common COVID-19 vaccine side effects?', acceptedAnswer: { '@type': 'Answer', text: `The most commonly reported side effects in VAERS include headache, fatigue, pyrexia (fever), pain, and chills. These are expected immune responses that typically resolve within 1-3 days of vaccination.` }},
+          { '@type': 'Question', name: 'How many COVID-19 vaccine adverse event reports are in VAERS?', acceptedAnswer: { '@type': 'Answer', text: `VAERS contains over ${formatNumber(totalReports)} COVID-19 vaccine reports. This high number reflects the unprecedented scale of the vaccination campaign (670+ million doses in the U.S.), mandatory reporting requirements, and heightened public awareness — not necessarily higher risk.` }},
+          { '@type': 'Question', name: 'Are COVID-19 vaccine side effects more severe than other vaccines?', acceptedAnswer: { '@type': 'Answer', text: 'VAERS data shows COVID-19 vaccines have a similar serious outcome rate to many other vaccines when adjusted for reporting volume. The high raw numbers are primarily driven by the massive number of doses administered. See our denominator problem analysis for context.' }},
+        ],
+      }) }} />
       <Breadcrumbs items={[
         { label: 'Vaccine Side Effects', href: '/side-effects' },
         { label: 'COVID-19 Vaccine' }
