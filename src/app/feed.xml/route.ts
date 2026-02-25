@@ -159,6 +159,16 @@ export async function GET() {
     { path: '/vaccine-schedule', title: 'CDC Vaccine Schedule & VAERS Data', description: 'Recommended vaccine schedule with links to VAERS adverse event data for each vaccine.', date: '2026-02-25' },
     { path: '/vaccine-injuries', title: 'Vaccine Injuries — VAERS & VICP Data', description: 'Understanding vaccine injuries, VAERS data, and the Vaccine Injury Compensation Program.', date: '2026-02-25' },
     { path: '/vaers-database', title: 'VAERS Database — Search & Explore', description: '1.98M vaccine adverse event reports made searchable and understandable.', date: '2026-02-25' },
+    { path: '/side-effects/tdap', title: 'Tdap Vaccine Side Effects', description: 'Tetanus, diphtheria, pertussis vaccine VAERS data with pregnancy context.', date: '2026-02-25' },
+    { path: '/side-effects/hepatitis-b', title: 'Hepatitis B Vaccine Side Effects', description: 'Engerix-B VAERS data — given at birth, 73K+ reports analyzed.', date: '2026-02-25' },
+    { path: '/side-effects/pneumonia', title: 'Pneumonia Vaccine Side Effects', description: 'Pneumovax and Prevnar VAERS data covering all pneumococcal vaccine types.', date: '2026-02-25' },
+    { path: '/side-effects/polio', title: 'Polio Vaccine Side Effects', description: 'IPV and historical OPV VAERS data with polio eradication context.', date: '2026-02-25' },
+    { path: '/side-effects/varicella', title: 'Varicella (Chickenpox) Vaccine Side Effects', description: 'Varivax VAERS data: 93K+ reports with MMRV comparison.', date: '2026-02-25' },
+    { path: '/side-effects/dtap', title: 'DTaP Vaccine Side Effects', description: 'Childhood diphtheria, tetanus, pertussis vaccine — DTaP vs DTP history.', date: '2026-02-25' },
+    { path: '/side-effects/hepatitis-a', title: 'Hepatitis A Vaccine Side Effects', description: 'Havrix and Vaqta VAERS data — 48K+ reports analyzed.', date: '2026-02-25' },
+    { path: '/side-effects/meningococcal', title: 'Meningococcal Vaccine Side Effects', description: 'Menactra and Menveo VAERS data covering MenACWY and MenB vaccines.', date: '2026-02-25' },
+    { path: '/side-effects/rotavirus', title: 'Rotavirus Vaccine Side Effects', description: 'RotaTeq and Rotarix VAERS data with intussusception context.', date: '2026-02-25' },
+    { path: '/vaccine-safety', title: 'Vaccine Safety — What VAERS Data Shows', description: 'A data-driven look at vaccine safety through 1.98 million VAERS reports.', date: '2026-02-25' },
   ]
 
   const analysisItems = articles.map(a => `    <item>
