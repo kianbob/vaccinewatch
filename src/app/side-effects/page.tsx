@@ -116,6 +116,38 @@ export default function SideEffectsPage() {
         ))}
       </div>
 
+      {/* Vaccine-specific guides */}
+      <div className="mb-12">
+        <h2 className={`text-2xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>Vaccine-Specific Guides</h2>
+        <p className="text-gray-600 mb-6">In-depth side effect analysis for the most commonly searched vaccines:</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <Link href="/side-effects/covid" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="text-lg font-bold text-gray-900">COVID-19</div>
+            <div className="text-sm text-gray-500">1.1M+ reports · Pfizer, Moderna, J&J</div>
+          </Link>
+          <Link href="/side-effects/flu" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="text-lg font-bold text-gray-900">Influenza (Flu)</div>
+            <div className="text-sm text-gray-500">11 flu vaccine types analyzed</div>
+          </Link>
+          <Link href="/side-effects/mmr" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="text-lg font-bold text-gray-900">MMR</div>
+            <div className="text-sm text-gray-500">Measles, mumps, rubella data</div>
+          </Link>
+          <Link href="/side-effects/hpv" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="text-lg font-bold text-gray-900">HPV (Gardasil)</div>
+            <div className="text-sm text-gray-500">Cancer prevention vaccine</div>
+          </Link>
+          <Link href="/side-effects/shingles" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="text-lg font-bold text-gray-900">Shingles (Shingrix)</div>
+            <div className="text-sm text-gray-500">Known for strong reactogenicity</div>
+          </Link>
+          <Link href="/side-effects/tdap" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="text-lg font-bold text-gray-900">Tdap</div>
+            <div className="text-sm text-gray-500">Tetanus, diphtheria, pertussis</div>
+          </Link>
+        </div>
+      </div>
+
       <div className="prose prose-lg max-w-none mb-12">
         <h2 className={playfairDisplay.className}>Side Effects by Vaccine</h2>
         <p>
