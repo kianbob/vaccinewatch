@@ -22,21 +22,33 @@ export const metadata: Metadata = {
 
 const recentArticles = [
   {
-    slug: 'covid-impact',
-    title: 'The COVID-19 Impact on VAERS',
-    subtitle: 'How the pandemic changed vaccine adverse event reporting forever',
-    readTime: 8,
+    slug: 'denominator-problem',
+    title: 'Why Raw VAERS Numbers Can Be Misleading',
+    subtitle: 'The most critical limitation: 670M+ COVID doses make raw counts meaningless without context',
+    readTime: 9,
   },
   {
-    slug: 'myocarditis',
-    title: 'Myocarditis Deep Dive',
-    subtitle: 'Understanding the most closely-watched vaccine safety signal',
+    slug: 'onset-timing',
+    title: 'When Do Vaccine Side Effects Start?',
+    subtitle: '73% of adverse events occur within 3 days — the timing patterns explained',
     readTime: 7,
   },
   {
-    slug: 'death-reports',
-    title: 'Understanding Death Reports in VAERS',
-    subtitle: 'What "death reported to VAERS" actually means — and doesn\'t mean',
+    slug: 'lot-analysis',
+    title: 'Understanding Vaccine Lot Numbers',
+    subtitle: '4,414 COVID lots tracked — why comparing lots by report counts is misleading',
+    readTime: 8,
+  },
+  {
+    slug: 'dose-comparison',
+    title: 'First Dose vs Second Dose vs Booster',
+    subtitle: 'How adverse event patterns change across COVID-19 vaccine doses',
+    readTime: 6,
+  },
+  {
+    slug: 'covid-impact',
+    title: 'The COVID-19 Impact on VAERS',
+    subtitle: 'How the pandemic changed vaccine adverse event reporting forever',
     readTime: 8,
   },
   {
