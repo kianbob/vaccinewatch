@@ -627,6 +627,25 @@ export default function HomePage() {
               <p className="text-gray-600">COVID impact, age patterns, myocarditis, and more. Context-rich analysis of the data.</p>
             </Link>
           </div>
+
+          {/* Quick Links */}
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            {[
+              { href: '/dashboard', label: 'Dashboard' },
+              { href: '/adverse-events', label: 'Adverse Events' },
+              { href: '/vaccine-safety', label: 'Vaccine Safety' },
+              { href: '/vaccine-deaths', label: 'Death Reports' },
+              { href: '/myocarditis', label: 'Myocarditis' },
+              { href: '/vaers-database', label: 'VAERS Database' },
+              { href: '/report-adverse-event', label: 'Report an Event' },
+              { href: '/is-vaers-reliable', label: 'Is VAERS Reliable?' },
+              { href: '/tools', label: '13 Interactive Tools' },
+            ].map(link => (
+              <Link key={link.href} href={link.href} className="text-sm px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-primary/10 hover:text-primary transition-colors">
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
