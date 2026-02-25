@@ -77,6 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/is-vaers-reliable`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.8 },
     { url: `${baseUrl}/side-effects/pneumonia`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: `${baseUrl}/side-effects/polio`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/vaccine-schedule`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.8 },
     { url: `${baseUrl}/glossary`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.6 },
     { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.6 },
     { url: `${baseUrl}/compare`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
