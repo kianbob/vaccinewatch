@@ -62,7 +62,15 @@ interface StateVaccine {
 export const dynamicParams = true
 export async function generateStaticParams() {
   const states: StateInfo[] = readJsonFile('state-index.json')
-  return states.map(s => ({ state: s.abbreviation.toLowerCase() }))
+  const seen = new Set<string>()
+  return states
+    .map(s => s.abbreviation.toLowerCase())
+    .filter(abbr => {
+      if (seen.has(abbr)) return false
+      seen.add(abbr)
+      return true
+    })
+    .map(state => ({ state }))
 }
 
 export async function generateMetadata({
@@ -75,8 +83,22 @@ export async function generateMetadata({
   const abbr = resolvedAbbrMeta ? resolvedAbbrMeta.toUpperCase() : state.toUpperCase()
   const name = STATE_NAMES[abbr] || abbr
 
-  const states: StateInfo[] = readJsonFile('state-index.json')
-  const stateData = states.find(s => s.abbreviation === abbr)
+  const rawStates: StateInfo[] = readJsonFile('state-index.json')
+  // Normalize duplicates
+  const stateMap = new Map<string, StateInfo>()
+  for (const s of rawStates) {
+    const key = s.abbreviation.toUpperCase()
+    const existing = stateMap.get(key)
+    if (existing) {
+      existing.reports += s.reports
+      existing.died += s.died
+      existing.hosp += s.hosp
+      existing.er += s.er
+    } else {
+      stateMap.set(key, { ...s, abbreviation: key })
+    }
+  }
+  const stateData = stateMap.get(abbr)
 
   if (!stateData) {
     return { title: 'State Not Found' }
@@ -104,7 +126,24 @@ export default async function StateDetailPage({
   const abbr = state.toUpperCase()
   const name = STATE_NAMES[abbr] || abbr
 
-  const states: StateInfo[] = readJsonFile('state-index.json')
+  const rawStates: StateInfo[] = readJsonFile('state-index.json')
+  
+  // Normalize: merge duplicate abbreviations (e.g. 'CA', 'ca', 'Ca' → 'CA')
+  const stateMap = new Map<string, StateInfo>()
+  for (const s of rawStates) {
+    const key = s.abbreviation.toUpperCase()
+    const existing = stateMap.get(key)
+    if (existing) {
+      existing.reports += s.reports
+      existing.died += s.died
+      existing.hosp += s.hosp
+      existing.er += s.er
+    } else {
+      stateMap.set(key, { ...s, abbreviation: key })
+    }
+  }
+  const states = Array.from(stateMap.values())
+  
   const stateData = states.find(s => s.abbreviation === abbr)
 
   if (!stateData) {
@@ -148,7 +187,7 @@ export default async function StateDetailPage({
                 {abbr}
               </span>
               <span>{formatNumber(stateData.reports)} total reports</span>
-              <span className="text-sm text-gray-500">Rank #{rank} of {states.length}</span>
+              <span className="text-sm text-gray-500">Rank #{rank} of {states.length} jurisdictions</span>
             </div>
           </div>
           <div className="hidden md:block">
@@ -266,7 +305,7 @@ export default async function StateDetailPage({
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Rank:</span>
-                <span className="font-semibold">#{rank} of {states.length}</span>
+                <span className="font-semibold">#{rank} of {states.length} jurisdictions</span>
               </div>
               {population && (
                 <>

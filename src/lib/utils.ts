@@ -135,7 +135,7 @@ export function getCleanVaccineName(rawName: string): string {
   const titleCase = (s: string): string => {
     if (!s) return s
     // Preserve known acronyms/brands
-    const preserveUpper = ['II', 'III', 'IV', 'IPV', 'DTP', 'HIB', 'BCG']
+    const preserveUpper = ['II', 'III', 'IV', 'VI', 'VII', 'VIII', 'IPV', 'OPV', 'DTP', 'DTAP', 'DTaP', 'TDAP', 'HIB', 'BCG', 'MMR', 'MMRV', 'HPV', 'HEP', 'RSV', 'YF', 'PCV', 'MR']
     return s.split(/(\s+|-)/).map(word => {
       if (preserveUpper.includes(word.toUpperCase())) return word.toUpperCase()
       if (word.length <= 1) return word

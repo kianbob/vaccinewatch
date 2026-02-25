@@ -50,7 +50,23 @@ interface StateData {
 }
 
 export default function StatesPage() {
-  const states: StateData[] = readJsonFile('state-index.json')
+  const rawStates: StateData[] = readJsonFile('state-index.json')
+
+  // Normalize: merge duplicate abbreviations with different cases (e.g. 'CA', 'ca', 'Ca')
+  const stateMap = new Map<string, StateData>()
+  for (const s of rawStates) {
+    const key = s.abbreviation.toUpperCase()
+    const existing = stateMap.get(key)
+    if (existing) {
+      existing.reports += s.reports
+      existing.died += s.died
+      existing.hosp += s.hosp
+      existing.er += s.er
+    } else {
+      stateMap.set(key, { ...s, abbreviation: key })
+    }
+  }
+  const states = Array.from(stateMap.values())
 
   const statesWithNames = states.map(s => {
     const popK = STATE_POP[s.abbreviation]
