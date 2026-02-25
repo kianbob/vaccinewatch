@@ -5,6 +5,7 @@ import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import ShareButtons from '@/components/ShareButtons'
 import { AgeChartsClient as AgeCharts } from '@/components/ClientCharts'
 
 export const metadata: Metadata = {

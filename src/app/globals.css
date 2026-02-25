@@ -19,6 +19,13 @@
 
 @plugin "@tailwindcss/typography";
 
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* Ensure Playfair Display is used for headings globally */
 h1, h2, h3 {
   font-feature-settings: "liga" 1, "kern" 1;

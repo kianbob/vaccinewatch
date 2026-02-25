@@ -26,6 +26,18 @@ const STATE_NAMES: Record<string, string> = {
   AE: 'Armed Forces Europe', AP: 'Armed Forces Pacific'
 }
 
+// US state populations (2023 estimates, rounded to thousands)
+const STATE_POPULATIONS: Record<string, number> = {
+  CA: 39029, TX: 30504, FL: 22610, NY: 19677, PA: 12972, IL: 12582, OH: 11756,
+  GA: 10912, NC: 10698, MI: 10037, NJ: 9261, VA: 8643, WA: 7812, AZ: 7359,
+  TN: 7051, MA: 7029, IN: 6833, MO: 6178, MD: 6165, WI: 5893, CO: 5839,
+  MN: 5707, SC: 5282, AL: 5074, LA: 4657, KY: 4512, OR: 4233, OK: 3959,
+  CT: 3626, UT: 3380, PR: 3222, IA: 3191, NV: 3177, AR: 3045, MS: 2940,
+  KS: 2937, NM: 2113, NE: 1961, ID: 1939, WV: 1770, HI: 1440, NH: 1395,
+  ME: 1386, MT: 1122, RI: 1093, DE: 1018, SD: 909, ND: 779, AK: 733,
+  DC: 672, VT: 647, WY: 577, GU: 154, VI: 87, AS: 44, MP: 47,
+}
+
 // Reverse lookup: full state name → abbreviation
 const NAME_TO_ABBR: Record<string, string> = Object.fromEntries(
   Object.entries(STATE_NAMES).map(([abbr, name]) => [name.toLowerCase().replace(/\s+/g, '-'), abbr.toLowerCase()])
@@ -114,6 +126,10 @@ export default async function StateDetailPage({
   const sorted = [...states].sort((a, b) => b.reports - a.reports)
   const rank = sorted.findIndex(s => s.abbreviation === abbr) + 1
 
+  // Population context
+  const population = STATE_POPULATIONS[abbr]
+  const reportsPerCapita = population ? (stateData.reports / (population * 1000) * 100000).toFixed(1) : null
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
@@ -153,6 +169,11 @@ export default async function StateDetailPage({
               <p>
                 Of these, <strong className="text-danger">{formatNumber(stateData.died)}</strong> mentioned death, <strong className="text-accent">{formatNumber(stateData.hosp)}</strong> involved hospitalization, and <strong>{formatNumber(stateData.er)}</strong> required emergency department visits.
               </p>
+              {population && reportsPerCapita && (
+                <p>
+                  With an estimated population of <strong>{(population * 1000).toLocaleString()}</strong>, {name} has approximately <strong>{reportsPerCapita} reports per 100,000 residents</strong>.
+                </p>
+              )}
             </div>
           </div>
 
@@ -239,6 +260,18 @@ export default async function StateDetailPage({
                 <span className="text-gray-600">Rank:</span>
                 <span className="font-semibold">#{rank} of {states.length}</span>
               </div>
+              {population && (
+                <>
+                  <div className="flex justify-between border-t border-gray-200 pt-3">
+                    <span className="text-gray-600">Population:</span>
+                    <span className="font-semibold">{(population * 1000).toLocaleString()}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Reports per 100K:</span>
+                    <span className="font-semibold">{reportsPerCapita}</span>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 

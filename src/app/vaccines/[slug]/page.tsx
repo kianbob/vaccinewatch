@@ -9,6 +9,7 @@ import { formatNumber, slugify, getCleanVaccineName } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import ShareButtons from '@/components/ShareButtons'
 import { VaccineYearlyChartClient as VaccineYearlyChart } from '@/components/ClientCharts'
 
 const STATE_NAMES: Record<string, string> = {
@@ -148,6 +149,9 @@ export default async function VaccineDetailPage({
               </span>
               <span>{formatNumber(vaccine.reports)} total reports</span>
             </div>
+          </div>
+          <div className="hidden md:block">
+            <ShareButtons title={`${cleanName} VAERS Data — VaccineWatch`} />
           </div>
         </div>
         
@@ -356,10 +360,10 @@ export default async function VaccineDetailPage({
             </h3>
             <div className="space-y-3">
               <Link
-                href="/compare"
-                className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
+                href={`/compare?v=${vaccine.type}`}
+                className="block w-full text-center bg-white border border-primary/30 bg-primary/5 rounded-xl py-3 px-4 text-sm font-medium text-primary hover:bg-primary/10 transition-colors"
               >
-                Compare with Other Vaccines
+                ⚖️ Compare {vaccine.type} with Others
               </Link>
               {vaccine.type.startsWith('COVID') && (
                 <Link

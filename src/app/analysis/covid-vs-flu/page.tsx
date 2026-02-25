@@ -5,6 +5,7 @@ import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import ShareButtons from '@/components/ShareButtons'
 import { CovidVsFluChartsClient as CovidVsFluCharts } from '@/components/ClientCharts'
 
 export const metadata: Metadata = {
@@ -62,7 +63,10 @@ export default function CovidVsFluPage() {
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'COVID-19 vs Influenza Vaccines' }]} />
 
       <div className="mb-12">
-        <div className="text-xs font-medium text-danger uppercase tracking-wider mb-2">7 min read</div>
+        <div className="flex items-center justify-between mb-2">
+          <div className="text-xs font-medium text-danger uppercase tracking-wider">7 min read</div>
+          <ShareButtons title="COVID-19 vs Influenza Vaccines — VaccineWatch" />
+        </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           COVID-19 vs Influenza Vaccines
         </h1>

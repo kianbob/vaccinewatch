@@ -19,11 +19,25 @@ interface SymptomResult {
   died: number
 }
 
+type CategoryFilter = 'all' | 'vaccines' | 'symptoms'
+
+const POPULAR_SEARCHES = [
+  { term: 'COVID', icon: '💉' },
+  { term: 'Headache', icon: '🤕' },
+  { term: 'Myocarditis', icon: '❤️' },
+  { term: 'Flu', icon: '🤧' },
+  { term: 'MMR', icon: '💊' },
+  { term: 'Fever', icon: '🌡️' },
+  { term: 'Death', icon: '⚠️' },
+  { term: 'Pfizer', icon: '🏭' },
+]
+
 export default function SearchClient() {
   const [query, setQuery] = useState('')
   const [vaccines, setVaccines] = useState<VaccineResult[]>([])
   const [symptoms, setSymptoms] = useState<SymptomResult[]>([])
   const [loading, setLoading] = useState(true)
+  const [filter, setFilter] = useState<CategoryFilter>('all')
 
   useEffect(() => {
     Promise.all([
@@ -83,9 +97,26 @@ export default function SearchClient() {
           />
         </div>
         {query.length >= 2 && !loading && (
-          <p className="text-sm text-gray-500 mt-2">
-            {totalResults} result{totalResults !== 1 ? 's' : ''} found
-          </p>
+          <div className="flex items-center justify-between mt-3">
+            <p className="text-sm text-gray-500">
+              {totalResults} result{totalResults !== 1 ? 's' : ''} found
+            </p>
+            <div className="flex gap-1">
+              {(['all', 'vaccines', 'symptoms'] as CategoryFilter[]).map(f => (
+                <button
+                  key={f}
+                  onClick={() => setFilter(f)}
+                  className={`px-3 py-1 text-xs font-medium rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 ${
+                    filter === f
+                      ? 'bg-primary text-white'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  }`}
+                >
+                  {f === 'all' ? 'All' : f === 'vaccines' ? `Vaccines (${results.vaccines.length})` : `Symptoms (${results.symptoms.length})`}
+                </button>
+              ))}
+            </div>
+          </div>
         )}
       </div>
 
@@ -96,18 +127,47 @@ export default function SearchClient() {
       )}
 
       {!loading && query.length < 2 && (
-        <div className="text-center py-12">
-          <p className="text-gray-400">Type at least 2 characters to search</p>
-          <div className="mt-6 flex flex-wrap gap-2 justify-center">
-            {['COVID', 'Headache', 'Myocarditis', 'Flu', 'MMR', 'Fever'].map(term => (
-              <button
-                key={term}
-                onClick={() => setQuery(term)}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-primary/10 hover:text-primary transition-colors text-sm"
-              >
-                {term}
-              </button>
-            ))}
+        <div className="py-8">
+          <p className="text-gray-400 text-center mb-6">Type at least 2 characters to search</p>
+          <div className="max-w-lg mx-auto">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Popular Searches</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              {POPULAR_SEARCHES.map(({ term, icon }) => (
+                <button
+                  key={term}
+                  onClick={() => setQuery(term)}
+                  className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-lg hover:border-primary/30 hover:bg-primary/5 hover:text-primary transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
+                >
+                  <span>{icon}</span>
+                  {term}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="max-w-lg mx-auto mt-8">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Browse by Category</h3>
+            <div className="grid grid-cols-2 gap-3">
+              <Link href="/vaccines" className="bg-primary/5 border border-primary/20 rounded-lg p-4 text-center hover:bg-primary/10 transition-colors">
+                <div className="text-2xl mb-1">💉</div>
+                <div className="text-sm font-medium text-gray-900">All Vaccines</div>
+                <div className="text-xs text-gray-500">104 vaccines</div>
+              </Link>
+              <Link href="/symptoms" className="bg-accent/5 border border-accent/20 rounded-lg p-4 text-center hover:bg-accent/10 transition-colors">
+                <div className="text-2xl mb-1">🩺</div>
+                <div className="text-sm font-medium text-gray-900">All Symptoms</div>
+                <div className="text-xs text-gray-500">500+ symptoms</div>
+              </Link>
+              <Link href="/states" className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:bg-gray-100 transition-colors">
+                <div className="text-2xl mb-1">🗺️</div>
+                <div className="text-sm font-medium text-gray-900">By State</div>
+                <div className="text-xs text-gray-500">50 states + territories</div>
+              </Link>
+              <Link href="/analysis" className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:bg-gray-100 transition-colors">
+                <div className="text-2xl mb-1">📊</div>
+                <div className="text-sm font-medium text-gray-900">Analysis</div>
+                <div className="text-xs text-gray-500">Deep-dive articles</div>
+              </Link>
+            </div>
           </div>
         </div>
       )}
@@ -115,7 +175,7 @@ export default function SearchClient() {
       {!loading && query.length >= 2 && (
         <div className="space-y-8">
           {/* Vaccine Results */}
-          {results.vaccines.length > 0 && (
+          {results.vaccines.length > 0 && (filter === 'all' || filter === 'vaccines') && (
             <div>
               <h2 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                 <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
@@ -147,7 +207,7 @@ export default function SearchClient() {
           )}
 
           {/* Symptom Results */}
-          {results.symptoms.length > 0 && (
+          {results.symptoms.length > 0 && (filter === 'all' || filter === 'symptoms') && (
             <div>
               <h2 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                 <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>

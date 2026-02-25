@@ -9,6 +9,7 @@ import { formatNumber, slugify } from '@/lib/utils'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
+import ShareButtons from '@/components/ShareButtons'
 import { SymptomVaccinesChartClient as SymptomVaccinesChart, SymptomYearlyChartClient as SymptomYearlyChart } from '@/components/ClientCharts'
 
 interface SymptomData {
@@ -90,14 +91,21 @@ export default async function SymptomDetailPage({
 
       {/* Header */}
       <div className="mb-8">
-        <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
-          {symptom.name}
-        </h1>
-        <div className="flex flex-wrap items-center gap-4 text-lg text-gray-600">
-          <span>{formatNumber(symptom.reports)} total reports</span>
-          <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
-            {severityRate.toFixed(1)}% serious outcomes
-          </span>
+        <div className="flex items-start justify-between">
+          <div>
+            <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
+              {symptom.name}
+            </h1>
+            <div className="flex flex-wrap items-center gap-4 text-lg text-gray-600">
+              <span>{formatNumber(symptom.reports)} total reports</span>
+              <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                {severityRate.toFixed(1)}% serious outcomes
+              </span>
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <ShareButtons title={`${symptom.name} After Vaccination — VaccineWatch`} />
+          </div>
         </div>
       </div>
 
@@ -303,6 +311,30 @@ export default async function SymptomDetailPage({
             </div>
           </div>
 
+          {/* Related Analysis */}
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Related Analysis</h3>
+            <div className="space-y-2">
+              {slug === 'myocarditis' && (
+                <Link href="/analysis/myocarditis" className="block text-sm text-primary hover:text-primary/80 font-medium">
+                  Myocarditis After COVID Vaccination →
+                </Link>
+              )}
+              <Link href="/analysis/top-symptoms" className="block text-sm text-primary hover:text-primary/80">
+                Most Common Symptoms Analysis →
+              </Link>
+              <Link href="/analysis/serious-outcomes" className="block text-sm text-primary hover:text-primary/80">
+                Serious Outcomes Analysis →
+              </Link>
+              <Link href="/analysis/onset-timing" className="block text-sm text-primary hover:text-primary/80">
+                When Do Side Effects Start? →
+              </Link>
+              <Link href="/analysis/recovery-rates" className="block text-sm text-primary hover:text-primary/80">
+                Recovery Rates Analysis →
+              </Link>
+            </div>
+          </div>
+
           {/* Related Actions */}
           <div className="bg-gray-50 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
@@ -315,14 +347,6 @@ export default async function SymptomDetailPage({
               >
                 Compare with Other Symptoms
               </Link>
-              {slug === 'myocarditis' && (
-                <Link
-                  href="/analysis/myocarditis"
-                  className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
-                >
-                  Myocarditis Deep Dive
-                </Link>
-              )}
               <Link
                 href="/analysis/top-symptoms"
                 className="block w-full text-center bg-primary text-white rounded-xl py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors"

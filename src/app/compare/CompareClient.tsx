@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { playfairDisplay } from '@/lib/fonts'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
@@ -10,6 +11,18 @@ const CompareCharts = dynamic(() => import('@/components/CompareCharts'), {
   ssr: false,
   loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div>
 })
+
+const CompareBarChart = dynamic(() => import('@/components/CompareBarChart'), {
+  ssr: false,
+  loading: () => <div className="h-80 bg-gray-100 animate-pulse rounded-lg"></div>
+})
+
+const QUICK_COMPARISONS = [
+  { label: 'COVID vs Flu', types: ['COVID19', 'FLU4'] },
+  { label: 'Moderna vs Pfizer', types: ['COVID19', 'COVID19-2'] },
+  { label: 'MMR vs DTaP', types: ['MMR', 'DTAP'] },
+  { label: 'HPV vs Hepatitis B', types: ['HPV9', 'HEP'] },
+]
 
 interface VaccineData {
   name: string
@@ -23,6 +36,7 @@ interface VaccineData {
 }
 
 export default function CompareClient() {
+  const searchParams = useSearchParams()
   const [vaccines, setVaccines] = useState<VaccineData[]>([])
   const [selected, setSelected] = useState<string[]>([])
   const [loading, setLoading] = useState(true)
@@ -33,8 +47,14 @@ export default function CompareClient() {
       .then(data => {
         setVaccines(data)
         setLoading(false)
+        // Pre-fill from URL params
+        const v = searchParams.get('v')
+        if (v) {
+          const types = v.split(',').filter(t => data.some((d: VaccineData) => d.type === t))
+          if (types.length > 0) setSelected(types)
+        }
       })
-  }, [])
+  }, [searchParams])
 
   const selectedVaccines = vaccines.filter(v => selected.includes(v.type))
 
@@ -63,6 +83,31 @@ export default function CompareClient() {
           Remember that report counts reflect reporting patterns, not relative safety.
         </p>
       </div>
+
+      {/* Quick Comparisons */}
+      {selected.length === 0 && !loading && (
+        <div className="mb-6">
+          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Quick Comparisons</h2>
+          <div className="flex flex-wrap gap-2">
+            {QUICK_COMPARISONS.map(qc => {
+              const available = qc.types.every(t => vaccines.some(v => v.type === t))
+              if (!available) return null
+              return (
+                <button
+                  key={qc.label}
+                  onClick={() => setSelected(qc.types)}
+                  className="inline-flex items-center px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:border-primary/40 hover:bg-primary/5 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                >
+                  <svg className="w-4 h-4 mr-1.5 text-primary/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                  {qc.label}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Selector */}
       <div className="bg-white border border-gray-200 rounded-lg p-6 mb-8">
@@ -155,6 +200,12 @@ export default function CompareClient() {
                 </tbody>
               </table>
             </div>
+          </div>
+
+          {/* Bar Chart Comparison */}
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">Metric Comparison</h3>
+            <CompareBarChart vaccines={selectedVaccines} />
           </div>
 
           {/* Yearly Trend Chart */}
