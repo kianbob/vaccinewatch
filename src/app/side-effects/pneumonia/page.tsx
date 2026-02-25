@@ -164,6 +164,23 @@ export default function PneumoniaSideEffectsPage() {
           </Link>
         </div>
       </div>
+      <div className="border-t border-gray-200 pt-8">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">More Side Effect Guides</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Link href="/side-effects/flu" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Flu Side Effects</div>
+            <div className="text-sm text-gray-500">Often given alongside pneumonia vaccine</div>
+          </Link>
+          <Link href="/side-effects/shingles" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Shingles Side Effects</div>
+            <div className="text-sm text-gray-500">Another adult vaccine</div>
+          </Link>
+          <Link href="/side-effects/covid" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">COVID-19 Side Effects</div>
+            <div className="text-sm text-gray-500">1.1M+ reports analyzed</div>
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }

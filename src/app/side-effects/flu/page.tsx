@@ -208,9 +208,9 @@ export default function FluSideEffectsPage() {
             <div className="font-medium text-gray-900">COVID-19 Side Effects</div>
             <div className="text-sm text-gray-500">1.1M+ reports analyzed</div>
           </Link>
-          <Link href="/dashboard" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-            <div className="font-medium text-gray-900">Full Dashboard</div>
-            <div className="text-sm text-gray-500">All 104 vaccines compared</div>
+          <Link href="/side-effects/pneumonia" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Pneumonia Vaccine</div>
+            <div className="text-sm text-gray-500">Often given with flu vaccine</div>
           </Link>
         </div>
       </div>

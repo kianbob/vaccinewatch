@@ -248,17 +248,17 @@ export default function CovidSideEffectsPage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">More Side Effect Guides</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Link href="/side-effects/flu" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Flu Side Effects</div>
+            <div className="text-sm text-gray-500">Compare with influenza vaccines</div>
+          </Link>
+          <Link href="/side-effects/mmr" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">MMR Side Effects</div>
+            <div className="text-sm text-gray-500">Measles, mumps, rubella</div>
+          </Link>
           <Link href="/side-effects" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-            <div className="font-medium text-gray-900">All Vaccine Side Effects</div>
-            <div className="text-sm text-gray-500">Overview across all vaccines</div>
-          </Link>
-          <Link href="/analysis/myocarditis" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-            <div className="font-medium text-gray-900">Myocarditis Deep Dive</div>
-            <div className="text-sm text-gray-500">Heart inflammation data</div>
-          </Link>
-          <Link href="/analysis/death-reports" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-            <div className="font-medium text-gray-900">Death Reports Analysis</div>
-            <div className="text-sm text-gray-500">Understanding mortality data</div>
+            <div className="font-medium text-gray-900">All 14 Guides →</div>
+            <div className="text-sm text-gray-500">Complete vaccine side effects collection</div>
           </Link>
         </div>
       </div>

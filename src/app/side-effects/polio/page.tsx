@@ -134,6 +134,23 @@ export default function PolioSideEffectsPage() {
           </Link>
         </div>
       </div>
+      <div className="border-t border-gray-200 pt-8">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">More Side Effect Guides</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Link href="/side-effects/dtap" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">DTaP Side Effects</div>
+            <div className="text-sm text-gray-500">Given at same visits as IPV</div>
+          </Link>
+          <Link href="/side-effects/rotavirus" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Rotavirus Side Effects</div>
+            <div className="text-sm text-gray-500">Another infant vaccine</div>
+          </Link>
+          <Link href="/side-effects/mmr" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">MMR Side Effects</div>
+            <div className="text-sm text-gray-500">Measles, mumps, rubella</div>
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }
