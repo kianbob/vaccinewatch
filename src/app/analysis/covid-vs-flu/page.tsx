@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { CovidVsFluChartsClient as CovidVsFluCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'COVID-19 vs Influenza Vaccines - VAERS Comparison',
@@ -60,6 +61,7 @@ export default function CovidVsFluPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="COVID-19 vs Influenza Vaccines - VAERS Comparison" description="Side-by-side comparison of COVID-19 and influenza vaccine adverse event reports in VAERS. Understanding the differences in scale and context." slug="covid-vs-flu" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'COVID-19 vs Influenza Vaccines' }]} />
 
       <div className="mb-12">

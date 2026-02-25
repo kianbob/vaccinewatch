@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { ManufacturerLandscapeChartsClient as ManufacturerLandscapeCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Manufacturer Landscape - Who Dominates VAERS Reporting',
@@ -46,6 +47,7 @@ export default function ManufacturerLandscapePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Manufacturer Landscape - Who Dominates VAERS Reporting" description="Analysis of vaccine manufacturer market share in VAERS reports. How a few companies account for the majority of adverse event reports." slug="manufacturer-landscape" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'The Manufacturer Landscape' }]} />
 
       <div className="mb-12">

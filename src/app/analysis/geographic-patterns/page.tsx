@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { GeographicChartsClient as GeographicCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Geographic Patterns in VAERS Reporting',
@@ -75,6 +76,7 @@ export default function GeographicPatternsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Geographic Patterns in VAERS Reporting" description="State-level analysis of VAERS adverse event reports. Which states report the most, per-capita patterns, and what drives geographic variation." slug="geographic-patterns" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Geographic Patterns' }]} />
 
       <div className="mb-12">

@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { AgeChartsClient as AgeCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Age Patterns in VAERS Reports',
@@ -26,6 +27,7 @@ export default function AgePatternsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Age Patterns in VAERS Reports" description="Analysis of VAERS adverse event reports by age group, exploring who reports most and who has the most serious outcomes." slug="age-patterns" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Age Patterns in VAERS Reports' }]} />
 
       {/* Hero */}

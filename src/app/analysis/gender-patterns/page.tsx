@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { GenderChartsClient as GenderCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Gender Disparities in VAERS Reporting',
@@ -23,6 +24,7 @@ export default function GenderPatternsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Gender Disparities in VAERS Reporting" description="Why 59% of VAERS reports come from women — exploring gender patterns in vaccine adverse event reporting." slug="gender-patterns" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Gender Disparities in Reporting' }]} />
 
       <div className="mb-12">

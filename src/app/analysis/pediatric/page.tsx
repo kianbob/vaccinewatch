@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { PediatricChartsClient as PediatricCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Pediatric VAERS Analysis - Children 0-17',
@@ -40,6 +41,7 @@ export default function PediatricPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Pediatric VAERS Analysis - Children 0-17" description="Analysis of VAERS adverse event reports for children ages 0-17. Age patterns, vaccine types, and outcome severity in pediatric populations." slug="pediatric" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Pediatric VAERS Analysis' }]} />
 
       <div className="mb-12">

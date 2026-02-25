@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { BirthDefectsChartsClient as BirthDefectsCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Birth Defect Reports in VAERS',
@@ -28,6 +29,7 @@ export default function BirthDefectsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Birth Defect Reports in VAERS" description="Analysis of birth defect reports in VAERS by vaccine type. Understanding the context of prenatal vaccination guidelines and background birth defect rates." slug="birth-defects" />
       
       {/* Extra Heavy Warning for Birth Defects */}
       <div className="bg-red-100 border-l-4 border-red-500 p-4 mb-6">

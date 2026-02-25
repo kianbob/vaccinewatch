@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { ElderlyChartsClient as ElderlyCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Elderly VAERS Analysis - Adults 65+',
@@ -48,6 +49,7 @@ export default function ElderlyPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Elderly VAERS Analysis - Adults 65+" description="Deep dive into VAERS adverse event reports for adults 65 and older. Why this age group has the highest serious outcome rates." slug="elderly" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'The 65+ Age Group' }]} />
 
       <div className="mb-12">

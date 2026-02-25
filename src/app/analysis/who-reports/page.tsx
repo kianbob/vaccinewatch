@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { WhoReportsChartsClient as WhoReportsCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Who Files VAERS Reports? - Analysis of Reporting Sources',
@@ -73,6 +74,7 @@ export default function WhoReportsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Who Files VAERS Reports? - Analysis of Reporting Sources" description="Analysis of who submits VAERS reports: private doctors, public health officials, military, pharmacies, and others. Understanding reporting mandates and patterns." slug="who-reports" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Who Files VAERS Reports?' }]} />
 
       {/* Hero */}

@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { ReportingTrendsChartsClient as ReportingTrendsCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: '35 Years of VAERS Reporting Trends',
@@ -28,6 +29,7 @@ export default function ReportingTrendsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="35 Years of VAERS Reporting Trends" description="Historical analysis of VAERS reporting trends from 1990 to 2026, including the COVID-era surge and return to baseline." slug="reporting-trends" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: '35 Years of VAERS Reporting' }]} />
 
       <div className="mb-12">

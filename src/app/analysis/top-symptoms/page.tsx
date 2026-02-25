@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { TopSymptomsChartClient as TopSymptomsChart } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Most Reported Symptoms in VAERS',
@@ -32,6 +33,7 @@ export default function TopSymptomsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Most Reported Symptoms in VAERS" description="The 20 most commonly reported adverse symptoms in VAERS, with context on what these symptoms mean." slug="top-symptoms" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Most Reported Symptoms' }]} />
 
       <div className="mb-12">

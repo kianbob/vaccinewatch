@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { MultiVaccineChartsClient as MultiVaccineCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'When Multiple Vaccines Are Given Together - VAERS Co-Administration Analysis',
@@ -45,6 +46,7 @@ export default function MultiVaccinePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="When Multiple Vaccines Are Given Together - VAERS Co-Administration Analysis" description="Analysis of VAERS reports when multiple vaccines are administered simultaneously. Understanding co-administration safety patterns and common vaccine combinations." slug="multi-vaccine" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'When Multiple Vaccines Are Given Together' }]} />
 
       {/* Hero */}
