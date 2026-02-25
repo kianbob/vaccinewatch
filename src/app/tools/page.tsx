@@ -52,14 +52,12 @@ const colorClasses: Record<string, string> = {
   primary: 'border-l-primary bg-primary/5',
   accent: 'border-l-accent bg-accent/5',
   danger: 'border-l-danger bg-danger/5',
-  success: 'border-l-success bg-success/5',
 }
 
 const badgeClasses: Record<string, string> = {
   primary: 'bg-primary/10 text-primary',
   accent: 'bg-accent/10 text-accent',
   danger: 'bg-danger/10 text-danger',
-  success: 'bg-success/10 text-success',
 }
 
 export default function ToolsIndexPage() {

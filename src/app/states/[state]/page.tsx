@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { redirect } from 'next/navigation'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
@@ -24,6 +25,11 @@ const STATE_NAMES: Record<string, string> = {
   FM: 'Federated States of Micronesia', MH: 'Marshall Islands', PW: 'Palau', AA: 'Armed Forces Americas',
   AE: 'Armed Forces Europe', AP: 'Armed Forces Pacific'
 }
+
+// Reverse lookup: full state name → abbreviation
+const NAME_TO_ABBR: Record<string, string> = Object.fromEntries(
+  Object.entries(STATE_NAMES).map(([abbr, name]) => [name.toLowerCase().replace(/\s+/g, '-'), abbr.toLowerCase()])
+)
 
 interface StateInfo {
   abbreviation: string
@@ -52,7 +58,8 @@ export async function generateMetadata({
   params: Promise<{ state: string }>
 }): Promise<Metadata> {
   const { state } = await params
-  const abbr = state.toUpperCase()
+  const resolvedAbbrMeta = NAME_TO_ABBR[state.toLowerCase()]
+  const abbr = resolvedAbbrMeta ? resolvedAbbrMeta.toUpperCase() : state.toUpperCase()
   const name = STATE_NAMES[abbr] || abbr
 
   const states: StateInfo[] = readJsonFile('state-index.json')
@@ -74,6 +81,13 @@ export default async function StateDetailPage({
   params: Promise<{ state: string }>
 }) {
   const { state } = await params
+  
+  // Handle full state names like "california" → redirect to /states/ca
+  const resolvedAbbr = NAME_TO_ABBR[state.toLowerCase()]
+  if (resolvedAbbr) {
+    redirect(`/states/${resolvedAbbr}`)
+  }
+  
   const abbr = state.toUpperCase()
   const name = STATE_NAMES[abbr] || abbr
 

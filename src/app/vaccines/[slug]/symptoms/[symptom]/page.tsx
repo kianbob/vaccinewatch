@@ -71,7 +71,7 @@ export async function generateMetadata({
     const pct = vaccineReports > 0 ? (match.count / vaccineReports * 100).toFixed(1) : '0'
 
     return {
-      title: `${match.name} Reports for ${vaccineName} Vaccine`,
+      title: `${match.name} Reports for ${vaccineName}`,
       description: `${formatNumber(match.count)} reports of ${match.name} following ${vaccineName} vaccination in VAERS (${pct}% of all reports). Deaths: ${formatNumber(match.died)}, Hospitalizations: ${formatNumber(match.hosp)}.`
     }
   } catch {

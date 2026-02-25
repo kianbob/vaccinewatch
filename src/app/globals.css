@@ -40,6 +40,26 @@ table td {
   vertical-align: middle;
 }
 
+/* Zebra striping for data tables */
+tbody tr:nth-child(even) {
+  background-color: rgba(248, 250, 252, 0.5);
+}
+
+/* Sticky table headers */
+.sticky-header thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #f8fafc;
+}
+
+/* Scroll shadows for tables */
+.table-scroll-container {
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Print styles */
 @media print {
   nav, footer, .back-to-top {

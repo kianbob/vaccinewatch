@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
 import { getCleanVaccineName } from '@/lib/utils'
+import DisclaimerBanner from '@/components/DisclaimerBanner'
 
 interface VaccineResult {
   name: string
@@ -57,6 +58,7 @@ export default function SearchClient() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <DisclaimerBanner />
       <div className="text-center mb-8">
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Search VAERS Data
