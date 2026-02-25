@@ -51,12 +51,14 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Deep Dives</h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/analysis/denominator-problem" className="hover:text-white transition-colors">The Denominator Problem</Link></li>
+              <li><Link href="/analysis/onset-timing" className="hover:text-white transition-colors">Onset Timing</Link></li>
+              <li><Link href="/analysis/lot-analysis" className="hover:text-white transition-colors">Lot Number Analysis</Link></li>
               <li><Link href="/analysis/covid-impact" className="hover:text-white transition-colors">COVID Impact</Link></li>
-              <li><Link href="/analysis/age-patterns" className="hover:text-white transition-colors">Age Patterns</Link></li>
               <li><Link href="/analysis/myocarditis" className="hover:text-white transition-colors">Myocarditis</Link></li>
               <li><Link href="/analysis/death-reports" className="hover:text-white transition-colors">Death Reports</Link></li>
-              <li><Link href="/analysis/serious-outcomes" className="hover:text-white transition-colors">Serious Outcomes</Link></li>
-              <li><Link href="/analysis" className="hover:text-white transition-colors">All Analysis →</Link></li>
+              <li><Link href="/tools" className="hover:text-white transition-colors">Interactive Tools</Link></li>
+              <li><Link href="/analysis" className="hover:text-white transition-colors">All 23 Articles →</Link></li>
             </ul>
           </div>
 

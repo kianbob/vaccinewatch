@@ -25,8 +25,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'VaccineWatch',
-    title: 'VaccineWatch - VAERS Data Analysis',
-    description: '1.98 Million Vaccine Adverse Event Reports. Exposed. Explored. Explained.',
     images: [
       {
         url: '/og-image.png',
@@ -38,8 +36,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'VaccineWatch - VAERS Data Analysis',
-    description: '1.98 Million Vaccine Adverse Event Reports. Exposed. Explored. Explained.',
     images: ['/og-image.png']
   },
   robots: 'index, follow',
