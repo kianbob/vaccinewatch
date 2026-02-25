@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'VAERS Database — Search & Explore Vaccine Adverse Event Reports | VaccineWatch',
+  title: 'VAERS Database — Search & Explore Vaccine Adverse Event Reports',
   description: 'Explore the VAERS database with interactive tools. 1.98 million vaccine adverse event reports (1990-2026), 104 vaccines, 1,000+ symptoms — all searchable and contextualized.',
   openGraph: {
     title: 'VAERS Database — Search & Explore Vaccine Safety Data',
@@ -34,7 +34,7 @@ export default function VAERSDatabasePage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">Complete Guide</div>
-          <ShareButtons title="VAERS Database — Search & Explore | VaccineWatch" />
+          <ShareButtons title="VAERS Database — Search & Explore" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           VAERS Database

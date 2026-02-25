@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Varicella (Chickenpox) Vaccine Side Effects — Varivax VAERS Data | VaccineWatch',
+  title: 'Varicella (Chickenpox) Vaccine Side Effects — Varivax VAERS Data',
   description: 'VAERS analysis of varicella (chickenpox) vaccine side effects. 93,000+ reports for Varivax including rash, fever, and rare serious outcomes.',
 }
 

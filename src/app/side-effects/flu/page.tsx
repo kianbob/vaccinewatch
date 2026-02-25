@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Flu Vaccine Side Effects — VAERS Data Analysis | VaccineWatch',
+  title: 'Flu Vaccine Side Effects — VAERS Data Analysis',
   description: 'Complete analysis of flu (influenza) vaccine side effects reported to VAERS. Multiple flu vaccine types analyzed with full context and disclaimers.',
   openGraph: {
     title: 'Flu Vaccine Side Effects — VAERS Data Analysis',
@@ -49,7 +49,7 @@ export default function FluSideEffectsPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">6 min read</div>
-          <ShareButtons title="Flu Vaccine Side Effects — VAERS Analysis | VaccineWatch" />
+          <ShareButtons title="Flu Vaccine Side Effects — VAERS Analysis" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Flu Vaccine Side Effects

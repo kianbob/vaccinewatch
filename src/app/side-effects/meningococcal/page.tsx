@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Meningococcal Vaccine Side Effects — Menactra & Menveo VAERS Data | VaccineWatch',
+  title: 'Meningococcal Vaccine Side Effects — Menactra & Menveo VAERS Data',
   description: 'VAERS analysis of meningococcal vaccine side effects. 36,000+ reports covering Menactra, Menveo, and MenB vaccines.',
 }
 

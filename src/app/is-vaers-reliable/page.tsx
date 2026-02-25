@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Is VAERS Reliable? Understanding VAERS Strengths & Limitations | VaccineWatch',
+  title: 'Is VAERS Reliable? Understanding VAERS Strengths & Limitations',
   description: 'An honest assessment of VAERS reliability. What VAERS can and cannot tell us about vaccine safety, its strengths, limitations, and how to interpret the data correctly.',
   openGraph: {
     title: 'Is VAERS Reliable? — Honest Assessment',
@@ -23,7 +23,7 @@ export default function IsVAERSReliablePage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">10 min read</div>
-          <ShareButtons title="Is VAERS Reliable? | VaccineWatch" />
+          <ShareButtons title="Is VAERS Reliable?" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Is VAERS Reliable?

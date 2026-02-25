@@ -7,7 +7,7 @@ import ShareButtons from '@/components/ShareButtons'
 import DashboardClient from './DashboardClient'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Safety Dashboard — Every Vaccine at a Glance | VaccineWatch',
+  title: 'Vaccine Safety Dashboard — Every Vaccine at a Glance',
   description: 'Interactive dashboard comparing all 104 vaccines in VAERS. Sort by reports, deaths, hospitalizations, ER visits, and disability rates. Searchable and filterable.',
   openGraph: {
     title: 'Vaccine Safety Dashboard — Every Vaccine at a Glance',
@@ -24,7 +24,7 @@ export default function DashboardPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">Interactive Tool</div>
-          <ShareButtons title="Vaccine Safety Dashboard — VaccineWatch" />
+          <ShareButtons title="Vaccine Safety Dashboard" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Vaccine Safety Dashboard

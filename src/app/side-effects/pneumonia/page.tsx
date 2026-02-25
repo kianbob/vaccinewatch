@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Pneumonia Vaccine Side Effects — Pneumovax & Prevnar VAERS Data | VaccineWatch',
+  title: 'Pneumonia Vaccine Side Effects — Pneumovax & Prevnar VAERS Data',
   description: 'VAERS analysis of pneumonia vaccine side effects (Pneumovax, Prevnar 13, Prevnar 20). 100,000+ reports analyzed with context for elderly recipients.',
 }
 
@@ -36,7 +36,7 @@ export default function PneumoniaSideEffectsPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">6 min read</div>
-          <ShareButtons title="Pneumonia Vaccine Side Effects — VaccineWatch" />
+          <ShareButtons title="Pneumonia Vaccine Side Effects" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Pneumonia Vaccine Side Effects

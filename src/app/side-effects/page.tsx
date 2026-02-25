@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Side Effects — Complete VAERS Database Analysis | VaccineWatch',
+  title: 'Vaccine Side Effects — Complete VAERS Database Analysis',
   description: 'Explore reported vaccine side effects from the VAERS database. 1.98 million adverse event reports across 104 vaccines, with context about what the data means and doesn\'t mean.',
   openGraph: {
     title: 'Vaccine Side Effects — Complete VAERS Database Analysis',
@@ -44,7 +44,7 @@ export default function SideEffectsPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">Comprehensive Guide</div>
-          <ShareButtons title="Vaccine Side Effects — Complete VAERS Analysis | VaccineWatch" />
+          <ShareButtons title="Vaccine Side Effects — Complete VAERS Analysis" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Vaccine Side Effects

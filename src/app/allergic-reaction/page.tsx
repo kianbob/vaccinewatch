@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Allergic Reactions to Vaccines — Anaphylaxis Data & Guidance | VaccineWatch',
+  title: 'Allergic Reactions to Vaccines — Anaphylaxis Data & Guidance',
   description: 'Understanding vaccine allergic reactions from mild hives to anaphylaxis. VAERS data, risk factors, the 15-minute wait, and what to do if you react.',
 }
 
@@ -22,7 +22,7 @@ export default function AllergicReactionPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">7 min read</div>
-          <ShareButtons title="Allergic Reactions to Vaccines | VaccineWatch" />
+          <ShareButtons title="Allergic Reactions to Vaccines" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Allergic Reactions to Vaccines

@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import TimelineClient from './TimelineClient'
 
 export const metadata: Metadata = {
-  title: 'VAERS Reporting Timeline - 35 Years of Vaccine Safety Data | VaccineWatch',
+  title: 'VAERS Reporting Timeline - 35 Years of Vaccine Safety Data',
   description: 'Interactive timeline of VAERS adverse event reports from 1990-2026. Explore yearly trends in reports, deaths, hospitalizations, and ER visits.'
 }
 

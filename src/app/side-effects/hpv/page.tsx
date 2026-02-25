@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'HPV Vaccine Side Effects — Gardasil VAERS Analysis | VaccineWatch',
+  title: 'HPV Vaccine Side Effects — Gardasil VAERS Analysis',
   description: 'Complete VAERS analysis of HPV vaccine (Gardasil) side effects. 44,000+ adverse event reports with full context and disclaimers.',
 }
 
@@ -36,7 +36,7 @@ export default function HpvSideEffectsPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">7 min read</div>
-          <ShareButtons title="HPV Vaccine Side Effects — Gardasil VAERS Analysis | VaccineWatch" />
+          <ShareButtons title="HPV Vaccine Side Effects — Gardasil VAERS Analysis" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           HPV Vaccine Side Effects

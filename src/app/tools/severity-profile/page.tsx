@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import SeverityProfileClient from './SeverityProfileClient'
 
 export const metadata: Metadata = {
-  title: 'Severity Profile - Vaccine Outcome Breakdown | VaccineWatch',
+  title: 'Severity Profile - Vaccine Outcome Breakdown',
   description: 'See the complete severity profile for any vaccine: recovery rates, hospitalization rates, death rates, and ER visits compared to the average across all vaccines.'
 }
 

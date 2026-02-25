@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Myocarditis and COVID Vaccine — VAERS Data & Research | VaccineWatch',
+  title: 'Myocarditis and COVID Vaccine — VAERS Data & Research',
   description: 'Complete analysis of myocarditis reports after COVID-19 vaccination. Data from VAERS combined with clinical research on risk factors, outcomes, and context.',
   openGraph: {
     title: 'Myocarditis and COVID Vaccine — VAERS Data & Research',
@@ -23,7 +23,7 @@ export default function MyocarditisLandingPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">10 min read</div>
-          <ShareButtons title="Myocarditis and COVID Vaccine — VaccineWatch" />
+          <ShareButtons title="Myocarditis and COVID Vaccine" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Myocarditis and Vaccines

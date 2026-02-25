@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Hepatitis B Vaccine Side Effects — VAERS Data Analysis | VaccineWatch',
+  title: 'Hepatitis B Vaccine Side Effects — VAERS Data Analysis',
   description: 'VAERS analysis of hepatitis B vaccine side effects. 73,000+ reports analyzed — given at birth, this vaccine generates reports across all ages.',
 }
 
@@ -36,7 +36,7 @@ export default function HepatitisBSideEffectsPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">5 min read</div>
-          <ShareButtons title="Hepatitis B Vaccine Side Effects — VAERS Data Analysis | VaccineWatch" />
+          <ShareButtons title="Hepatitis B Vaccine Side Effects — VAERS Data Analysis" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Hepatitis B Vaccine Side Effects

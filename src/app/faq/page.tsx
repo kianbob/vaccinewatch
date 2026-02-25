@@ -4,7 +4,7 @@ import { playfairDisplay } from '@/lib/fonts'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions — VaccineWatch',
+  title: 'Frequently Asked Questions',
   description: 'Common questions about VAERS data, VaccineWatch methodology, and how to interpret vaccine adverse event reports.'
 }
 

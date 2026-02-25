@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Deaths Reported to VAERS — Complete Data & Context | VaccineWatch',
+  title: 'Vaccine Deaths Reported to VAERS — Complete Data & Context',
   description: 'Analysis of 27,732 death reports in VAERS (1990-2026). Critical context: a VAERS death report does NOT mean the vaccine caused the death. Full data with proper interpretation.',
   openGraph: {
     title: 'Vaccine Deaths Reported to VAERS — Data with Context',
@@ -56,7 +56,7 @@ export default function VaccineDeathsPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">8 min read</div>
-          <ShareButtons title="Vaccine Deaths Reported to VAERS | VaccineWatch" />
+          <ShareButtons title="Vaccine Deaths Reported to VAERS" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Deaths Reported After Vaccination

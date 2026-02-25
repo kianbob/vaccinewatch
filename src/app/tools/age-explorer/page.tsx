@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import AgeExplorerClient from './AgeExplorerClient'
 
 export const metadata: Metadata = {
-  title: 'Age Explorer - Adverse Events by Age Group | VaccineWatch',
+  title: 'Age Explorer - Adverse Events by Age Group',
   description: 'Interactive tool to explore how vaccine adverse event reports vary by age group. See age distributions for any vaccine in the VAERS database.'
 }
 

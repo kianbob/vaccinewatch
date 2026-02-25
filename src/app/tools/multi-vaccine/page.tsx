@@ -6,7 +6,7 @@ import ShareButtons from '@/components/ShareButtons'
 import MultiVaccineClient from './MultiVaccineClient'
 
 export const metadata: Metadata = {
-  title: 'Multi-Vaccine Interaction Explorer — Vaccine Combinations in VAERS | VaccineWatch',
+  title: 'Multi-Vaccine Interaction Explorer — Vaccine Combinations in VAERS',
   description: 'Explore 1,514 vaccine combinations reported to VAERS. See which vaccines are most commonly given together and their adverse event statistics.',
 }
 

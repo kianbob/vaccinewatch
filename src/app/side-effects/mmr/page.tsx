@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'MMR Vaccine Side Effects — Measles, Mumps & Rubella | VaccineWatch',
+  title: 'MMR Vaccine Side Effects — Measles, Mumps & Rubella',
   description: 'Complete VAERS analysis of MMR vaccine side effects. 89,000+ adverse event reports covering measles, mumps, and rubella vaccination.',
 }
 
@@ -36,7 +36,7 @@ export default function MmrSideEffectsPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">7 min read</div>
-          <ShareButtons title="MMR Vaccine Side Effects — Measles, Mumps & Rubella | VaccineWatch" />
+          <ShareButtons title="MMR Vaccine Side Effects — Measles, Mumps & Rubella" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           MMR Vaccine Side Effects

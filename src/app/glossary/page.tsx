@@ -5,7 +5,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'VAERS Glossary — Vaccine Safety Terms Explained | VaccineWatch',
+  title: 'VAERS Glossary — Vaccine Safety Terms Explained',
   description: 'Clear definitions of VAERS terminology, vaccine safety terms, and adverse event reporting concepts. Understand the data with plain-language explanations.',
   keywords: 'VAERS glossary, adverse event definition, vaccine safety terms, what is VAERS, what does VAERS stand for, vaccine adverse event reporting system explained'
 }

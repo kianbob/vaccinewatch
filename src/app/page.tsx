@@ -18,7 +18,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 import { YearlyTrendChartClient as YearlyTrendChart } from '@/components/ClientCharts'
 
 export const metadata: Metadata = {
-  title: 'VaccineWatch — VAERS Adverse Event Reports Exposed, Explored, Explained',
+  title: {
+    absolute: 'VaccineWatch — VAERS Adverse Event Reports Exposed, Explored, Explained',
+  },
   description: 'Comprehensive analysis of 1.98 million vaccine adverse event reports from VAERS. Transparent data on 104 vaccines, 500 symptoms, and 35 years of reporting history.',
 }
 

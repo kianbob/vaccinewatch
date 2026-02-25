@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
 
 export const metadata: Metadata = {
-  title: 'Disclaimer - VaccineWatch',
+  title: 'Disclaimer',
   description: 'Important disclaimer about the limitations of VAERS data presented on VaccineWatch.',
   alternates: {
     canonical: 'https://vaccinewatch.org/disclaimer',

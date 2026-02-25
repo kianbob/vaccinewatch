@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Tdap Vaccine Side Effects — Boostrix & Adacel VAERS Data | VaccineWatch',
+  title: 'Tdap Vaccine Side Effects — Boostrix & Adacel VAERS Data',
   description: 'VAERS analysis of Tdap vaccine side effects (tetanus, diphtheria, pertussis). 52,000+ reports including pregnancy data.',
 }
 
@@ -36,7 +36,7 @@ export default function TdapSideEffectsPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">5 min read</div>
-          <ShareButtons title="Tdap Vaccine Side Effects — Boostrix & Adacel VAERS Data | VaccineWatch" />
+          <ShareButtons title="Tdap Vaccine Side Effects — Boostrix & Adacel VAERS Data" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Tdap Vaccine Side Effects

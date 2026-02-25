@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Hepatitis A Vaccine Side Effects — Havrix & Vaqta VAERS Data | VaccineWatch',
+  title: 'Hepatitis A Vaccine Side Effects — Havrix & Vaqta VAERS Data',
   description: 'VAERS analysis of hepatitis A vaccine side effects. 48,000+ reports for Havrix and Vaqta including injection site reactions and rare outcomes.',
 }
 

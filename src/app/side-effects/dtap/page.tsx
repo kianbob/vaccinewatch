@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'DTaP Vaccine Side Effects — Diphtheria, Tetanus, Pertussis VAERS Data | VaccineWatch',
+  title: 'DTaP Vaccine Side Effects — Diphtheria, Tetanus, Pertussis VAERS Data',
   description: 'VAERS analysis of DTaP vaccine side effects in children. 66,000+ reports covering fever, fussiness, and rare serious outcomes.',
 }
 

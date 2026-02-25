@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Polio Vaccine Side Effects — IPV & OPV VAERS Data | VaccineWatch',
+  title: 'Polio Vaccine Side Effects — IPV & OPV VAERS Data',
   description: 'VAERS analysis of polio vaccine side effects. Both inactivated (IPV/IPOL) and oral (OPV) polio vaccines analyzed with historical context.',
 }
 
@@ -36,7 +36,7 @@ export default function PolioSideEffectsPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">5 min read</div>
-          <ShareButtons title="Polio Vaccine Side Effects — VaccineWatch" />
+          <ShareButtons title="Polio Vaccine Side Effects" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Polio Vaccine Side Effects

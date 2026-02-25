@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'How to Search VAERS — Easy Guide to Vaccine Safety Data | VaccineWatch',
+  title: 'How to Search VAERS — Easy Guide to Vaccine Safety Data',
   description: 'The easiest way to search VAERS data. No complex queries needed — browse vaccines, symptoms, states, and manufacturers with interactive tools and proper context.',
 }
 
@@ -19,7 +19,7 @@ export default function HowToSearchVAERSPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">Guide</div>
-          <ShareButtons title="How to Search VAERS | VaccineWatch" />
+          <ShareButtons title="How to Search VAERS" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           How to Search VAERS Data

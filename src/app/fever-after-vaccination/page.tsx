@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Fever After Vaccination — Is It Normal? VAERS Data | VaccineWatch',
+  title: 'Fever After Vaccination — Is It Normal? VAERS Data',
   description: 'Fever is the #1 reported symptom in VAERS with 276,000+ reports. Learn when post-vaccination fever is normal, when to worry, and what the data shows.',
 }
 
@@ -31,7 +31,7 @@ export default function FeverAfterVaccinationPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">5 min read</div>
-          <ShareButtons title="Fever After Vaccination — Is It Normal? | VaccineWatch" />
+          <ShareButtons title="Fever After Vaccination — Is It Normal?" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Fever After Vaccination

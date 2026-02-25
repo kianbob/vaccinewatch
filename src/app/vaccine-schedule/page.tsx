@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'CDC Vaccine Schedule & VAERS Data — Side Effects by Age | VaccineWatch',
+  title: 'CDC Vaccine Schedule & VAERS Data — Side Effects by Age',
   description: 'See the recommended CDC vaccine schedule with links to VAERS adverse event data for each vaccine. Understand what\'s given at each age and what side effects are reported.',
 }
 
@@ -128,7 +128,7 @@ export default function VaccineSchedulePage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <div className="text-xs font-medium text-primary uppercase tracking-wider">Reference</div>
-          <ShareButtons title="CDC Vaccine Schedule & VAERS Data | VaccineWatch" />
+          <ShareButtons title="CDC Vaccine Schedule & VAERS Data" />
         </div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Vaccine Schedule &amp; VAERS Data
