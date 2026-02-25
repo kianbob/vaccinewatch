@@ -23,6 +23,15 @@ export default function VaccineInjuriesPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What is a vaccine injury?', acceptedAnswer: { '@type': 'Answer', text: 'A vaccine injury is an adverse health outcome that has been determined (or is alleged) to be caused by a vaccine. The National Vaccine Injury Compensation Program (VICP) has a Vaccine Injury Table listing injuries presumed to be caused by specific vaccines.' } },
+          { '@type': 'Question', name: 'How do I file a vaccine injury claim?', acceptedAnswer: { '@type': 'Answer', text: 'Claims are filed with the U.S. Court of Federal Claims under the National Vaccine Injury Compensation Program (VICP). You must file within 3 years of the first symptom. The program has paid over $5 billion since 1988.' } },
+          { '@type': 'Question', name: 'How common are serious vaccine injuries?', acceptedAnswer: { '@type': 'Answer', text: `VAERS has received ${totalReports.toLocaleString()} total reports since 1990. Of these, ${totalHosp.toLocaleString()} involved hospitalization and ${totalDisabled.toLocaleString()} reported disability. However, VAERS reports don't prove causation — many events are coincidental.` } },
+        ],
+      }) }} />
       <Breadcrumbs items={[{ label: 'Vaccine Injuries' }]} />
 
       <div className="mb-8">
