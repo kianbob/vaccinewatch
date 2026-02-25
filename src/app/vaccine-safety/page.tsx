@@ -197,9 +197,9 @@ export default function VaccineSafetyPage() {
             <div className="font-medium text-gray-900">🔍 Is VAERS Reliable? →</div>
             <div className="text-sm text-gray-500">Honest assessment</div>
           </Link>
-          <Link href="/analysis" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
-            <div className="font-medium text-gray-900">📝 23 Analysis Articles →</div>
-            <div className="text-sm text-gray-500">In-depth data journalism</div>
+          <Link href="/vaccine-safety-timeline" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">📅 Safety Timeline →</div>
+            <div className="text-sm text-gray-500">Key events since 1955</div>
           </Link>
         </div>
       </div>
