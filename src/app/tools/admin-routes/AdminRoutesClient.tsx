@@ -1,18 +1,10 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
-import dynamic from 'next/dynamic'
-
-const BarChart = dynamic(() => import('recharts').then(m => m.BarChart) as any, { ssr: false }) as any
-const Bar = dynamic(() => import('recharts').then(m => m.Bar) as any, { ssr: false }) as any
-const XAxis = dynamic(() => import('recharts').then(m => m.XAxis) as any, { ssr: false }) as any
-const YAxis = dynamic(() => import('recharts').then(m => m.YAxis) as any, { ssr: false }) as any
-const CartesianGrid = dynamic(() => import('recharts').then(m => m.CartesianGrid) as any, { ssr: false }) as any
-const Tooltip = dynamic(() => import('recharts').then(m => m.Tooltip) as any, { ssr: false }) as any
-const ResponsiveContainer = dynamic(() => import('recharts').then(m => m.ResponsiveContainer) as any, { ssr: false }) as any
-const PieChart = dynamic(() => import('recharts').then(m => m.PieChart) as any, { ssr: false }) as any
-const Pie = dynamic(() => import('recharts').then(m => m.Pie) as any, { ssr: false }) as any
-const Cell = dynamic(() => import('recharts').then(m => m.Cell) as any, { ssr: false }) as any
+import {
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
+  ResponsiveContainer, PieChart, Pie, Cell, Legend
+} from 'recharts'
 
 const ADMIN_LABELS: Record<string, string> = {
   PVT: 'Private Doctor/Office',
@@ -22,20 +14,20 @@ const ADMIN_LABELS: Record<string, string> = {
   PHM: 'Pharmacy',
   WRK: 'Workplace',
   SCH: 'School',
-  SEN: 'Senior Care/Nursing'
+  SEN: 'Senior Care/Nursing',
 }
 
 const ROUTE_LABELS: Record<string, string> = {
-  IM: 'Intramuscular (injection)',
+  IM: 'Intramuscular',
   PO: 'Oral',
   SC: 'Subcutaneous',
   ID: 'Intradermal',
   SYR: 'Syringe (unspecified)',
   IN: 'Intranasal',
-  OT: 'Other'
+  OT: 'Other/Unknown',
 }
 
-const COLORS = ['#0d9488', '#0891b2', '#059669', '#0284c7', '#7c3aed', '#d97706', '#dc2626', '#94a3b8']
+const COLORS = ['#0891b2', '#06b6d4', '#22d3ee', '#67e8f9', '#a5f3fc', '#155e75', '#164e63', '#083344']
 
 interface AdminData {
   adminBy: Record<string, number>
@@ -55,29 +47,20 @@ export default function AdminRoutesClient() {
 
   const adminData = useMemo(() => {
     if (!data) return []
-    const total = Object.values(data.adminBy).reduce((a, b) => a + b, 0)
     return Object.entries(data.adminBy)
-      .map(([key, value]) => ({
-        name: ADMIN_LABELS[key] || key,
-        code: key,
-        value,
-        pct: ((value / total) * 100).toFixed(1)
-      }))
-      .sort((a, b) => b.value - a.value)
+      .map(([code, count]) => ({ code, name: ADMIN_LABELS[code] || code, count }))
+      .sort((a, b) => b.count - a.count)
   }, [data])
 
   const routeData = useMemo(() => {
     if (!data) return []
-    const total = Object.values(data.vaxRoute).reduce((a, b) => a + b, 0)
     return Object.entries(data.vaxRoute)
-      .map(([key, value]) => ({
-        name: ROUTE_LABELS[key] || key,
-        code: key,
-        value,
-        pct: ((value / total) * 100).toFixed(1)
-      }))
-      .sort((a, b) => b.value - a.value)
+      .map(([code, count]) => ({ code, name: ROUTE_LABELS[code] || code, count }))
+      .sort((a, b) => b.count - a.count)
   }, [data])
+
+  const adminTotal = useMemo(() => adminData.reduce((s, d) => s + d.count, 0), [adminData])
+  const routeTotal = useMemo(() => routeData.reduce((s, d) => s + d.count, 0), [routeData])
 
   if (!data) {
     return (
@@ -87,8 +70,20 @@ export default function AdminRoutesClient() {
     )
   }
 
-  const currentData = view === 'admin' ? adminData : routeData
-  const total = currentData.reduce((sum, d) => sum + d.value, 0)
+  const activeData = view === 'admin' ? adminData : routeData
+  const activeTotal = view === 'admin' ? adminTotal : routeTotal
+
+  const pieData = activeData.map(d => ({
+    name: d.name,
+    value: d.count,
+    pct: ((d.count / activeTotal) * 100).toFixed(1),
+  }))
+
+  const barData = activeData.map(d => ({
+    name: d.name,
+    count: d.count,
+    pct: ((d.count / activeTotal) * 100).toFixed(1),
+  }))
 
   return (
     <div className="space-y-8">
@@ -96,128 +91,127 @@ export default function AdminRoutesClient() {
       <div className="flex gap-2">
         <button
           onClick={() => setView('admin')}
-          className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
-            view === 'admin' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
+            view === 'admin' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
-          🏥 Who Administers
+          Who Administers
         </button>
         <button
           onClick={() => setView('route')}
-          className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
-            view === 'route' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
+            view === 'route' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
-          💉 How It&apos;s Given
+          Administration Routes
         </button>
       </div>
 
-      {/* Charts side by side */}
+      {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Bar Chart */}
         <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-bold mb-4">
-            {view === 'admin' ? 'Administration Setting' : 'Route of Administration'}
+          <h2 className="text-lg font-bold text-gray-900 mb-4">
+            {view === 'admin' ? 'Who Administers Vaccines' : 'How Vaccines Are Given'}
           </h2>
-          <div style={{ width: '100%', height: 400 }}>
-            <ResponsiveContainer>
-              <BarChart data={currentData} layout="vertical" margin={{ left: 140 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis type="number" tickFormatter={(v: number) => v >= 1000 ? `${(v / 1000).toFixed(0)}K` : String(v)} />
-                <YAxis type="category" dataKey="name" tick={{ fontSize: 11 }} width={140} />
-                <Tooltip
-                  formatter={(value: any) => [Number(value).toLocaleString(), 'Reports']}
-                  contentStyle={{ borderRadius: '12px', border: '1px solid #e5e7eb' }}
-                />
-                <Bar dataKey="value" fill="#0d9488" radius={[0, 4, 4, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-
-        {/* Pie Chart */}
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-bold mb-4">Distribution</h2>
-          <div style={{ width: '100%', height: 350 }}>
-            <ResponsiveContainer>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
-                  data={currentData}
+                  data={pieData}
                   cx="50%"
                   cy="50%"
-                  outerRadius={130}
+                  outerRadius={120}
                   dataKey="value"
-                  label={({ name, pct }: any) => `${name.split(' ')[0]} (${pct}%)`}
-                  labelLine={{ strokeWidth: 1 }}
+                  label={({ pct }: any) => `${pct}%`}
                 >
-                  {currentData.map((_, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  {pieData.map((_, i) => (
+                    <Cell key={i} fill={COLORS[i % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(value: any) => Number(value).toLocaleString()} />
+                <Tooltip formatter={(value: any) => value.toLocaleString()} />
+                <Legend />
               </PieChart>
             </ResponsiveContainer>
           </div>
         </div>
+
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">Report Count by Category</h2>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={barData} layout="vertical" margin={{ left: 140, right: 20, top: 5, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis type="number" />
+                <YAxis type="category" dataKey="name" width={130} tick={{ fontSize: 12 }} />
+                <Tooltip formatter={(value: any) => value.toLocaleString()} />
+                <Bar dataKey="count" fill="#0891b2" name="Reports" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
       </div>
 
-      {/* Data Table */}
+      {/* Table */}
       <div className="bg-white rounded-xl border border-gray-200 p-6">
-        <h2 className="text-lg font-bold mb-4">Detailed Breakdown</h2>
+        <h2 className="text-lg font-bold text-gray-900 mb-4">Detailed Breakdown</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-4 py-3 text-left font-medium text-gray-500">
-                  {view === 'admin' ? 'Setting' : 'Route'}
-                </th>
-                <th className="px-4 py-3 text-left font-medium text-gray-500">Code</th>
-                <th className="px-4 py-3 text-right font-medium text-gray-500">Reports</th>
-                <th className="px-4 py-3 text-right font-medium text-primary">% of Total</th>
+                <th className="text-left px-3 py-2 font-semibold text-gray-700">Code</th>
+                <th className="text-left px-3 py-2 font-semibold text-gray-700">Description</th>
+                <th className="text-right px-3 py-2 font-semibold text-gray-700">Reports</th>
+                <th className="text-right px-3 py-2 font-semibold text-gray-700">% of Total</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
-              {currentData.map((row, i) => (
-                <tr key={row.code} className="hover:bg-gray-50">
-                  <td className="px-4 py-3 font-medium flex items-center gap-2">
-                    <div className="w-3 h-3 rounded" style={{ backgroundColor: COLORS[i % COLORS.length] }} />
-                    {row.name}
-                  </td>
-                  <td className="px-4 py-3 text-gray-500">{row.code}</td>
-                  <td className="px-4 py-3 text-right">{row.value.toLocaleString()}</td>
-                  <td className="px-4 py-3 text-right text-primary font-medium">{row.pct}%</td>
+            <tbody className="divide-y divide-gray-100">
+              {activeData.map(d => (
+                <tr key={d.code} className="hover:bg-gray-50">
+                  <td className="px-3 py-2 font-mono text-gray-600">{d.code}</td>
+                  <td className="px-3 py-2 font-medium text-gray-900">{d.name}</td>
+                  <td className="px-3 py-2 text-right text-gray-700">{d.count.toLocaleString()}</td>
+                  <td className="px-3 py-2 text-right text-gray-700">{((d.count / activeTotal) * 100).toFixed(1)}%</td>
                 </tr>
               ))}
               <tr className="bg-gray-50 font-bold">
-                <td className="px-4 py-3" colSpan={2}>Total</td>
-                <td className="px-4 py-3 text-right">{total.toLocaleString()}</td>
-                <td className="px-4 py-3 text-right text-primary">100%</td>
+                <td className="px-3 py-2" colSpan={2}>Total</td>
+                <td className="px-3 py-2 text-right">{activeTotal.toLocaleString()}</td>
+                <td className="px-3 py-2 text-right">100%</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      {/* Key Insights */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6">
-        <h2 className="text-lg font-bold mb-3">Key Insights</h2>
-        {view === 'admin' ? (
-          <ul className="text-sm text-gray-700 space-y-2">
-            <li>• <strong>Private doctors/offices</strong> account for the largest identifiable share of vaccine administration, followed by pharmacies.</li>
-            <li>• <strong>Pharmacies</strong> became major vaccination sites during COVID-19 — their share is heavily influenced by pandemic-era reporting.</li>
-            <li>• <strong>&quot;Other/Unknown&quot;</strong> is a large category because many VAERS reports don&apos;t specify the administration setting.</li>
-            <li>• <strong>Military</strong> has its own reporting pathway, reflecting mandatory vaccination programs.</li>
-            <li>• <strong>School-based</strong> vaccination programs generate relatively few VAERS reports despite vaccinating millions of children.</li>
-          </ul>
-        ) : (
-          <ul className="text-sm text-gray-700 space-y-2">
-            <li>• <strong>Intramuscular injection (IM)</strong> dominates because most vaccines — including COVID-19, flu, and childhood vaccines — are given this way.</li>
-            <li>• <strong>Subcutaneous (SC)</strong> is used for vaccines like MMR and varicella.</li>
-            <li>• <strong>Oral (PO)</strong> includes rotavirus vaccine, the primary oral vaccine in the U.S.</li>
-            <li>• <strong>Intranasal (IN)</strong> represents FluMist, the nasal spray flu vaccine.</li>
-            <li>• <strong>&quot;Syringe&quot; (SYR)</strong> is a generic classification when the specific injection method wasn&apos;t recorded.</li>
-          </ul>
-        )}
+      {/* Context */}
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <h3 className="font-bold text-blue-900 mb-3">What This Tells Us About Reporting</h3>
+        <div className="text-sm text-blue-800 space-y-2">
+          {view === 'admin' ? (
+            <>
+              <p>The &ldquo;who administers&rdquo; field reveals important patterns about VAERS reporting:</p>
+              <ul className="space-y-1 ml-4">
+                <li>• <strong>Private doctors</strong> account for a significant share — these are routine visits where reporting is integrated</li>
+                <li>• <strong>Pharmacies</strong> became major reporters during COVID-19 as they administered millions of doses</li>
+                <li>• <strong>&ldquo;Other/Unknown&rdquo;</strong> is the largest category, reflecting how often this field goes unfilled</li>
+                <li>• <strong>Military</strong> reports reflect mandatory vaccination programs and structured reporting</li>
+                <li>• <strong>School &amp; workplace</strong> programs have low numbers — many events may be reported by the patient&apos;s doctor instead</li>
+              </ul>
+            </>
+          ) : (
+            <>
+              <p>How vaccines are given affects both the type and reporting of adverse events:</p>
+              <ul className="space-y-1 ml-4">
+                <li>• <strong>Intramuscular (IM)</strong> dominates because most modern vaccines use this route</li>
+                <li>• <strong>Subcutaneous (SC)</strong> is used for vaccines like MMR and varicella</li>
+                <li>• <strong>Oral (PO)</strong> includes rotavirus and older oral polio vaccines</li>
+                <li>• <strong>Intranasal (IN)</strong> is primarily FluMist nasal spray flu vaccine</li>
+                <li>• <strong>Syringe (SYR)</strong> means a needle injection where the specific route wasn&apos;t recorded</li>
+                <li>• <strong>Intradermal (ID)</strong> is rare — some flu vaccines and TB tests use this route</li>
+              </ul>
+            </>
+          )}
+        </div>
       </div>
     </div>
   )

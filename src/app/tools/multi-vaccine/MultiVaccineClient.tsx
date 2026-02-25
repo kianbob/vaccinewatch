@@ -1,28 +1,25 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
-import dynamic from 'next/dynamic'
+import {
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
+  ResponsiveContainer
+} from 'recharts'
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-const BarChart = dynamic(() => import('recharts').then(m => m.BarChart) as any, { ssr: false }) as any
-const Bar = dynamic(() => import('recharts').then(m => m.Bar) as any, { ssr: false }) as any
-const XAxis = dynamic(() => import('recharts').then(m => m.XAxis) as any, { ssr: false }) as any
-const YAxis = dynamic(() => import('recharts').then(m => m.YAxis) as any, { ssr: false }) as any
-const CartesianGrid = dynamic(() => import('recharts').then(m => m.CartesianGrid) as any, { ssr: false }) as any
-const Tooltip = dynamic(() => import('recharts').then(m => m.Tooltip) as any, { ssr: false }) as any
-const ResponsiveContainer = dynamic(() => import('recharts').then(m => m.ResponsiveContainer) as any, { ssr: false }) as any
-
-interface Combo {
+interface ComboEntry {
+  vaccines: string[]
   reports: number
   died: number
   hosp: number
-  vaccines: string[]
 }
 
+type SortKey = 'reports' | 'died' | 'hosp'
+
 export default function MultiVaccineClient() {
-  const [data, setData] = useState<Combo[]>([])
+  const [data, setData] = useState<ComboEntry[]>([])
   const [search, setSearch] = useState('')
-  const [sortKey, setSortKey] = useState<'reports' | 'died' | 'hosp'>('reports')
+  const [sortBy, setSortBy] = useState<SortKey>('reports')
+  const [sortAsc, setSortAsc] = useState(false)
 
   useEffect(() => {
     fetch('/data/multi-vaccine.json')
@@ -32,22 +29,35 @@ export default function MultiVaccineClient() {
   }, [])
 
   const filtered = useMemo(() => {
-    let result = data
-    if (search) {
-      const q = search.toLowerCase()
-      result = result.filter(c => c.vaccines.some(v => v.toLowerCase().includes(q)))
+    let items = data
+    if (search.trim()) {
+      const q = search.toUpperCase().trim()
+      items = items.filter(d => d.vaccines.some(v => v.includes(q)) || d.vaccines.join(' + ').includes(q))
     }
-    return [...result].sort((a, b) => b[sortKey] - a[sortKey])
-  }, [data, search, sortKey])
+    return [...items].sort((a, b) => sortAsc ? a[sortBy] - b[sortBy] : b[sortBy] - a[sortBy])
+  }, [data, search, sortBy, sortAsc])
 
   const top20 = useMemo(() => {
-    return [...data].sort((a, b) => b.reports - a.reports).slice(0, 20).map(c => ({
-      name: c.vaccines.join(' + '),
-      reports: c.reports,
-      deaths: c.died,
-      hospitalizations: c.hosp
-    }))
+    return [...data]
+      .sort((a, b) => b.reports - a.reports)
+      .slice(0, 20)
+      .map(d => ({
+        name: d.vaccines.join(' + '),
+        reports: d.reports,
+        deaths: d.died,
+        hospitalizations: d.hosp,
+      }))
   }, [data])
+
+  const totalReports = useMemo(() => data.reduce((s, d) => s + d.reports, 0), [data])
+  const totalDeaths = useMemo(() => data.reduce((s, d) => s + d.died, 0), [data])
+
+  const handleSort = (key: SortKey) => {
+    if (sortBy === key) setSortAsc(!sortAsc)
+    else { setSortBy(key); setSortAsc(false) }
+  }
+
+  const sortIcon = (key: SortKey) => sortBy === key ? (sortAsc ? ' ↑' : ' ↓') : ''
 
   if (!data.length) {
     return (
@@ -59,92 +69,82 @@ export default function MultiVaccineClient() {
 
   return (
     <div className="space-y-8">
-      {/* Top 20 Chart */}
+      {/* Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="bg-white rounded-xl border border-gray-200 p-4 text-center">
+          <p className="text-2xl font-bold text-primary">{data.length.toLocaleString()}</p>
+          <p className="text-sm text-gray-500">vaccine combinations</p>
+        </div>
+        <div className="bg-white rounded-xl border border-gray-200 p-4 text-center">
+          <p className="text-2xl font-bold text-primary">{totalReports.toLocaleString()}</p>
+          <p className="text-sm text-gray-500">total co-admin reports</p>
+        </div>
+        <div className="bg-white rounded-xl border border-gray-200 p-4 text-center">
+          <p className="text-2xl font-bold text-primary">{totalDeaths.toLocaleString()}</p>
+          <p className="text-sm text-gray-500">deaths in multi-vax reports</p>
+        </div>
+      </div>
+
+      {/* Bar Chart */}
       <div className="bg-white rounded-xl border border-gray-200 p-6">
-        <h2 className="text-xl font-bold mb-1">Top 20 Vaccine Combinations</h2>
-        <p className="text-sm text-gray-500 mb-4">Most frequently co-administered vaccines in VAERS reports</p>
-        <div style={{ width: '100%', height: 500 }}>
-          <ResponsiveContainer>
-            <BarChart data={top20} layout="vertical" margin={{ left: 120 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis type="number" tickFormatter={(v: number) => v >= 1000 ? `${(v / 1000).toFixed(0)}K` : String(v)} />
-              <YAxis type="category" dataKey="name" tick={{ fontSize: 11 }} width={120} />
-              <Tooltip
-                formatter={(value: any) => [Number(value).toLocaleString(), 'Reports']}
-                contentStyle={{ borderRadius: '12px', border: '1px solid #e5e7eb' }}
-              />
-              <Bar dataKey="reports" fill="#0d9488" radius={[0, 4, 4, 0]} />
+        <h2 className="text-lg font-bold text-gray-900 mb-4">Top 20 Vaccine Combinations by Reports</h2>
+        <div className="h-[500px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={top20} layout="vertical" margin={{ left: 120, right: 20, top: 5, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis type="number" />
+              <YAxis type="category" dataKey="name" width={110} tick={{ fontSize: 11 }} />
+              <Tooltip formatter={(value: any) => value.toLocaleString()} />
+              <Bar dataKey="reports" fill="#0891b2" name="Reports" />
             </BarChart>
           </ResponsiveContainer>
         </div>
       </div>
 
-      {/* Search and Table */}
+      {/* Search + Table */}
       <div className="bg-white rounded-xl border border-gray-200 p-6">
-        <div className="flex flex-col sm:flex-row gap-4 mb-4">
-          <div className="flex-1">
-            <input
-              type="text"
-              placeholder="Search for a vaccine (e.g., COVID, MMR, FLU)..."
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary/30 focus:border-primary"
-            />
-          </div>
-          <div className="flex gap-2">
-            {(['reports', 'died', 'hosp'] as const).map(k => (
-              <button
-                key={k}
-                onClick={() => setSortKey(k)}
-                className={`px-3 py-2 rounded-xl text-xs font-medium ${
-                  sortKey === k ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {k === 'reports' ? 'Reports' : k === 'died' ? 'Deaths' : 'Hospitalizations'}
-              </button>
-            ))}
-          </div>
+        <h2 className="text-lg font-bold text-gray-900 mb-4">All Vaccine Combinations</h2>
+        <input
+          type="text"
+          placeholder="Search vaccine combos (e.g. FLU3, MMR, COVID19)..."
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-primary/30 focus:border-primary"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
+        <div className="text-sm text-gray-500 mb-3">
+          Showing {filtered.length.toLocaleString()} of {data.length.toLocaleString()} combinations
         </div>
-        <p className="text-sm text-gray-500 mb-3">
-          Showing {filtered.length} of {data.length} combinations
-        </p>
-        <div className="overflow-x-auto max-h-96 overflow-y-auto">
+        <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50 sticky top-0">
+            <thead className="sticky top-0 bg-gray-50">
               <tr>
-                <th className="px-4 py-3 text-left font-medium text-gray-500">Vaccines</th>
-                <th className="px-4 py-3 text-right font-medium text-gray-500">Reports</th>
-                <th className="px-4 py-3 text-right font-medium text-danger">Deaths</th>
-                <th className="px-4 py-3 text-right font-medium text-accent">Hospitalizations</th>
-                <th className="px-4 py-3 text-right font-medium text-gray-500">Death Rate</th>
+                <th className="text-left px-3 py-2 font-semibold text-gray-700">Vaccines</th>
+                <th className="text-right px-3 py-2 font-semibold text-gray-700 cursor-pointer select-none" onClick={() => handleSort('reports')}>
+                  Reports{sortIcon('reports')}
+                </th>
+                <th className="text-right px-3 py-2 font-semibold text-gray-700 cursor-pointer select-none" onClick={() => handleSort('died')}>
+                  Deaths{sortIcon('died')}
+                </th>
+                <th className="text-right px-3 py-2 font-semibold text-gray-700 cursor-pointer select-none" onClick={() => handleSort('hosp')}>
+                  Hospitalizations{sortIcon('hosp')}
+                </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
-              {filtered.slice(0, 100).map((c, i) => (
+            <tbody className="divide-y divide-gray-100">
+              {filtered.slice(0, 200).map((d, i) => (
                 <tr key={i} className="hover:bg-gray-50">
-                  <td className="px-4 py-2 font-medium">
-                    <div className="flex flex-wrap gap-1">
-                      {c.vaccines.map(v => (
-                        <span key={v} className="inline-block px-2 py-0.5 bg-primary/10 text-primary text-xs rounded-lg">
-                          {v}
-                        </span>
-                      ))}
-                    </div>
-                  </td>
-                  <td className="px-4 py-2 text-right">{c.reports.toLocaleString()}</td>
-                  <td className="px-4 py-2 text-right text-danger font-medium">{c.died.toLocaleString()}</td>
-                  <td className="px-4 py-2 text-right text-accent">{c.hosp.toLocaleString()}</td>
-                  <td className="px-4 py-2 text-right text-gray-600">
-                    {c.reports > 0 ? ((c.died / c.reports) * 100).toFixed(1) : '0'}%
-                  </td>
+                  <td className="px-3 py-2 font-medium text-gray-900">{d.vaccines.join(' + ')}</td>
+                  <td className="px-3 py-2 text-right text-gray-700">{d.reports.toLocaleString()}</td>
+                  <td className="px-3 py-2 text-right text-gray-700">{d.died.toLocaleString()}</td>
+                  <td className="px-3 py-2 text-right text-gray-700">{d.hosp.toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>
           </table>
+          {filtered.length > 200 && (
+            <p className="text-sm text-gray-500 mt-2 text-center">Showing first 200 results. Refine your search to see more.</p>
+          )}
         </div>
-        {filtered.length > 100 && (
-          <p className="text-sm text-gray-400 mt-2">Showing first 100 results. Use search to narrow down.</p>
-        )}
       </div>
     </div>
   )
