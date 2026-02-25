@@ -5,7 +5,7 @@ import { readdirSync } from 'fs'
 import { join } from 'path'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
-import { formatNumber, slugify } from '@/lib/utils'
+import { formatNumber, slugify, formatManufacturer } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -46,8 +46,8 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${mfr.name} Vaccine Safety Reports`,
-    description: `${formatNumber(mfr.reports)} VAERS adverse event reports for vaccines by ${mfr.name}. View associated vaccines, death reports (${formatNumber(mfr.died)}), and hospitalization data.`
+    title: `${formatManufacturer(mfr.name)} Vaccine Safety Reports`,
+    description: `${formatNumber(mfr.reports)} VAERS adverse event reports for vaccines by ${formatManufacturer(mfr.name)}. View associated vaccines, death reports (${formatNumber(mfr.died)}), and hospitalization data.`
   }
 }
 
@@ -81,11 +81,11 @@ export default async function ManufacturerDetailPage({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
 
-      <Breadcrumbs items={[{ label: 'Manufacturers', href: '/manufacturers' }, { label: mfr.name }]} />
+      <Breadcrumbs items={[{ label: 'Manufacturers', href: '/manufacturers' }, { label: formatManufacturer(mfr.name) }]} />
 
       <div className="mb-8">
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-2 ${playfairDisplay.className}`}>
-          {mfr.name}
+          {formatManufacturer(mfr.name)}
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-lg text-gray-600">
           <span>{formatNumber(mfr.reports)} total reports</span>
@@ -106,17 +106,17 @@ export default async function ManufacturerDetailPage({
         <div className="lg:col-span-2 space-y-8">
           <div className="bg-white rounded-xl border border-gray-200 p-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              About {mfr.name}
+              About {formatManufacturer(mfr.name)}
             </h2>
             <div className="prose prose-lg text-gray-600">
               <p>
-                <strong>{mfr.name}</strong> has <strong>{formatNumber(mfr.reports)}</strong> adverse event reports in VAERS, representing <strong>{marketShare}%</strong> of all manufacturer-attributed reports.
+                <strong>{formatManufacturer(mfr.name)}</strong> has <strong>{formatNumber(mfr.reports)}</strong> adverse event reports in VAERS, representing <strong>{marketShare}%</strong> of all manufacturer-attributed reports.
               </p>
               <p>
                 Of these reports, <strong className="text-danger">{formatNumber(mfr.died)}</strong> mentioned death and <strong className="text-accent">{formatNumber(mfr.hosp)}</strong> involved hospitalization.
               </p>
               <p>
-                {mfr.name} produces <strong>{vaccines.length || mfr.vaccines.length}</strong> vaccine{(vaccines.length || mfr.vaccines.length) !== 1 ? 's' : ''} tracked in VAERS.
+                {formatManufacturer(mfr.name)} produces <strong>{vaccines.length || mfr.vaccines.length}</strong> vaccine{(vaccines.length || mfr.vaccines.length) !== 1 ? 's' : ''} tracked in VAERS.
                 {parseFloat(marketShare) > 10 
                   ? ` As one of the largest vaccine manufacturers by report volume, their high report count primarily reflects extensive market distribution rather than safety concerns.`
                   : parseFloat(marketShare) > 1
@@ -130,7 +130,7 @@ export default async function ManufacturerDetailPage({
           {vaccines.length > 0 && (
             <div className="bg-white rounded-xl border border-gray-200 p-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Vaccines by {mfr.name}
+                Vaccines by {formatManufacturer(mfr.name)}
               </h2>
               <div className="overflow-x-auto">
                 <table className="w-full">

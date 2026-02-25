@@ -248,6 +248,56 @@ export function getCleanVaccineName(rawName: string): string {
   return cleanType
 }
 
+/**
+ * Format raw VAERS manufacturer names into human-friendly display names.
+ * e.g. "PFIZER\BIONTECH" → "Pfizer / BioNTech"
+ */
+export function formatManufacturer(name: string): string {
+  if (!name) return name
+
+  const knownMappings: Record<string, string> = {
+    'PFIZER\\BIONTECH': 'Pfizer / BioNTech',
+    'MERCK & CO. INC.': 'Merck & Co.',
+    'GLAXOSMITHKLINE BIOLOGICALS': 'GlaxoSmithKline',
+    'SANOFI PASTEUR': 'Sanofi Pasteur',
+    'UNKNOWN MANUFACTURER': 'Unknown Manufacturer',
+    'MODERNA': 'Moderna',
+    'JANSSEN': 'Janssen',
+    'NOVARTIS VACCINES AND DIAGNOSTICS': 'Novartis',
+    'MEDIMMUNE VACCINES, INC.': 'MedImmune',
+    'LEDERLE LABORATORIES': 'Lederle Laboratories',
+    'WYETH': 'Wyeth',
+    'CSL LIMITED': 'CSL Limited',
+    'CONNAUGHT LABORATORIES': 'Connaught Laboratories',
+    'BERNA BIOTECH, LTD': 'Berna Biotech',
+    'NORTH AMERICAN VACCINE, INC.': 'North American Vaccine',
+    'NABI (NORTH AMERICAN BIOLOGICALS, INC.)': 'NABI',
+    'EMERGENT BIOSOLUTIONS': 'Emergent BioSolutions',
+    'DYNAVAX TECHNOLOGIES CORPORATION': 'Dynavax',
+    'SEQIRUS, INC.': 'Seqirus',
+    'PROTEIN SCIENCES': 'Protein Sciences',
+    'BAVARIAN NORDIC': 'Bavarian Nordic',
+    'MASS. PUB HLTH BIOL LAB': 'Mass. Public Health Bio Lab',
+  }
+
+  const upper = name.toUpperCase()
+  // Check exact match (case-insensitive)
+  for (const [key, value] of Object.entries(knownMappings)) {
+    if (upper === key.toUpperCase()) return value
+  }
+
+  // Generic: replace backslash, convert to title case
+  return name
+    .replace(/\\/g, ' / ')
+    .split(/\s+/)
+    .map(word => {
+      if (word === '/') return '/'
+      if (word.length <= 2 && word.toUpperCase() === word) return word
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+    })
+    .join(' ')
+}
+
 export function slugify(text: string): string {
   return text
     .toLowerCase()

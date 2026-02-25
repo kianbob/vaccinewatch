@@ -5,7 +5,7 @@ import { readdirSync, existsSync } from 'fs'
 import { join } from 'path'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
-import { formatNumber, slugify, getCleanVaccineName } from '@/lib/utils'
+import { formatNumber, slugify, getCleanVaccineName, formatManufacturer } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -165,7 +165,7 @@ export default async function VaccineDetailPage({
                   href={`/manufacturers/${slugify(manufacturer.name)}`}
                   className="text-sm bg-white border border-gray-200 rounded-md px-3 py-1 hover:border-primary/30 hover:bg-primary/5 transition-colors"
                 >
-                  {manufacturer.name}
+                  {formatManufacturer(manufacturer.name)}
                 </Link>
               ))}
             </div>
@@ -227,7 +227,7 @@ export default async function VaccineDetailPage({
               </p>
               {vaccine.manufacturers.length > 0 && (
                 <p>
-                  This vaccine is manufactured by: <strong>{vaccine.manufacturers.map(m => m.name).join(', ')}</strong>.
+                  This vaccine is manufactured by: <strong>{vaccine.manufacturers.map(m => formatManufacturer(m.name)).join(', ')}</strong>.
                 </p>
               )}
               <p>

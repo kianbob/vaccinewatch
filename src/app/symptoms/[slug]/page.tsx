@@ -44,7 +44,7 @@ export async function generateMetadata({
     
     return {
       title: `${symptom.name} After Vaccination — VAERS Reports`,
-      description: `${formatNumber(symptom.reports)} reports of ${symptom.name} after vaccination in VAERS. Severity rate: ${symptom.reports > 0 ? ((symptom.died + symptom.hosp) / symptom.reports * 100).toFixed(1) : '0'}%. View associated vaccines and yearly trends.`
+      description: `${formatNumber(symptom.reports)} reports of ${symptom.name} after vaccination in VAERS. Severity rate: ${symptom.reports > 0 ? Math.min((symptom.died + symptom.hosp) / symptom.reports * 100, 100).toFixed(1) : '0'}%. View associated vaccines and yearly trends.`
     }
   } catch {
     return {
@@ -69,7 +69,7 @@ export default async function SymptomDetailPage({
     notFound()
   }
 
-  const severityRate = symptom.reports > 0 ? ((symptom.died + symptom.hosp) / symptom.reports * 100) : 0
+  const severityRate = symptom.reports > 0 ? Math.min((symptom.died + symptom.hosp) / symptom.reports * 100, 100) : 0
   const mortalityRate = symptom.reports > 0 ? (symptom.died / symptom.reports * 100) : 0
 
   // Sensitive symptom detection

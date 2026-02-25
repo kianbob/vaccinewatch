@@ -298,7 +298,7 @@ export default function HomePage() {
               <div className="space-y-4">
                 <div>
                   <div className="text-3xl font-bold text-gray-900">{formatNumber(covidReports)}</div>
-                  <div className="text-sm text-gray-500">total reports ({(covidReports / stats.totalReports * 100).toFixed(0)}% of all)</div>
+                  <div className="text-sm text-gray-500">total reports ({(covidReports / stats.totalReports * 100).toFixed(0)}% of reports)</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-danger">{formatNumber(covidDeaths)}</div>
@@ -315,7 +315,7 @@ export default function HomePage() {
               <div className="space-y-4">
                 <div>
                   <div className="text-3xl font-bold text-gray-900">{formatNumber(otherReports)}</div>
-                  <div className="text-sm text-gray-500">total reports ({(otherReports / stats.totalReports * 100).toFixed(0)}% of all)</div>
+                  <div className="text-sm text-gray-500">total reports ({(otherReports / stats.totalReports * 100).toFixed(0)}% of reports)</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-danger">{formatNumber(otherDeaths)}</div>
@@ -327,6 +327,9 @@ export default function HomePage() {
                 Compare COVID vs flu vaccines →
               </Link>
             </div>
+          <p className="text-xs text-gray-500 text-center mt-4 max-w-2xl mx-auto">
+            Note: Some reports involve multiple vaccines, so percentages may exceed 100% when combined.
+          </p>
           </div>
           </ScrollReveal>
         </div>
