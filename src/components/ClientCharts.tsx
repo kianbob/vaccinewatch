@@ -103,3 +103,54 @@ export const SeriousOutcomesChartsClient = dynamic(
   () => import('@/components/charts/SeriousOutcomesCharts'),
   { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
 )
+
+// New analysis charts for the 10 new articles
+export const OnsetTimingChartsClient = dynamic(
+  () => import('@/components/charts/OnsetTimingCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const DoseComparisonChartsClient = dynamic(
+  () => import('@/components/charts/DoseComparisonCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const RecoveryRatesChartsClient = dynamic(
+  () => import('@/components/charts/RecoveryRatesCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const LotAnalysisChartsClient = dynamic(
+  () => import('@/components/charts/LotAnalysisCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const MultiVaccineChartsClient = dynamic(
+  () => import('@/components/charts/MultiVaccineCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const ReportingBiasChartsClient = dynamic(
+  () => import('@/components/charts/ReportingBiasCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const BirthDefectsChartsClient = dynamic(
+  () => import('@/components/charts/BirthDefectsCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const HospitalStaysChartsClient = dynamic(
+  () => import('@/components/charts/HospitalStaysCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const WhoReportsChartsClient = dynamic(
+  () => import('@/components/charts/WhoReportsCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const DenominatorProblemChartsClient = dynamic(
+  () => import('@/components/charts/DenominatorProblemCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)

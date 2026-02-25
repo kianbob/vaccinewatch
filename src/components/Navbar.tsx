@@ -8,6 +8,7 @@ const navigation = [
   { name: 'Vaccines', href: '/vaccines' },
   { name: 'Symptoms', href: '/symptoms' },
   { name: 'Analysis', href: '/analysis' },
+  { name: 'Tools', href: '/tools' },
   { name: 'Compare', href: '/compare' },
 ]
 

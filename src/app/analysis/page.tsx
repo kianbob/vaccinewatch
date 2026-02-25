@@ -9,6 +9,25 @@ export const metadata: Metadata = {
 }
 
 const articles = [
+  // Foundational credibility articles (most important first)
+  {
+    slug: 'denominator-problem',
+    title: 'Why Raw VAERS Numbers Can Be Misleading',
+    subtitle: 'The most critical limitation: raw numbers are meaningless without context',
+    keyFinding: '670+ million COVID doses make raw report counts misleading without proper denominators',
+    readTime: 9,
+    color: 'danger',
+  },
+  {
+    slug: 'reporting-bias',
+    title: 'Understanding VAERS Reporting Bias',
+    subtitle: 'Stimulated reporting, awareness bias, and media influence on VAERS data',
+    keyFinding: '2021 saw a 25x spike in reports, demonstrating massive stimulated reporting',
+    readTime: 8,
+    color: 'primary',
+  },
+  
+  // Core analysis articles
   {
     slug: 'covid-impact',
     title: 'The COVID-19 Impact on VAERS',
@@ -17,6 +36,74 @@ const articles = [
     readTime: 8,
     color: 'danger',
   },
+  {
+    slug: 'onset-timing',
+    title: 'When Do Vaccine Side Effects Start?',
+    subtitle: 'Analysis of onset timing patterns across all vaccines',
+    keyFinding: '73% of adverse events occur within 3 days of vaccination',
+    readTime: 7,
+    color: 'primary',
+  },
+  {
+    slug: 'dose-comparison',
+    title: 'First Dose vs Second Dose vs Booster',
+    subtitle: 'Comparing adverse event patterns across COVID-19 vaccine doses',
+    keyFinding: 'Second doses generate 130% more reports than first doses',
+    readTime: 6,
+    color: 'accent',
+  },
+  {
+    slug: 'recovery-rates',
+    title: 'Do Vaccine Side Effects Go Away?',
+    subtitle: 'Analysis of recovery status in VAERS reports',
+    keyFinding: '68% of reports indicate recovery, but context about "not recovered" is essential',
+    readTime: 6,
+    color: 'primary',
+  },
+  
+  // Specific analysis topics
+  {
+    slug: 'lot-analysis',
+    title: 'Understanding Vaccine Lot Numbers in VAERS',
+    subtitle: 'Why lot analysis is misleading without proper context',
+    keyFinding: '4,414 COVID lots with reports, but raw counts cannot determine safety',
+    readTime: 8,
+    color: 'danger',
+  },
+  {
+    slug: 'multi-vaccine',
+    title: 'When Multiple Vaccines Are Given Together',
+    subtitle: 'Analysis of co-administration patterns and safety',
+    keyFinding: '1,514 vaccine combinations reported, reflecting standard medical practice',
+    readTime: 7,
+    color: 'accent',
+  },
+  {
+    slug: 'birth-defects',
+    title: 'Birth Defect Reports in VAERS',
+    subtitle: 'Understanding prenatal vaccination and background birth defect rates',
+    keyFinding: '41 vaccines with birth defect reports, but 3-4% background rate is key context',
+    readTime: 8,
+    color: 'danger',
+  },
+  {
+    slug: 'hospital-stays',
+    title: 'How Long Are Vaccine-Related Hospitalizations?',
+    subtitle: 'Analysis of hospitalization duration patterns',
+    keyFinding: '72% of hospitalizations last 3 days or fewer',
+    readTime: 6,
+    color: 'primary',
+  },
+  {
+    slug: 'who-reports',
+    title: 'Who Files VAERS Reports?',
+    subtitle: 'Understanding reporting sources and patterns',
+    keyFinding: 'Private practice dominates reporting, reflecting where most vaccines are given',
+    readTime: 6,
+    color: 'accent',
+  },
+  
+  // Original analysis articles
   {
     slug: 'age-patterns',
     title: 'Age Patterns in VAERS Reports',
