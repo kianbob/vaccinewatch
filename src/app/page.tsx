@@ -509,7 +509,7 @@ export default function HomePage() {
               <div className="text-xs text-gray-500 mt-1">36K+ reports</div>
             </Link>
             <Link href="/side-effects" className="bg-primary/5 border border-primary/20 rounded-xl p-4 hover:shadow-md transition-all text-center">
-              <div className="font-bold text-primary">All 13 Guides →</div>
+              <div className="font-bold text-primary">All 14 Guides →</div>
               <div className="text-xs text-gray-500 mt-1">Complete collection</div>
             </Link>
           </div>
