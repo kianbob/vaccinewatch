@@ -113,6 +113,17 @@ export default async function SymptomDetailPage({
         </div>
       </div>
 
+      {/* SEO Description */}
+      <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+        {symptom.name} appears in {formatNumber(symptom.reports)} VAERS reports across all vaccines.
+        Of these, {formatNumber(symptom.died)} reports also mentioned death and {formatNumber(symptom.hosp)} involved
+        hospitalization. The severity rate (deaths + hospitalizations as a percentage of reports) is {severityRate.toFixed(1)}%.
+        {symptom.vaccines.length > 0 && (
+          <> The top vaccines associated with this symptom are {symptom.vaccines.slice(0, 3).map(v => v.type).join(', ')}.</>
+        )}
+        {' '}Remember: VAERS reports show temporal association, not causation.
+      </p>
+
       {/* Sensitive Content Notice */}
       {isSensitive && (
         <div className="mb-8 bg-amber-50 border border-amber-300 rounded-xl p-6">
