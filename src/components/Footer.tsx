@@ -107,6 +107,7 @@ export default function Footer() {
               <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
               <li><Link href="/about#methodology" className="hover:text-white transition-colors">Methodology</Link></li>
               <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link href="/glossary" className="hover:text-white transition-colors">Glossary</Link></li>
               <li><Link href="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link></li>
               <li><a href="https://vaers.hhs.gov" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">VAERS Official Site ↗</a></li>
             </ul>
