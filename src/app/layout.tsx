@@ -19,9 +19,6 @@ export const metadata: Metadata = {
   description: '1.98 Million Vaccine Adverse Event Reports. Exposed. Explored. Explained. Transparent access to VAERS data for informed decision-making.',
   keywords: ['VAERS', 'vaccine', 'adverse events', 'safety', 'transparency', 'data'],
   authors: [{ name: 'VaccineWatch' }],
-  alternates: {
-    canonical: BASE_URL,
-  },
   openGraph: {
     type: 'website',
     siteName: 'VaccineWatch',
