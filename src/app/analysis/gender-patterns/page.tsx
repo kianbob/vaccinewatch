@@ -26,7 +26,7 @@ export default function GenderPatternsPage() {
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Gender Disparities in Reporting' }]} />
 
       <div className="mb-12">
-        <div className="text-xs font-medium text-accent uppercase tracking-wider mb-2">5 min read</div>
+        <div className="flex items-center justify-between mb-2"><div className="text-xs font-medium text-accent uppercase tracking-wider">5 min read</div><ShareButtons title="Gender Disparities in VAERS Reporting - VaccineWatch" /></div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Gender Disparities in Reporting
         </h1>

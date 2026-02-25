@@ -48,7 +48,7 @@ export default function HospitalStaysPage() {
 
       {/* Hero */}
       <div className="mb-12">
-        <div className="text-xs font-medium text-primary uppercase tracking-wider mb-2">6 min read</div>
+        <div className="flex items-center justify-between mb-2"><div className="text-xs font-medium text-primary uppercase tracking-wider">6 min read</div><ShareButtons title="How Long Are Vaccine-Related Hospitalizations? - VAERS Hospital Duration Analysis - VaccineWatch" /></div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           How Long Are Vaccine-Related Hospitalizations?
         </h1>

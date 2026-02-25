@@ -43,7 +43,7 @@ export default function PediatricPage() {
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Pediatric VAERS Analysis' }]} />
 
       <div className="mb-12">
-        <div className="text-xs font-medium text-primary uppercase tracking-wider mb-2">6 min read</div>
+        <div className="flex items-center justify-between mb-2"><div className="text-xs font-medium text-primary uppercase tracking-wider">6 min read</div><ShareButtons title="Pediatric VAERS Analysis - Children 0-17 - VaccineWatch" /></div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Pediatric VAERS Reports
         </h1>

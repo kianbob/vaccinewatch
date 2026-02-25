@@ -66,7 +66,7 @@ const popularSearches = [
   { label: 'Myocarditis', href: '/symptoms/myocarditis' },
   { label: 'Influenza Vaccine', href: '/vaccines/flu4' },
   { label: 'Death Reports', href: '/analysis/death-reports' },
-  { label: 'Pfizer', href: '/manufacturers/pfizer-biontech' },
+  { label: 'Pfizer', href: '/manufacturers/pfizerbiontech' },
   { label: 'Headache', href: '/symptoms/headache' },
   { label: 'MMR Vaccine', href: '/vaccines/mmr' },
   { label: 'Moderna', href: '/manufacturers/moderna' },

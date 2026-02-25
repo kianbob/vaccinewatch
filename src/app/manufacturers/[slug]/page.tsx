@@ -115,6 +115,15 @@ export default async function ManufacturerDetailPage({
               <p>
                 Of these reports, <strong className="text-danger">{formatNumber(mfr.died)}</strong> mentioned death and <strong className="text-accent">{formatNumber(mfr.hosp)}</strong> involved hospitalization.
               </p>
+              <p>
+                {mfr.name} produces <strong>{vaccines.length || mfr.vaccines.length}</strong> vaccine{(vaccines.length || mfr.vaccines.length) !== 1 ? 's' : ''} tracked in VAERS.
+                {parseFloat(marketShare) > 10 
+                  ? ` As one of the largest vaccine manufacturers by report volume, their high report count primarily reflects extensive market distribution rather than safety concerns.`
+                  : parseFloat(marketShare) > 1
+                    ? ` Their moderate report volume reflects their market presence in specific vaccine categories.`
+                    : ` Their relatively low report count reflects a smaller market presence or specialized vaccine portfolio.`
+                }
+              </p>
             </div>
           </div>
 

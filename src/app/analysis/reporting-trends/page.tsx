@@ -31,7 +31,7 @@ export default function ReportingTrendsPage() {
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: '35 Years of VAERS Reporting' }]} />
 
       <div className="mb-12">
-        <div className="text-xs font-medium text-primary uppercase tracking-wider mb-2">7 min read</div>
+        <div className="flex items-center justify-between mb-2"><div className="text-xs font-medium text-primary uppercase tracking-wider">7 min read</div><ShareButtons title="35 Years of VAERS Reporting Trends - VaccineWatch" /></div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           35 Years of VAERS Reporting
         </h1>

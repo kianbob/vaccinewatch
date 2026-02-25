@@ -42,7 +42,7 @@ export default function DeathReportsPage() {
       </div>
 
       <div className="mb-12">
-        <div className="text-xs font-medium text-danger uppercase tracking-wider mb-2">8 min read</div>
+        <div className="flex items-center justify-between mb-2"><div className="text-xs font-medium text-danger uppercase tracking-wider">8 min read</div><ShareButtons title="Understanding Death Reports in VAERS - VaccineWatch" /></div>
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Understanding Death Reports in VAERS
         </h1>

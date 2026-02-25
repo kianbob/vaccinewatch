@@ -48,7 +48,7 @@ export default function VaccinesPage() {
       </div>
 
       {/* Key Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
             {formatNumber(vaccines.length)}
@@ -63,6 +63,14 @@ export default function VaccinesPage() {
           </div>
           <div className="text-sm font-medium text-accent">Total Reports</div>
           <div className="text-xs text-gray-500 mt-1">All vaccines combined</div>
+        </div>
+
+        <div className="bg-gradient-to-br from-danger/5 to-danger/10 border border-danger/20 rounded-xl p-6">
+          <div className="text-2xl font-bold text-gray-900">
+            {formatNumber(vaccines.reduce((sum, v) => sum + v.died, 0))}
+          </div>
+          <div className="text-sm font-medium text-danger">Deaths Reported</div>
+          <div className="text-xs text-gray-500 mt-1">All vaccines</div>
         </div>
 
         <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-6">

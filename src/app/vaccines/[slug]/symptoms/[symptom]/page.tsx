@@ -175,6 +175,28 @@ export default async function VaccineSymptomPage({
             </p>
           </div>
 
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-amber-900 mb-3">
+              What This Means
+            </h3>
+            <div className="text-amber-800 space-y-3 text-sm">
+              <p>
+                Seeing <strong>{formatNumber(match.count)}</strong> reports of {match.name} after {vaccineName} vaccination may seem alarming, but context is critical.
+                {vaccineReports > 100000 && (
+                  <> With {formatNumber(vaccineReports)} total reports for this vaccine (representing many millions of doses), {match.name} appears in only <strong>{percentOfVaccine}%</strong> of reports.</>
+                )}
+              </p>
+              <p>
+                {parseFloat(mortalityRate) < 1 
+                  ? `The mortality rate among these reports is very low at ${mortalityRate}%, suggesting most cases are non-fatal.`
+                  : parseFloat(mortalityRate) < 5
+                    ? `The mortality rate of ${mortalityRate}% warrants monitoring, though VAERS deaths represent temporal associations, not confirmed causal links.`
+                    : `The ${mortalityRate}% mortality rate among these reports is elevated, but this reflects the severity of the condition itself rather than vaccine causation.`
+                }
+              </p>
+            </div>
+          </div>
+
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-blue-900 mb-3">
               Important Context
@@ -191,6 +213,10 @@ export default async function VaccineSymptomPage({
               <div className="flex items-start">
                 <span className="text-blue-500 mr-2">•</span>
                 <span><strong>Anyone can report:</strong> VAERS accepts reports from anyone — patients, parents, healthcare providers — without requiring medical verification.</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-blue-500 mr-2">•</span>
+                <span><strong>Denominator missing:</strong> VAERS counts reports, not rates per dose. Without knowing how many doses were given, raw counts can be misleading. <Link href="/analysis/denominator-problem" className="text-blue-600 underline hover:text-blue-800">Learn more →</Link></span>
               </div>
             </div>
           </div>
@@ -247,6 +273,9 @@ export default async function VaccineSymptomPage({
               </Link>
               <Link href={`/symptoms/${symptom}`} className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
                 {match.name} (All Vaccines)
+              </Link>
+              <Link href="/analysis/denominator-problem" className="block w-full text-center bg-white border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                Why Raw Numbers Mislead
               </Link>
               <Link href="/analysis/top-symptoms" className="block w-full text-center bg-primary text-white rounded-xl py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors">
                 Top Symptoms Analysis

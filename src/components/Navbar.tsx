@@ -8,6 +8,7 @@ import { playfairDisplay } from '@/lib/fonts'
 const navigation = [
   { name: 'Vaccines', href: '/vaccines' },
   { name: 'Symptoms', href: '/symptoms' },
+  { name: 'States', href: '/states' },
   { name: 'Analysis', href: '/analysis' },
   { name: 'Tools', href: '/tools' },
   { name: 'Compare', href: '/compare' },
