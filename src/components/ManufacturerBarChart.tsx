@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
   Cell,
 } from 'recharts'
+import { formatManufacturer } from '@/lib/utils'
 
 interface ManufacturerData {
   name: string
@@ -27,11 +28,13 @@ function formatYAxis(value: number): string {
 }
 
 export default function ManufacturerBarChart({ data }: { data: ManufacturerData[] }) {
-  const chartData = data.map(d => ({
-    name: d.name.length > 20 ? d.name.substring(0, 20) + '...' : d.name,
-    fullName: d.name,
+  const chartData = data.map(d => {
+    const formatted = formatManufacturer(d.name)
+    return {
+    name: formatted.length > 20 ? formatted.substring(0, 20) + '...' : formatted,
+    fullName: formatted,
     reports: d.reports,
-  }))
+  }})
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">

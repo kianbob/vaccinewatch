@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
-import { formatNumber, slugify } from '@/lib/utils'
+import { formatNumber, slugify, formatManufacturer } from '@/lib/utils'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
@@ -24,16 +24,20 @@ export default function ManufacturerLandscapePage() {
   const top5Reports = top5.reduce((s: number, m: any) => s + m.reports, 0)
   const top5Pct = totalReports > 0 ? (top5Reports / totalReports * 100).toFixed(0) : '0'
 
-  const topManufacturers = sorted.slice(0, 10).map((m: any) => ({
-    name: m.name.length > 20 ? m.name.substring(0, 20) + '...' : m.name,
-    fullName: m.name,
+  const topManufacturers = sorted.slice(0, 10).map((m: any) => {
+    const formatted = formatManufacturer(m.name)
+    return {
+    name: formatted.length > 20 ? formatted.substring(0, 20) + '...' : formatted,
+    fullName: formatted,
     reports: m.reports,
-  }))
+  }})
 
-  const marketShare = sorted.slice(0, 6).map((m: any) => ({
-    name: m.name.length > 15 ? m.name.substring(0, 15) + '...' : m.name,
+  const marketShare = sorted.slice(0, 6).map((m: any) => {
+    const formatted = formatManufacturer(m.name)
+    return {
+    name: formatted.length > 15 ? formatted.substring(0, 15) + '...' : formatted,
     value: m.reports,
-  }))
+  }})
   const othersReports = sorted.slice(6).reduce((s: number, m: any) => s + m.reports, 0)
   if (othersReports > 0) {
     marketShare.push({ name: 'Others', value: othersReports })
@@ -63,7 +67,7 @@ export default function ManufacturerLandscapePage() {
         <h2 className={playfairDisplay.className}>Market Concentration</h2>
         <p>
           VAERS tracks reports from <strong>{manufacturers.length}</strong> manufacturers, but the market is
-          heavily concentrated. The top manufacturer, <strong>{sorted[0]?.name}</strong>, alone accounts for{' '}
+          heavily concentrated. The top manufacturer, <strong>{formatManufacturer(sorted[0]?.name || '')}</strong>, alone accounts for{' '}
           <strong>{formatNumber(sorted[0]?.reports || 0)}</strong> reports ({totalReports > 0 ? (sorted[0]?.reports / totalReports * 100).toFixed(1) : 0}%).
         </p>
         <p>

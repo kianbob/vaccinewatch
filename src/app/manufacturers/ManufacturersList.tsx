@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import { formatManufacturer } from '@/lib/utils'
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-')
@@ -29,7 +30,7 @@ export default function ManufacturersList({ manufacturers }: { manufacturers: Ma
     let result = manufacturers
     if (search) {
       const q = search.toLowerCase()
-      result = result.filter(m => m.name.toLowerCase().includes(q))
+      result = result.filter(m => m.name.toLowerCase().includes(q) || formatManufacturer(m.name).toLowerCase().includes(q))
     }
     result = [...result].sort((a, b) => {
       const av = a[sortKey]
@@ -89,7 +90,7 @@ export default function ManufacturersList({ manufacturers }: { manufacturers: Ma
                 <tr key={m.name} className="hover:bg-gray-50">
                   <td className="px-6 py-4 text-sm font-medium">
                           <Link href={`/manufacturers/${slugify(m.name)}`} className="text-primary hover:text-primary/80">
-                            {m.name}
+                            {formatManufacturer(m.name)}
                           </Link>
                         </td>
                   <td className="px-6 py-4 text-sm text-gray-900">{m.reports.toLocaleString()}</td>

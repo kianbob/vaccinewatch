@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
-import { formatNumber } from '@/lib/utils'
+import { formatNumber, formatManufacturer } from '@/lib/utils'
 import ManufacturersList from './ManufacturersList'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -118,7 +118,7 @@ export default function ManufacturersPage() {
                   className="bg-white p-4 rounded-xl border border-gray-200"
                 >
                   <div className="font-medium text-gray-900 mb-1">
-                    {index + 1}. {manufacturer.name}
+                    {index + 1}. {formatManufacturer(manufacturer.name)}
                   </div>
                   <div className="text-sm space-y-1">
                     <div>

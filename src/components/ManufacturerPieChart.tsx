@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
   Legend,
 } from 'recharts'
+import { formatManufacturer } from '@/lib/utils'
 
 interface ManufacturerData {
   name: string
@@ -20,11 +21,13 @@ const COLORS = ['#0d9488', '#0891b2', '#0e7490', '#14b8a6', '#22d3ee', '#2dd4bf'
 
 export default function ManufacturerPieChart({ data }: { data: ManufacturerData[] }) {
   const totalReports = data.reduce((sum, d) => sum + d.reports, 0)
-  const chartData = data.map(d => ({
-    name: d.name.length > 25 ? d.name.substring(0, 25) + '...' : d.name,
+  const chartData = data.map(d => {
+    const formatted = formatManufacturer(d.name)
+    return {
+    name: formatted.length > 25 ? formatted.substring(0, 25) + '...' : formatted,
     value: d.reports,
     share: ((d.reports / totalReports) * 100).toFixed(1),
-  }))
+  }})
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
