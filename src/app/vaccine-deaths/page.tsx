@@ -23,6 +23,16 @@ export default function VaccineDeathsPage() {
   const totalDeaths = stats?.totalDied || 27732
   const totalReports = stats?.totalReports || 1983260
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'How many deaths are reported to VAERS?', acceptedAnswer: { '@type': 'Answer', text: `As of 2026, VAERS contains ${totalDeaths.toLocaleString()} death reports out of ${totalReports.toLocaleString()} total reports. However, a death report in VAERS does not mean the vaccine caused the death. These are temporal associations — deaths that occurred after vaccination.` }},
+      { '@type': 'Question', name: 'Does a VAERS death report mean the vaccine killed someone?', acceptedAnswer: { '@type': 'Answer', text: 'No. VAERS accepts all reports of death occurring after vaccination regardless of cause. Many reported deaths, especially in elderly populations, reflect background mortality rates — deaths that would have occurred regardless of vaccination. Only controlled studies can determine if vaccines cause deaths.' }},
+      { '@type': 'Question', name: 'What is the background death rate?', acceptedAnswer: { '@type': 'Answer', text: 'In the United States, approximately 8,000-9,000 people die every day from all causes. When hundreds of millions of people are vaccinated, some will die shortly after by pure coincidence. This background mortality must be considered when interpreting VAERS death reports.' }},
+    ],
+  }
+
   // Top vaccines by death reports
   const topByDeaths = [...vaccineIndex]
     .sort((a: any, b: any) => b.died - a.died)
@@ -34,6 +44,10 @@ export default function VaccineDeathsPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <DisclaimerBanner />
       <Breadcrumbs items={[{ label: 'Vaccine Deaths' }]} />
 

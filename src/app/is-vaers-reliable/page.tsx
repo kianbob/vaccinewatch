@@ -15,8 +15,23 @@ export const metadata: Metadata = {
 }
 
 export default function IsVAERSReliablePage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Is VAERS reliable?', acceptedAnswer: { '@type': 'Answer', text: 'VAERS is a valuable early warning system for vaccine safety signals, but it has significant limitations. Reports are unverified, anyone can submit them, and they show correlation not causation. VAERS is reliable for signal detection but not for determining if a vaccine caused a specific event.' }},
+      { '@type': 'Question', name: 'Can VAERS prove a vaccine caused an injury?', acceptedAnswer: { '@type': 'Answer', text: 'No. VAERS is a passive surveillance system that collects reports of events occurring after vaccination. A VAERS report means something happened after a vaccine was given — not that the vaccine caused it. Determining causation requires controlled studies, not passive reporting data.' }},
+      { '@type': 'Question', name: 'Who can report to VAERS?', acceptedAnswer: { '@type': 'Answer', text: 'Anyone can submit a VAERS report — healthcare providers, vaccine manufacturers, patients, and family members. Healthcare providers are required by law to report certain serious adverse events. This open reporting is both a strength and limitation of the system.' }},
+      { '@type': 'Question', name: 'What are the limitations of VAERS?', acceptedAnswer: { '@type': 'Answer', text: 'Key limitations include: underreporting of mild events, stimulated reporting during health scares, no verification of reports, lack of denominator data (doses administered), and inability to determine causation. Reports may contain errors, duplicates, or coincidental events.' }},
+    ],
+  }
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <DisclaimerBanner />
       <Breadcrumbs items={[{ label: 'Is VAERS Reliable?' }]} />
 
