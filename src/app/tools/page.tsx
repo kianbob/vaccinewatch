@@ -46,6 +46,24 @@ const tools = [
     color: 'primary',
     readTime: 5,
   },
+  {
+    slug: 'age-explorer',
+    title: 'Age Explorer',
+    subtitle: 'Adverse events by age group',
+    description: 'See how vaccine adverse event reports are distributed across age groups with interactive charts and gender breakdowns.',
+    icon: '👶👴',
+    color: 'accent',
+    readTime: 3,
+  },
+  {
+    slug: 'timeline',
+    title: 'Reporting Timeline',
+    subtitle: '35 years of VAERS data visualized',
+    description: 'Interactive timeline of all VAERS reports from 1990-2026. Track trends, compare metrics, and zoom into any time period.',
+    icon: '📅',
+    color: 'primary',
+    readTime: 4,
+  },
 ]
 
 const colorClasses: Record<string, string> = {
