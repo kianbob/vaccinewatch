@@ -12,32 +12,7 @@ const sisterSites = [
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
-      {/* Newsletter Section */}
-      <div className="border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-white font-bold text-lg mb-1">Stay Informed</h3>
-              <p className="text-gray-400 text-sm">Get notified when we publish new analysis or data updates.</p>
-            </div>
-            <div className="flex w-full md:w-auto gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 md:w-72 px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                disabled
-              />
-              <button
-                className="px-6 py-2.5 bg-primary text-white rounded-xl text-sm font-medium opacity-50 cursor-not-allowed"
-                disabled
-                title="Coming soon"
-              >
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Newsletter Section — hidden until functional */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
@@ -80,6 +55,7 @@ export default function Footer() {
               <li><Link href="/symptoms" className="hover:text-white transition-colors">Symptoms</Link></li>
               <li><Link href="/manufacturers" className="hover:text-white transition-colors">Manufacturers</Link></li>
               <li><Link href="/states" className="hover:text-white transition-colors">States</Link></li>
+              <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
               <li><Link href="/compare" className="hover:text-white transition-colors">Compare Tool</Link></li>
               <li><Link href="/search" className="hover:text-white transition-colors">Search</Link></li>
             </ul>
