@@ -173,6 +173,17 @@ export default async function VaccineDetailPage({
         )}
       </div>
 
+      {/* SEO Description */}
+      <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+        {cleanName} has {formatNumber(vaccine.reports)} reports in VAERS spanning from 1990 to 2026.
+        Of these reports, {formatNumber(vaccine.died)} mentioned death, {formatNumber(vaccine.hosp)} involved
+        hospitalization, and {formatNumber(vaccine.er)} required emergency department visits.
+        {vaccine.manufacturers.length > 0 && (
+          <> This vaccine is manufactured by: {vaccine.manufacturers.map(m => formatManufacturer(m.name)).join(', ')}.</>
+        )}
+        {' '}This vaccine accounts for {percentOfAll}% of all {formatNumber(stats.totalReports)} reports in the VAERS database.
+      </p>
+
       {/* Key Statistics */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
         <StatCard
@@ -400,6 +411,26 @@ export default async function VaccineDetailPage({
                     Myocarditis After COVID Vaccination
                   </Link>
                 </>
+              )}
+              {['covid19', 'flu3', 'flu4', 'mmr', 'hpv4', 'hpv9', 'varzos', 'tdap', 'hep', 'ppv', 'pnc13', 'ipv', 'opv', 'varcel', 'mmrv', 'dtap', 'dtp', 'hepa', 'mnq', 'rv5', 'rv1'].includes(slug) && (
+                <Link href={`/side-effects/${
+                  slug.startsWith('covid') ? 'covid' :
+                  slug.startsWith('flu') ? 'flu' :
+                  slug === 'mmr' || slug === 'mmrv' ? 'mmr' :
+                  slug.startsWith('hpv') ? 'hpv' :
+                  slug === 'varzos' ? 'shingles' :
+                  slug === 'tdap' ? 'tdap' :
+                  slug === 'hep' ? 'hepatitis-b' :
+                  slug === 'ppv' || slug === 'pnc13' ? 'pneumonia' :
+                  slug === 'ipv' || slug === 'opv' ? 'polio' :
+                  slug === 'varcel' ? 'varicella' :
+                  slug === 'dtap' || slug === 'dtp' ? 'dtap' :
+                  slug === 'hepa' ? 'hepatitis-a' :
+                  slug === 'mnq' ? 'meningococcal' :
+                  slug === 'rv5' || slug === 'rv1' ? 'rotavirus' : slug
+                }`} className="block text-sm font-medium text-primary hover:text-primary/80 bg-primary/5 rounded-lg px-3 py-2 mb-2">
+                  📋 Side Effects Guide →
+                </Link>
               )}
               <Link href="/analysis/denominator-problem" className="block text-sm text-primary hover:text-primary/80">
                 The Denominator Problem
