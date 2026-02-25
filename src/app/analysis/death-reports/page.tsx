@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { DeathReportsChartsClient as DeathReportsCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Understanding Death Reports in VAERS',
@@ -28,6 +29,7 @@ export default function DeathReportsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Understanding Death Reports in VAERS" description="What " slug="death-reports" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Understanding Death Reports in VAERS' }]} />
 
       {/* Strong disclaimer upfront */}

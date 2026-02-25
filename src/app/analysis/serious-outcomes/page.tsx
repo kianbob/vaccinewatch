@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { SeriousOutcomesChartsClient as SeriousOutcomesCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Serious Outcomes Analysis - VAERS Data',
@@ -54,6 +55,7 @@ export default function SeriousOutcomesPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Serious Outcomes Analysis - VAERS Data" description="Analysis of serious vs non-serious outcomes in VAERS. Deaths, hospitalizations, ER visits, and disability reports across all vaccines." slug="serious-outcomes" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Serious vs Non-Serious Outcomes' }]} />
 
       <div className="mb-12">

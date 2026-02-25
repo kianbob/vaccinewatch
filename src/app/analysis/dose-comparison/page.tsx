@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { DoseComparisonChartsClient as DoseComparisonCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'First Dose vs Second Dose vs Booster - VAERS Dose Series Analysis',
@@ -41,6 +42,7 @@ export default function DoseComparisonPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="First Dose vs Second Dose vs Booster - VAERS Dose Series Analysis" description="Analysis comparing adverse event rates between first dose, second dose, and booster COVID-19 vaccinations. Does the second dose really cause more side effects?" slug="dose-comparison" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'First Dose vs Second Dose vs Booster' }]} />
 
       {/* Hero */}

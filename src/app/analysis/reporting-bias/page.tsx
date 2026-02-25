@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { ReportingBiasChartsClient as ReportingBiasCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Understanding VAERS Reporting Bias',
@@ -33,6 +34,7 @@ export default function ReportingBiasPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Understanding VAERS Reporting Bias" description="Analysis of factors that influence VAERS reporting patterns: stimulated reporting, awareness bias, media influence, and the healthy vaccinee effect." slug="reporting-bias" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Understanding VAERS Reporting Bias' }]} />
 
       {/* Hero */}

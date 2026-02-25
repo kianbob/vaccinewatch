@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { MyocarditisChartsClient as MyocarditisCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Myocarditis Deep Dive - VAERS Analysis',
@@ -23,6 +24,7 @@ export default function MyocarditisPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Myocarditis Deep Dive - VAERS Analysis" description="In-depth analysis of myocarditis reports in VAERS, the most closely-watched vaccine safety signal of the COVID era." slug="myocarditis" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'Myocarditis Deep Dive' }]} />
 
       <div className="mb-12">

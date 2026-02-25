@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { LotAnalysisChartsClient as LotAnalysisCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'Understanding Vaccine Lot Numbers in VAERS',
@@ -39,6 +40,7 @@ export default function LotAnalysisPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="Understanding Vaccine Lot Numbers in VAERS" description="Analysis of COVID-19 vaccine lot numbers in VAERS reports. Why lot analysis can be misleading without proper context about manufacturing and distribution." slug="lot-analysis" />
       
       {/* Extra Warning Banner for Lot Analysis */}
       <div className="bg-red-100 border-l-4 border-red-500 p-4 mb-6">

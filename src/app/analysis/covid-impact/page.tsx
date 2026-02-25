@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { CovidImpactChartsClient as CovidImpactCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'The COVID-19 Impact on VAERS',
@@ -43,6 +44,7 @@ export default function CovidImpactPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="The COVID-19 Impact on VAERS" description="How the COVID-19 pandemic changed vaccine adverse event reporting, with data analysis of the unprecedented spike in VAERS reports." slug="covid-impact" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'The COVID-19 Impact on VAERS' }]} />
 
       {/* Hero */}

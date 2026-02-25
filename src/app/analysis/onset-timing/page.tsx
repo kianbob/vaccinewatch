@@ -7,6 +7,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 import { OnsetTimingChartsClient as OnsetTimingCharts } from '@/components/ClientCharts'
+import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'When Do Vaccine Side Effects Start? - VAERS Onset Timing Analysis',
@@ -39,6 +40,7 @@ export default function OnsetTimingPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <ArticleSchema title="When Do Vaccine Side Effects Start? - VAERS Onset Timing Analysis" description="Analysis of when vaccine adverse events occur after vaccination. Most side effects start within 0-3 days, with detailed timing by vaccine type and outcome severity." slug="onset-timing" />
       <Breadcrumbs items={[{ label: 'Analysis', href: '/analysis' }, { label: 'When Do Vaccine Side Effects Start?' }]} />
 
       {/* Hero */}
