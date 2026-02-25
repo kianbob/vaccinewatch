@@ -64,6 +64,24 @@ const tools = [
     color: 'primary',
     readTime: 4,
   },
+  {
+    slug: 'multi-vaccine',
+    title: 'Multi-Vaccine Explorer',
+    subtitle: 'Vaccines given together',
+    description: 'Explore which vaccines are commonly co-administered and their combined adverse event profiles. 1,514 combinations analyzed.',
+    icon: '🔗',
+    color: 'accent',
+    readTime: 3,
+  },
+  {
+    slug: 'admin-routes',
+    title: 'Administration & Routes',
+    subtitle: 'Who gives vaccines and how',
+    description: 'See where vaccines are administered (pharmacy, doctor, military, school) and how (injection, oral, nasal).',
+    icon: '🏥',
+    color: 'primary',
+    readTime: 3,
+  },
 ]
 
 const colorClasses: Record<string, string> = {
