@@ -171,6 +171,8 @@ export async function GET() {
     { path: '/vaccine-safety', title: 'Vaccine Safety — What VAERS Data Shows', description: 'A data-driven look at vaccine safety through 1.98 million VAERS reports.', date: '2026-02-25' },
     { path: '/adverse-events', title: 'Vaccine Adverse Events — What VAERS Reports Show', description: 'Explore 1.98 million vaccine adverse event reports. What are adverse events, how they\'re reported, and what the data shows.', date: '2026-02-25' },
     { path: '/report-adverse-event', title: 'How to Report a Vaccine Adverse Event to VAERS', description: 'Step-by-step guide to reporting a vaccine adverse event. Who can report, what to include, and what happens after.', date: '2026-02-25' },
+    { path: '/vaccine-safety-timeline', title: 'Vaccine Safety Timeline — Key Events in U.S. Vaccine History', description: 'Major vaccine safety events from 1955 to 2026. From the Cutter Incident to COVID-19 myocarditis detection.', date: '2026-02-25' },
+    { path: '/vaccine-injuries', title: 'Vaccine Injuries — VAERS Reports, VICP Claims & Data', description: 'Understanding vaccine injuries: VAERS data, the Vaccine Injury Compensation Program, and serious reactions.', date: '2026-02-25' },
   ]
 
   const analysisItems = articles.map(a => `    <item>
