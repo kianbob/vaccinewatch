@@ -79,6 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/vaccine-schedule`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.8 },
     { url: `${baseUrl}/vaccine-injuries`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${baseUrl}/vaccine-safety`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 },
+    { url: `${baseUrl}/adverse-events`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 },
     { url: `${baseUrl}/fever-after-vaccination`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.7 },
     { url: `${baseUrl}/allergic-reaction`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.7 },
     { url: `${baseUrl}/guillain-barre`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.7 },
