@@ -45,6 +45,7 @@ interface VaccineData {
   }>
 }
 
+export const dynamicParams = true
 export async function generateStaticParams() {
   const vaccinesDir = join(process.cwd(), 'public', 'data', 'vaccines')
   const files = readdirSync(vaccinesDir).filter(f => f.endsWith('.json'))

@@ -24,6 +24,7 @@ interface ManufacturerInfo {
   vaccines: Array<{ type: string; count: number }>
 }
 
+export const dynamicParams = true
 export async function generateStaticParams() {
   const dir = join(process.cwd(), 'public', 'data', 'manufacturer-vaccines')
   const files = readdirSync(dir).filter(f => f.endsWith('.json'))

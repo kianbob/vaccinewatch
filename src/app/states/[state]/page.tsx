@@ -39,6 +39,7 @@ interface StateVaccine {
   hosp: number
 }
 
+export const dynamicParams = true
 export async function generateStaticParams() {
   const states: StateInfo[] = readJsonFile('state-index.json')
   return states.map(s => ({ state: s.abbreviation.toLowerCase() }))

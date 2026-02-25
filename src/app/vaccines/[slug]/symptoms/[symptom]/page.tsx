@@ -17,7 +17,10 @@ interface VaccineSymptom {
   hosp: number
 }
 
+export const dynamicParams = true
+
 export async function generateStaticParams() {
+  // Pre-render top 200 per vaccine at build time; rest generated on-demand
   const dir = join(process.cwd(), 'public', 'data', 'vaccine-symptoms')
   const files = readdirSync(dir).filter(f => f.endsWith('.json'))
   const params: Array<{ slug: string; symptom: string }> = []
@@ -29,7 +32,7 @@ export async function generateStaticParams() {
       const top = symptoms
         .filter(s => s.count >= 3)
         .sort((a, b) => b.count - a.count)
-        .slice(0, 500)
+        .slice(0, 200)
       for (const s of top) {
         params.push({ slug, symptom: s.slug })
       }

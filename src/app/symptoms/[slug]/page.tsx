@@ -21,6 +21,7 @@ interface SymptomData {
   }>
 }
 
+export const dynamicParams = true
 export async function generateStaticParams() {
   const symptoms = readJsonFile('symptom-index.json')
   

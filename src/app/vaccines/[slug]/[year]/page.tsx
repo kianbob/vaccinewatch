@@ -18,6 +18,7 @@ interface YearData {
   disabled: number
 }
 
+export const dynamicParams = true
 export async function generateStaticParams() {
   const dir = join(process.cwd(), 'public', 'data', 'vaccine-years')
   const files = readdirSync(dir).filter(f => f.endsWith('.json'))
