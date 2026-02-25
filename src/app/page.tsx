@@ -659,7 +659,7 @@ export default function HomePage() {
           </div>
           <p className="text-amber-700 leading-relaxed">
             This website presents VAERS data for transparency and education.
-            <strong> Reports in VAERS do not prove that vaccines caused the reported adverse events.</strong>
+            <strong> Reports in VAERS do not prove that vaccines caused the reported adverse events.</strong>{' '}
             Always consult healthcare professionals for medical decisions.
             Our goal is informed transparency, not medical advice.
           </p>

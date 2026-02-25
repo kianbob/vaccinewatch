@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { redirect } from 'next/navigation'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
-import { formatNumber } from '@/lib/utils'
+import { formatNumber, getVaccineDisplayName } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -244,7 +244,7 @@ export default async function StateDetailPage({
                       <tr key={v.type} className="hover:bg-gray-50">
                         <td className="px-4 py-3 text-sm">
                           <Link href={`/vaccines/${v.type.toLowerCase()}`} className="text-primary hover:text-primary/80 font-medium">
-                            {v.type}
+                            {getVaccineDisplayName(v.type)}
                           </Link>
                         </td>
                         <td className="px-4 py-3 text-sm text-gray-900">{formatNumber(v.reports)}</td>

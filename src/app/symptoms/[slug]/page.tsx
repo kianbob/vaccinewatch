@@ -5,7 +5,7 @@ import { existsSync } from 'fs'
 import { join } from 'path'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
-import { formatNumber, slugify } from '@/lib/utils'
+import { formatNumber, slugify, getVaccineDisplayName } from '@/lib/utils'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
@@ -116,7 +116,7 @@ export default async function SymptomDetailPage({
         Of these, {formatNumber(symptom.died)} reports also mentioned death and {formatNumber(symptom.hosp)} involved
         hospitalization. The severity rate (deaths + hospitalizations as a percentage of reports) is {severityRate.toFixed(1)}%.
         {symptom.vaccines.length > 0 && (
-          <> The top vaccines associated with this symptom are {symptom.vaccines.slice(0, 3).map(v => v.type).join(', ')}.</>
+          <> The top vaccines associated with this symptom are {symptom.vaccines.slice(0, 3).map(v => getVaccineDisplayName(v.type)).join(', ')}.</>
         )}
         {' '}Remember: VAERS reports show temporal association, not causation.
       </p>
@@ -294,7 +294,7 @@ export default async function SymptomDetailPage({
                         href={`/vaccines/${vaccine.type.toLowerCase()}`}
                         className="text-sm text-primary hover:text-primary/80 font-medium truncate mr-2"
                       >
-                        {index + 1}. {vaccine.type}
+                        {index + 1}. {getVaccineDisplayName(vaccine.type)}
                       </Link>
                       <span className="text-sm text-gray-500 flex-shrink-0">
                         {formatNumber(vaccine.count)}
@@ -320,7 +320,7 @@ export default async function SymptomDetailPage({
                         href={`/vaccines/${vaccine.type.toLowerCase()}/symptoms/${slug}`}
                         className="block text-xs text-primary hover:text-primary/80"
                       >
-                        {symptom.name} × {vaccine.type} →
+                        {symptom.name} × {getVaccineDisplayName(vaccine.type)} →
                       </Link>
                     ))}
                 </div>

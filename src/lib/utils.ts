@@ -298,6 +298,73 @@ export function formatManufacturer(name: string): string {
     .join(' ')
 }
 
+/** Map VAERS vaccine type codes to short human-friendly display names */
+const VACCINE_CODE_NAMES: Record<string, string> = {
+  COVID19: 'COVID-19',
+  'COVID19-2': 'COVID-19 (Bivalent)',
+  VARZOS: 'Shingles (Zostavax)',
+  FLU3: 'Flu (Trivalent)',
+  FLU4: 'Flu (Quadrivalent)',
+  FLUX: 'Flu (Seasonal)',
+  FLUA3: 'Flu (Adjuvanted)',
+  FLUC3: 'Flu (Cell-Based)',
+  FLUC4: 'Flu (Cell-Based Quad)',
+  FLUR3: 'Flu (Recombinant)',
+  FLUR4: 'Flu (Recombinant Quad)',
+  FLUN3: 'FluMist (Nasal Tri)',
+  FLUN4: 'FluMist (Nasal Quad)',
+  VARCEL: 'Chickenpox (Varivax)',
+  MMR: 'MMR',
+  MMRV: 'MMRV (ProQuad)',
+  HEP: 'Hepatitis B',
+  HEPAB: 'Hepatitis A+B',
+  HEPA: 'Hepatitis A',
+  PPV: 'Pneumococcal (PPV23)',
+  PNC: 'Pneumococcal (PCV7)',
+  PNC13: 'Pneumococcal (PCV13)',
+  PNC15: 'Pneumococcal (PCV15)',
+  PNC20: 'Pneumococcal (PCV20)',
+  DTAP: 'DTaP',
+  DTP: 'DTP',
+  TDAP: 'Tdap',
+  TD: 'Td',
+  HIBV: 'Hib',
+  HPV4: 'HPV (Gardasil)',
+  HPV9: 'HPV (Gardasil 9)',
+  IPV: 'Polio (IPV)',
+  OPV: 'Polio (OPV)',
+  MNQ: 'Meningococcal (MenACWY)',
+  MEN: 'Meningococcal (MenB)',
+  RV5: 'Rotavirus (RotaTeq)',
+  RV1: 'Rotavirus (Rotarix)',
+  ANTH: 'Anthrax',
+  SMALL: 'Smallpox',
+  TYP: 'Typhoid',
+  RAB: 'Rabies',
+  YF: 'Yellow Fever',
+  UNK: 'Unknown Vaccine',
+  DTAPIPV: 'DTaP+IPV',
+  DTAPIPVHIB: 'DTaP+IPV+Hib',
+  DTAPHEPBIP: 'DTaP+HepB+IPV',
+  HIBV_HEPB: 'Hib+HepB',
+  RSV: 'RSV',
+  RSVM: 'RSV (Maternal)',
+  JEVX: 'Japanese Encephalitis',
+  BCG: 'BCG (Tuberculosis)',
+  EBZR: 'Ebola (Ervebo)',
+  'HPV2': 'HPV (Cervarix)',
+  MEA: 'Measles',
+  MUR: 'Mumps',
+  RUB: 'Rubella',
+  LYME: 'Lyme Disease',
+  CHOL: 'Cholera',
+  DF: 'Dengue (Dengvaxia)',
+}
+
+export function getVaccineDisplayName(typeCode: string): string {
+  return VACCINE_CODE_NAMES[typeCode] || typeCode
+}
+
 export function slugify(text: string): string {
   return text
     .toLowerCase()

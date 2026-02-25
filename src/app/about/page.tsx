@@ -21,6 +21,21 @@ export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <Breadcrumbs items={[{ label: 'About' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        mainEntity: {
+          '@type': 'Organization',
+          name: 'VaccineWatch',
+          url: 'https://www.vaccinewatch.org',
+          description: 'Transparent access to VAERS vaccine adverse event data for informed decision-making.',
+          parentOrganization: {
+            '@type': 'Organization',
+            name: 'TheDataProject.ai',
+            url: 'https://thedataproject.ai',
+          },
+        },
+      }) }} />
 
       {/* Header */}
       <div className="mb-12">

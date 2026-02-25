@@ -414,7 +414,7 @@ export default async function VaccineDetailPage({
                 href={`/compare?v=${vaccine.type}`}
                 className="block w-full text-center bg-white border border-primary/30 bg-primary/5 rounded-xl py-3 px-4 text-sm font-medium text-primary hover:bg-primary/10 transition-colors"
               >
-                ⚖️ Compare {vaccine.type} with Others
+                ⚖️ Compare {cleanName} with Others
               </Link>
               {vaccine.type.startsWith('COVID') && (
                 <Link

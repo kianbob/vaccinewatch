@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
 const sisterSites = [
-  { name: 'OpenMedicaid', url: 'https://openmedicaid.org', description: 'Medicaid spending transparency' },
-  { name: 'OpenFeds', url: 'https://openfeds.org', description: 'Federal employee data' },
-  { name: 'OpenSpending', url: 'https://openspending.us', description: 'Government spending tracker' },
-  { name: 'OpenMedicare', url: 'https://openmedicare.us', description: 'Medicare data analysis' },
-  { name: 'OpenLobby', url: 'https://openlobby.us', description: 'Lobbying transparency' },
+  { name: 'OpenMedicaid', url: 'https://www.openmedicaid.org', description: 'Medicaid spending transparency' },
+  { name: 'OpenFeds', url: 'https://www.openfeds.org', description: 'Federal employee data' },
+  { name: 'OpenSpending', url: 'https://www.openspending.us', description: 'Government spending tracker' },
+  { name: 'OpenMedicare', url: 'https://www.openmedicare.us', description: 'Medicare data analysis' },
+  { name: 'OpenLobby', url: 'https://www.openlobby.us', description: 'Lobbying transparency' },
   { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]
 

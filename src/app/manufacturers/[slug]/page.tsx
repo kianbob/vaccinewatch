@@ -5,7 +5,7 @@ import { readdirSync } from 'fs'
 import { join } from 'path'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
-import { formatNumber, slugify, formatManufacturer } from '@/lib/utils'
+import { formatNumber, slugify, formatManufacturer, getVaccineDisplayName } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -147,7 +147,7 @@ export default async function ManufacturerDetailPage({
                       <tr key={v.type} className="hover:bg-gray-50">
                         <td className="px-4 py-3 text-sm">
                           <Link href={`/vaccines/${v.type.toLowerCase()}`} className="text-primary hover:text-primary/80 font-medium">
-                            {v.type}
+                            {getVaccineDisplayName(v.type)}
                           </Link>
                         </td>
                         <td className="px-4 py-3 text-sm text-gray-900">{formatNumber(v.reports)}</td>
@@ -193,7 +193,7 @@ export default async function ManufacturerDetailPage({
                   .map((v, i) => (
                     <div key={v.type} className="flex items-center justify-between">
                       <Link href={`/vaccines/${v.type.toLowerCase()}`} className="text-sm text-primary hover:text-primary/80 font-medium truncate mr-2">
-                        {i + 1}. {v.type}
+                        {i + 1}. {getVaccineDisplayName(v.type)}
                       </Link>
                       <span className="text-sm text-gray-500 flex-shrink-0">{formatNumber(v.count)}</span>
                     </div>
