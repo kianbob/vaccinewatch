@@ -144,13 +144,40 @@ export async function GET() {
     },
   ]
 
-  const items = articles.map(a => `    <item>
+  // Standalone pages (non-analysis)
+  const pages = [
+    { path: '/dashboard', title: 'Vaccine Safety Dashboard — Every Vaccine at a Glance', description: 'Interactive sortable table of all 104 vaccines with death rates, hospitalization rates, and more.', date: '2026-02-25' },
+    { path: '/side-effects', title: 'Vaccine Side Effects — Complete VAERS Database Analysis', description: 'Comprehensive guide to reported vaccine side effects across all 104 vaccines in VAERS.', date: '2026-02-25' },
+    { path: '/side-effects/covid', title: 'COVID-19 Vaccine Side Effects', description: '1.1M+ COVID vaccine adverse event reports analyzed with manufacturer breakdown and context.', date: '2026-02-25' },
+    { path: '/side-effects/flu', title: 'Flu Vaccine Side Effects', description: 'All flu vaccine types analyzed: trivalent, quadrivalent, nasal, adjuvanted, and more.', date: '2026-02-25' },
+    { path: '/side-effects/mmr', title: 'MMR Vaccine Side Effects', description: 'Measles, mumps, rubella vaccine data from VAERS with autism myth context.', date: '2026-02-25' },
+    { path: '/side-effects/hpv', title: 'HPV Vaccine Side Effects', description: 'Gardasil VAERS data including fainting context and version comparisons.', date: '2026-02-25' },
+    { path: '/side-effects/shingles', title: 'Shingles Vaccine Side Effects', description: 'Zostavax and Shingrix VAERS data with strong reactogenicity context.', date: '2026-02-25' },
+    { path: '/vaccine-deaths', title: 'Deaths Reported After Vaccination', description: 'Analysis of 27,732 death reports with critical context about background mortality.', date: '2026-02-25' },
+    { path: '/myocarditis', title: 'Myocarditis and Vaccines', description: 'Confirmed rare side effect of mRNA COVID vaccines — risk factors, outcomes, and data.', date: '2026-02-25' },
+    { path: '/is-vaers-reliable', title: 'Is VAERS Reliable?', description: 'Honest assessment of VAERS strengths and limitations for vaccine safety monitoring.', date: '2026-02-25' },
+    { path: '/vaccine-schedule', title: 'CDC Vaccine Schedule & VAERS Data', description: 'Recommended vaccine schedule with links to VAERS adverse event data for each vaccine.', date: '2026-02-25' },
+    { path: '/vaccine-injuries', title: 'Vaccine Injuries — VAERS & VICP Data', description: 'Understanding vaccine injuries, VAERS data, and the Vaccine Injury Compensation Program.', date: '2026-02-25' },
+    { path: '/vaers-database', title: 'VAERS Database — Search & Explore', description: '1.98M vaccine adverse event reports made searchable and understandable.', date: '2026-02-25' },
+  ]
+
+  const analysisItems = articles.map(a => `    <item>
       <title>${escapeXml(a.title)}</title>
       <link>${baseUrl}/analysis/${a.slug}</link>
       <description>${escapeXml(a.description)}</description>
       <pubDate>${new Date(a.date).toUTCString()}</pubDate>
       <guid>${baseUrl}/analysis/${a.slug}</guid>
     </item>`).join('\n')
+
+  const pageItems = pages.map(p => `    <item>
+      <title>${escapeXml(p.title)}</title>
+      <link>${baseUrl}${p.path}</link>
+      <description>${escapeXml(p.description)}</description>
+      <pubDate>${new Date(p.date).toUTCString()}</pubDate>
+      <guid>${baseUrl}${p.path}</guid>
+    </item>`).join('\n')
+
+  const items = analysisItems + '\n' + pageItems
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
