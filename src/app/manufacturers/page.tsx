@@ -22,9 +22,10 @@ interface Manufacturer {
 export default function ManufacturersPage() {
   const manufacturers: Manufacturer[] = readJsonFile('manufacturer-index.json')
 
-  const totalReports = manufacturers.reduce((sum, m) => sum + m.reports, 0)
-  const totalDeaths = manufacturers.reduce((sum, m) => sum + m.died, 0)
-  const totalHosp = manufacturers.reduce((sum, m) => sum + m.hosp, 0)
+  const stats = readJsonFile('stats.json')
+  const totalReports = stats?.totalReports || 1983260
+  const totalDeaths = stats?.totalDied || 27732
+  const totalHosp = stats?.totalHospitalized || 143653
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

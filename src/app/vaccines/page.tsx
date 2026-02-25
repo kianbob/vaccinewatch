@@ -25,6 +25,7 @@ interface Vaccine {
 
 export default function VaccinesPage() {
   const vaccines: Vaccine[] = readJsonFile('vaccine-index.json')
+  const stats = readJsonFile('stats.json')
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -59,15 +60,15 @@ export default function VaccinesPage() {
 
         <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
-            {formatNumber(vaccines.reduce((sum, v) => sum + v.reports, 0))}
+            {formatNumber(stats?.totalReports || 1983260)}
           </div>
           <div className="text-sm font-medium text-accent">Total Reports</div>
-          <div className="text-xs text-gray-500 mt-1">All vaccines combined</div>
+          <div className="text-xs text-gray-500 mt-1">Unique VAERS reports</div>
         </div>
 
         <div className="bg-gradient-to-br from-danger/5 to-danger/10 border border-danger/20 rounded-xl p-6">
           <div className="text-2xl font-bold text-gray-900">
-            {formatNumber(vaccines.reduce((sum, v) => sum + v.died, 0))}
+            {formatNumber(stats?.totalDied || 27732)}
           </div>
           <div className="text-sm font-medium text-danger">Deaths Reported</div>
           <div className="text-xs text-gray-500 mt-1">All vaccines</div>

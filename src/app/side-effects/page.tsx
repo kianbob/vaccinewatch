@@ -30,10 +30,11 @@ export default function SideEffectsPage() {
     .sort((a: any, b: any) => b.reports - a.reports)
     .slice(0, 10)
 
-  // Calculate totals
-  const totalReports = vaccineIndex.reduce((sum: number, v: any) => sum + v.reports, 0)
-  const totalDeaths = vaccineIndex.reduce((sum: number, v: any) => sum + v.died, 0)
-  const totalHosp = vaccineIndex.reduce((sum: number, v: any) => sum + v.hosp, 0)
+  // Use stats.json for accurate unique totals (vaccine-index sums overcount due to multi-vaccine reports)
+  const stats = readJsonFile('stats.json')
+  const totalReports = stats?.totalReports || 1983260
+  const totalDeaths = stats?.totalDied || 27732
+  const totalHosp = stats?.totalHospitalized || 143653
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -290,6 +291,22 @@ export default function SideEffectsPage() {
           <Link href="/side-effects/polio" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
             <div className="font-bold text-gray-900 mb-1">Polio Vaccine</div>
             <div className="text-sm text-gray-500">IPV &amp; historical OPV</div>
+          </Link>
+          <Link href="/side-effects/varicella" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="font-bold text-gray-900 mb-1">Varicella (Chickenpox)</div>
+            <div className="text-sm text-gray-500">Varivax · 93K+ reports</div>
+          </Link>
+          <Link href="/side-effects/dtap" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="font-bold text-gray-900 mb-1">DTaP Vaccine</div>
+            <div className="text-sm text-gray-500">Childhood diphtheria, tetanus, pertussis</div>
+          </Link>
+          <Link href="/side-effects/hepatitis-a" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="font-bold text-gray-900 mb-1">Hepatitis A Vaccine</div>
+            <div className="text-sm text-gray-500">Havrix &amp; Vaqta · 48K+ reports</div>
+          </Link>
+          <Link href="/side-effects/meningococcal" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="font-bold text-gray-900 mb-1">Meningococcal Vaccine</div>
+            <div className="text-sm text-gray-500">Menactra &amp; Menveo · 36K+ reports</div>
           </Link>
           <Link href="/dashboard" className="bg-primary/5 border border-primary/20 rounded-xl p-5 hover:shadow-md transition-all">
             <div className="font-bold text-primary mb-1">View All 104 Vaccines →</div>

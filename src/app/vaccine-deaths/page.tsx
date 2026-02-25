@@ -19,8 +19,9 @@ export const metadata: Metadata = {
 export default function VaccineDeathsPage() {
   const vaccineIndex = readJsonFile('vaccine-index.json')
 
-  const totalDeaths = vaccineIndex.reduce((sum: number, v: any) => sum + v.died, 0)
-  const totalReports = vaccineIndex.reduce((sum: number, v: any) => sum + v.reports, 0)
+  const stats = readJsonFile('stats.json')
+  const totalDeaths = stats?.totalDied || 27732
+  const totalReports = stats?.totalReports || 1983260
 
   // Top vaccines by death reports
   const topByDeaths = [...vaccineIndex]

@@ -494,9 +494,21 @@ export default function HomePage() {
               <div className="font-bold text-gray-900">Hepatitis B</div>
               <div className="text-xs text-gray-500 mt-1">73K+ reports</div>
             </Link>
+            <Link href="/side-effects/varicella" className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-md hover:border-primary/30 transition-all text-center">
+              <div className="font-bold text-gray-900">Chickenpox</div>
+              <div className="text-xs text-gray-500 mt-1">93K+ reports</div>
+            </Link>
+            <Link href="/side-effects/dtap" className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-md hover:border-primary/30 transition-all text-center">
+              <div className="font-bold text-gray-900">DTaP</div>
+              <div className="text-xs text-gray-500 mt-1">66K+ reports</div>
+            </Link>
+            <Link href="/side-effects/meningococcal" className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-md hover:border-primary/30 transition-all text-center">
+              <div className="font-bold text-gray-900">Meningococcal</div>
+              <div className="text-xs text-gray-500 mt-1">36K+ reports</div>
+            </Link>
             <Link href="/side-effects" className="bg-primary/5 border border-primary/20 rounded-xl p-4 hover:shadow-md transition-all text-center">
-              <div className="font-bold text-primary">All Vaccines →</div>
-              <div className="text-xs text-gray-500 mt-1">Complete guide</div>
+              <div className="font-bold text-primary">All 13 Guides →</div>
+              <div className="text-xs text-gray-500 mt-1">Complete collection</div>
             </Link>
           </div>
         </div>

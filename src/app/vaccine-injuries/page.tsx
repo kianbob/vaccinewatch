@@ -14,10 +14,11 @@ export const metadata: Metadata = {
 
 export default function VaccineInjuriesPage() {
   const vaccineIndex = readJsonFile('vaccine-index.json')
-  const totalReports = vaccineIndex.reduce((sum: number, v: any) => sum + v.reports, 0)
-  const totalHosp = vaccineIndex.reduce((sum: number, v: any) => sum + v.hosp, 0)
-  const totalDisabled = vaccineIndex.reduce((sum: number, v: any) => sum + v.disabled, 0)
-  const totalDeaths = vaccineIndex.reduce((sum: number, v: any) => sum + v.died, 0)
+  const stats = readJsonFile('stats.json')
+  const totalReports = stats?.totalReports || 1983260
+  const totalHosp = stats?.totalHospitalized || 143653
+  const totalDisabled = stats?.totalDisabled || 37185
+  const totalDeaths = stats?.totalDied || 27732
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

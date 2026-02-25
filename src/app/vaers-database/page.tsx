@@ -21,9 +21,10 @@ export default function VAERSDatabasePage() {
   const symptomIndex = readJsonFile('symptom-index.json')
   const stateIndex = readJsonFile('state-index.json')
 
-  const totalReports = vaccineIndex.reduce((sum: number, v: any) => sum + v.reports, 0)
-  const totalDeaths = vaccineIndex.reduce((sum: number, v: any) => sum + v.died, 0)
-  const totalHosp = vaccineIndex.reduce((sum: number, v: any) => sum + v.hosp, 0)
+  const stats = readJsonFile('stats.json')
+  const totalReports = stats?.totalReports || 1983260
+  const totalDeaths = stats?.totalDied || 27732
+  const totalHosp = stats?.totalHospitalized || 143653
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

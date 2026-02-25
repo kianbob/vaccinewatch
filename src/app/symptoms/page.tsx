@@ -22,9 +22,10 @@ interface Symptom {
 export default function SymptomsPage() {
   const symptoms: Symptom[] = readJsonFile('symptom-index.json')
 
-  const totalReports = symptoms.reduce((sum, s) => sum + s.reports, 0)
-  const totalDeaths = symptoms.reduce((sum, s) => sum + s.died, 0)
-  const totalHosp = symptoms.reduce((sum, s) => sum + s.hosp, 0)
+  const stats = readJsonFile('stats.json')
+  const totalReports = stats?.totalReports || 1983260
+  const totalDeaths = stats?.totalDied || 27732
+  const totalHosp = stats?.totalHospitalized || 143653
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

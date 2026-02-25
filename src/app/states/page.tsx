@@ -77,10 +77,11 @@ export default function StatesPage() {
     }
   })
 
-  const totalReports = states.reduce((sum, s) => sum + s.reports, 0)
-  const totalDeaths = states.reduce((sum, s) => sum + s.died, 0)
-  const totalHosp = states.reduce((sum, s) => sum + s.hosp, 0)
-  const totalER = states.reduce((sum, s) => sum + s.er, 0)
+  const statsData = readJsonFile('stats.json')
+  const totalReports = statsData?.totalReports || 1983260
+  const totalDeaths = statsData?.totalDied || 27732
+  const totalHosp = statsData?.totalHospitalized || 143653
+  const totalER = statsData?.totalER || 356123
 
   // Top 5 states excluding Unknown/Foreign
   const topStates = statesWithNames
