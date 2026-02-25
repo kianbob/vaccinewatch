@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
 const sisterSites = [
-  { name: 'OpenMedicaid', url: 'https://openmedicaid.com', description: 'Medicaid spending transparency' },
-  { name: 'OpenFeds', url: 'https://openfeds.com', description: 'Federal employee data' },
-  { name: 'OpenSpending', url: 'https://openspending.com', description: 'Government spending tracker' },
-  { name: 'OpenMedicare', url: 'https://openmedicare.com', description: 'Medicare data analysis' },
-  { name: 'OpenLobby', url: 'https://openlobby.com', description: 'Lobbying transparency' },
+  { name: 'OpenMedicaid', url: 'https://www.openmedicaid.org', description: 'Medicaid spending transparency' },
+  { name: 'OpenFeds', url: 'https://www.openfeds.org', description: 'Federal employee data' },
+  { name: 'OpenSpending', url: 'https://www.openspending.us', description: 'Government spending tracker' },
+  { name: 'OpenMedicare', url: 'https://www.openmedicare.us', description: 'Medicare data analysis' },
+  { name: 'OpenLobby', url: 'https://www.openlobby.us', description: 'Lobbying transparency' },
   { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]
 
@@ -96,7 +96,7 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row md:items-center md:space-x-6 space-y-2 md:space-y-0 text-sm">
               <Link href="/about" className="hover:text-white transition-colors">About</Link>
               <Link href="/about" className="hover:text-white transition-colors">Methodology</Link>
-              <Link href="/about" className="hover:text-white transition-colors">Disclaimer</Link>
+              <Link href="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
               <div className="text-gray-500">
                 Built by{' '}
                 <a href="https://thedataproject.ai" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-white">TheDataProject.ai</a>

@@ -5,11 +5,12 @@ import { formatNumber } from '@/lib/utils'
 
 interface YearlyData {
   year: number
-  reports: number
-  died: number
-  hosp: number
-  er: number
-  disabled: number
+  count?: number
+  reports?: number
+  died?: number
+  hosp?: number
+  er?: number
+  disabled?: number
 }
 
 interface VaccineYearlyChartProps {
@@ -18,8 +19,13 @@ interface VaccineYearlyChartProps {
 }
 
 export default function VaccineYearlyChart({ data, vaccineName }: VaccineYearlyChartProps) {
-  // Filter out years with zero reports to clean up the chart
-  const filteredData = data.filter(d => d.reports > 0)
+  // Normalize: some data uses 'count', some uses 'reports'
+  const normalized = data.map(d => ({
+    ...d,
+    reports: d.reports ?? d.count ?? 0,
+  }))
+  const filteredData = normalized.filter(d => d.reports > 0)
+  const hasDetailedData = normalized.some(d => d.died != null)
 
   const formatTooltip = (value: number, name: string) => {
     const names: { [key: string]: string } = {
@@ -71,31 +77,35 @@ export default function VaccineYearlyChart({ data, vaccineName }: VaccineYearlyC
             }}
           />
           <Legend />
-          <Line 
-            type="monotone" 
-            dataKey="reports" 
-            stroke="var(--color-primary, #0d9488)" 
+          <Line
+            type="monotone"
+            dataKey="reports"
+            stroke="var(--color-primary, #0d9488)"
             strokeWidth={3}
             name="Total Reports"
             dot={{ fill: 'var(--color-primary, #0d9488)', strokeWidth: 2, r: 4 }}
           />
-          <Line 
-            type="monotone" 
-            dataKey="died" 
-            stroke="var(--color-danger, #dc2626)" 
-            strokeWidth={2}
-            name="Deaths"
-            strokeDasharray="5 5"
-            dot={{ fill: 'var(--color-danger, #dc2626)', strokeWidth: 2, r: 3 }}
-          />
-          <Line 
-            type="monotone" 
-            dataKey="hosp" 
-            stroke="var(--color-accent, #0891b2)" 
-            strokeWidth={2}
-            name="Hospitalizations"
-            dot={{ fill: 'var(--color-accent, #0891b2)', strokeWidth: 2, r: 3 }}
-          />
+          {hasDetailedData && (
+            <Line
+              type="monotone"
+              dataKey="died"
+              stroke="var(--color-danger, #dc2626)"
+              strokeWidth={2}
+              name="Deaths"
+              strokeDasharray="5 5"
+              dot={{ fill: 'var(--color-danger, #dc2626)', strokeWidth: 2, r: 3 }}
+            />
+          )}
+          {hasDetailedData && (
+            <Line
+              type="monotone"
+              dataKey="hosp"
+              stroke="var(--color-accent, #0891b2)"
+              strokeWidth={2}
+              name="Hospitalizations"
+              dot={{ fill: 'var(--color-accent, #0891b2)', strokeWidth: 2, r: 3 }}
+            />
+          )}
         </LineChart>
       </ResponsiveContainer>
     </div>

@@ -66,3 +66,40 @@ export const TopSymptomsChartClient = dynamic(
   () => import('@/components/charts/TopSymptomsCharts'),
   { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
 )
+
+// Symptom yearly trend chart
+export const SymptomYearlyChartClient = dynamic(
+  () => import('@/components/SymptomYearlyChart'),
+  { ssr: false, loading: () => <div className="h-80 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+// New analysis charts
+export const PediatricChartsClient = dynamic(
+  () => import('@/components/charts/PediatricCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const ElderlyChartsClient = dynamic(
+  () => import('@/components/charts/ElderlyCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const CovidVsFluChartsClient = dynamic(
+  () => import('@/components/charts/CovidVsFluCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const ManufacturerLandscapeChartsClient = dynamic(
+  () => import('@/components/charts/ManufacturerLandscapeCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const GeographicChartsClient = dynamic(
+  () => import('@/components/charts/GeographicCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)
+
+export const SeriousOutcomesChartsClient = dynamic(
+  () => import('@/components/charts/SeriousOutcomesCharts'),
+  { ssr: false, loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div> }
+)

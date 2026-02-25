@@ -3,6 +3,14 @@ import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
+
+interface VaccineIndex {
+  name: string
+  type: string
+  reports: number
+  died: number
+  hosp: number
+}
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import { YearlyTrendChartClient as YearlyTrendChart } from '@/components/ClientCharts'
@@ -15,6 +23,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const stats = readJsonFile('stats.json')
   const yearlyStats = readJsonFile('yearly-stats.json')
+  const vaccines: VaccineIndex[] = readJsonFile('vaccine-index.json')
+  const topVaccines = [...vaccines].sort((a, b) => b.reports - a.reports).slice(0, 10)
 
   return (
     <div className="min-h-screen">
@@ -116,8 +126,46 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What is VAERS? */}
+      {/* Top 10 Vaccines */}
       <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
+              Top 10 Vaccines by Reports
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              The most-reported vaccines in VAERS. Higher counts primarily reflect widespread use,
+              not higher risk.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {topVaccines.map((v, i) => (
+              <Link
+                key={v.type}
+                href={`/vaccines/${v.type.toLowerCase()}`}
+                className="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-primary/30 hover:shadow-sm transition-all"
+              >
+                <div className="text-xs text-gray-400 mb-1">#{i + 1}</div>
+                <div className="font-medium text-gray-900 text-sm mb-1 truncate">{v.name.split('(')[0].trim()}</div>
+                <div className="text-xs text-gray-500 mb-2">{v.type}</div>
+                <div className="text-sm font-semibold text-primary">{formatNumber(v.reports)}</div>
+                <div className="text-xs text-gray-400">reports</div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/vaccines"
+              className="text-primary font-semibold hover:text-primary/80"
+            >
+              View all 104 vaccines →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* What is VAERS? */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -175,7 +223,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Sections */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>

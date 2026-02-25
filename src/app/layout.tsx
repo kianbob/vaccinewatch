@@ -8,7 +8,10 @@ import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
+const BASE_URL = 'https://vaccinewatch.org'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: 'VaccineWatch - VAERS Data Analysis',
     template: '%s | VaccineWatch'
@@ -16,6 +19,9 @@ export const metadata: Metadata = {
   description: '1.98 Million Vaccine Adverse Event Reports. Exposed. Explored. Explained. Transparent access to VAERS data for informed decision-making.',
   keywords: ['VAERS', 'vaccine', 'adverse events', 'safety', 'transparency', 'data'],
   authors: [{ name: 'VaccineWatch' }],
+  alternates: {
+    canonical: BASE_URL,
+  },
   openGraph: {
     type: 'website',
     siteName: 'VaccineWatch',
@@ -37,9 +43,6 @@ export const metadata: Metadata = {
     images: ['/og-image.png']
   },
   robots: 'index, follow',
-  verification: {
-    google: 'your-google-verification-code'
-  }
 }
 
 export default function RootLayout({
@@ -49,6 +52,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfairDisplay.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'VaccineWatch',
+              url: BASE_URL,
+              description: '1.98 Million Vaccine Adverse Event Reports. Exposed. Explored. Explained.',
+              publisher: {
+                '@type': 'Organization',
+                name: 'TheDataProject.ai',
+                url: 'https://thedataproject.ai',
+              },
+            }),
+          }}
+        />
+      </head>
       <body className="font-sans bg-gray-50 text-gray-900">
         <div className="flex flex-col min-h-screen">
           <Navbar />

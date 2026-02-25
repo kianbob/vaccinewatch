@@ -92,7 +92,7 @@ export default function VaccinesPage() {
             .map((vaccine) => (
               <Link
                 key={vaccine.name}
-                href={`/vaccines/${slugify(vaccine.name)}`}
+                href={`/vaccines/${vaccine.type.toLowerCase()}`}
                 className="bg-white p-4 rounded-lg border border-gray-200 hover:border-primary/30 hover:shadow-sm transition-all"
               >
                 <div className="font-medium text-gray-900 mb-1">{vaccine.name}</div>

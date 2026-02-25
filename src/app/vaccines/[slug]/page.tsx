@@ -1,12 +1,29 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { readdirSync, existsSync } from 'fs'
+import { join } from 'path'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber, slugify } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import { VaccineYearlyChartClient as VaccineYearlyChart } from '@/components/ClientCharts'
+
+const STATE_NAMES: Record<string, string> = {
+  AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California',
+  CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', FL: 'Florida', GA: 'Georgia',
+  HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa',
+  KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland',
+  MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi', MO: 'Missouri',
+  MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey',
+  NM: 'New Mexico', NY: 'New York', NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio',
+  OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina',
+  SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont',
+  VA: 'Virginia', WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming',
+  DC: 'District of Columbia', PR: 'Puerto Rico', GU: 'Guam', VI: 'U.S. Virgin Islands',
+  AS: 'American Samoa', MP: 'Northern Mariana Islands', UNK: 'Unknown', FR: 'Foreign'
+}
 
 interface VaccineData {
   name: string
@@ -17,14 +34,10 @@ interface VaccineData {
   er: number
   disabled: number
   lifeThreatening: number
-  manufacturers: string[]
+  manufacturers: Array<{ name: string; count: number }>
   yearly: Array<{
     year: number
-    reports: number
-    died: number
-    hosp: number
-    er: number
-    disabled: number
+    count: number
   }>
   symptoms: Array<{
     name: string
@@ -33,10 +46,11 @@ interface VaccineData {
 }
 
 export async function generateStaticParams() {
-  const vaccines = readJsonFile('vaccine-index.json')
-  
-  return vaccines.map((vaccine: any) => ({
-    slug: slugify(vaccine.name)
+  const vaccinesDir = join(process.cwd(), 'public', 'data', 'vaccines')
+  const files = readdirSync(vaccinesDir).filter(f => f.endsWith('.json'))
+
+  return files.map(f => ({
+    slug: f.replace('.json', '')
   }))
 }
 
@@ -77,6 +91,38 @@ export default async function VaccineDetailPage({
     notFound()
   }
 
+  // Load state distribution data
+  let stateData: Array<{ state: string; reports: number; died: number; hosp: number }> = []
+  const statePath = join(process.cwd(), 'public', 'data', 'vaccine-states', `${slug}.json`)
+  if (existsSync(statePath)) {
+    try {
+      stateData = readJsonFile(`vaccine-states/${slug}.json`)
+    } catch { /* no data */ }
+  }
+  const topStates = stateData
+    .filter(s => s.state !== 'UNK' && s.state !== 'FR')
+    .sort((a, b) => b.reports - a.reports)
+    .slice(0, 10)
+
+  // Load vaccine-symptoms for linking
+  let vaccineSymptoms: Array<{ name: string; slug: string; count: number }> = []
+  const symptomPath = join(process.cwd(), 'public', 'data', 'vaccine-symptoms', `${slug}.json`)
+  if (existsSync(symptomPath)) {
+    try {
+      vaccineSymptoms = readJsonFile(`vaccine-symptoms/${slug}.json`)
+    } catch { /* no data */ }
+  }
+
+  // Load yearly data for sub-page links
+  let yearlyData: Array<{ year: number; reports: number }> = []
+  const yearPath = join(process.cwd(), 'public', 'data', 'vaccine-years', `${slug}.json`)
+  if (existsSync(yearPath)) {
+    try {
+      yearlyData = readJsonFile(`vaccine-years/${slug}.json`)
+    } catch { /* no data */ }
+  }
+  const yearsWithData = yearlyData.filter(y => y.reports >= 5).sort((a, b) => b.year - a.year)
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
@@ -114,11 +160,11 @@ export default async function VaccineDetailPage({
             <div className="flex flex-wrap gap-2">
               {vaccine.manufacturers.map((manufacturer) => (
                 <Link
-                  key={manufacturer}
-                  href={`/manufacturers#${slugify(manufacturer)}`}
+                  key={manufacturer.name}
+                  href={`/manufacturers/${slugify(manufacturer.name)}`}
                   className="text-sm bg-white border border-gray-200 rounded-md px-3 py-1 hover:border-primary/30 hover:bg-primary/5 transition-colors"
                 >
-                  {manufacturer}
+                  {manufacturer.name}
                 </Link>
               ))}
             </div>
@@ -127,36 +173,31 @@ export default async function VaccineDetailPage({
       </div>
 
       {/* Key Statistics */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-        <StatCard 
-          title="Total Reports" 
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+        <StatCard
+          title="Total Reports"
           value={vaccine.reports}
           color="primary"
         />
-        <StatCard 
-          title="Deaths" 
+        <StatCard
+          title="Deaths"
           value={vaccine.died}
           color="danger"
         />
-        <StatCard 
-          title="Hospitalizations" 
+        <StatCard
+          title="Hospitalizations"
           value={vaccine.hosp}
           color="accent"
         />
-        <StatCard 
-          title="ER Visits" 
+        <StatCard
+          title="ER Visits"
           value={vaccine.er}
           color="gray"
         />
-        <StatCard 
-          title="Disabilities" 
+        <StatCard
+          title="Disabilities"
           value={vaccine.disabled}
           color="gray"
-        />
-        <StatCard 
-          title="Life-threatening" 
-          value={vaccine.lifeThreatening}
-          color="danger"
         />
       </div>
 
@@ -175,7 +216,7 @@ export default async function VaccineDetailPage({
             </h2>
             <div className="prose prose-lg text-gray-600">
               <p>
-                <strong>{vaccine.name}</strong> is a {vaccine.type.toLowerCase()} vaccine with{' '}
+                <strong>{vaccine.name}</strong> has{' '}
                 <strong>{formatNumber(vaccine.reports)}</strong> reports in VAERS spanning from 1990 to 2026.
               </p>
               <p>
@@ -185,11 +226,28 @@ export default async function VaccineDetailPage({
               </p>
               {vaccine.manufacturers.length > 0 && (
                 <p>
-                  This vaccine is manufactured by: <strong>{vaccine.manufacturers.join(', ')}</strong>.
+                  This vaccine is manufactured by: <strong>{vaccine.manufacturers.map(m => m.name).join(', ')}</strong>.
                 </p>
               )}
             </div>
           </div>
+
+          {/* Report Rate Context */}
+          {vaccine.yearly.length > 0 && (() => {
+            const yearsWithReports = vaccine.yearly.filter(y => y.count > 0)
+            const numYears = yearsWithReports.length
+            const avgPerYear = numYears > 0 ? Math.round(vaccine.reports / numYears) : 0
+            const firstYear = yearsWithReports[0]?.year
+            const lastYear = yearsWithReports[yearsWithReports.length - 1]?.year
+            return (
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                <h3 className="text-sm font-semibold text-gray-900 mb-2">Reporting Rate</h3>
+                <p className="text-sm text-gray-600">
+                  This vaccine averages <strong>{formatNumber(avgPerYear)} reports per year</strong> over {numYears} years of reporting ({firstYear}–{lastYear}).
+                </p>
+              </div>
+            )
+          })()}
 
           {/* Reporting Context */}
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
@@ -225,16 +283,16 @@ export default async function VaccineDetailPage({
         {/* Sidebar */}
         <div className="space-y-6">
           {/* Top Reported Symptoms */}
-          {vaccine.symptoms && vaccine.symptoms.length > 0 && (
+          {vaccineSymptoms.length > 0 && (
             <div className="bg-white rounded-lg border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Most Reported Symptoms
               </h3>
               <div className="space-y-3">
-                {vaccine.symptoms.slice(0, 10).map((symptom, index) => (
+                {vaccineSymptoms.slice(0, 10).map((symptom, index) => (
                   <div key={symptom.name} className="flex items-center justify-between">
-                    <Link 
-                      href={`/symptoms/${slugify(symptom.name)}`}
+                    <Link
+                      href={`/vaccines/${slug}/symptoms/${symptom.slug}`}
                       className="text-sm text-primary hover:text-primary/80 font-medium truncate mr-2"
                     >
                       {index + 1}. {symptom.name}
@@ -245,12 +303,40 @@ export default async function VaccineDetailPage({
                   </div>
                 ))}
               </div>
-              <Link 
-                href={`/symptoms?vaccine=${slugify(vaccine.name)}`}
-                className="text-sm text-primary hover:text-primary/80 font-medium mt-4 inline-block"
-              >
-                View all symptoms →
-              </Link>
+            </div>
+          )}
+
+          {/* Top States */}
+          {topStates.length > 0 && (
+            <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Top Reporting States</h3>
+              <div className="space-y-3">
+                {topStates.slice(0, 8).map((s, i) => (
+                  <div key={s.state} className="flex items-center justify-between">
+                    <Link href={`/states/${s.state.toLowerCase()}`} className="text-sm text-primary hover:text-primary/80 font-medium truncate mr-2">
+                      {i + 1}. {STATE_NAMES[s.state] || s.state}
+                    </Link>
+                    <span className="text-sm text-gray-500 flex-shrink-0">{formatNumber(s.reports)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Yearly Sub-Pages */}
+          {yearsWithData.length > 0 && (
+            <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Reports by Year</h3>
+              <div className="space-y-2">
+                {yearsWithData.slice(0, 10).map(y => (
+                  <div key={y.year} className="flex items-center justify-between">
+                    <Link href={`/vaccines/${slug}/${y.year}`} className="text-sm text-primary hover:text-primary/80 font-medium">
+                      {y.year}
+                    </Link>
+                    <span className="text-sm text-gray-500">{formatNumber(y.reports)}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
@@ -261,11 +347,19 @@ export default async function VaccineDetailPage({
             </h3>
             <div className="space-y-3">
               <Link
-                href={`/compare?vaccines=${slugify(vaccine.name)}`}
+                href="/compare"
                 className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
               >
                 Compare with Other Vaccines
               </Link>
+              {vaccine.type.startsWith('COVID') && (
+                <Link
+                  href="/analysis/covid-impact"
+                  className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
+                >
+                  COVID-19 Impact Analysis
+                </Link>
+              )}
               <Link
                 href="/analysis"
                 className="block w-full text-center bg-primary text-white rounded-lg py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors"

@@ -25,6 +25,21 @@ const STATE_NAMES: Record<string, string> = {
   AS: 'American Samoa', MP: 'Northern Mariana Islands', UNK: 'Unknown', FR: 'Foreign'
 }
 
+// Approximate 2024 US Census population estimates (in thousands)
+const STATE_POP: Record<string, number> = {
+  CA: 39030, TX: 30504, FL: 22611, NY: 19571, PA: 12972,
+  IL: 12550, OH: 11780, GA: 10912, NC: 10699, MI: 10037,
+  NJ: 9261, VA: 8643, WA: 7812, AZ: 7360, TN: 7051,
+  MA: 6982, IN: 6834, MO: 6178, MD: 6164, WI: 5893,
+  CO: 5840, MN: 5707, SC: 5283, AL: 5074, LA: 4624,
+  KY: 4512, OR: 4233, OK: 4019, CT: 3617, UT: 3418,
+  IA: 3201, NV: 3177, AR: 3046, MS: 2940, KS: 2937,
+  NM: 2114, NE: 1967, ID: 1964, WV: 1770, HI: 1440,
+  NH: 1396, ME: 1385, MT: 1123, RI: 1093, DE: 1018,
+  SD: 909, ND: 783, AK: 733, VT: 647, WY: 577,
+  DC: 672, PR: 3222, GU: 172, VI: 87, AS: 44, MP: 47,
+}
+
 interface StateData {
   abbreviation: string
   reports: number
@@ -36,10 +51,14 @@ interface StateData {
 export default function StatesPage() {
   const states: StateData[] = readJsonFile('state-index.json')
 
-  const statesWithNames = states.map(s => ({
-    ...s,
-    name: STATE_NAMES[s.abbreviation] || s.abbreviation,
-  }))
+  const statesWithNames = states.map(s => {
+    const popK = STATE_POP[s.abbreviation]
+    return {
+      ...s,
+      name: STATE_NAMES[s.abbreviation] || s.abbreviation,
+      per100k: popK ? Math.round(s.reports / popK * 100) : null,
+    }
+  })
 
   const totalReports = states.reduce((sum, s) => sum + s.reports, 0)
   const totalDeaths = states.reduce((sum, s) => sum + s.died, 0)

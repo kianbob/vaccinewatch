@@ -1,6 +1,11 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Link from 'next/link'
+
+function slugify(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-')
+}
 
 interface Manufacturer {
   name: string
@@ -82,7 +87,11 @@ export default function ManufacturersList({ manufacturers }: { manufacturers: Ma
               const share = totalReports > 0 ? (m.reports / totalReports * 100).toFixed(1) : '0.0'
               return (
                 <tr key={m.name} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">{m.name}</td>
+                  <td className="px-6 py-4 text-sm font-medium">
+                          <Link href={`/manufacturers/${slugify(m.name)}`} className="text-primary hover:text-primary/80">
+                            {m.name}
+                          </Link>
+                        </td>
                   <td className="px-6 py-4 text-sm text-gray-900">{m.reports.toLocaleString()}</td>
                   <td className="px-6 py-4 text-sm text-danger font-medium">{m.died.toLocaleString()}</td>
                   <td className="px-6 py-4 text-sm text-gray-900">{m.hosp.toLocaleString()}</td>

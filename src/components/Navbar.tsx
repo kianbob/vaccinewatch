@@ -7,10 +7,8 @@ import { playfairDisplay } from '@/lib/fonts'
 const navigation = [
   { name: 'Vaccines', href: '/vaccines' },
   { name: 'Symptoms', href: '/symptoms' },
-  { name: 'Manufacturers', href: '/manufacturers' },
-  { name: 'States', href: '/states' },
   { name: 'Analysis', href: '/analysis' },
-  { name: 'About', href: '/about' }
+  { name: 'Compare', href: '/compare' },
 ]
 
 export default function Navbar() {

@@ -1,12 +1,14 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { existsSync } from 'fs'
+import { join } from 'path'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber, slugify } from '@/lib/utils'
 import StatCard from '@/components/StatCard'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
-import { SymptomVaccinesChartClient as SymptomVaccinesChart } from '@/components/ClientCharts'
+import { SymptomVaccinesChartClient as SymptomVaccinesChart, SymptomYearlyChartClient as SymptomYearlyChart } from '@/components/ClientCharts'
 
 interface SymptomData {
   name: string
@@ -67,6 +69,17 @@ export default async function SymptomDetailPage({
   const severityRate = symptom.reports > 0 ? ((symptom.died + symptom.hosp) / symptom.reports * 100) : 0
   const mortalityRate = symptom.reports > 0 ? (symptom.died / symptom.reports * 100) : 0
 
+  // Load yearly trend data if available
+  let yearlyData: Array<{ year: number; count: number; died: number; hosp: number }> = []
+  const yearlyPath = join(process.cwd(), 'public', 'data', 'symptom-years', `${slug}.json`)
+  if (existsSync(yearlyPath)) {
+    try {
+      yearlyData = readJsonFile(`symptom-years/${slug}.json`)
+    } catch {
+      // no yearly data
+    }
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
@@ -124,6 +137,13 @@ export default async function SymptomDetailPage({
       <div className="mb-8">
         <SymptomVaccinesChart data={symptom.vaccines} symptomName={symptom.name} />
       </div>
+
+      {/* Yearly Trend Chart */}
+      {yearlyData.length > 0 && (
+        <div className="mb-8">
+          <SymptomYearlyChart data={yearlyData} symptomName={symptom.name} />
+        </div>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main Content */}
@@ -224,7 +244,7 @@ export default async function SymptomDetailPage({
                   .map((vaccine, index) => (
                     <div key={vaccine.type} className="flex items-center justify-between">
                       <Link 
-                        href={`/vaccines/${slugify(vaccine.type)}`}
+                        href={`/vaccines/${vaccine.type.toLowerCase()}`}
                         className="text-sm text-primary hover:text-primary/80 font-medium truncate mr-2"
                       >
                         {index + 1}. {vaccine.type}
@@ -285,6 +305,14 @@ export default async function SymptomDetailPage({
               >
                 Compare with Other Symptoms
               </Link>
+              {slug === 'myocarditis' && (
+                <Link
+                  href="/analysis/myocarditis"
+                  className="block w-full text-center bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-gray-900 hover:border-primary/30 hover:bg-primary/5 transition-colors"
+                >
+                  Myocarditis Deep Dive
+                </Link>
+              )}
               <Link
                 href="/analysis/top-symptoms"
                 className="block w-full text-center bg-primary text-white rounded-lg py-3 px-4 text-sm font-medium hover:bg-primary/90 transition-colors"

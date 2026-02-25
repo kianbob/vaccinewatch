@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Link from 'next/link'
 
 interface StateRow {
   abbreviation: string
@@ -9,9 +10,10 @@ interface StateRow {
   died: number
   hosp: number
   er: number
+  per100k: number | null
 }
 
-type SortKey = 'name' | 'reports' | 'died' | 'hosp' | 'er'
+type SortKey = 'name' | 'reports' | 'died' | 'hosp' | 'er' | 'per100k'
 
 export default function StatesList({ states }: { states: StateRow[] }) {
   const [search, setSearch] = useState('')
@@ -29,6 +31,9 @@ export default function StatesList({ states }: { states: StateRow[] }) {
     result = [...result].sort((a, b) => {
       const av = a[sortKey]
       const bv = b[sortKey]
+      if (av == null && bv == null) return 0
+      if (av == null) return 1
+      if (bv == null) return -1
       if (typeof av === 'number' && typeof bv === 'number') {
         return sortDir === 'asc' ? av - bv : bv - av
       }
@@ -67,7 +72,7 @@ export default function StatesList({ states }: { states: StateRow[] }) {
         <table className="w-full">
           <thead className="bg-gray-50">
             <tr>
-              {([['name', 'State'], ['reports', 'Total Reports'], ['died', 'Deaths'], ['hosp', 'Hospitalizations'], ['er', 'ER Visits']] as [SortKey, string][]).map(([key, label]) => (
+              {([['name', 'State'], ['reports', 'Total Reports'], ['per100k', 'Per 100K'], ['died', 'Deaths'], ['hosp', 'Hospitalizations'], ['er', 'ER Visits']] as [SortKey, string][]).map(([key, label]) => (
                 <th key={key} onClick={() => handleSort(key)} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100">
                   {label}<span className="text-primary">{sortIcon(key)}</span>
                 </th>
@@ -78,10 +83,13 @@ export default function StatesList({ states }: { states: StateRow[] }) {
             {paginated.map(s => (
               <tr key={s.abbreviation} className="hover:bg-gray-50">
                 <td className="px-6 py-4 text-sm">
-                  <span className="font-semibold text-gray-900">{s.name}</span>
+                  <Link href={`/states/${s.abbreviation.toLowerCase()}`} className="font-semibold text-primary hover:text-primary/80">
+                    {s.name}
+                  </Link>
                   <span className="text-gray-400 ml-1">({s.abbreviation})</span>
                 </td>
                 <td className="px-6 py-4 text-sm text-gray-900">{s.reports.toLocaleString()}</td>
+                <td className="px-6 py-4 text-sm text-primary font-medium">{s.per100k != null ? s.per100k.toLocaleString() : '—'}</td>
                 <td className="px-6 py-4 text-sm text-danger font-medium">{s.died.toLocaleString()}</td>
                 <td className="px-6 py-4 text-sm text-gray-900">{s.hosp.toLocaleString()}</td>
                 <td className="px-6 py-4 text-sm text-gray-900">{s.er.toLocaleString()}</td>
