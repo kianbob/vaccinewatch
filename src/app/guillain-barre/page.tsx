@@ -14,6 +14,7 @@ export default function GuillainBarrePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"Guillain-Barré Syndrome & Vaccines — VAERS Data & Research","description":"Understanding the link between Guillain-Barré Syndrome (GBS) and vaccines. VAERS data, established risk from flu and J&J vaccines, and clinical outcomes.","url":"https://www.vaccinewatch.org/guillain-barre","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
       <Breadcrumbs items={[
         { label: 'Side Effects', href: '/side-effects' },
         { label: 'Guillain-Barré Syndrome' }

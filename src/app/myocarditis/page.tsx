@@ -18,6 +18,7 @@ export default function MyocarditisLandingPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"Myocarditis and COVID Vaccine — VAERS Data & Research","description":"Complete analysis of myocarditis reports after COVID-19 vaccination. Data from VAERS combined with clinical research on risk factors, outcomes, and context.","url":"https://www.vaccinewatch.org/myocarditis","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
       <Breadcrumbs items={[{ label: 'Myocarditis & Vaccines' }]} />
 
       <div className="mb-8">

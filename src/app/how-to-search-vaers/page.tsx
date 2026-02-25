@@ -14,6 +14,7 @@ export default function HowToSearchVAERSPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"How to Search VAERS — Easy Guide to Vaccine Safety Data","description":"The easiest way to search VAERS data. No complex queries needed — browse vaccines, symptoms, states, and manufacturers with interactive tools and proper context.","url":"https://www.vaccinewatch.org/how-to-search-vaers","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
       <Breadcrumbs items={[{ label: 'How to Search VAERS' }]} />
 
       <div className="mb-8">

@@ -29,6 +29,7 @@ export default function VAERSDatabasePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"VAERS Database — Search & Explore Vaccine Adverse Event Reports","description":"Explore the VAERS database with interactive tools. 1.98 million vaccine adverse event reports (1990-2026), 104 vaccines, 1,000+ symptoms — all searchable and contextualized.","url":"https://www.vaccinewatch.org/vaers-database","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
       <Breadcrumbs items={[{ label: 'VAERS Database' }]} />
 
       <div className="mb-8">

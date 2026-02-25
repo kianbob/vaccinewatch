@@ -23,6 +23,7 @@ export default function FeverAfterVaccinationPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"Fever After Vaccination — Is It Normal? VAERS Data","description":"Fever is the #1 reported symptom in VAERS with 276,000+ reports. Learn when post-vaccination fever is normal, when to worry, and what the data shows.","url":"https://www.vaccinewatch.org/fever-after-vaccination","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
       <Breadcrumbs items={[
         { label: 'Side Effects', href: '/side-effects' },
         { label: 'Fever After Vaccination' }

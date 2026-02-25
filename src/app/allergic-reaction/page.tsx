@@ -14,6 +14,7 @@ export default function AllergicReactionPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"Allergic Reactions to Vaccines — Anaphylaxis Data & Guidance","description":"Understanding vaccine allergic reactions from mild hives to anaphylaxis. VAERS data, risk factors, the 15-minute wait, and what to do if you react.","url":"https://www.vaccinewatch.org/allergic-reaction","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
       <Breadcrumbs items={[
         { label: 'Side Effects', href: '/side-effects' },
         { label: 'Allergic Reactions' }
