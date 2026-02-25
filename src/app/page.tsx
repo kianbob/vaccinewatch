@@ -1,65 +1,250 @@
-import Image from "next/image";
+import { Metadata } from 'next'
+import Link from 'next/link'
+import { playfairDisplay } from '@/lib/fonts'
+import { readJsonFile } from '@/lib/server-utils'
+import { formatNumber } from '@/lib/utils'
+import StatCard from '@/components/StatCard'
+import DisclaimerBanner from '@/components/DisclaimerBanner'
+import { YearlyTrendChartClient as YearlyTrendChart } from '@/components/ClientCharts'
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'VaccineWatch - 1.98 Million VAERS Reports Analyzed',
+  description: 'Comprehensive analysis of 1.98 million vaccine adverse event reports from VAERS. Transparent data, neutral analysis, informed decisions.'
+}
+
+export default function HomePage() {
+  const stats = readJsonFile('stats.json')
+  const yearlyStats = readJsonFile('yearly-stats.json')
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen">
+      <DisclaimerBanner />
+
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-primary/5 to-accent/10 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className={`text-4xl md:text-6xl font-bold text-gray-900 mb-6 ${playfairDisplay.className}`}>
+            {formatNumber(stats.totalReports)} Vaccine Adverse Event Reports
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
+            <span className="text-primary font-semibold">Exposed.</span>{' '}
+            <span className="text-accent font-semibold">Explored.</span>{' '}
+            <span className="text-gray-900 font-semibold">Explained.</span>
+          </p>
+          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+            Transparent access to 35 years of VAERS data (1990-2026). 
+            We present the numbers with context, not conclusions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/vaccines"
+              className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Explore Vaccines
+            </Link>
+            <Link
+              href="/analysis"
+              className="bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary/5 transition-colors"
             >
-              Learning
-            </a>{" "}
-            center.
+              Read Analysis
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Statistics */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
+              Key Numbers at a Glance
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              These are the raw numbers from VAERS. Remember: reports don&apos;t prove causation, 
+              but transparency is essential for informed decision-making.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <StatCard 
+              title="Total Reports" 
+              value={stats.totalReports} 
+              subtitle="Since 1990"
+              color="primary"
+            />
+            <StatCard 
+              title="Deaths Reported" 
+              value={stats.totalDied} 
+              subtitle="Correlation ≠ causation"
+              color="danger"
+            />
+            <StatCard 
+              title="Hospitalizations" 
+              value={stats.totalHospitalized} 
+              subtitle="Serious adverse events"
+              color="accent"
+            />
+            <StatCard 
+              title="ER Visits" 
+              value={stats.totalER} 
+              subtitle="Emergency department"
+              color="gray"
+            />
+            <StatCard 
+              title="Disabilities" 
+              value={stats.totalDisabled} 
+              subtitle="Reported disabilities"
+              color="gray"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Yearly Trend */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
+              35 Years of VAERS Reporting
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              See how adverse event reporting has changed over time. 
+              Note the dramatic spike in 2021 with COVID-19 vaccine rollout.
+            </p>
+          </div>
+          <YearlyTrendChart data={yearlyStats} />
+        </div>
+      </section>
+
+      {/* What is VAERS? */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-6 ${playfairDisplay.className}`}>
+                What is VAERS?
+              </h2>
+              <div className="prose prose-lg text-gray-600">
+                <p>
+                  The <strong>Vaccine Adverse Event Reporting System (VAERS)</strong> is a passive surveillance system 
+                  jointly managed by the CDC and FDA. It accepts reports of adverse events following vaccination.
+                </p>
+                <p>
+                  <strong>Anyone can report to VAERS</strong> — healthcare providers, vaccine manufacturers, patients, 
+                  or family members. This openness is both a strength (captures a wide range of potential signals) 
+                  and a limitation (reports aren&apos;t verified).
+                </p>
+                <p>
+                  <strong>Key limitations:</strong> Reports alone don&apos;t prove causation. They might be coincidental, 
+                  incomplete, or inaccurate. But they&apos;re still valuable for safety signal detection.
+                </p>
+              </div>
+              <Link
+                href="/about"
+                className="inline-flex items-center mt-6 text-primary font-semibold hover:text-primary/80"
+              >
+                Learn more about our methodology
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+            <div className="bg-gradient-to-br from-accent/5 to-primary/10 p-8 rounded-lg">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Why This Matters</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>Transparency:</strong> The public deserves access to this data</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>Context:</strong> Raw numbers need proper interpretation</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>Education:</strong> Understanding helps informed decisions</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>Balance:</strong> Neither pro-vax nor anti-vax — just data</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Sections */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
+              Explore the Data
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Dive deep into vaccines, symptoms, and analysis. Every number tells a story, 
+              but context is everything.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Link 
+              href="/vaccines" 
+              className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">104 Vaccines</h3>
+              <p className="text-gray-600">From COVID-19 to measles, explore adverse event reports for every vaccine in VAERS.</p>
+            </Link>
+
+            <Link 
+              href="/symptoms" 
+              className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200"
+            >
+              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">500 Symptoms</h3>
+              <p className="text-gray-600">Which symptoms get reported most? Discover patterns in adverse event descriptions.</p>
+            </Link>
+
+            <Link 
+              href="/analysis" 
+              className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200"
+            >
+              <div className="w-12 h-12 bg-gray-500/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Deep Analysis</h3>
+              <p className="text-gray-600">COVID impact, age patterns, myocarditis, and more. Context-rich analysis of the data.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Disclaimer */}
+      <section className="py-12 bg-amber-50 border-t border-amber-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center mb-4">
+            <span className="text-2xl mr-3">⚠️</span>
+            <h3 className="text-lg font-bold text-amber-800">Important Reminder</h3>
+          </div>
+          <p className="text-amber-700 leading-relaxed">
+            This website presents VAERS data for transparency and education. 
+            <strong> Reports in VAERS do not prove that vaccines caused the reported adverse events.</strong> 
+            Always consult healthcare professionals for medical decisions. 
+            Our goal is informed transparency, not medical advice.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
     </div>
-  );
+  )
 }
