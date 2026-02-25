@@ -84,7 +84,17 @@ export default function DashboardClient() {
   }
 
   if (loading) {
-    return <div className="text-center py-20 text-gray-500">Loading dashboard...</div>
+    return (
+      <div className="space-y-4">
+        <div className="flex gap-4">
+          <div className="h-10 bg-gray-200 rounded-xl flex-1 animate-pulse"></div>
+          <div className="h-10 bg-gray-200 rounded-xl w-48 animate-pulse"></div>
+        </div>
+        {[...Array(8)].map((_, i) => (
+          <div key={i} className="h-14 bg-gray-100 rounded-xl animate-pulse"></div>
+        ))}
+      </div>
+    )
   }
 
   return (
