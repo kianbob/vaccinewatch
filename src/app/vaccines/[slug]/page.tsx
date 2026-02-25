@@ -210,6 +210,49 @@ export default async function VaccineDetailPage({
         />
       </div>
 
+      {/* Automated Insights */}
+      {(() => {
+        const insights: Array<{ icon: string; text: string; color: string }> = []
+        const deathRate = vaccine.reports > 0 ? (vaccine.died / vaccine.reports * 100) : 0
+        const hospRate = vaccine.reports > 0 ? (vaccine.hosp / vaccine.reports * 100) : 0
+        const avgDeathRate = stats.totalReports > 0 ? (27732 / stats.totalReports * 100) : 1.4
+        const avgHospRate = stats.totalReports > 0 ? (143653 / stats.totalReports * 100) : 7.2
+        
+        if (deathRate > avgDeathRate * 2 && vaccine.died > 10) {
+          insights.push({ icon: '⚠️', text: `Death reporting rate (${deathRate.toFixed(1)}%) is ${(deathRate/avgDeathRate).toFixed(1)}× the database average. This may reflect the patient population, not vaccine safety.`, color: 'amber' })
+        }
+        if (deathRate < avgDeathRate * 0.3 && vaccine.reports > 100) {
+          insights.push({ icon: '📊', text: `Death reporting rate (${deathRate.toFixed(1)}%) is well below the database average (${avgDeathRate.toFixed(1)}%), likely reflecting the younger age of recipients.`, color: 'green' })
+        }
+        if (parseFloat(percentOfAll) > 10) {
+          insights.push({ icon: '📈', text: `This vaccine accounts for ${percentOfAll}% of all VAERS reports — driven by massive vaccination campaigns, not higher risk.`, color: 'blue' })
+        }
+        const peakYear = vaccine.yearly?.reduce((max: { year: number; count: number }, y: { year: number; count: number }) => y.count > max.count ? y : max, { year: 0, count: 0 })
+        if (peakYear && peakYear.year >= 2020 && peakYear.count > vaccine.reports * 0.3) {
+          insights.push({ icon: '🦠', text: `${(peakYear.count / vaccine.reports * 100).toFixed(0)}% of all reports came in ${peakYear.year} alone, reflecting pandemic-era heightened reporting.`, color: 'primary' })
+        }
+
+        if (insights.length === 0) return null
+
+        const colorMap: Record<string, string> = {
+          amber: 'bg-amber-50 border-amber-200 text-amber-800',
+          green: 'bg-green-50 border-green-200 text-green-800',
+          blue: 'bg-blue-50 border-blue-200 text-blue-800',
+          primary: 'bg-primary/5 border-primary/20 text-gray-800',
+        }
+
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+            {insights.map((insight, i) => (
+              <div key={i} className={`border rounded-xl p-4 text-sm ${colorMap[insight.color]}`}>
+                <span className="mr-2">{insight.icon}</span>
+                {insight.text}
+              </div>
+            ))}
+          </div>
+        )
+      })()}
+
       {/* Yearly Trend Chart */}
       <div className="mb-8">
         <VaccineYearlyChart data={vaccine.yearly} vaccineName={cleanName} />
