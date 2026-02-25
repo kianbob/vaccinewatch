@@ -308,6 +308,10 @@ export default function SideEffectsPage() {
             <div className="font-bold text-gray-900 mb-1">Meningococcal Vaccine</div>
             <div className="text-sm text-gray-500">Menactra &amp; Menveo · 36K+ reports</div>
           </Link>
+          <Link href="/side-effects/rotavirus" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="font-bold text-gray-900 mb-1">Rotavirus Vaccine</div>
+            <div className="text-sm text-gray-500">RotaTeq &amp; Rotarix · 25K+ reports</div>
+          </Link>
           <Link href="/dashboard" className="bg-primary/5 border border-primary/20 rounded-xl p-5 hover:shadow-md transition-all">
             <div className="font-bold text-primary mb-1">View All 104 Vaccines →</div>
             <div className="text-sm text-gray-500">Interactive sortable dashboard</div>
