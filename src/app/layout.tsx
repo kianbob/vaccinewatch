@@ -62,6 +62,11 @@ export default function RootLayout({
                 name: 'TheDataProject.ai',
                 url: 'https://thedataproject.ai',
               },
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: `${BASE_URL}/search?q={search_term_string}`,
+                'query-input': 'required name=search_term_string',
+              },
             }),
           }}
         />
