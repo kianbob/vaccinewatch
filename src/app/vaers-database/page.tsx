@@ -238,9 +238,9 @@ export default function VAERSDatabasePage() {
             <div className="font-medium text-gray-900">Raw Data Downloads ↗</div>
             <div className="text-sm text-gray-500">CSV files used by VaccineWatch</div>
           </a>
-          <Link href="/about" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-            <div className="font-medium text-gray-900">About VaccineWatch</div>
-            <div className="text-sm text-gray-500">Our methodology and approach</div>
+          <Link href="/how-to-search-vaers" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">How to Search VAERS</div>
+            <div className="text-sm text-gray-500">Easy guide to exploring the data</div>
           </Link>
         </div>
       </div>

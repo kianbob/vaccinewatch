@@ -38,6 +38,9 @@ export default function SearchPage() {
             <div className="text-xs text-gray-500">Browse all</div>
           </Link>
         </div>
+        <p className="mt-4 text-center text-sm text-gray-500">
+          New to VAERS? Read our <Link href="/how-to-search-vaers" className="text-primary hover:underline">guide to searching VAERS data</Link>.
+        </p>
       </div>
     </>
   )
