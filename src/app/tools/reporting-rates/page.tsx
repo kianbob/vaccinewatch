@@ -1,10 +1,8 @@
 import { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import DisclaimerBanner from '@/components/DisclaimerBanner';
 import Breadcrumbs from '@/components/Breadcrumbs';
-
-const ReportingRatesClient = dynamic(() => import('./ReportingRatesClient'), { ssr: false });
+import ReportingRatesWrapper from './ReportingRatesWrapper';
 
 export const metadata: Metadata = {
   title: 'Reporting Rate Calculator — VAERS Reports Per Dose Administered',
@@ -34,7 +32,7 @@ export default function ReportingRatesPage() {
         the single most important context missing from raw VAERS numbers.
       </p>
 
-      <ReportingRatesClient />
+      <ReportingRatesWrapper />
 
       {/* SEO Content */}
       <section className="mt-12 prose prose-gray max-w-none">

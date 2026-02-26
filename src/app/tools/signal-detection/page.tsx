@@ -1,10 +1,8 @@
 import { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import DisclaimerBanner from '@/components/DisclaimerBanner';
 import Breadcrumbs from '@/components/Breadcrumbs';
-
-const SignalDetectionClient = dynamic(() => import('./SignalDetectionClient'), { ssr: false });
+import SignalDetectionWrapper from './SignalDetectionWrapper';
 
 export const metadata: Metadata = {
   title: 'Signal Detection Dashboard — PRR Safety Signal Analysis',
@@ -39,7 +37,7 @@ export default function SignalDetectionPage() {
         classified as a signal. This is a screening tool — signals require further investigation to confirm causality.
       </p>
 
-      <SignalDetectionClient />
+      <SignalDetectionWrapper />
 
       {/* SEO Content */}
       <section className="mt-12 prose prose-gray max-w-none">
