@@ -265,8 +265,8 @@ export default function AboutPage() {
           Journalists, researchers, and organizations are welcome to cite VaccineWatch data with attribution.
           For press inquiries, data questions, or partnership opportunities:
         </p>
-        <a href="mailto:press@thedataproject.ai" className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary/80">
-          📧 press@thedataproject.ai
+        <a href="mailto:info@thedataproject.ai" className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary/80">
+          📧 info@thedataproject.ai
         </a>
       </section>
 
