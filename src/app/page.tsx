@@ -30,36 +30,42 @@ const recentArticles = [
     title: 'Why Raw VAERS Numbers Can Be Misleading',
     subtitle: 'The most critical limitation: 670M+ COVID doses make raw counts meaningless without context',
     readTime: 9,
+    date: 'Feb 2026',
   },
   {
     slug: 'onset-timing',
     title: 'When Do Vaccine Side Effects Start?',
     subtitle: '73% of adverse events occur within 3 days — the timing patterns explained',
     readTime: 7,
+    date: 'Feb 2026',
   },
   {
     slug: 'lot-analysis',
     title: 'Understanding Vaccine Lot Numbers',
     subtitle: '4,414 COVID lots tracked — why comparing lots by report counts is misleading',
     readTime: 8,
+    date: 'Feb 2026',
   },
   {
     slug: 'dose-comparison',
     title: 'First Dose vs Second Dose vs Booster',
     subtitle: 'How adverse event patterns change across COVID-19 vaccine doses',
     readTime: 6,
+    date: 'Feb 2026',
   },
   {
     slug: 'covid-impact',
     title: 'The COVID-19 Impact on VAERS',
     subtitle: 'How the pandemic changed vaccine adverse event reporting forever',
     readTime: 8,
+    date: 'Feb 2026',
   },
   {
     slug: 'serious-outcomes',
     title: 'Serious vs Non-Serious Outcomes',
     subtitle: 'Understanding the spectrum of adverse event severity',
     readTime: 7,
+    date: 'Feb 2026',
   },
 ]
 
@@ -111,10 +117,13 @@ export default function HomePage() {
             <span className="text-accent font-semibold">Explored.</span>{' '}
             <span className="text-white font-semibold">Explained.</span>
           </p>
-          <p className="text-lg text-gray-400 mb-10 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-400 mb-3 max-w-3xl mx-auto">
             Transparent access to 35 years of VAERS data (1990–2026).
             We present the numbers with context, not conclusions.
-            <span className="block mt-2 text-sm text-gray-500">Data updated through February 2026 · Source: CDC/FDA VAERS</span>
+          </p>
+          <p className="text-sm text-gray-500 italic mb-10">
+            Neither pro-vaccine nor anti-vaccine — pro-transparency.
+            <span className="block mt-1 text-xs not-italic text-gray-500">Data updated through February 2026 · Source: CDC/FDA VAERS</span>
           </p>
 
           {/* Hero stat pills with animated numbers */}
@@ -331,7 +340,7 @@ export default function HomePage() {
               </Link>
             </div>
           <p className="text-xs text-gray-500 text-center mt-4 max-w-2xl mx-auto">
-            Note: Some reports involve multiple vaccines, so percentages may exceed 100% when combined.
+            ⓘ Percentages are calculated from vaccine-level reports, not unique reports. A single report listing both COVID-19 and flu vaccines counts toward both categories, so percentages add up to more than 100%.
           </p>
           </div>
           </ScrollReveal>
@@ -402,7 +411,6 @@ export default function HomePage() {
                 <span className="text-3xl">🧮</span>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">Reporting Rate Calculator</h3>
-                  <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">NEW</span>
                 </div>
               </div>
               <p className="text-gray-600 text-sm mb-3">
@@ -416,7 +424,6 @@ export default function HomePage() {
                 <span className="text-3xl">🔬</span>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-danger transition-colors">Signal Detection Dashboard</h3>
-                  <span className="text-xs bg-danger/10 text-danger px-2 py-0.5 rounded-full font-medium">NEW</span>
                 </div>
               </div>
               <p className="text-gray-600 text-sm mb-3">
@@ -494,7 +501,7 @@ export default function HomePage() {
                   {article.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-3">{article.subtitle}</p>
-                <span className="text-xs text-gray-400">{article.readTime} min read</span>
+                <span className="text-xs text-gray-400">{article.date} · {article.readTime} min read</span>
               </Link>
             ))}
           </div>

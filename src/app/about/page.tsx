@@ -256,6 +256,20 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Press & Media Contact */}
+      <section className="bg-white border border-gray-200 rounded-xl p-8 mb-8">
+        <h2 className={`text-2xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
+          Press & Media Inquiries
+        </h2>
+        <p className="text-gray-600 mb-4">
+          Journalists, researchers, and organizations are welcome to cite VaccineWatch data with attribution.
+          For press inquiries, data questions, or partnership opportunities:
+        </p>
+        <a href="mailto:press@thedataproject.ai" className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary/80">
+          📧 press@thedataproject.ai
+        </a>
+      </section>
+
       {/* Final Note */}
       <section className="bg-gray-50 rounded-xl p-8 text-center">
         <p className="text-gray-600">
