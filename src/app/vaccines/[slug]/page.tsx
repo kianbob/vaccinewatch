@@ -117,6 +117,17 @@ export default async function VaccineDetailPage({
     } catch { /* no data */ }
   }
 
+  // Load advanced data
+  const onsetTiming = readJsonFile('onset-timing.json')
+  const doseSeries = readJsonFile('dose-series.json')
+  const recoveryRates = readJsonFile('recovery-rates.json')
+  const hospitalDuration = readJsonFile('hospital-duration.json')
+
+  const vaccineOnset = onsetTiming?.byVaccine?.[vaccine.name] || null
+  const vaccineDose = doseSeries?.[vaccine.name] || null
+  const vaccineRecovery = recoveryRates?.[vaccine.name] || null
+  const vaccineHospital = hospitalDuration?.[vaccine.name] || null
+
   // Load yearly data for sub-page links
   let yearlyData: Array<{ year: number; reports: number }> = []
   const yearPath = join(process.cwd(), 'public', 'data', 'vaccine-years', `${slug}.json`)
@@ -333,6 +344,183 @@ export default async function VaccineDetailPage({
               </div>
             </div>
           </div>
+          {/* Onset Timing */}
+          {vaccineOnset && (() => {
+            const buckets = [
+              { key: '0', label: 'Day 0 (same day)' },
+              { key: '1', label: 'Day 1' },
+              { key: '2', label: 'Day 2' },
+              { key: '3', label: 'Day 3' },
+              { key: '4', label: 'Day 4-7', keys: ['4','5','6','7'] },
+              { key: '8-14', label: '8-14 days', keys: ['8','9','10','11','12','13','14','8-14'] },
+              { key: '15-30', label: '15-30 days' },
+              { key: '31-90', label: '1-3 months', keys: ['31-90'] },
+              { key: '91-180', label: '3-6 months', keys: ['91-180'] },
+              { key: '181-365', label: '6-12 months', keys: ['181-365'] },
+            ]
+            const rows = buckets.map(b => {
+              const count = b.keys 
+                ? b.keys.reduce((s, k) => s + (vaccineOnset[k] || 0), 0)
+                : (vaccineOnset[b.key] || 0)
+              return { label: b.label, count }
+            }).filter(r => r.count > 0)
+            const total = rows.reduce((s, r) => s + r.count, 0)
+            if (total === 0) return null
+            const maxCount = Math.max(...rows.map(r => r.count))
+            return (
+              <div className="bg-white rounded-xl border border-gray-200 p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">⏱️ Onset Timing</h2>
+                <p className="text-sm text-gray-500 mb-4">When symptoms typically appear after {cleanName} vaccination ({formatNumber(total)} reports with onset data)</p>
+                <div className="space-y-2">
+                  {rows.map(r => (
+                    <div key={r.label} className="flex items-center gap-3">
+                      <div className="w-32 text-sm text-gray-600 flex-shrink-0">{r.label}</div>
+                      <div className="flex-grow bg-gray-100 rounded-full h-5 overflow-hidden">
+                        <div className="bg-primary/70 h-full rounded-full" style={{ width: `${(r.count / maxCount) * 100}%` }} />
+                      </div>
+                      <div className="w-20 text-right text-sm text-gray-600 flex-shrink-0">
+                        {formatNumber(r.count)} <span className="text-gray-400">({(r.count / total * 100).toFixed(0)}%)</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <Link href="/tools/onset-calculator" className="inline-block mt-4 text-sm text-primary hover:text-primary/80 font-medium">
+                  → Explore onset timing for all vaccines
+                </Link>
+              </div>
+            )
+          })()}
+
+          {/* Dose Series */}
+          {vaccineDose && (() => {
+            const doses = Object.entries(vaccineDose as Record<string, { reports: number; died: number; hosp: number }>)
+              .filter(([_, d]) => d.reports > 0)
+              .sort((a, b) => {
+                const order = ['1','2','3','4','5','6','UNK']
+                return order.indexOf(a[0]) - order.indexOf(b[0])
+              })
+            if (doses.length < 2) return null
+            return (
+              <div className="bg-white rounded-xl border border-gray-200 p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">💉 Reports by Dose Number</h2>
+                <p className="text-sm text-gray-500 mb-4">How adverse event reports vary by which dose in the series</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-gray-200">
+                        <th className="text-left py-2 px-2 text-gray-600 font-medium">Dose</th>
+                        <th className="text-right py-2 px-2 text-gray-600 font-medium">Reports</th>
+                        <th className="text-right py-2 px-2 text-gray-600 font-medium">Deaths</th>
+                        <th className="text-right py-2 px-2 text-gray-600 font-medium">Hosp.</th>
+                        <th className="text-right py-2 px-2 text-gray-600 font-medium">Death Rate</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {doses.map(([dose, data]) => (
+                        <tr key={dose} className="border-b border-gray-100">
+                          <td className="py-2 px-2 font-medium text-gray-900">{dose === 'UNK' ? 'Unknown' : `Dose ${dose}`}</td>
+                          <td className="py-2 px-2 text-right text-gray-600">{formatNumber(data.reports)}</td>
+                          <td className="py-2 px-2 text-right text-danger">{formatNumber(data.died)}</td>
+                          <td className="py-2 px-2 text-right text-accent">{formatNumber(data.hosp)}</td>
+                          <td className="py-2 px-2 text-right text-gray-600">{data.reports > 0 ? (data.died / data.reports * 100).toFixed(1) : '0.0'}%</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <Link href="/tools/dose-explorer" className="inline-block mt-4 text-sm text-primary hover:text-primary/80 font-medium">
+                  → Compare dose patterns across vaccines
+                </Link>
+              </div>
+            )
+          })()}
+
+          {/* Recovery Rates */}
+          {vaccineRecovery && (() => {
+            const y = vaccineRecovery.Y || 0
+            const n = vaccineRecovery.N || 0
+            const u = vaccineRecovery.U || 0
+            const total = y + n + u
+            if (total === 0) return null
+            const known = y + n
+            const recoveryPct = known > 0 ? (y / known * 100).toFixed(1) : null
+            return (
+              <div className="bg-white rounded-xl border border-gray-200 p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">📈 Recovery Outcomes</h2>
+                <p className="text-sm text-gray-500 mb-4">Of {formatNumber(total)} reports with recovery status recorded</p>
+                <div className="grid grid-cols-3 gap-4 mb-4">
+                  <div className="text-center p-3 bg-green-50 rounded-xl">
+                    <div className="text-2xl font-bold text-green-700">{formatNumber(y)}</div>
+                    <div className="text-xs text-green-600 mt-1">Recovered</div>
+                  </div>
+                  <div className="text-center p-3 bg-red-50 rounded-xl">
+                    <div className="text-2xl font-bold text-red-700">{formatNumber(n)}</div>
+                    <div className="text-xs text-red-600 mt-1">Not Recovered</div>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-700">{formatNumber(u)}</div>
+                    <div className="text-xs text-gray-600 mt-1">Unknown</div>
+                  </div>
+                </div>
+                {recoveryPct && (
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm text-gray-600">Recovery rate (of known outcomes)</span>
+                      <span className="text-sm font-bold text-gray-900">{recoveryPct}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-3">
+                      <div className="bg-green-500 h-full rounded-full" style={{ width: `${recoveryPct}%` }} />
+                    </div>
+                  </div>
+                )}
+                <Link href="/tools/recovery-explorer" className="inline-block mt-4 text-sm text-primary hover:text-primary/80 font-medium">
+                  → Compare recovery rates across vaccines
+                </Link>
+              </div>
+            )
+          })()}
+
+          {/* Hospital Duration */}
+          {vaccineHospital && (() => {
+            const buckets = [
+              { key: '1', label: '1 day' },
+              { key: '2', label: '2 days' },
+              { key: '3', label: '3 days' },
+              { key: '4', label: '4 days' },
+              { key: '5', label: '5 days' },
+              { key: '6', label: '6 days' },
+              { key: '7', label: '7 days' },
+              { key: '8-14', label: '8-14 days' },
+              { key: '15-30', label: '15-30 days' },
+              { key: '31+', label: '31+ days' },
+            ]
+            const rows = buckets.map(b => ({ label: b.label, count: (vaccineHospital as Record<string, number>)[b.key] || 0 })).filter(r => r.count > 0)
+            const total = rows.reduce((s, r) => s + r.count, 0)
+            if (total === 0) return null
+            const maxCount = Math.max(...rows.map(r => r.count))
+            return (
+              <div className="bg-white rounded-xl border border-gray-200 p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">🏥 Hospital Stay Duration</h2>
+                <p className="text-sm text-gray-500 mb-4">Length of hospitalization for {formatNumber(total)} hospitalized cases</p>
+                <div className="space-y-2">
+                  {rows.map(r => (
+                    <div key={r.label} className="flex items-center gap-3">
+                      <div className="w-24 text-sm text-gray-600 flex-shrink-0">{r.label}</div>
+                      <div className="flex-grow bg-gray-100 rounded-full h-5 overflow-hidden">
+                        <div className="bg-accent/70 h-full rounded-full" style={{ width: `${(r.count / maxCount) * 100}%` }} />
+                      </div>
+                      <div className="w-20 text-right text-sm text-gray-600 flex-shrink-0">
+                        {formatNumber(r.count)} <span className="text-gray-400">({(r.count / total * 100).toFixed(0)}%)</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <Link href="/tools/hospital-duration" className="inline-block mt-4 text-sm text-primary hover:text-primary/80 font-medium">
+                  → Explore hospital durations for all vaccines
+                </Link>
+              </div>
+            )
+          })()}
         </div>
 
         {/* Sidebar */}
