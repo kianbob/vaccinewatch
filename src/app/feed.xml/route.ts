@@ -173,6 +173,10 @@ export async function GET() {
     { path: '/report-adverse-event', title: 'How to Report a Vaccine Adverse Event to VAERS', description: 'Step-by-step guide to reporting a vaccine adverse event. Who can report, what to include, and what happens after.', date: '2026-02-25' },
     { path: '/vaccine-safety-timeline', title: 'Vaccine Safety Timeline — Key Events in U.S. Vaccine History', description: 'Major vaccine safety events from 1955 to 2026. From the Cutter Incident to COVID-19 myocarditis detection.', date: '2026-02-25' },
     { path: '/vaccine-injuries', title: 'Vaccine Injuries — VAERS Reports, VICP Claims & Data', description: 'Understanding vaccine injuries: VAERS data, the Vaccine Injury Compensation Program, and serious reactions.', date: '2026-02-25' },
+    { path: '/allergic-reaction', title: 'Allergic Reactions to Vaccines — Anaphylaxis Data & Guidance', description: 'Understanding vaccine allergic reactions from mild hives to anaphylaxis. VAERS data, risk factors, and what to do.', date: '2026-02-25' },
+    { path: '/fever-after-vaccination', title: 'Fever After Vaccination — Is It Normal?', description: 'Fever is the #1 reported symptom in VAERS. When post-vaccination fever is normal, when to worry, and what the data shows.', date: '2026-02-25' },
+    { path: '/guillain-barre', title: 'Guillain-Barré Syndrome & Vaccines — VAERS Data & Research', description: 'Understanding the link between GBS and vaccines. VAERS data, established risk from flu and J&J vaccines, and clinical outcomes.', date: '2026-02-25' },
+    { path: '/how-to-search-vaers', title: 'How to Search VAERS Data', description: 'A complete guide to searching and exploring VAERS data using VaccineWatch tools.', date: '2026-02-25' },
   ]
 
   const analysisItems = articles.map(a => `    <item>

@@ -319,6 +319,31 @@ export default function SideEffectsPage() {
         </div>
       </div>
 
+      {/* Condition deep dives */}
+      <div className="mb-12">
+        <h2 className={`text-2xl font-bold text-gray-900 mb-6 ${playfairDisplay.className}`}>
+          Condition Deep Dives
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link href="/myocarditis" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="font-bold text-gray-900 mb-1">Myocarditis &amp; Vaccines</div>
+            <div className="text-sm text-gray-500">Confirmed mRNA risk · Outcomes data · Current guidance</div>
+          </Link>
+          <Link href="/guillain-barre" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="font-bold text-gray-900 mb-1">Guillain-Barré Syndrome</div>
+            <div className="text-sm text-gray-500">GBS risk from flu &amp; J&amp;J vaccines · Clinical outcomes</div>
+          </Link>
+          <Link href="/allergic-reaction" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="font-bold text-gray-900 mb-1">Allergic Reactions &amp; Anaphylaxis</div>
+            <div className="text-sm text-gray-500">Risk factors · The 15-minute wait · What to do</div>
+          </Link>
+          <Link href="/fever-after-vaccination" className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all">
+            <div className="font-bold text-gray-900 mb-1">Fever After Vaccination</div>
+            <div className="text-sm text-gray-500">#1 reported symptom · When it&apos;s normal vs. concerning</div>
+          </Link>
+        </div>
+      </div>
+
       {/* Explore tools */}
       <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Explore Side Effects Further</h3>

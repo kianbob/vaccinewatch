@@ -14,7 +14,14 @@ export default function GuillainBarrePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"Guillain-Barré Syndrome & Vaccines — VAERS Data & Research","description":"Understanding the link between Guillain-Barré Syndrome (GBS) and vaccines. VAERS data, established risk from flu and J&J vaccines, and clinical outcomes.","url":"https://www.vaccinewatch.org/guillain-barre","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+        {"@context":"https://schema.org","@type":"Article","headline":"Guillain-Barré Syndrome & Vaccines — VAERS Data & Research","description":"Understanding the link between Guillain-Barré Syndrome (GBS) and vaccines. VAERS data, established risk from flu and J&J vaccines, and clinical outcomes.","url":"https://www.vaccinewatch.org/guillain-barre","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}},
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+          {"@type":"Question","name":"Can vaccines cause Guillain-Barré Syndrome?","acceptedAnswer":{"@type":"Answer","text":"There is an established but very small increased risk of GBS after certain vaccines. The flu vaccine carries about 1-2 additional cases per million doses. The J&J COVID vaccine showed a higher signal, contributing to its reduced use. The risk from infection itself is generally much higher."}},
+          {"@type":"Question","name":"What is Guillain-Barré Syndrome?","acceptedAnswer":{"@type":"Answer","text":"GBS is a rare neurological disorder where the immune system attacks the peripheral nerves, causing weakness and sometimes paralysis. Most people recover fully, though recovery can take weeks to months. It can be triggered by infections, surgery, or rarely, vaccination."}},
+          {"@type":"Question","name":"How common is GBS after vaccination?","acceptedAnswer":{"@type":"Answer","text":"GBS after vaccination is extremely rare — approximately 1-2 additional cases per million flu vaccine doses. The background rate of GBS is about 1-2 per 100,000 people per year regardless of vaccination status."}}
+        ]}
+      ]) }} />
       <Breadcrumbs items={[
         { label: 'Side Effects', href: '/side-effects' },
         { label: 'Guillain-Barré Syndrome' }

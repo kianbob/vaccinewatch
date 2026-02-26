@@ -14,7 +14,14 @@ export default function AllergicReactionPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"Allergic Reactions to Vaccines — Anaphylaxis Data & Guidance","description":"Understanding vaccine allergic reactions from mild hives to anaphylaxis. VAERS data, risk factors, the 15-minute wait, and what to do if you react.","url":"https://www.vaccinewatch.org/allergic-reaction","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+        {"@context":"https://schema.org","@type":"Article","headline":"Allergic Reactions to Vaccines — Anaphylaxis Data & Guidance","description":"Understanding vaccine allergic reactions from mild hives to anaphylaxis. VAERS data, risk factors, the 15-minute wait, and what to do if you react.","url":"https://www.vaccinewatch.org/allergic-reaction","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}},
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+          {"@type":"Question","name":"How common are allergic reactions to vaccines?","acceptedAnswer":{"@type":"Answer","text":"Severe allergic reactions (anaphylaxis) to vaccines are rare, occurring in approximately 1-2 per million doses. Mild reactions like redness and swelling at the injection site are much more common."}},
+          {"@type":"Question","name":"Why do you wait 15 minutes after a vaccine?","acceptedAnswer":{"@type":"Answer","text":"The 15-minute observation period allows healthcare providers to monitor for signs of anaphylaxis, which typically occurs within minutes of vaccination. Immediate treatment with epinephrine is highly effective."}},
+          {"@type":"Question","name":"What should I do if I have an allergic reaction to a vaccine?","acceptedAnswer":{"@type":"Answer","text":"Seek immediate medical attention. If you're still at the vaccination site, alert staff immediately. For symptoms after leaving (difficulty breathing, swelling, rapid heartbeat), call 911. Report the reaction to VAERS."}}
+        ]}
+      ]) }} />
       <Breadcrumbs items={[
         { label: 'Side Effects', href: '/side-effects' },
         { label: 'Allergic Reactions' }

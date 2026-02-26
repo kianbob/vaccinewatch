@@ -23,7 +23,14 @@ export default function FeverAfterVaccinationPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"Fever After Vaccination — Is It Normal? VAERS Data","description":"Fever is the #1 reported symptom in VAERS with 276,000+ reports. Learn when post-vaccination fever is normal, when to worry, and what the data shows.","url":"https://www.vaccinewatch.org/fever-after-vaccination","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+        {"@context":"https://schema.org","@type":"Article","headline":"Fever After Vaccination — Is It Normal? VAERS Data","description":"Fever is the #1 reported symptom in VAERS with 276,000+ reports. Learn when post-vaccination fever is normal, when to worry, and what the data shows.","url":"https://www.vaccinewatch.org/fever-after-vaccination","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}},
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+          {"@type":"Question","name":"Is it normal to get a fever after a vaccine?","acceptedAnswer":{"@type":"Answer","text":"Yes, low-grade fever (under 101°F/38.3°C) is a common and expected immune response after many vaccines, especially in children. It typically resolves within 1-2 days and indicates your immune system is building protection."}},
+          {"@type":"Question","name":"When should I worry about a fever after vaccination?","acceptedAnswer":{"@type":"Answer","text":"Seek medical attention if fever exceeds 104°F (40°C), lasts more than 3 days, is accompanied by severe symptoms (difficulty breathing, persistent vomiting, seizures), or occurs in infants under 3 months old."}},
+          {"@type":"Question","name":"Which vaccines are most likely to cause fever?","acceptedAnswer":{"@type":"Answer","text":"Vaccines most commonly associated with fever include DTaP, MMR, pneumococcal (PCV13), and COVID-19 vaccines. Live vaccines like MMR may cause delayed fever 7-12 days after vaccination."}}
+        ]}
+      ]) }} />
       <Breadcrumbs items={[
         { label: 'Side Effects', href: '/side-effects' },
         { label: 'Fever After Vaccination' }
