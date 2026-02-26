@@ -385,6 +385,55 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Flagship Analysis Tools */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
+              Unique Analysis Tools
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Tools you won&apos;t find on any other VAERS site. Real pharmacovigilance methods, made accessible.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <Link href="/tools/reporting-rates" className="bg-white rounded-xl border-2 border-primary/20 p-6 hover:border-primary/40 hover:shadow-lg transition-all group">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-3xl">🧮</span>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">Reporting Rate Calculator</h3>
+                  <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">NEW</span>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm mb-3">
+                How many adverse events per million doses? Combines VAERS data with CDC dose
+                estimates — the <strong>single most important context</strong> missing from raw VAERS numbers.
+              </p>
+              <span className="text-primary text-sm font-medium">Calculate rates →</span>
+            </Link>
+            <Link href="/tools/signal-detection" className="bg-white rounded-xl border-2 border-danger/20 p-6 hover:border-danger/40 hover:shadow-lg transition-all group">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-3xl">🔬</span>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-danger transition-colors">Signal Detection Dashboard</h3>
+                  <span className="text-xs bg-danger/10 text-danger px-2 py-0.5 rounded-full font-medium">NEW</span>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm mb-3">
+                FDA-style PRR analysis across 1.98M reports. <strong>5,225 safety signals</strong> detected —
+                see which adverse events are disproportionately reported for each vaccine.
+              </p>
+              <span className="text-danger text-sm font-medium">Explore signals →</span>
+            </Link>
+          </div>
+          <div className="text-center mt-6">
+            <Link href="/tools" className="text-primary font-semibold hover:text-primary/80">
+              View all 15 interactive tools →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Top 10 Vaccines */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
