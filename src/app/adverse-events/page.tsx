@@ -5,6 +5,7 @@ import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
   title: 'Vaccine Adverse Events — What VAERS Reports Show',
@@ -73,6 +74,7 @@ export default function AdverseEventsPage() {
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Vaccine Adverse Events
         </h1>
+        <ShareButtons title="Vaccine Adverse Events — What VAERS Reports Show" url="https://www.vaccinewatch.org/adverse-events" />
         <p className="text-lg text-gray-600 max-w-4xl mb-4">
           A vaccine adverse event is any health problem that occurs after vaccination. The Vaccine Adverse Event
           Reporting System (VAERS) has collected <strong>{formatNumber(totalReports)} reports</strong> of adverse

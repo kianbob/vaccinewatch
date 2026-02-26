@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import BirthDefectsClient from './BirthDefectsClient'
 
 export const metadata: Metadata = {
-  title: 'Birth Defects Explorer - VAERS Reports by Vaccine',
+  title: 'Birth Defects Explorer — VAERS Reports by Vaccine',
   description: 'Explore birth defect reports in VAERS by vaccine type. Includes important context about reporting limitations, background rates, and why correlation does not equal causation.'
 }
 

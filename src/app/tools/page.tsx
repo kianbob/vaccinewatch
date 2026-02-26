@@ -259,7 +259,7 @@ export default function ToolsIndexPage() {
       {/* SEO Content */}
       <div className="mt-8 prose max-w-none text-gray-500 text-sm">
         <p>
-          VaccineWatch offers 13 free interactive tools for exploring VAERS vaccine adverse event data.
+          VaccineWatch offers 15 free interactive tools for exploring VAERS vaccine adverse event data.
           Each tool provides a different lens on the 1.98 million reports in the database — from onset
           timing patterns and lot number analysis to recovery rates and dose-series comparisons.
           All tools work directly in your browser with no login required.

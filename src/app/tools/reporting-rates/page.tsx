@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import DisclaimerBanner from '@/components/DisclaimerBanner';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 const ReportingRatesClient = dynamic(() => import('./ReportingRatesClient'), { ssr: false });
 
 export const metadata: Metadata = {
-  title: 'Reporting Rate Calculator',
+  title: 'Reporting Rate Calculator — VAERS Reports Per Dose Administered',
   description: 'Calculate VAERS adverse event reporting rates per dose administered. Compare reporting rates across vaccines using CDC dose denominator estimates.',
   openGraph: {
     title: 'Reporting Rate Calculator — VaccineWatch',
@@ -67,6 +68,15 @@ export default function ReportingRatesPage() {
           <li>Dose estimates for non-COVID vaccines are approximations based on coverage surveys</li>
           <li>Reporting awareness varies dramatically — COVID received far more media attention</li>
           <li>A VAERS report does not confirm the vaccine caused the event</li>
+        </ul>
+
+        <h3>Related Tools & Analysis</h3>
+        <ul>
+          <li><Link href="/analysis/denominator-problem">The Denominator Problem</Link> — Why raw VAERS numbers can be misleading without dose context</li>
+          <li><Link href="/tools/signal-detection">Signal Detection Dashboard</Link> — PRR analysis showing disproportionately reported adverse events</li>
+          <li><Link href="/analysis/reporting-bias">Understanding Reporting Bias</Link> — How awareness and media influence VAERS data</li>
+          <li><Link href="/tools/risk-context">Risk Context Calculator</Link> — Put VAERS numbers in perspective with background rates</li>
+          <li><Link href="/dashboard">Vaccine Safety Dashboard</Link> — Compare all 104 vaccines at a glance</li>
         </ul>
       </section>
     </main>

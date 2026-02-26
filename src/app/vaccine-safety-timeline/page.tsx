@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
   title: 'Vaccine Safety Timeline — Key Events in U.S. Vaccine History',
@@ -50,6 +51,7 @@ export default function VaccineSafetyTimelinePage() {
         <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${playfairDisplay.className}`}>
           Vaccine Safety Timeline
         </h1>
+        <ShareButtons title="Vaccine Safety Timeline — Key Events in U.S. Vaccine History" url="https://www.vaccinewatch.org/vaccine-safety-timeline" />
         <p className="text-lg text-gray-600 max-w-3xl">
           Key events in the history of vaccine safety monitoring in the United States — from early
           manufacturing disasters to modern surveillance systems. This timeline shows how today&apos;s

@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import DisclaimerBanner from '@/components/DisclaimerBanner';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 const SignalDetectionClient = dynamic(() => import('./SignalDetectionClient'), { ssr: false });
 
 export const metadata: Metadata = {
-  title: 'Signal Detection Dashboard',
+  title: 'Signal Detection Dashboard — PRR Safety Signal Analysis',
   description: 'Explore statistically significant vaccine safety signals using Proportional Reporting Ratio (PRR) analysis of VAERS data. Find disproportionately reported adverse events for every vaccine.',
   openGraph: {
     title: 'Signal Detection Dashboard — VaccineWatch',
@@ -74,6 +75,15 @@ export default function SignalDetectionPage() {
           post-herpetic neuralgia after Zostavax. This validation confirms the methodology is working
           as expected.
         </p>
+
+        <h3>Related Tools & Analysis</h3>
+        <ul>
+          <li><Link href="/tools/reporting-rates">Reporting Rate Calculator</Link> — Calculate adverse event rates per dose administered</li>
+          <li><Link href="/analysis/serious-outcomes">Serious Outcomes Analysis</Link> — Deep dive into hospitalizations, deaths, and disabilities</li>
+          <li><Link href="/analysis/myocarditis">Myocarditis Analysis</Link> — Detailed look at the strongest confirmed COVID vaccine signal</li>
+          <li><Link href="/vaccines">Browse All 104 Vaccines</Link> — Individual vaccine safety profiles with full data</li>
+          <li><Link href="/dashboard">Vaccine Safety Dashboard</Link> — Compare death rates, hospitalization rates across all vaccines</li>
+        </ul>
       </section>
     </main>
   );

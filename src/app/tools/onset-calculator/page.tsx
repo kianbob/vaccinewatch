@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import OnsetCalculatorClient from './OnsetCalculatorClient'
 
 export const metadata: Metadata = {
-  title: 'Onset Calculator - When Do Vaccine Side Effects Start?',
+  title: 'Onset Calculator — When Do Vaccine Side Effects Start?',
   description: 'Interactive calculator showing when adverse events typically occur after vaccination for different vaccine types. Explore onset timing patterns in VAERS data.'
 }
 
