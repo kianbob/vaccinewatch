@@ -157,7 +157,6 @@ export async function GET() {
     { path: '/myocarditis', title: 'Myocarditis and Vaccines', description: 'Confirmed rare side effect of mRNA COVID vaccines — risk factors, outcomes, and data.', date: '2026-02-25' },
     { path: '/is-vaers-reliable', title: 'Is VAERS Reliable?', description: 'Honest assessment of VAERS strengths and limitations for vaccine safety monitoring.', date: '2026-02-25' },
     { path: '/vaccine-schedule', title: 'CDC Vaccine Schedule & VAERS Data', description: 'Recommended vaccine schedule with links to VAERS adverse event data for each vaccine.', date: '2026-02-25' },
-    { path: '/vaccine-injuries', title: 'Vaccine Injuries — VAERS & VICP Data', description: 'Understanding vaccine injuries, VAERS data, and the Vaccine Injury Compensation Program.', date: '2026-02-25' },
     { path: '/vaers-database', title: 'VAERS Database — Search & Explore', description: '1.98M vaccine adverse event reports made searchable and understandable.', date: '2026-02-25' },
     { path: '/side-effects/tdap', title: 'Tdap Vaccine Side Effects', description: 'Tetanus, diphtheria, pertussis vaccine VAERS data with pregnancy context.', date: '2026-02-25' },
     { path: '/side-effects/hepatitis-b', title: 'Hepatitis B Vaccine Side Effects', description: 'Engerix-B VAERS data — given at birth, 73K+ reports analyzed.', date: '2026-02-25' },
@@ -177,6 +176,8 @@ export async function GET() {
     { path: '/fever-after-vaccination', title: 'Fever After Vaccination — Is It Normal?', description: 'Fever is the #1 reported symptom in VAERS. When post-vaccination fever is normal, when to worry, and what the data shows.', date: '2026-02-25' },
     { path: '/guillain-barre', title: 'Guillain-Barré Syndrome & Vaccines — VAERS Data & Research', description: 'Understanding the link between GBS and vaccines. VAERS data, established risk from flu and J&J vaccines, and clinical outcomes.', date: '2026-02-25' },
     { path: '/how-to-search-vaers', title: 'How to Search VAERS Data', description: 'A complete guide to searching and exploring VAERS data using VaccineWatch tools.', date: '2026-02-25' },
+    { path: '/tools/reporting-rates', title: 'Reporting Rate Calculator — VAERS Reports Per Dose', description: 'Calculate adverse event reporting rates per million doses administered. CDC dose denominator estimates for 16 major vaccine types.', date: '2026-02-26' },
+    { path: '/tools/signal-detection', title: 'Signal Detection Dashboard — PRR Safety Signal Analysis', description: 'FDA-style Proportional Reporting Ratio analysis across 1.98M VAERS reports. 5,225 safety signals detected across 30 vaccines.', date: '2026-02-26' },
   ]
 
   const analysisItems = articles.map(a => `    <item>

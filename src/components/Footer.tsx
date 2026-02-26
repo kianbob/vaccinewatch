@@ -72,6 +72,8 @@ export default function Footer() {
               <li><Link href="/analysis/myocarditis" className="hover:text-white transition-colors">Myocarditis</Link></li>
               <li><Link href="/analysis/death-reports" className="hover:text-white transition-colors">Death Reports</Link></li>
               <li><Link href="/tools" className="hover:text-white transition-colors">Interactive Tools</Link></li>
+              <li><Link href="/tools/reporting-rates" className="hover:text-white transition-colors">Reporting Rate Calculator</Link></li>
+              <li><Link href="/tools/signal-detection" className="hover:text-white transition-colors">Signal Detection</Link></li>
               <li><Link href="/analysis" className="hover:text-white transition-colors">All 23 Articles →</Link></li>
             </ul>
           </div>

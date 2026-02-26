@@ -643,7 +643,9 @@ export default function HomePage() {
               { href: '/vaers-database', label: 'VAERS Database' },
               { href: '/report-adverse-event', label: 'Report an Event' },
               { href: '/is-vaers-reliable', label: 'Is VAERS Reliable?' },
-              { href: '/tools', label: '13 Interactive Tools' },
+              { href: '/tools/reporting-rates', label: '🧮 Reporting Rates' },
+              { href: '/tools/signal-detection', label: '🔬 Signal Detection' },
+              { href: '/tools', label: '15 Interactive Tools' },
             ].map(link => (
               <Link key={link.href} href={link.href} className="text-sm px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-primary/10 hover:text-primary transition-colors">
                 {link.label}
