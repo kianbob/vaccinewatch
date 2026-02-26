@@ -281,7 +281,7 @@ export default function AnalysisIndexPage() {
           </Link>
           <Link href="/tools" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all">
             <div className="font-bold text-gray-900 mb-1">Interactive Tools</div>
-            <div className="text-sm text-gray-500">13 data exploration tools</div>
+            <div className="text-sm text-gray-500">15 data exploration tools</div>
           </Link>
         </div>
       </div>
