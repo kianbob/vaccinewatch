@@ -127,6 +127,24 @@ const tools = [
     color: 'accent',
     readTime: 3,
   },
+  {
+    slug: 'reporting-rates',
+    title: 'Reporting Rate Calculator',
+    subtitle: 'VAERS reports per dose administered',
+    description: 'Calculate adverse event reporting rates per million doses using CDC dose denominator estimates. The missing context for raw VAERS numbers.',
+    icon: '🧮',
+    color: 'primary',
+    readTime: 5,
+  },
+  {
+    slug: 'signal-detection',
+    title: 'Signal Detection Dashboard',
+    subtitle: 'FDA-style safety signal analysis',
+    description: 'Proportional Reporting Ratio (PRR) analysis across 1.98M VAERS reports. Find which adverse events are disproportionately reported for each vaccine.',
+    icon: '🔬',
+    color: 'danger',
+    readTime: 6,
+  },
 ]
 
 const colorClasses: Record<string, string> = {

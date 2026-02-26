@@ -1,0 +1,134 @@
+{
+  "_meta": {
+    "description": "Estimated annual US vaccine doses administered, compiled from CDC sources",
+    "sources": [
+      "CDC COVID Data Tracker — covid.cdc.gov",
+      "CDC FluVaxView — cdc.gov/fluvaxview",
+      "CDC National Immunization Survey (NIS)",
+      "CDC NHIS / BRFSS adult vaccination estimates",
+      "Published literature and manufacturer reports"
+    ],
+    "notes": "These are best-available estimates. Exact dose counts are not published for most non-COVID vaccines. Childhood vaccine estimates use coverage rates × annual birth cohort (~3.6M). Reporting rates should be interpreted as minimum estimates due to known VAERS underreporting.",
+    "lastUpdated": "2026-02-25"
+  },
+  "COVID19": {
+    "totalDoses": 677000000,
+    "period": "2020-2024",
+    "byYear": {
+      "2020": 4200000,
+      "2021": 388000000,
+      "2022": 168000000,
+      "2023": 78000000,
+      "2024": 39000000
+    },
+    "source": "CDC COVID Data Tracker",
+    "confidence": "high"
+  },
+  "FLU": {
+    "totalDoses": 900000000,
+    "period": "2010-2024",
+    "annualAvg": 155000000,
+    "byYear": {
+      "2018": 169000000,
+      "2019": 175000000,
+      "2020": 193000000,
+      "2021": 189000000,
+      "2022": 174000000,
+      "2023": 156000000,
+      "2024": 148000000
+    },
+    "source": "CDC FluVaxView doses distributed",
+    "confidence": "high"
+  },
+  "MMR": {
+    "totalDoses": 240000000,
+    "period": "1990-2024",
+    "annualAvg": 7000000,
+    "source": "CDC NIS coverage (~92%) × birth cohort",
+    "confidence": "medium"
+  },
+  "DTAP": {
+    "totalDoses": 580000000,
+    "period": "1990-2024",
+    "annualAvg": 17000000,
+    "source": "CDC NIS coverage × 5-dose series",
+    "confidence": "medium"
+  },
+  "HEPB": {
+    "totalDoses": 400000000,
+    "period": "1990-2024",
+    "annualAvg": 12000000,
+    "source": "CDC NIS + adult vaccination data",
+    "confidence": "medium"
+  },
+  "HPV": {
+    "totalDoses": 135000000,
+    "period": "2006-2024",
+    "annualAvg": 14000000,
+    "source": "CDC NIS-Teen + NHIS adult data",
+    "confidence": "medium"
+  },
+  "VARCEL": {
+    "totalDoses": 220000000,
+    "period": "1995-2024",
+    "annualAvg": 7500000,
+    "source": "CDC NIS coverage data",
+    "confidence": "medium"
+  },
+  "PPV": {
+    "totalDoses": 300000000,
+    "period": "2000-2024",
+    "annualAvg": 15000000,
+    "source": "CDC NIS + NHIS adult data",
+    "confidence": "low"
+  },
+  "VARZOS": {
+    "totalDoses": 70000000,
+    "period": "2017-2024",
+    "annualAvg": 10000000,
+    "source": "NHIS + manufacturer reports (GSK)",
+    "confidence": "medium"
+  },
+  "HEPA": {
+    "totalDoses": 130000000,
+    "period": "1999-2024",
+    "annualAvg": 6000000,
+    "source": "CDC NIS coverage data",
+    "confidence": "medium"
+  },
+  "TDAP": {
+    "totalDoses": 200000000,
+    "period": "2005-2024",
+    "annualAvg": 12000000,
+    "source": "CDC NIS-Teen + NHIS + pregnancy recommendations",
+    "confidence": "low"
+  },
+  "IPV": {
+    "totalDoses": 480000000,
+    "period": "1990-2024",
+    "annualAvg": 14000000,
+    "source": "CDC NIS coverage data",
+    "confidence": "medium"
+  },
+  "HIBV": {
+    "totalDoses": 450000000,
+    "period": "1990-2024",
+    "annualAvg": 13000000,
+    "source": "CDC NIS coverage data",
+    "confidence": "medium"
+  },
+  "RV": {
+    "totalDoses": 75000000,
+    "period": "2006-2024",
+    "annualAvg": 7500000,
+    "source": "CDC NIS coverage data",
+    "confidence": "medium"
+  },
+  "MNQ": {
+    "totalDoses": 80000000,
+    "period": "2005-2024",
+    "annualAvg": 7000000,
+    "source": "CDC NIS-Teen data",
+    "confidence": "medium"
+  }
+}
