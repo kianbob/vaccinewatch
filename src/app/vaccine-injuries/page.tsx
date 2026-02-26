@@ -68,6 +68,29 @@ export default function VaccineInjuriesPage() {
         </div>
       </div>
 
+      {/* Key Insights */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-12">
+        <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Only ~{((totalHosp + totalDeaths) / totalReports * 100).toFixed(0)}% of VAERS reports involve hospitalization or death.</strong> The vast majority describe mild, self-limiting reactions like soreness, headache, and low-grade fever that resolve within days.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>VAERS reports ≠ confirmed injuries.</strong> The National Vaccine Injury Compensation Program (VICP) has paid ~$5.1 billion since 1988 — but across billions of doses, this represents an extraordinarily low injury rate.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Reporting bias works both ways.</strong> Anti-vaccine sentiment can increase reporting of coincidental events, while healthcare providers may underreport routine reactions they consider normal.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>The {formatNumber(totalDisabled)} disability reports require context.</strong> &quot;Disability&quot; in VAERS includes temporary conditions and is self-reported — it doesn&apos;t mean permanent disability confirmed by a doctor.</span>
+          </div>
+        </div>
+      </div>
+
       <div className="prose prose-lg max-w-none mb-12">
         <h2 className={playfairDisplay.className}>What Is a Vaccine Injury?</h2>
         <p>

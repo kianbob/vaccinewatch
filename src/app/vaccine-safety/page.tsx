@@ -75,6 +75,29 @@ export default function VaccineSafetyPage() {
         </div>
       </div>
 
+      {/* Key Insights */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-12">
+        <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Vaccines undergo the most rigorous safety testing of any medical product</strong> — clinical trials, post-market surveillance (VAERS, VSD, CISA), and ongoing monitoring ensure safety signals are caught quickly.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>VAERS is designed to be over-inclusive</strong> — it captures everything reported after vaccination, including events that are purely coincidental. This is a feature, not a bug — it helps detect rare signals.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>The system works</strong> — VAERS detected the J&amp;J blood clot signal, the myocarditis signal after mRNA vaccines, and the intussusception signal after rotavirus vaccine. Each led to updated guidance.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Context matters more than raw numbers</strong> — 8,000 Americans die daily from all causes. When millions are vaccinated, temporal coincidences are expected and don&apos;t indicate causation.</span>
+          </div>
+        </div>
+      </div>
+
       <div className="prose prose-lg max-w-none mb-12">
         <h2 className={playfairDisplay.className}>The Big Picture</h2>
         <p>

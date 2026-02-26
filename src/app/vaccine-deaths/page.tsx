@@ -82,6 +82,29 @@ export default function VaccineDeathsPage() {
         </p>
       </div>
 
+      {/* Key Insights */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+        <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>{formatNumber(totalDeaths)} death reports out of {formatNumber(totalReports)} total</strong> — that&apos;s {((totalDeaths / totalReports) * 100).toFixed(1)}%. But &quot;reported after&quot; does not mean &quot;caused by.&quot;</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>~8,000 Americans die every day from all causes.</strong> When hundreds of millions are vaccinated, thousands will die in the days following by pure statistical coincidence.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>COVID vaccines account for ~{((covidDeaths / totalDeaths) * 100).toFixed(0)}% of death reports</strong> — driven by 670M+ doses administered, elderly-first rollout, and mandatory provider reporting.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>CDC reviews every COVID death report.</strong> Confirmed vaccine-caused deaths are extremely rare — limited to TTS (J&amp;J) and anaphylaxis cases.</span>
+          </div>
+        </div>
+      </div>
+
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
         <div className="bg-white border border-red-200 rounded-xl p-4 text-center">

@@ -79,6 +79,29 @@ export default function SideEffectsPage() {
         </div>
       </div>
 
+      {/* Key Insights */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-12">
+        <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Most reported &quot;side effects&quot; are mild and expected</strong> — fever, headache, and injection site pain account for the majority of VAERS reports. These are signs the immune system is responding.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Serious events are rare but tracked carefully</strong> — only {((totalDeaths + totalHosp) / totalReports * 100).toFixed(1)}% of all reports involve death or hospitalization, and these are investigated by CDC/FDA.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Reporting ≠ causation</strong> — VAERS captures any health event after vaccination. Someone getting the flu a week after a vaccine will be reported, even if unrelated.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>COVID-19 dramatically increased reporting</strong> — heightened public awareness and mandatory reporting for healthcare providers created an unprecedented volume of reports.</span>
+          </div>
+        </div>
+      </div>
+
       {/* Understanding section */}
       <div className="prose prose-lg max-w-none mb-12">
         <h2 className={playfairDisplay.className}>What Are Vaccine Side Effects?</h2>

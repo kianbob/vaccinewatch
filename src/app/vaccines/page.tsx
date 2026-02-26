@@ -87,6 +87,39 @@ export default function VaccinesPage() {
         </div>
       </div>
 
+      {/* Key Insights */}
+      {(() => {
+        const sorted = [...vaccines].sort((a, b) => b.reports - a.reports)
+        const covidVaxes = vaccines.filter(v => v.type?.startsWith('COVID'))
+        const covidTotal = covidVaxes.reduce((s, v) => s + v.reports, 0)
+        const covidPct = (stats?.totalReports || 1983260) > 0 ? (covidTotal / (stats?.totalReports || 1983260) * 100).toFixed(0) : '0'
+        const topVax = sorted[0]
+        const avgReports = Math.round(vaccines.reduce((s, v) => s + v.reports, 0) / vaccines.length)
+        return (
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+            <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+              <div className="flex items-start gap-2">
+                <span className="font-bold text-amber-600 mt-0.5">→</span>
+                <span><strong>COVID-19 vaccines account for ~{covidPct}% of all VAERS reports</strong> — not because they&apos;re more dangerous, but because over 670 million doses were administered in the US alone, and awareness of VAERS surged during the pandemic.</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="font-bold text-amber-600 mt-0.5">→</span>
+                <span><strong>Reports jumped 1.8× after 2020</strong> compared to the prior 30 years. This reflects pandemic-era media attention, not a sudden increase in vaccine danger. The &quot;stimulated reporting&quot; effect is well-documented.</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="font-bold text-amber-600 mt-0.5">→</span>
+                <span><strong>The average vaccine has {formatNumber(avgReports)} reports</strong>, but distribution is extremely skewed — widely-used vaccines like flu and COVID have hundreds of thousands, while niche vaccines have under 100.</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="font-bold text-amber-600 mt-0.5">→</span>
+                <span><strong>Death rates vary dramatically by vaccine type</strong>, but this largely reflects the age of the patient population. Vaccines given to elderly patients (pneumococcal, shingles) naturally show higher death reporting rates.</span>
+              </div>
+            </div>
+          </div>
+        )
+      })()}
+
       {/* Table */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">

@@ -272,32 +272,6 @@ export default async function VaccineDetailPage({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-8">
-          {/* About This Vaccine */}
-          <div className="bg-white rounded-xl border border-gray-200 p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              About {cleanName}
-            </h2>
-            <div className="prose prose-lg text-gray-600">
-              <p>
-                <strong>{cleanName}</strong> has{' '}
-                <strong>{formatNumber(vaccine.reports)}</strong> reports in VAERS spanning from 1990 to 2026.
-              </p>
-              <p>
-                Of these reports, <strong className="text-danger">{formatNumber(vaccine.died)}</strong> mentioned death,{' '}
-                <strong className="text-accent">{formatNumber(vaccine.hosp)}</strong> involved hospitalization, and{' '}
-                <strong>{formatNumber(vaccine.er)}</strong> required emergency department visits.
-              </p>
-              {vaccine.manufacturers.length > 0 && (
-                <p>
-                  This vaccine is manufactured by: <strong>{vaccine.manufacturers.map(m => formatManufacturer(m.name)).join(', ')}</strong>.
-                </p>
-              )}
-              <p>
-                This vaccine accounts for <strong>{percentOfAll}%</strong> of all {formatNumber(stats.totalReports)} reports in the VAERS database.
-              </p>
-            </div>
-          </div>
-
           {/* Report Rate Context */}
           {vaccine.yearly.length > 0 && (() => {
             const yearsWithReports = vaccine.yearly.filter(y => y.count > 0)

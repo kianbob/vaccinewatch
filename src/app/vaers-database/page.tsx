@@ -67,6 +67,29 @@ export default function VAERSDatabasePage() {
         </div>
       </div>
 
+      {/* Key Insights */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-12">
+        <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>VAERS is the largest vaccine safety database in the world</strong> — {formatNumber(totalReports)} reports spanning 35 years, covering every vaccine licensed in the United States.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Anyone can report</strong> — doctors, patients, parents, manufacturers. This openness catches rare signals but also means reports aren&apos;t verified or confirmed.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>The official VAERS interface is notoriously difficult to use.</strong> We&apos;ve processed all the raw data into searchable, filterable, contextualized pages — no CDC Wonder expertise needed.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>VAERS is a signal detection system, not a proof system.</strong> It flags potential issues for further investigation by epidemiologists using controlled studies.</span>
+          </div>
+        </div>
+      </div>
+
       {/* What is VAERS */}
       <div className="prose prose-lg max-w-none mb-12">
         <h2 className={playfairDisplay.className}>What Is VAERS?</h2>

@@ -55,6 +55,29 @@ export default function MyocarditisLandingPage() {
         </div>
       </div>
 
+      {/* Key Insights */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-12">
+        <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>This is a confirmed, real risk</strong> — unlike most VAERS signals, the myocarditis-mRNA vaccine link has been validated by multiple independent surveillance systems worldwide. It&apos;s not just a VAERS artifact.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>COVID infection causes myocarditis at 5-10× higher rates than vaccination.</strong> For most age groups, the cardiac risk from catching COVID unvaccinated far exceeds the myocarditis risk from the vaccine.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Young males aged 12-29 after dose 2 are the highest-risk group</strong> — estimated at 1-10 extra cases per 100,000. This led to updated guidance recommending longer intervals between doses for this demographic.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Vaccine-associated myocarditis has better outcomes</strong> than infection-associated myocarditis — shorter hospital stays, faster recovery, and lower rates of cardiac complications.</span>
+          </div>
+        </div>
+      </div>
+
       <div className="prose prose-lg max-w-none mb-12">
         <h2 className={playfairDisplay.className}>What Is Myocarditis?</h2>
         <p>

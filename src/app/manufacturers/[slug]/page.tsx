@@ -102,6 +102,43 @@ export default async function ManufacturerDetailPage({
         <StatCard title="Vaccines" value={vaccines.length || mfr.vaccines.length} color="gray" />
       </div>
 
+      {/* Key Insights */}
+      {(() => {
+        const insights: Array<{ text: string }> = []
+        const deathRate = mfr.reports > 0 ? (mfr.died / mfr.reports * 100) : 0
+        const avgDeathRate = 1.4 // database average ~27732/1983260
+        
+        if (parseFloat(marketShare) > 20) {
+          insights.push({ text: `<strong>${formatManufacturer(mfr.name)} is one of the top 3 manufacturers in VAERS</strong> with ${marketShare}% of all reports. This dominance reflects massive distribution — particularly from COVID-19 vaccines — not a worse safety profile.` })
+        }
+        if (vaccines.length > 10) {
+          insights.push({ text: `<strong>Produces ${vaccines.length} different vaccines</strong> — a broad portfolio spanning decades means VAERS data includes reports from different eras, patient populations, and reporting standards.` })
+        } else if (vaccines.length === 1) {
+          insights.push({ text: `<strong>Single-vaccine manufacturer</strong> — all reports are concentrated in one product, making trends more directly interpretable than multi-vaccine companies.` })
+        }
+        if (deathRate > avgDeathRate * 1.5 && mfr.reports > 1000) {
+          insights.push({ text: `<strong>Death reporting rate (${deathRate.toFixed(1)}%) is above average</strong> — likely reflects the patient demographics receiving this manufacturer's vaccines (e.g., elderly populations) rather than product safety differences.` })
+        } else if (deathRate < avgDeathRate * 0.5 && mfr.reports > 1000) {
+          insights.push({ text: `<strong>Death reporting rate (${deathRate.toFixed(1)}%) is below the database average</strong> — this manufacturer's vaccines tend to be given to younger, healthier populations.` })
+        }
+        if (insights.length > 0) {
+          return (
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+              <h2 className="text-lg font-bold text-amber-900 mb-3">💡 Key Insights</h2>
+              <div className="space-y-3 text-sm text-amber-900">
+                {insights.map((ins, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <span className="font-bold text-amber-600 mt-0.5">→</span>
+                    <span dangerouslySetInnerHTML={{ __html: ins.text }} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )
+        }
+        return null
+      })()}
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
           <div className="bg-white rounded-xl border border-gray-200 p-6">

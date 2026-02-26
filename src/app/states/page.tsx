@@ -130,6 +130,43 @@ export default function StatesPage() {
         </div>
       </div>
 
+      {/* Key Insights */}
+      {(() => {
+        const realStates = statesWithNames.filter(s => s.abbreviation !== 'UNK' && s.abbreviation !== 'FR')
+        const unkState = statesWithNames.find(s => s.abbreviation === 'UNK')
+        const unkPct = unkState ? ((unkState.reports / totalReports) * 100).toFixed(0) : '15'
+        const withPerCapita = realStates.filter(s => s.per100k !== null).sort((a, b) => (b.per100k || 0) - (a.per100k || 0))
+        const highestPerCapita = withPerCapita[0]
+        const lowestPerCapita = withPerCapita[withPerCapita.length - 1]
+        const topByReports = [...realStates].sort((a, b) => b.reports - a.reports)
+        const top5Pct = ((topByReports.slice(0, 5).reduce((s, st) => s + st.reports, 0) / totalReports) * 100).toFixed(0)
+        return (
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+            <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+              <div className="flex items-start gap-2">
+                <span className="font-bold text-amber-600 mt-0.5">→</span>
+                <span><strong>The top 5 states account for {top5Pct}% of all reports</strong> — California, Texas, New York, Florida, and Pennsylvania. This mirrors population distribution, not regional safety differences.</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="font-bold text-amber-600 mt-0.5">→</span>
+                <span><strong>{unkPct}% of reports have no state listed.</strong> State data is often missing because VAERS doesn&apos;t require it, and manufacturer-submitted reports rarely include geographic information.</span>
+              </div>
+              {highestPerCapita && lowestPerCapita && (
+                <div className="flex items-start gap-2">
+                  <span className="font-bold text-amber-600 mt-0.5">→</span>
+                  <span><strong>Per-capita rates reveal reporting culture differences.</strong> {highestPerCapita.name} reports at {highestPerCapita.per100k} per 100K residents while {lowestPerCapita.name} reports just {lowestPerCapita.per100k} per 100K — a gap driven by provider awareness, not vaccine safety.</span>
+                </div>
+              )}
+              <div className="flex items-start gap-2">
+                <span className="font-bold text-amber-600 mt-0.5">→</span>
+                <span><strong>Geographic patterns shift dramatically during pandemics.</strong> States with early COVID-19 vaccine rollouts saw reporting spikes months before others, creating temporary geographic distortions in the data.</span>
+              </div>
+            </div>
+          </div>
+        )
+      })()}
+
       {/* Top States */}
       <div className="bg-gray-50 rounded-xl p-8 mb-8">
         <h3 className="text-xl font-bold text-gray-900 mb-4">Top 5 Reporting States</h3>

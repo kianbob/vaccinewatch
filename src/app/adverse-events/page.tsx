@@ -105,6 +105,29 @@ export default function AdverseEventsPage() {
         </div>
       </div>
 
+      {/* Key Insights */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-10">
+        <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>&quot;Adverse event&quot; ≠ &quot;side effect.&quot;</strong> An adverse event is anything that happens after vaccination — including things that would have happened anyway. Only a fraction of VAERS reports represent actual vaccine reactions.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>~{((totalHosp + totalDied) / totalReports * 100).toFixed(0)}% of reports involve serious outcomes.</strong> The vast majority of VAERS submissions describe mild, expected reactions like injection site pain, headache, and fatigue.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Anyone can submit a VAERS report</strong> — patients, parents, doctors, even lawyers. This openness is both a strength (captures rare events) and weakness (no verification of causality).</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>2021 saw {formatNumber(768706)} reports — more than the prior 5 years combined.</strong> The COVID-19 vaccine rollout plus unprecedented media attention created a massive spike in reporting awareness.</span>
+          </div>
+        </div>
+      </div>
+
       {/* What Are Adverse Events */}
       <div className="prose prose-lg max-w-4xl mb-10">
         <h2 className={`${playfairDisplay.className}`}>What Is a Vaccine Adverse Event?</h2>

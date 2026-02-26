@@ -180,6 +180,48 @@ export default async function SymptomDetailPage({
         />
       </div>
 
+      {/* Key Insights */}
+      {(() => {
+        const insights: Array<{ text: string }> = []
+        const topVax = symptom.vaccines?.[0]
+        const avgSeverity = 1983260 > 0 ? ((27732 + 143653) / 1983260 * 100) : 8.6
+        
+        if (topVax) {
+          const topVaxPct = symptom.reports > 0 ? (topVax.count / symptom.reports * 100).toFixed(0) : '0'
+          const topVaxName = getVaccineDisplayName(topVax.type)
+          insights.push({ text: `<strong>${topVaxName} accounts for ${topVaxPct}% of all ${symptom.name} reports</strong> — this reflects the volume of ${topVaxName} doses administered, not a unique safety concern.` })
+        }
+        if (severityRate > avgSeverity * 2 && symptom.reports > 100) {
+          insights.push({ text: `<strong>Severity rate of ${severityRate.toFixed(1)}% is ${(severityRate / avgSeverity).toFixed(1)}× the database average.</strong> This suggests ${symptom.name} tends to appear in more serious reports, though it may also be reported alongside other serious conditions.` })
+        } else if (severityRate < avgSeverity * 0.5 && symptom.reports > 1000) {
+          insights.push({ text: `<strong>Severity rate of ${severityRate.toFixed(1)}% is well below the database average.</strong> ${symptom.name} is predominantly reported as a mild, self-limiting reaction.` })
+        }
+        if (yearlyData.length > 5) {
+          const peak = yearlyData.reduce((m, y) => y.count > (m?.count || 0) ? y : m, yearlyData[0])
+          if (peak && peak.count > symptom.reports * 0.2) {
+            insights.push({ text: `<strong>${peak.year} saw the most reports (${formatNumber(peak.count)})</strong> — ${peak.year >= 2021 ? 'likely driven by the COVID-19 vaccine rollout and heightened VAERS awareness' : 'reflecting reporting patterns and vaccine program changes of that era'}.` })
+          }
+        }
+        if (symptom.vaccines?.length > 5) {
+          insights.push({ text: `<strong>Reported across ${symptom.vaccines.length} different vaccines</strong> — ${symptom.vaccines.length > 30 ? 'this is a general symptom seen with many vaccines, not specific to any one type' : 'appearing in multiple vaccine types suggests it may be a general immune response'}.` })
+        }
+        
+        if (insights.length === 0) return null
+        return (
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+            <h2 className="text-lg font-bold text-amber-900 mb-3">💡 Key Insights</h2>
+            <div className="space-y-3 text-sm text-amber-900">
+              {insights.map((ins, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <span className="font-bold text-amber-600 mt-0.5">→</span>
+                  <span dangerouslySetInnerHTML={{ __html: ins.text }} />
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      })()}
+
       {/* Associated Vaccines Chart */}
       <div className="mb-8">
         <SymptomVaccinesChart data={symptom.vaccines} symptomName={symptom.name} />

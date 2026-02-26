@@ -38,6 +38,29 @@ export default function DashboardPage() {
 
       <DashboardClient />
 
+      {/* Key Insights */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mt-8 mb-8">
+        <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights From the Data</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Sort by &quot;Death Rate&quot; to see what raw counts hide.</strong> Vaccines given to elderly patients (pneumococcal, shingles) have the highest death reporting rates — not because they&apos;re dangerous, but because their recipients are older and more fragile.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>COVID-19 vaccines dominate raw counts but have moderate rates.</strong> With 1.1M+ reports from 670M+ doses, COVID vaccines actually have lower hospitalization rates per report than many childhood vaccines.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Discontinued vaccines appear in this data.</strong> OPV (oral polio), DTP, and Lyme disease vaccines show reports from decades ago — they were replaced by safer alternatives, partly because of VAERS signal detection.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>62.6% of reports with known outcomes indicate recovery.</strong> Most adverse events, even serious ones, are temporary. Use the <Link href="/tools/recovery-explorer" className="underline font-medium">Recovery Explorer</Link> for vaccine-specific recovery data.</span>
+          </div>
+        </div>
+      </div>
+
       {/* SEO Content */}
       <div className="mt-8 prose prose-lg max-w-none text-gray-600">
         <h2 className={playfairDisplay.className}>How to Use This Dashboard</h2>

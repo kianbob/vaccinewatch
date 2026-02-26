@@ -87,6 +87,37 @@ export default function ManufacturersPage() {
         </div>
       </div>
 
+      {/* Key Insights */}
+      {(() => {
+        const sorted = [...manufacturers].sort((a, b) => b.reports - a.reports)
+        const top3 = sorted.slice(0, 3)
+        const top3Pct = ((top3.reduce((s, m) => s + m.reports, 0) / totalReports) * 100).toFixed(0)
+        const smallMfg = manufacturers.filter(m => m.reports < 1000)
+        return (
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+            <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+              <div className="flex items-start gap-2">
+                <span className="font-bold text-amber-600 mt-0.5">→</span>
+                <span><strong>Three manufacturers dominate: {formatManufacturer(top3[0]?.name)}, {formatManufacturer(top3[1]?.name)}, and {formatManufacturer(top3[2]?.name)}</strong> account for {top3Pct}% of all VAERS reports — reflecting their massive market share from COVID-19 mRNA vaccines and legacy vaccine portfolios.</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="font-bold text-amber-600 mt-0.5">→</span>
+                <span><strong>Report count ≠ safety profile.</strong> Pfizer has the most reports because they manufactured the most-used COVID-19 vaccine in the US. Comparing manufacturers requires controlling for doses administered, patient demographics, and reporting era.</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="font-bold text-amber-600 mt-0.5">→</span>
+                <span><strong>{smallMfg.length} manufacturers have fewer than 1,000 reports</strong> — these make niche vaccines (rabies, yellow fever, anthrax) given to small populations, making statistical comparisons unreliable.</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="font-bold text-amber-600 mt-0.5">→</span>
+                <span><strong>Legacy manufacturers like Merck have decades of data</strong> spanning dozens of vaccine types, while newer companies like BioNTech emerged in 2021. Time span matters when comparing totals.</span>
+              </div>
+            </div>
+          </div>
+        )
+      })()}
+
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
         <ManufacturerBarChart data={manufacturers.slice(0, 10)} />
