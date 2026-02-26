@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   title: 'Vaccine Adverse Events — What VAERS Reports Show',
   description: 'Explore 1.98 million vaccine adverse event reports from VAERS. Understand what adverse events are, how they\'re reported, and what the data shows across 104 vaccines.',
   alternates: { canonical: 'https://www.vaccinewatch.org/adverse-events' },
+  openGraph: {
+    title: 'Vaccine Adverse Events — What VAERS Reports Show',
+    description: 'Explore 1.98 million vaccine adverse event reports from VAERS across 104 vaccines.',
+  },
 }
 
 export default function AdverseEventsPage() {

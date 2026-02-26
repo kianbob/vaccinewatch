@@ -9,7 +9,11 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'All 500 Symptoms Reported After Vaccination — VAERS Data',
-  description: 'Browse all 500 symptoms reported in VAERS after vaccination. Sortable by frequency, deaths, hospitalizations, and severity rate. From pyrexia to myocarditis.'
+  description: 'Browse all 500 symptoms reported in VAERS after vaccination. Sortable by frequency, deaths, hospitalizations, and severity rate. From pyrexia to myocarditis.',
+  openGraph: {
+    title: 'All 500 Symptoms Reported After Vaccination — VAERS Data',
+    description: 'Browse all 500 symptoms reported in VAERS after vaccination. Sortable by frequency, deaths, hospitalizations, and severity rate. From pyrexia to myocarditis.',
+  },
 }
 
 interface Symptom {

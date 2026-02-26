@@ -10,6 +10,10 @@ import ShareButtons from '@/components/ShareButtons'
 export const metadata: Metadata = {
   title: 'Fever After Vaccination — Is It Normal? VAERS Data',
   description: 'Fever is the #1 reported symptom in VAERS with 276,000+ reports. Learn when post-vaccination fever is normal, when to worry, and what the data shows.',
+  openGraph: {
+    title: 'Fever After Vaccination — Is It Normal? VAERS Data',
+    description: 'Fever is the #1 reported symptom in VAERS with 276,000+ reports. Learn when post-vaccination fever is normal, when to worry, and what the data shows.',
+  },
 }
 
 export default function FeverAfterVaccinationPage() {

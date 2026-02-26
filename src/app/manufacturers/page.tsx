@@ -9,7 +9,11 @@ import { ManufacturerBarChartClient as ManufacturerBarChart, ManufacturerPieChar
 
 export const metadata: Metadata = {
   title: 'Vaccine Manufacturers — VAERS Safety Reports by Company',
-  description: 'VAERS adverse event reports by vaccine manufacturer. Compare Pfizer, Moderna, Merck, and more. Market share analysis, death reports, and hospitalization data.'
+  description: 'VAERS adverse event reports by vaccine manufacturer. Compare Pfizer, Moderna, Merck, and more. Market share analysis, death reports, and hospitalization data.',
+  openGraph: {
+    title: 'Vaccine Manufacturers — VAERS Safety Reports by Company',
+    description: 'VAERS adverse event reports by vaccine manufacturer. Compare Pfizer, Moderna, Merck, and more. Market share analysis, death reports, and hospitalization data.',
+  },
 }
 
 interface Manufacturer {
