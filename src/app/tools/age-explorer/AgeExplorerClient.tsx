@@ -137,23 +137,26 @@ export default function AgeExplorerClient() {
         <h2 className="text-xl font-bold mb-1">Gender Distribution</h2>
         <p className="text-sm text-gray-500 mb-4">Women report adverse events at nearly 2x the rate of men.</p>
         <div className="flex flex-col md:flex-row items-center gap-8">
-          <ResponsiveContainer width={300} height={300}>
-            <PieChart>
-              <Pie
-                data={genderData}
-                cx="50%"
-                cy="50%"
-                outerRadius={120}
-                dataKey="value"
-                label={({ name, pct }: any) => `${name} (${pct}%)`}
-              >
-                {genderData.map((_, index) => (
-                  <Cell key={`cell-${index}`} fill={GENDER_COLORS[index]} />
-                ))}
-              </Pie>
-              <Tooltip formatter={(value: any) => Number(value).toLocaleString()} />
-            </PieChart>
-          </ResponsiveContainer>
+          <div className="w-full md:w-[350px] h-[300px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={genderData}
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={100}
+                  dataKey="value"
+                  label={({ name, pct }: any) => `${name} (${pct}%)`}
+                  labelLine={{ strokeWidth: 1 }}
+                >
+                  {genderData.map((_, index) => (
+                    <Cell key={`cell-${index}`} fill={GENDER_COLORS[index]} />
+                  ))}
+                </Pie>
+                <Tooltip formatter={(value: any) => Number(value).toLocaleString()} />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
           <div className="space-y-3">
             {genderData.map((g, i) => (
               <div key={g.name} className="flex items-center gap-3">

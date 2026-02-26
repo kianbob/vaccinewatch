@@ -120,9 +120,10 @@ export default function AdminRoutesClient() {
                   data={pieData}
                   cx="50%"
                   cy="50%"
-                  outerRadius={120}
+                  outerRadius={100}
                   dataKey="value"
-                  label={({ pct }: any) => `${pct}%`}
+                  label={({ name, pct }: any) => `${name.length > 15 ? name.slice(0, 15) + '…' : name} (${pct}%)`}
+                  labelLine={{ strokeWidth: 1 }}
                 >
                   {pieData.map((_, i) => (
                     <Cell key={i} fill={COLORS[i % COLORS.length]} />
@@ -139,10 +140,10 @@ export default function AdminRoutesClient() {
           <h2 className="text-lg font-bold text-gray-900 mb-4">Report Count by Category</h2>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={barData} layout="vertical" margin={{ left: 140, right: 20, top: 5, bottom: 5 }}>
+              <BarChart data={barData} layout="vertical" margin={{ left: 10, right: 20, top: 5, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis type="number" />
-                <YAxis type="category" dataKey="name" width={130} tick={{ fontSize: 12 }} />
+                <XAxis type="number" tickFormatter={(v: number) => v >= 1000 ? `${(v / 1000).toFixed(0)}K` : String(v)} />
+                <YAxis type="category" dataKey="name" width={150} tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(value: any) => value.toLocaleString()} />
                 <Bar dataKey="count" fill="#0891b2" name="Reports" />
               </BarChart>

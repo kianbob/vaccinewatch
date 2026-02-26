@@ -78,9 +78,9 @@ export default function BirthDefectsClient() {
         <p className="text-sm text-gray-500 mb-4">Top {showAll ? data.length : 15} vaccines with birth defect reports in VAERS</p>
         <div className="h-[400px]">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={topVaccines} layout="vertical" margin={{ left: 80, right: 20, top: 5, bottom: 5 }}>
-              <XAxis type="number" />
-              <YAxis type="category" dataKey="type" width={75} tick={{ fontSize: 11 }} />
+            <BarChart data={topVaccines} layout="vertical" margin={{ left: 10, right: 20, top: 5, bottom: 5 }}>
+              <XAxis type="number" tickFormatter={(v: number) => v >= 1000 ? `${(v / 1000).toFixed(0)}K` : String(v)} />
+              <YAxis type="category" dataKey="type" width={90} tick={{ fontSize: 11 }} />
               <Tooltip
                 formatter={(value: number) => [formatNumber(value), 'Reports']}
                 labelFormatter={(label: string) => formatManufacturer(label)}
@@ -110,8 +110,9 @@ export default function BirthDefectsClient() {
                 data={data.slice(0, 10).map(d => ({ name: d.type, value: d.count }))}
                 cx="50%"
                 cy="50%"
-                outerRadius={120}
+                outerRadius={100}
                 dataKey="value"
+                labelLine={{ strokeWidth: 1 }}
                 label={({ name, percent }: { name: string; percent: number }) =>
                   `${name} (${(percent * 100).toFixed(0)}%)`
                 }

@@ -1,17 +1,10 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
-import dynamic from 'next/dynamic'
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-const BarChart = dynamic(() => import('recharts').then(m => m.BarChart) as any, { ssr: false }) as any
-const Bar = dynamic(() => import('recharts').then(m => m.Bar) as any, { ssr: false }) as any
-const XAxis = dynamic(() => import('recharts').then(m => m.XAxis) as any, { ssr: false }) as any
-const YAxis = dynamic(() => import('recharts').then(m => m.YAxis) as any, { ssr: false }) as any
-const CartesianGrid = dynamic(() => import('recharts').then(m => m.CartesianGrid) as any, { ssr: false }) as any
-const Tooltip = dynamic(() => import('recharts').then(m => m.Tooltip) as any, { ssr: false }) as any
-const Legend = dynamic(() => import('recharts').then(m => m.Legend) as any, { ssr: false }) as any
-const ResponsiveContainer = dynamic(() => import('recharts').then(m => m.ResponsiveContainer) as any, { ssr: false }) as any
+import {
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  ResponsiveContainer
+} from 'recharts'
 
 interface VaccineInfo {
   name: string
