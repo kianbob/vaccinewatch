@@ -7,6 +7,7 @@ const sisterSites = [
   { name: 'OpenSpending', url: 'https://www.openspending.us', description: 'Government spending tracker' },
   { name: 'OpenMedicare', url: 'https://www.openmedicare.us', description: 'Medicare data analysis' },
   { name: 'OpenLobby', url: 'https://www.openlobby.us', description: 'Lobbying transparency' },
+  { name: 'OpenSubsidies', url: 'https://www.opensubsidies.us', description: 'Farm subsidy tracker' },
   { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]
 
