@@ -8,7 +8,7 @@ const sisterSites = [
   { name: 'OpenSpending', url: 'https://www.openspending.us', description: 'Government spending tracker' },
   { name: 'OpenMedicare', url: 'https://www.openmedicare.us', description: 'Medicare data analysis' },
   { name: 'OpenLobby', url: 'https://www.openlobby.us', description: 'Lobbying transparency' },
-  { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
+            <li><a href="https://openprescriber.vercel.app" className="hover:text-white">OpenPrescriber</a></li>  { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]
 
 export default function Footer() {
@@ -143,7 +143,7 @@ export default function Footer() {
 
             <div className="text-sm text-gray-500">
               Built by{' '}
-              <a href="https://thedataproject.ai" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-white">TheDataProject.ai</a>
+            <li><a href="https://openprescriber.vercel.app" className="hover:text-white">OpenPrescriber</a></li>              <a href="https://thedataproject.ai" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-white">TheDataProject.ai</a>
               {' '}· © {new Date().getFullYear()} VaccineWatch
             </div>
           </div>
