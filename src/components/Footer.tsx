@@ -9,6 +9,7 @@ const sisterSites = [
   { name: 'OpenMedicare', url: 'https://www.openmedicare.us', description: 'Medicare data analysis' },
   { name: 'OpenLobby', url: 'https://www.openlobby.us', description: 'Lobbying transparency' },
   { name: 'WarCosts', url: 'https://www.warcosts.org', description: 'War spending tracker' },
+  { name: 'OpenPrescriber', url: 'https://www.openprescriber.org', description: 'Medicare Part D prescribing data' },
   { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]
 
