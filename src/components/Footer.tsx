@@ -4,7 +4,7 @@ const sisterSites = [
   { name: 'OpenMedicaid', url: 'https://www.openmedicaid.org', description: 'Medicaid spending transparency' },
   { name: 'OpenFeds', url: 'https://www.openfeds.org', description: 'Federal employee data' },
   { name: 'OpenImmigration', url: 'https://www.openimmigration.us', description: 'Immigration court data' },
-  { name: 'OpenSubsidies', url: 'https://www.opensubsidies.org', description: 'Farm subsidy tracker' },
+            <li><a href="https://www.opencrime.us" className="hover:text-white">OpenCrime</a></li>  { name: 'OpenSubsidies', url: 'https://www.opensubsidies.org', description: 'Farm subsidy tracker' },
   { name: 'OpenSpending', url: 'https://www.openspending.us', description: 'Government spending tracker' },
   { name: 'OpenMedicare', url: 'https://www.openmedicare.us', description: 'Medicare data analysis' },
   { name: 'OpenLobby', url: 'https://www.openlobby.us', description: 'Lobbying transparency' },
