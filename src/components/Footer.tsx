@@ -10,6 +10,7 @@ const sisterSites = [
   { name: 'OpenLobby', url: 'https://www.openlobby.us', description: 'Lobbying transparency' },
   { name: 'WarCosts', url: 'https://www.warcosts.org', description: 'War spending tracker' },
   { name: 'OpenPrescriber', url: 'https://www.openprescriber.org', description: 'Medicare Part D prescribing data' },
+  { name: 'GiveScope', url: 'https://www.givescope.com', description: 'Nonprofit spending tracker' },
   { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]
 
