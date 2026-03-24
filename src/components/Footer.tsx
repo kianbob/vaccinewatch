@@ -12,7 +12,7 @@ const sisterSites = [
   { name: 'WarCosts', url: 'https://www.warcosts.org', description: 'War spending tracker' },
   { name: 'OpenPrescriber', url: 'https://www.openprescriber.org', description: 'Medicare Part D prescribing data' },
   { name: 'GiveScope', url: 'https://www.givescope.com', description: 'Nonprofit spending tracker' },
-  { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
+              <a href="https://www.spacgraveyard.com" target="_blank" rel="noopener noreferrer" className="block text-gray-500 hover:text-teal-700 text-sm transition-colors">SPACGraveyard</a>  { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]
 
 export default function Footer() {
