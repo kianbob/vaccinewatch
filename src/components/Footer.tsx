@@ -15,8 +15,6 @@ const sisterSites = [
     { name: 'SPACGraveyard', url: 'https://www.spacgraveyard.com', description: 'SPAC bubble forensic investigation' },
     { name: 'AI Exposure', url: 'https://www.aiexposure.org', description: 'AI job displacement tracker' },
     { name: 'TariffTax', url: 'https://www.tarifftax.org', description: 'Tariff impact tracker' },
-    { name: 'PowerMap', url: 'https://powermap-app.vercel.app', description: 'Political money tracker' },
-    { name: 'OpenHousing', url: 'https://openhousing-app.vercel.app', description: 'Housing data tracker' },
     { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]
 
