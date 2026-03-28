@@ -16,7 +16,6 @@ const sisterSites = [
     { name: 'TariffTax', url: 'https://www.tarifftax.org', description: 'Tariff impact tracker' },
     { name: 'ShelterScope', url: 'https://www.shelterscope.com', description: 'Housing crisis tracker' },
     { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
-    { name: 'VaccineWatch', url: 'https://www.vaccinewatch.org', description: 'Vaccine safety data' },
 ]
 
 export default function Footer() {
