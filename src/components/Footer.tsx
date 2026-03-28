@@ -5,7 +5,6 @@ const sisterSites = [
   { name: 'OpenFeds', url: 'https://www.openfeds.org', description: 'Federal employee data' },
   { name: 'OpenImmigration', url: 'https://www.openimmigration.us', description: 'Immigration court data' },
   { name: 'OpenCrime', url: 'https://www.opencrime.us', description: 'Crime data analysis' },
-  { name: 'OpenSubsidies', url: 'https://www.opensubsidies.org', description: 'Farm subsidy tracker' },
   { name: 'OpenSpending', url: 'https://www.openspending.us', description: 'Government spending tracker' },
   { name: 'OpenMedicare', url: 'https://www.openmedicare.us', description: 'Medicare data analysis' },
   { name: 'OpenLobby', url: 'https://www.openlobby.us', description: 'Lobbying transparency' },
@@ -15,7 +14,9 @@ const sisterSites = [
     { name: 'SPACGraveyard', url: 'https://www.spacgraveyard.com', description: 'SPAC bubble forensic investigation' },
     { name: 'AI Exposure', url: 'https://www.aiexposure.org', description: 'AI job displacement tracker' },
     { name: 'TariffTax', url: 'https://www.tarifftax.org', description: 'Tariff impact tracker' },
+    { name: 'ShelterScope', url: 'https://www.shelterscope.com', description: 'Housing crisis tracker' },
     { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
+    { name: 'VaccineWatch', url: 'https://www.vaccinewatch.org', description: 'Vaccine safety data' },
 ]
 
 export default function Footer() {
