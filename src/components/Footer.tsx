@@ -13,7 +13,7 @@ const sisterSites = [
   { name: 'GiveScope', url: 'https://www.givescope.com', description: 'Nonprofit spending tracker' },
     { name: 'SPACGraveyard', url: 'https://www.spacgraveyard.com', description: 'SPAC bubble forensic investigation' },
     { name: 'AI Exposure', url: 'https://www.aiexposure.org', description: 'AI job displacement tracker' },
-    { name: 'TariffTax', url: 'https://www.tarifftax.org', description: 'Tariff impact tracker' },
+    { name: 'AutoPilotWatch', url: 'https://www.autopilotwatch.com', description: 'Autonomous vehicle safety tracker' },    { name: 'TariffTax', url: 'https://www.tarifftax.org', description: 'Tariff impact tracker' },
     { name: 'ShelterScope', url: 'https://www.shelterscope.com', description: 'Housing crisis tracker' },
     { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]
