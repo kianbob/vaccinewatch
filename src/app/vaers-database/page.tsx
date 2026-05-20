@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'VAERS Database — Search & Explore Vaccine Adverse Event Reports',
+  title: 'VAERS Database — Search Adverse Event Reports',
   description: 'Explore the VAERS database with interactive tools. 1.98 million vaccine adverse event reports (1990-2026), 104 vaccines, 1,000+ symptoms — all searchable and contextualized.',
   openGraph: {
     title: 'VAERS Database — Search & Explore Vaccine Safety Data',

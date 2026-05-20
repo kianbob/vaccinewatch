@@ -5,7 +5,7 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'VAERS Analysis Tools — Interactive Vaccine Safety Data Explorer',
+  title: 'VAERS Analysis Tools — Interactive Explorer',
   description: 'Interactive tools for exploring VAERS data: onset calculators, lot lookups, dose comparisons, risk context, search, and comparison tools.'
 }
 

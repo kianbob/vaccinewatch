@@ -15,6 +15,7 @@ const sisterSites = [
     { name: 'AI Exposure', url: 'https://www.aiexposure.org', description: 'AI job displacement tracker' },
     { name: 'AutoPilotWatch', url: 'https://www.autopilotwatch.com', description: 'Autonomous vehicle safety tracker' },    { name: 'TariffTax', url: 'https://www.tarifftax.org', description: 'Tariff impact tracker' },
     { name: 'ShelterScope', url: 'https://www.shelterscope.com', description: 'Housing crisis tracker' },
+    { name: 'OpenPrices', url: 'https://openprices.thedataproject.ai', description: 'Healthcare price transparency' },
     { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]
 

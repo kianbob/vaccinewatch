@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Safety Timeline — Key Events in U.S. Vaccine History',
+  title: 'Vaccine Safety Timeline — Key US Events',
   description: 'A timeline of major vaccine safety events from 1955 to present. From the Cutter Incident to COVID-19 myocarditis detection — how vaccine safety monitoring evolved.',
   alternates: { canonical: 'https://www.vaccinewatch.org/vaccine-safety-timeline' },
 }
