@@ -8,8 +8,8 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'All 500 Symptoms Reported After Vaccination — VAERS Data',
-  description: 'Browse all 500 symptoms reported in VAERS after vaccination. Sortable by frequency, deaths, hospitalizations, and severity rate. From pyrexia to myocarditis.',
+  title: 'Vaccine Side Effect Symptoms — 500 in VAERS',
+  description: 'Browse 500 symptoms reported in VAERS after vaccination. Sort by frequency, deaths, hospitalizations, and severity. From fever to myocarditis.',
   openGraph: {
     title: 'All 500 Symptoms Reported After Vaccination — VAERS Data',
     description: 'Browse all 500 symptoms reported in VAERS after vaccination. Sortable by frequency, deaths, hospitalizations, and severity rate. From pyrexia to myocarditis.',
@@ -193,6 +193,20 @@ export default function SymptomsPage() {
               and time periods
             </span>
           </div>
+        </div>
+      </div>
+
+      {/* Related Pages */}
+      <div className="mt-8 bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <h3 className="text-lg font-semibold text-gray-900 mb-3">Related VAERS Data</h3>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/vaccines" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">104 Vaccines</Link>
+          <Link href="/myocarditis" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Myocarditis</Link>
+          <Link href="/fever-after-vaccination" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Fever After Vaccination</Link>
+          <Link href="/allergic-reaction" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Allergic Reactions</Link>
+          <Link href="/guillain-barre" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Guillain-Barré</Link>
+          <Link href="/analysis/top-symptoms" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Top 20 Symptoms</Link>
+          <Link href="/tools/onset-calculator" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Onset Calculator</Link>
         </div>
       </div>
     </div>

@@ -10,8 +10,8 @@ import { ReportingBiasChartsClient as ReportingBiasCharts } from '@/components/C
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Understanding VAERS Reporting Bias',
-  description: 'Analysis of factors that influence VAERS reporting patterns: stimulated reporting, awareness bias, media influence, and the healthy vaccinee effect.'
+  title: 'VAERS Reporting Bias — Key Factors Explained',
+  description: 'Stimulated reporting, awareness bias, and media influence on VAERS data. 2021 saw a 25x reporting spike from COVID awareness.'
 }
 
 export default function ReportingBiasPage() {

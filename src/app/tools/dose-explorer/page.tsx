@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import DoseExplorerClient from './DoseExplorerClient'
 
 export const metadata: Metadata = {
-  title: 'Dose Series Explorer — 1st vs 2nd vs 3rd Dose',
-  description: 'Interactive tool comparing adverse event reports across vaccine dose numbers. See how 1st dose, 2nd dose, and booster reports differ for any vaccine.'
+  title: 'Vaccine Dose Series Explorer — VAERS',
+  description: 'Compare 1st, 2nd, and 3rd dose adverse event reports for any vaccine. Interactive dose series analysis from VAERS data.'
 }
 
 export default function DoseExplorerPage() {

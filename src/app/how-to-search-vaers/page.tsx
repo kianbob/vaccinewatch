@@ -6,8 +6,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'How to Search VAERS — Easy Guide to Vaccine Safety Data',
-  description: 'The easiest way to search VAERS data. No complex queries needed — browse vaccines, symptoms, states, and manufacturers with interactive tools and proper context.',
+  title: 'How to Search VAERS — Step-by-Step Guide',
+  description: 'The easiest way to search VAERS data. Browse vaccines, symptoms, states, and manufacturers with interactive tools — no complex queries needed.',
 }
 
 export default function HowToSearchVAERSPage() {

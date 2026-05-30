@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 
 export const metadata: Metadata = {
-  title: 'VAERS Data Analysis — In-Depth Vaccine Safety Insights',
-  description: 'In-depth analysis of VAERS data: COVID-19 impact, myocarditis trends, age patterns, death reports, geographic analysis, and more. Context-rich data journalism.'
+  title: 'VAERS Data Analysis — Vaccine Safety Insights',
+  description: 'In-depth analysis of 1.98M VAERS reports: COVID-19 impact, myocarditis, age patterns, death reports, and geographic trends with full context.'
 }
 
 const articles = [

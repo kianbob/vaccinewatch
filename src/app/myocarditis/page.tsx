@@ -6,8 +6,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Myocarditis and COVID Vaccine — VAERS Data & Research',
-  description: 'Complete analysis of myocarditis reports after COVID-19 vaccination. Data from VAERS combined with clinical research on risk factors, outcomes, and context.',
+  title: 'Myocarditis After COVID Vaccine — VAERS Data',
+  description: 'Myocarditis reports after COVID-19 vaccination in VAERS. Risk by age and sex, clinical outcomes, and research context for this confirmed safety signal.',
   openGraph: {
     title: 'Myocarditis and COVID Vaccine — VAERS Data & Research',
     description: 'Myocarditis after COVID vaccination: VAERS data, risk factors, and clinical outcomes.',
@@ -18,6 +18,49 @@ export default function MyocarditisLandingPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Can COVID vaccines cause myocarditis?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, myocarditis is a confirmed but rare side effect of mRNA COVID-19 vaccines (Pfizer and Moderna). The risk is highest in males aged 16-24 after the second dose. Most cases are mild and resolve with treatment.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How common is myocarditis after COVID vaccination?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'VAERS data and clinical studies show approximately 1-4 cases per 100,000 mRNA vaccine doses in young males. The risk is much lower in older adults and females.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What are the symptoms of vaccine-related myocarditis?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Symptoms typically include chest pain, shortness of breath, and heart palpitations, usually appearing within 1-5 days after vaccination. Most cases are mild and patients recover fully.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Is myocarditis from COVID vaccine serious?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Most vaccine-associated myocarditis cases are mild, with the majority of patients recovering fully. Hospitalization is common for monitoring but ICU admission is rare. Clinical studies show most patients have normal cardiac function at follow-up.'
+                }
+              }
+            ]
+          })
+        }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"Myocarditis and COVID Vaccine — VAERS Data & Research","description":"Complete analysis of myocarditis reports after COVID-19 vaccination. Data from VAERS combined with clinical research on risk factors, outcomes, and context.","url":"https://www.vaccinewatch.org/myocarditis","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
       <Breadcrumbs items={[{ label: 'Myocarditis & Vaccines' }]} />
 

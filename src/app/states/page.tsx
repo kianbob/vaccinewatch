@@ -7,8 +7,8 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Adverse Events by State — Geographic VAERS Data',
-  description: 'Vaccine adverse event reports by U.S. state and territory. See per-capita rates, top reporting states, and geographic patterns in VAERS data.'
+  title: 'VAERS Reports by State — Per-Capita Data',
+  description: 'Vaccine adverse event reports by U.S. state. Per-capita rates, top reporting states, and geographic patterns across 50 states.'
 }
 
 const STATE_NAMES: Record<string, string> = {

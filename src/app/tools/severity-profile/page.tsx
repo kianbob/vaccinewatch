@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import SeverityProfileClient from './SeverityProfileClient'
 
 export const metadata: Metadata = {
-  title: 'Severity Profile — Vaccine Outcome Breakdown',
-  description: 'See the complete severity profile for any vaccine: recovery rates, hospitalization rates, death rates, and ER visits compared to the average across all vaccines.'
+  title: 'Vaccine Severity Profile — Outcome Breakdown',
+  description: 'Severity profile for any vaccine: recovery, hospitalization, death, and ER rates compared to the average across all 104 vaccines.'
 }
 
 export default function SeverityProfilePage() {

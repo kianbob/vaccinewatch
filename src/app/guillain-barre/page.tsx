@@ -6,8 +6,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Guillain-Barré & Vaccines — VAERS Data',
-  description: 'Understanding the link between Guillain-Barré Syndrome (GBS) and vaccines. VAERS data, established risk from flu and J&J vaccines, and clinical outcomes.',
+  title: 'Guillain-Barré Syndrome & Vaccines — VAERS Data',
+  description: 'GBS reports after vaccination in VAERS. Established risk from flu and J&J vaccines, clinical outcomes, and recovery data.',
 }
 
 export default function GuillainBarrePage() {

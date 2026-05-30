@@ -10,8 +10,8 @@ import { TopSymptomsChartClient as TopSymptomsChart } from '@/components/ClientC
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Most Reported Symptoms in VAERS',
-  description: 'The 20 most commonly reported adverse symptoms in VAERS, with context on what these symptoms mean.'
+  title: 'Top 20 VAERS Symptoms — Most Reported',
+  description: 'The 20 most reported vaccine adverse event symptoms in VAERS. Fever, headache, pain, fatigue and more — with clinical context.'
 }
 
 interface Symptom {

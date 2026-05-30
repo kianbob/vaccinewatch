@@ -8,8 +8,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Deaths Reported to VAERS — Complete Data & Context',
-  description: 'Analysis of 27,732 death reports in VAERS (1990-2026). Critical context: a VAERS death report does NOT mean the vaccine caused the death. Full data with proper interpretation.',
+  title: 'Vaccine Death Reports in VAERS — 27,732 Cases',
+  description: 'Analyze 27,732 death reports in VAERS (1990-2026) across 104 vaccines. Critical context on what these reports mean and don\'t mean.',
   openGraph: {
     title: 'Vaccine Deaths Reported to VAERS — Data with Context',
     description: '27,732 death reports analyzed with critical context about what VAERS data means.',

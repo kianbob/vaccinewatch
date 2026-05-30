@@ -10,8 +10,8 @@ import { MultiVaccineChartsClient as MultiVaccineCharts } from '@/components/Cli
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'When Multiple Vaccines Are Given Together - VAERS Co-Administration Analysis',
-  description: 'Analysis of VAERS reports when multiple vaccines are administered simultaneously. Understanding co-administration safety patterns and common vaccine combinations.'
+  title: 'Multiple Vaccines at Once — VAERS Safety Data',
+  description: '1,514 vaccine combinations in VAERS. Safety patterns when multiple vaccines are given together and common co-administration combos.'
 }
 
 export default function MultiVaccinePage() {

@@ -13,10 +13,10 @@ const BASE_URL = 'https://www.vaccinewatch.org'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'VaccineWatch — Vaccine Adverse Event Reports',
+    default: 'VAERS Data & Vaccine Safety Reports | VaccineWatch',
     template: '%s | VaccineWatch'
   },
-  description: '1.98 Million Vaccine Adverse Event Reports. Exposed. Explored. Explained. Transparent access to VAERS data for informed decision-making.',
+  description: 'Explore 1.98 million VAERS vaccine adverse event reports across 104 vaccines and 35 years. Search, analyze, and understand vaccine safety data.',
   keywords: ['VAERS', 'vaccine', 'adverse events', 'safety', 'transparency', 'data'],
   authors: [{ name: 'VaccineWatch' }],
   openGraph: {

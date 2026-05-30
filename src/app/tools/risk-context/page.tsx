@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import RiskContextClient from './RiskContextClient'
 
 export const metadata: Metadata = {
-  title: 'Risk Context Calculator — VAERS Numbers in Perspective',
-  description: 'Put VAERS numbers in proper context with dose estimates. Calculate reports per million doses and compare to background disease rates.'
+  title: 'VAERS Risk Context Calculator',
+  description: 'Put VAERS numbers in perspective. Calculate reports per million doses and compare to background disease rates for proper context.'
 }
 
 export default function RiskContextPage() {

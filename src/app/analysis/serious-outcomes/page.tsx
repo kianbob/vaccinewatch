@@ -10,8 +10,8 @@ import { SeriousOutcomesChartsClient as SeriousOutcomesCharts } from '@/componen
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Serious Outcomes Analysis - VAERS Data',
-  description: 'Analysis of serious vs non-serious outcomes in VAERS. Deaths, hospitalizations, ER visits, and disability reports across all vaccines.'
+  title: 'Serious vs Non-Serious VAERS Outcomes',
+  description: 'Deaths, hospitalizations, ER visits, and disabilities in VAERS. How serious outcomes compare across 104 vaccines.'
 }
 
 export default function SeriousOutcomesPage() {

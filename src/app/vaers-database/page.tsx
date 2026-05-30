@@ -8,8 +8,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'VAERS Database — Search Adverse Event Reports',
-  description: 'Explore the VAERS database with interactive tools. 1.98 million vaccine adverse event reports (1990-2026), 104 vaccines, 1,000+ symptoms — all searchable and contextualized.',
+  title: 'VAERS Database Search — 1.98M Reports Online',
+  description: 'Search 1.98M VAERS adverse event reports (1990-2026). 104 vaccines, 1,000+ symptoms — all searchable with interactive tools and context.',
   openGraph: {
     title: 'VAERS Database — Search & Explore Vaccine Safety Data',
     description: '1.98M vaccine adverse event reports made searchable, sortable, and understandable.',
@@ -29,6 +29,41 @@ export default function VAERSDatabasePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'How do I search the VAERS database?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'VaccineWatch provides an easy way to search VAERS data without complex queries. Browse by vaccine, symptom, state, or manufacturer using interactive tools. You can also use the official CDC WONDER system for raw data access.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How often is the VAERS database updated?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'The CDC updates VAERS data weekly, typically on Fridays. VaccineWatch processes and publishes updated data shortly after each CDC release.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Is VAERS data available to the public?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, VAERS data is fully public. Anyone can access it through the CDC WONDER system or through tools like VaccineWatch that make the data easier to explore and understand.'
+                }
+              }
+            ]
+          })
+        }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"VAERS Database — Search & Explore Vaccine Adverse Event Reports","description":"Explore the VAERS database with interactive tools. 1.98 million vaccine adverse event reports (1990-2026), 104 vaccines, 1,000+ symptoms — all searchable and contextualized.","url":"https://www.vaccinewatch.org/vaers-database","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
       <Breadcrumbs items={[{ label: 'VAERS Database' }]} />
 

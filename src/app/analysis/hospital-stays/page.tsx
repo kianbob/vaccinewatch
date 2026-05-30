@@ -10,8 +10,8 @@ import { HospitalStaysChartsClient as HospitalStaysCharts } from '@/components/C
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'How Long Are Vaccine-Related Hospitalizations? - VAERS Hospital Duration Analysis',
-  description: 'Analysis of hospitalization duration for vaccine-related adverse events. Most hospital stays are brief, typically 1-3 days for vaccine-associated hospitalizations.'
+  title: 'Vaccine Hospitalization Duration — VAERS Data',
+  description: '72% of vaccine-related hospitalizations last 3 days or fewer. Duration patterns across 100+ vaccines in VAERS analyzed.'
 }
 
 export default function HospitalStaysPage() {

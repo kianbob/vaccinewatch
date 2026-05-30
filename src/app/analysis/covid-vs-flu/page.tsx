@@ -10,8 +10,8 @@ import { CovidVsFluChartsClient as CovidVsFluCharts } from '@/components/ClientC
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'COVID-19 vs Influenza Vaccines - VAERS Comparison',
-  description: 'Side-by-side comparison of COVID-19 and influenza vaccine adverse event reports in VAERS. Understanding the differences in scale and context.'
+  title: 'COVID vs Flu Vaccine — VAERS Comparison',
+  description: 'Side-by-side VAERS comparison of COVID-19 vs influenza vaccines. Report counts, death rates, and why scale matters for context.'
 }
 
 export default function CovidVsFluPage() {

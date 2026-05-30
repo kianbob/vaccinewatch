@@ -6,8 +6,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Allergic Reactions — Anaphylaxis Data',
-  description: 'Understanding vaccine allergic reactions from mild hives to anaphylaxis. VAERS data, risk factors, the 15-minute wait, and what to do if you react.',
+  title: 'Vaccine Allergic Reactions & Anaphylaxis Data',
+  description: 'VAERS data on vaccine allergic reactions from hives to anaphylaxis. Risk factors, the 15-minute observation rule, and what to do if you react.',
   openGraph: {
     title: 'Allergic Reactions to Vaccines — Anaphylaxis Data & Guidance',
     description: 'Understanding vaccine allergic reactions from mild hives to anaphylaxis. VAERS data, risk factors, the 15-minute wait, and what to do if you react.',

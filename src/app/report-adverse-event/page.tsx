@@ -5,8 +5,8 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'How to Report a Vaccine Adverse Event to VAERS',
-  description: 'Step-by-step guide to reporting a vaccine adverse event to VAERS. Who can report, what to include, and what happens after you file. Plus: how reports become the data on VaccineWatch.',
+  title: 'Report a Vaccine Adverse Event to VAERS',
+  description: 'Step-by-step guide to filing a VAERS report. Who can report, what to include, and what happens after you submit.',
   openGraph: {
     title: 'How to Report a Vaccine Adverse Event to VAERS',
     description: 'Step-by-step guide to reporting a vaccine adverse event to VAERS. Who can report, what to include, and what happens after you file. Plus: how reports become the data on VaccineWatch.',

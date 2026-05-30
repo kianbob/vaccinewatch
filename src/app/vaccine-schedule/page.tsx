@@ -6,8 +6,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'CDC Vaccine Schedule & VAERS Data — Side Effects by Age',
-  description: 'See the recommended CDC vaccine schedule with links to VAERS adverse event data for each vaccine. Understand what\'s given at each age and what side effects are reported.',
+  title: 'CDC Vaccine Schedule with VAERS Safety Data',
+  description: 'CDC-recommended vaccine schedule with links to VAERS adverse event data for each vaccine. Side effects reported by age group.',
   openGraph: {
     title: 'CDC Vaccine Schedule & VAERS Data — Side Effects by Age',
     description: 'See the recommended CDC vaccine schedule with links to VAERS adverse event data for each vaccine.',

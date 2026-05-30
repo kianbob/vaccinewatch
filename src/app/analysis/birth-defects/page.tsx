@@ -10,8 +10,8 @@ import { BirthDefectsChartsClient as BirthDefectsCharts } from '@/components/Cli
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Birth Defect Reports in VAERS',
-  description: 'Analysis of birth defect reports in VAERS by vaccine type. Understanding the context of prenatal vaccination guidelines and background birth defect rates.'
+  title: 'Vaccine Birth Defect Reports — VAERS Data',
+  description: '41 vaccines with birth defect reports in VAERS. Context on prenatal vaccination, 3-4% background rate, and correlation vs causation.'
 }
 
 export default function BirthDefectsPage() {

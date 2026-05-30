@@ -10,8 +10,8 @@ import { ReportingTrendsChartsClient as ReportingTrendsCharts } from '@/componen
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: '35 Years of VAERS Reporting Trends',
-  description: 'Historical analysis of VAERS reporting trends from 1990 to 2026, including the COVID-era surge and return to baseline.'
+  title: 'VAERS Reporting Trends — 1990 to 2026',
+  description: '35 years of VAERS data: from 2,214 reports in 1990 to 768K in 2021. Historical trends, COVID surge, and return to baseline.'
 }
 
 export default function ReportingTrendsPage() {

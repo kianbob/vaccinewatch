@@ -10,8 +10,8 @@ import { WhoReportsChartsClient as WhoReportsCharts } from '@/components/ClientC
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Who Files VAERS Reports? - Analysis of Reporting Sources',
-  description: 'Analysis of who submits VAERS reports: private doctors, public health officials, military, pharmacies, and others. Understanding reporting mandates and patterns.'
+  title: 'Who Files VAERS Reports? — Source Analysis',
+  description: 'VAERS reporting sources analyzed: private doctors, public health, military, pharmacies. Who submits reports and reporting mandates.'
 }
 
 export default function WhoReportsPage() {

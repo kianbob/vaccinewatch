@@ -10,8 +10,8 @@ import { PediatricChartsClient as PediatricCharts } from '@/components/ClientCha
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Pediatric VAERS Analysis - Children 0-17',
-  description: 'Analysis of VAERS adverse event reports for children ages 0-17. Age patterns, vaccine types, and outcome severity in pediatric populations.'
+  title: 'Pediatric Vaccine Reports — Children 0-17',
+  description: 'VAERS adverse event reports for children ages 0-17. Age patterns, most-reported vaccines, and outcome severity in pediatric populations.'
 }
 
 export default function PediatricPage() {

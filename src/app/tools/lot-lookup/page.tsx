@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import LotLookupClient from './LotLookupClient'
 
 export const metadata: Metadata = {
-  title: 'Lot Lookup Tool — COVID-19 Vaccine Lot Number Search',
-  description: 'Search COVID-19 vaccine lot numbers in VAERS data. Important: raw counts cannot determine safety without lot size and distribution context.'
+  title: 'COVID Vaccine Lot Number Lookup — VAERS',
+  description: 'Search 4,414 COVID-19 vaccine lot numbers in VAERS. Reports per lot with context on why raw counts don\'t determine safety.'
 }
 
 export default function LotLookupPage() {

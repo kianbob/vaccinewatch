@@ -10,8 +10,8 @@ import { CovidImpactChartsClient as CovidImpactCharts } from '@/components/Clien
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'The COVID-19 Impact on VAERS',
-  description: 'How the COVID-19 pandemic changed vaccine adverse event reporting, with data analysis of the unprecedented spike in VAERS reports.'
+  title: 'COVID-19 Impact on VAERS Reporting',
+  description: '768,706 VAERS reports in 2021 alone — more than the previous 10 years combined. How COVID-19 transformed vaccine safety reporting.'
 }
 
 export default function CovidImpactPage() {

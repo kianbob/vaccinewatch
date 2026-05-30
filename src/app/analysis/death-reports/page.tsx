@@ -10,8 +10,8 @@ import { DeathReportsChartsClient as DeathReportsCharts } from '@/components/Cli
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Understanding Death Reports in VAERS',
-  description: 'What "death reported to VAERS" actually means, and why context is essential for interpreting these numbers.'
+  title: 'VAERS Death Reports Explained — 27,732 Cases',
+  description: 'What "death reported to VAERS" actually means. 27,732 cases analyzed with critical context on causation vs correlation.'
 }
 
 export default function DeathReportsPage() {

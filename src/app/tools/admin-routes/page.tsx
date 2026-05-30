@@ -6,8 +6,8 @@ import ShareButtons from '@/components/ShareButtons'
 import AdminRoutesClient from './AdminRoutesClient'
 
 export const metadata: Metadata = {
-  title: 'Administration Routes Explorer — Who Gives Vaccines & How',
-  description: 'Explore who administers vaccines (doctors, pharmacies, military) and how they\'re given (IM, oral, subcutaneous) in VAERS data.',
+  title: 'Vaccine Administration Routes — VAERS Data',
+  description: 'Who gives vaccines and how? Explore administration routes (IM, oral, subcutaneous) and settings (doctors, pharmacies, military) in VAERS.',
 }
 
 export default function AdminRoutesPage() {

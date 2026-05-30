@@ -10,8 +10,8 @@ import { GenderChartsClient as GenderCharts } from '@/components/ClientCharts'
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Gender Disparities in VAERS Reporting',
-  description: 'Why 59% of VAERS reports come from women — exploring gender patterns in vaccine adverse event reporting.'
+  title: 'Gender Patterns in VAERS — Why 59% Are Women',
+  description: '59% of VAERS reports come from women. Exploring gender disparities in vaccine adverse event reporting across all vaccines.'
 }
 
 export default function GenderPatternsPage() {

@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import DoseComparisonClient from './DoseComparisonClient'
 
 export const metadata: Metadata = {
-  title: 'Dose Comparison Tool — First vs Second vs Booster Analysis',
-  description: 'Compare adverse event patterns between first dose, second dose, and booster vaccinations. Interactive tool for exploring dose-specific VAERS data.'
+  title: 'Vaccine Dose Comparison Tool — 1st vs 2nd',
+  description: 'Compare adverse events between 1st dose, 2nd dose, and boosters. Interactive VAERS dose comparison for any vaccine.'
 }
 
 export default function DoseComparisonPage() {

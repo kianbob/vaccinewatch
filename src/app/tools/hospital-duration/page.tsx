@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import HospitalDurationClient from './HospitalDurationClient'
 
 export const metadata: Metadata = {
-  title: 'Hospital Duration Explorer — How Long Are Vaccine Hospitalizations?',
-  description: 'Interactive tool to explore hospitalization duration for vaccine adverse events. Most stays are 1-3 days. Compare duration patterns across 100+ vaccines.'
+  title: 'Vaccine Hospitalization Duration Explorer',
+  description: 'How long are vaccine-related hospital stays? Most are 1-3 days. Compare hospitalization duration across 100+ vaccines in VAERS.'
 }
 
 export default function HospitalDurationPage() {

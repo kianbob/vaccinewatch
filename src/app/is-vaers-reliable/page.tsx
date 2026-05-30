@@ -6,8 +6,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Is VAERS Reliable? Strengths & Limitations',
-  description: 'An honest assessment of VAERS reliability. What VAERS can and cannot tell us about vaccine safety, its strengths, limitations, and how to interpret the data correctly.',
+  title: 'Is VAERS Reliable? — Strengths & Limits',
+  description: 'Honest assessment of VAERS reliability. What VAERS can and cannot tell us about vaccine safety, and how to interpret reports correctly.',
   openGraph: {
     title: 'Is VAERS Reliable? — Honest Assessment',
     description: 'What VAERS can and cannot tell us about vaccine safety.',

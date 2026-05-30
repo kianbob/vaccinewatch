@@ -8,8 +8,8 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'All 104 Vaccines in VAERS — Adverse Event Reports',
-  description: 'Browse all 104 vaccines with VAERS adverse event reports. Sortable by total reports, deaths, hospitalizations, and ER visits. See which vaccines have the most reports.',
+  title: 'All 104 Vaccines in VAERS — Safety Report Data',
+  description: 'Browse 104 vaccines in VAERS sorted by reports, deaths, hospitalizations, and ER visits. Compare adverse event data across all vaccine types.',
   openGraph: {
     title: 'All 104 Vaccines in VAERS — Adverse Event Reports',
     description: 'Browse all 104 vaccines with VAERS adverse event reports. Sortable by total reports, deaths, hospitalizations, and ER visits. See which vaccines have the most reports.',
@@ -34,6 +34,41 @@ export default function VaccinesPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'How many vaccines are tracked in VAERS?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'VAERS tracks adverse event reports for 104 different vaccines, including COVID-19, influenza, MMR, HPV, shingles, and many more. Reports span from 1990 to present.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Which vaccine has the most VAERS reports?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'COVID-19 vaccines have the most VAERS reports by a large margin, primarily because of the unprecedented scale of the vaccination campaign (670+ million doses in the US) and heightened public awareness during the pandemic.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Does a high number of VAERS reports mean a vaccine is unsafe?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'No. More reports primarily reflect more doses administered and greater public awareness. Without knowing how many doses were given (the denominator), raw report counts cannot determine relative safety.'
+                }
+              }
+            ]
+          })
+        }}
+      />
       <Breadcrumbs items={[{ label: 'Vaccines' }]} />
 
       {/* Header */}
@@ -170,6 +205,21 @@ export default function VaccinesPage() {
           <li>• VAERS captures <strong>temporal associations</strong>, not proven causal relationships</li>
           <li>• Always consider <strong>background rates</strong> and <strong>reporting incentives</strong></li>
         </ul>
+      </div>
+
+      {/* Related Pages */}
+      <div className="mt-8 bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <h3 className="text-lg font-semibold text-gray-900 mb-3">Explore More VAERS Data</h3>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/symptoms" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">500 Symptoms</Link>
+          <Link href="/manufacturers" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">By Manufacturer</Link>
+          <Link href="/side-effects" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Side Effects Guides</Link>
+          <Link href="/compare" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Compare Vaccines</Link>
+          <Link href="/tools/reporting-rates" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Reporting Rate Calculator</Link>
+          <Link href="/tools/signal-detection" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Safety Signal Detection</Link>
+          <Link href="/dashboard" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Dashboard</Link>
+          <Link href="/vaccine-deaths" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Death Reports</Link>
+        </div>
       </div>
     </div>
   )

@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Injuries — VAERS Reports, VICP Claims & Data',
+  title: 'Vaccine Injuries — VAERS & VICP Data',
   description: 'Understanding vaccine injuries: VAERS adverse event data, the Vaccine Injury Compensation Program (VICP), and what the data shows about serious vaccine reactions.',
 }
 

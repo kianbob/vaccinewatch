@@ -10,8 +10,8 @@ import { OnsetTimingChartsClient as OnsetTimingCharts } from '@/components/Clien
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'When Do Vaccine Side Effects Start? - VAERS Onset Timing Analysis',
-  description: 'Analysis of when vaccine adverse events occur after vaccination. Most side effects start within 0-3 days, with detailed timing by vaccine type and outcome severity.'
+  title: 'Vaccine Side Effect Onset Timing — VAERS Data',
+  description: '73% of vaccine adverse events start within 3 days. Onset timing analysis by vaccine type and outcome severity from VAERS.'
 }
 
 export default function OnsetTimingPage() {

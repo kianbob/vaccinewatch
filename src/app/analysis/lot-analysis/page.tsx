@@ -10,8 +10,8 @@ import { LotAnalysisChartsClient as LotAnalysisCharts } from '@/components/Clien
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Understanding Vaccine Lot Numbers in VAERS',
-  description: 'Analysis of COVID-19 vaccine lot numbers in VAERS reports. Why lot analysis can be misleading without proper context about manufacturing and distribution.'
+  title: 'Vaccine Lot Number Analysis — VAERS Data',
+  description: '4,414 COVID vaccine lots tracked in VAERS. Why lot-level analysis is misleading without manufacturing and distribution context.'
 }
 
 export default function LotAnalysisPage() {

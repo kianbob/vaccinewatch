@@ -10,8 +10,8 @@ import { RecoveryRatesChartsClient as RecoveryRatesCharts } from '@/components/C
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Do Vaccine Side Effects Go Away? - VAERS Recovery Rate Analysis',
-  description: 'Analysis of recovery rates for vaccine adverse events in VAERS. What does "not recovered" mean? How often do vaccine side effects resolve?'
+  title: 'Vaccine Side Effect Recovery Rates — VAERS',
+  description: '68% of VAERS reports indicate recovery. What "not recovered" means and how often vaccine side effects resolve by vaccine type.'
 }
 
 export default function RecoveryRatesPage() {

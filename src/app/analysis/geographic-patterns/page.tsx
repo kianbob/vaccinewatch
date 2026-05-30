@@ -10,8 +10,8 @@ import { GeographicChartsClient as GeographicCharts } from '@/components/ClientC
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Geographic Patterns in VAERS Reporting',
-  description: 'State-level analysis of VAERS adverse event reports. Which states report the most, per-capita patterns, and what drives geographic variation.'
+  title: 'VAERS Reports by State — Geographic Patterns',
+  description: 'State-level VAERS analysis: which states report most, per-capita rates, and what drives geographic variation in adverse events.'
 }
 
 const STATE_NAMES: Record<string, string> = {

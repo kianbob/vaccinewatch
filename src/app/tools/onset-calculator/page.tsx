@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import OnsetCalculatorClient from './OnsetCalculatorClient'
 
 export const metadata: Metadata = {
-  title: 'Onset Calculator — When Do Vaccine Side Effects Start?',
-  description: 'Interactive calculator showing when adverse events typically occur after vaccination for different vaccine types. Explore onset timing patterns in VAERS data.'
+  title: 'Vaccine Side Effect Onset Calculator',
+  description: 'When do vaccine side effects start? Interactive tool showing onset timing for 104 vaccines. 73% occur within 3 days of vaccination.'
 }
 
 export default function OnsetCalculatorPage() {

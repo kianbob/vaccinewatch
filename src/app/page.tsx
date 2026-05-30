@@ -19,9 +19,9 @@ import { YearlyTrendChartClient as YearlyTrendChart } from '@/components/ClientC
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'VaccineWatch — VAERS Adverse Event Reports Exposed, Explored, Explained',
+    absolute: 'VAERS Vaccine Adverse Event Data | VaccineWatch',
   },
-  description: 'Comprehensive analysis of 1.98 million vaccine adverse event reports from VAERS. Transparent data on 104 vaccines, 500 symptoms, and 35 years of reporting history.',
+  description: 'Search 1.98M VAERS reports across 104 vaccines, 500 symptoms, and 35 years. Analyze vaccine adverse events with free interactive tools and data.',
 }
 
 const recentArticles = [
@@ -96,6 +96,57 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What is VAERS and how does it work?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'VAERS (Vaccine Adverse Event Reporting System) is a passive surveillance system run by the CDC and FDA. Anyone can submit a report of an adverse event after vaccination. Reports do not prove causation — they indicate a temporal association.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How many vaccine adverse event reports are in VAERS?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'VAERS contains approximately 1.98 million adverse event reports spanning 35 years (1990-2026), covering 104 different vaccines and over 500 reported symptoms.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Can anyone search the VAERS database?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, VAERS data is publicly available. VaccineWatch makes it easy to search and explore with interactive tools, proper context, and no complex queries needed.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Do VAERS reports prove vaccines caused adverse events?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'No. VAERS reports show temporal associations, not proven causation. An event reported after vaccination may be coincidental, related to an underlying condition, or caused by something else entirely.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How many vaccine-related deaths are reported in VAERS?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'VAERS contains 27,732 death reports (1990-2026). These are reports where death occurred after vaccination — they do not confirm the vaccine caused the death. Context about background mortality rates is essential for interpretation.'
+                }
+              }
+            ]
+          })
+        }}
+      />
       <DisclaimerBanner />
 
       {/* Hero Section — Enhanced with gradient */}

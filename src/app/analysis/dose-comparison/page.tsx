@@ -10,8 +10,8 @@ import { DoseComparisonChartsClient as DoseComparisonCharts } from '@/components
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'First Dose vs Second Dose vs Booster - VAERS Dose Series Analysis',
-  description: 'Analysis comparing adverse event rates between first dose, second dose, and booster COVID-19 vaccinations. Does the second dose really cause more side effects?'
+  title: '1st vs 2nd Dose vs Booster — VAERS Analysis',
+  description: 'COVID-19 vaccine dose comparison: 2nd doses generate 130% more VAERS reports than 1st doses. Adverse event patterns by dose number.'
 }
 
 export default function DoseComparisonPage() {

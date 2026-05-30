@@ -8,8 +8,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Side Effects — Complete VAERS Database Analysis',
-  description: 'Explore reported vaccine side effects from the VAERS database. 1.98 million adverse event reports across 104 vaccines, with context about what the data means and doesn\'t mean.',
+  title: 'Vaccine Side Effects — VAERS Data by Vaccine',
+  description: 'Explore side effects for 14 major vaccines from 1.98M VAERS reports. Data-driven guides with context on what the numbers mean.',
   openGraph: {
     title: 'Vaccine Side Effects — Complete VAERS Database Analysis',
     description: 'Explore 1.98M reported vaccine adverse events across 104 vaccines with full context.',
@@ -39,6 +39,41 @@ export default function SideEffectsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What are the most common vaccine side effects?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'According to VAERS data, the most commonly reported side effects are fever (276,000+ reports), headache, injection site pain, fatigue, and chills. Most are mild and resolve within a few days.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How long do vaccine side effects last?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: '73% of VAERS-reported adverse events occur within 3 days of vaccination, and 68% of reports indicate full recovery. Most common side effects like fever and soreness resolve within 1-3 days.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Which vaccines have the most side effect reports?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'COVID-19 vaccines have the most VAERS reports due to the massive vaccination campaign (670M+ US doses). This does not mean they are less safe — more doses and public awareness lead to more reporting.'
+                }
+              }
+            ]
+          })
+        }}
+      />
       <Breadcrumbs items={[{ label: 'Vaccine Side Effects' }]} />
 
       <div className="mb-8">

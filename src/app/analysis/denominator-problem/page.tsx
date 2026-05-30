@@ -10,8 +10,8 @@ import { DenominatorProblemChartsClient as DenominatorProblemCharts } from '@/co
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Why Raw VAERS Numbers Can Be Misleading - The Denominator Problem',
-  description: 'The most critical limitation of VAERS data: raw report counts are meaningless without knowing how many doses were administered. Understanding rates vs. raw numbers.'
+  title: 'VAERS Denominator Problem — Why Raw Counts Mislead',
+  description: 'Raw VAERS counts are meaningless without dose data. 670M+ COVID doses vs 10M other doses — why rates matter more than counts.'
 }
 
 export default function DenominatorProblemPage() {

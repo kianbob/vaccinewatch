@@ -4,8 +4,8 @@ import { playfairDisplay } from '@/lib/fonts'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'About — Methodology, Data Sources & Mission',
-  description: 'Learn about VaccineWatch, our methodology, data sources, update frequency, and the limitations of VAERS data. Built by TheDataProject.ai for transparent data access.'
+  title: 'About VaccineWatch — VAERS Data Methodology',
+  description: 'Our methodology, data sources, and update process for 1.98M VAERS reports across 104 vaccines. Built by TheDataProject.ai.'
 }
 
 const sisterSites = [

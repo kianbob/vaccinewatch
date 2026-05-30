@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import SignalDetectionWrapper from './SignalDetectionWrapper';
 
 export const metadata: Metadata = {
-  title: 'Signal Detection Dashboard — PRR Safety Signal Analysis',
-  description: 'Explore statistically significant vaccine safety signals using Proportional Reporting Ratio (PRR) analysis of VAERS data. Find disproportionately reported adverse events for every vaccine.',
+  title: 'Vaccine Safety Signal Detection — PRR Analysis',
+  description: '5,225 safety signals detected via PRR analysis of 1.98M VAERS reports. Find disproportionately reported adverse events by vaccine.',
   openGraph: {
     title: 'Signal Detection Dashboard — VaccineWatch',
     description: 'PRR analysis revealing which adverse events are disproportionately reported for each vaccine in VAERS.',

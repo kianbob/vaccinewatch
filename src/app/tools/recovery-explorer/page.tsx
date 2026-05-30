@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import RecoveryExplorerClient from './RecoveryExplorerClient'
 
 export const metadata: Metadata = {
-  title: 'Recovery Explorer — Do Side Effects Go Away?',
-  description: 'Interactive tool to explore recovery rates for vaccine adverse events. Compare recovery outcomes across 100+ vaccines in VAERS.'
+  title: 'Vaccine Recovery Rate Explorer — VAERS',
+  description: 'Do vaccine side effects go away? Explore recovery rates across 100+ vaccines. 68% of VAERS reports indicate full recovery.'
 }
 
 export default function RecoveryExplorerPage() {

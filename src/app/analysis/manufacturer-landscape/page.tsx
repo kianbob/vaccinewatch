@@ -10,8 +10,8 @@ import { ManufacturerLandscapeChartsClient as ManufacturerLandscapeCharts } from
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Manufacturer Landscape - Who Dominates VAERS Reporting',
-  description: 'Analysis of vaccine manufacturer market share in VAERS reports. How a few companies account for the majority of adverse event reports.'
+  title: 'Vaccine Manufacturer Market Share — VAERS',
+  description: 'Which vaccine manufacturers dominate VAERS reports? Market share analysis showing how a few companies account for most adverse events.'
 }
 
 export default function ManufacturerLandscapePage() {
