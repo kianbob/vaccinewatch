@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Flu Vaccine Side Effects — VAERS Data Analysis',
+  title: 'Flu Shot Side Effects 2026 — Common Reactions & VAERS Adverse Event Data',
   description: 'Complete analysis of flu (influenza) vaccine side effects reported to VAERS. Multiple flu vaccine types analyzed with full context and disclaimers.',
   openGraph: {
     title: 'Flu Vaccine Side Effects — VAERS Data Analysis',

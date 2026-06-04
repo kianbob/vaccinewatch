@@ -10,7 +10,7 @@ import { MyocarditisChartsClient as MyocarditisCharts } from '@/components/Clien
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Myocarditis in VAERS — Deep Dive Analysis',
+  title: 'Myocarditis After COVID Vaccine — VAERS Data, Rates & Risk by Age',
   description: 'The most closely-watched COVID-era safety signal. Myocarditis VAERS reports by age, sex, vaccine brand, and clinical outcomes.'
 }
 

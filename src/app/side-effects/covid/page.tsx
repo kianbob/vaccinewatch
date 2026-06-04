@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'COVID-19 Vaccine Side Effects — VAERS Data Analysis',
+  title: 'COVID-19 Vaccine Side Effects — Pfizer, Moderna & J&J VAERS Reports (2026)',
   description: 'Complete analysis of COVID-19 vaccine side effects reported to VAERS. 1.1M+ reports covering Pfizer, Moderna, J&J, and Novavax with full context and disclaimers.',
   openGraph: {
     title: 'COVID-19 Vaccine Side Effects — VAERS Data Analysis',

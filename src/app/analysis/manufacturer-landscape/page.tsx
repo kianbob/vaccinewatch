@@ -10,7 +10,7 @@ import { ManufacturerLandscapeChartsClient as ManufacturerLandscapeCharts } from
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Manufacturer Market Share — VAERS',
+  title: 'Vaccine Manufacturers Ranked by VAERS Reports — Pfizer, Moderna, J&J Data',
   description: 'Which vaccine manufacturers dominate VAERS reports? Market share analysis showing how a few companies account for most adverse events.'
 }
 

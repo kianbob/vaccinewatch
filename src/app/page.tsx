@@ -19,9 +19,9 @@ import { YearlyTrendChartClient as YearlyTrendChart } from '@/components/ClientC
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'VAERS Vaccine Adverse Event Data | VaccineWatch',
+    absolute: 'VaccineWatch — Search 1.98M VAERS Vaccine Adverse Event Reports',
   },
-  description: 'Search 1.98M VAERS reports across 104 vaccines, 500 symptoms, and 35 years. Analyze vaccine adverse events with free interactive tools and data.',
+  description: 'Free VAERS database search: explore 1.98 million vaccine adverse event reports across 104 vaccines, 500+ symptoms, and 35 years of data. Interactive tools, analysis, and full context.',
 }
 
 const recentArticles = [

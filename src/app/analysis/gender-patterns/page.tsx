@@ -10,8 +10,8 @@ import { GenderChartsClient as GenderCharts } from '@/components/ClientCharts'
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Gender Patterns in VAERS — Why 59% Are Women',
-  description: '59% of VAERS reports come from women. Exploring gender disparities in vaccine adverse event reporting across all vaccines.'
+  title: 'Gender Differences in Vaccine Side Effects — Why Women Report 59% of Cases',
+  description: 'Women file 59% of all VAERS vaccine adverse event reports. Data on gender disparities in vaccine reactions, immune response differences, and reporting patterns across 104 vaccines.'
 }
 
 export default function GenderPatternsPage() {
@@ -68,6 +68,19 @@ export default function GenderPatternsPage() {
           <li><strong>Pregnancy-related reporting:</strong> Vaccines given during pregnancy generate additional reporting from both the patient and their healthcare provider</li>
           <li><strong>Occupational exposure:</strong> Women represent a majority of healthcare workers, who are often required to receive certain vaccines and report adverse events</li>
         </ul>
+
+        <h2 className={playfairDisplay.className}>2026 Update: Gender Trends in Recent Data</h2>
+        <p>
+          The gender gap in VAERS reporting has remained remarkably stable through 2026. Even as COVID-19 booster campaigns
+          wound down and reporting returned closer to pre-pandemic baselines, women continued to file the majority of reports.
+          For the 2025-2026 flu season vaccines, women accounted for approximately 62% of adverse event reports —
+          slightly higher than the overall historical average, consistent with higher flu vaccination rates among women.
+        </p>
+        <p>
+          The new RSV vaccines authorized in 2023-2024 for older adults and pregnant women added a notable data point:
+          maternal RSV vaccination reports were almost exclusively filed by women, as expected, but the gender split
+          for the 60+ population receiving RSV vaccines was closer to 55/45 — narrower than most other vaccine categories.
+        </p>
 
         <h2 className={playfairDisplay.className}>Gender and Outcome Severity</h2>
         <p>

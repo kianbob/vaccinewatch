@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Adverse Events — 1.98M VAERS Reports',
+  title: 'Vaccine Adverse Events — Search 1.98M VAERS Reports by Vaccine, Symptom & State',
   description: 'Browse 1.98M vaccine adverse event reports from VAERS across 104 vaccines and 35 years. Understand reporting, outcomes, and trends.',
   alternates: { canonical: 'https://www.vaccinewatch.org/adverse-events' },
   openGraph: {

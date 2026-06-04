@@ -10,7 +10,7 @@ import { PediatricChartsClient as PediatricCharts } from '@/components/ClientCha
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Pediatric Vaccine Reports — Children 0-17',
+  title: 'Pediatric Vaccine Side Effects — VAERS Reports for Children Ages 0-17',
   description: 'VAERS adverse event reports for children ages 0-17. Age patterns, most-reported vaccines, and outcome severity in pediatric populations.'
 }
 
@@ -93,6 +93,31 @@ export default function PediatricPage() {
 
       <div className="mb-12">
         <PediatricCharts ageData={pediatricAgeData} topVaccines={topPediatricVaccines} />
+      </div>
+
+      <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>2026 Pediatric Vaccine Landscape</h2>
+        <p>
+          The pediatric vaccination landscape continues to evolve in 2026. Several developments are shaping
+          the data parents and healthcare providers are watching:
+        </p>
+        <ul>
+          <li><strong>Updated COVID vaccines for children:</strong> The 2025-2026 formulation targeting newer variants
+          was authorized for children 6 months and older. Uptake has been lower than initial childhood COVID vaccination,
+          and VAERS reports reflect this reduced volume</li>
+          <li><strong>RSV prevention for infants:</strong> Nirsevimab (Beyfortus), the monoclonal antibody for infants,
+          entered its second full season in 2025-2026. While technically not a vaccine, adverse events are tracked through
+          similar surveillance systems</li>
+          <li><strong>Routine schedule stability:</strong> The core childhood vaccine schedule (DTaP, MMR, IPV, Hib, PCV, rotavirus)
+          remains stable with no major changes in 2026. VAERS reports for these vaccines continue at historically consistent levels</li>
+          <li><strong>Catch-up vaccination post-pandemic:</strong> Some children who missed routine vaccines during 2020-2021
+          are still catching up, occasionally receiving multiple vaccines at older-than-usual ages</li>
+        </ul>
+        <p>
+          For parents researching vaccine safety, VAERS data is one piece of a larger picture.
+          The <Link href="/vaccine-schedule" className="text-primary hover:underline">CDC vaccine schedule</Link> page
+          links each recommended vaccine to its full VAERS adverse event profile on VaccineWatch.
+        </p>
       </div>
 
       <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">

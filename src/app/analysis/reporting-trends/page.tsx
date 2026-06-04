@@ -10,7 +10,7 @@ import { ReportingTrendsChartsClient as ReportingTrendsCharts } from '@/componen
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'VAERS Reporting Trends — 1990 to 2026',
+  title: 'VAERS Reporting Trends 1990–2026 — 35 Years of Vaccine Safety Data',
   description: '35 years of VAERS data: from 2,214 reports in 1990 to 768K in 2021. Historical trends, COVID surge, and return to baseline.'
 }
 
@@ -93,6 +93,29 @@ export default function ReportingTrendsPage() {
           booster uptake declined, and the heightened awareness of VAERS faded, reports returned toward
           pre-pandemic levels. This pattern confirms that the spike was driven by the pandemic context,
           not a permanent change in reporting behavior.
+        </p>
+
+        <h2 className={playfairDisplay.className}>What&apos;s Happening in 2026</h2>
+        <p>
+          Through mid-2026, VAERS reporting continues its normalization trend. Early data suggests 2026 annual
+          reports will land near the 35,000-45,000 range — essentially back to the 2015-2019 baseline. Key factors shaping
+          the current landscape:
+        </p>
+        <ul>
+          <li><strong>Updated COVID formulations:</strong> The 2025-2026 updated COVID vaccines targeting newer variants
+          saw lower uptake than previous boosters, contributing fewer VAERS reports</li>
+          <li><strong>RSV vaccine monitoring:</strong> RSV vaccines for older adults and maternal immunization (Abrysvo)
+          continue to generate a small but steady stream of reports, being closely watched for safety signals</li>
+          <li><strong>Bird flu preparedness:</strong> With H5N1 avian influenza concerns growing in 2025-2026,
+          pre-pandemic vaccine candidates are under review — any future mass vaccination would likely trigger
+          another reporting surge</li>
+          <li><strong>Routine childhood vaccines:</strong> Reports for DTaP, MMR, and other childhood vaccines
+          remain stable and consistent with historical patterns</li>
+        </ul>
+        <p>
+          The post-pandemic normalization is an important data point: it demonstrates that VAERS&apos;s sensitivity to
+          external events (media coverage, public awareness, new vaccine rollouts) is both a feature and a limitation.
+          Understanding these contextual drivers is essential for interpreting any year&apos;s data accurately.
         </p>
       </div>
 

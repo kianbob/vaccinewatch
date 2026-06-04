@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Shingles Vaccine Side Effects — Zostavax & Shingrix VAERS Data',
+  title: 'Shingrix Side Effects — Shingles Vaccine Reactions & VAERS Safety Data',
   description: 'VAERS analysis of shingles vaccine side effects for both Zostavax and Shingrix. 140,000+ reports analyzed with context.',
 }
 

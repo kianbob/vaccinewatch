@@ -10,7 +10,7 @@ import { ElderlyChartsClient as ElderlyCharts } from '@/components/ClientCharts'
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Elderly Vaccine Reports — Adults 65+ in VAERS',
+  title: 'Vaccine Side Effects in Seniors — VAERS Data for Adults 65 and Older',
   description: 'Adults 65+ account for 56% of VAERS death reports. Deep dive into adverse events, serious outcomes, and vaccine patterns for seniors.'
 }
 

@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'HPV Vaccine Side Effects — Gardasil VAERS Analysis',
+  title: 'HPV Vaccine (Gardasil) Side Effects — VAERS Reports & Safety Data',
   description: 'Complete VAERS analysis of HPV vaccine (Gardasil) side effects. 44,000+ adverse event reports with full context and disclaimers.',
 }
 

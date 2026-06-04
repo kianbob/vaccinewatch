@@ -10,7 +10,7 @@ import { DeathReportsChartsClient as DeathReportsCharts } from '@/components/Cli
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'VAERS Death Reports Explained — 27,732 Cases',
+  title: 'Vaccine Deaths in VAERS — 27,732 Reports Explained (What They Mean & Don\'t)',
   description: 'What "death reported to VAERS" actually means. 27,732 cases analyzed with critical context on causation vs correlation.'
 }
 

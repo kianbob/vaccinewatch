@@ -10,7 +10,7 @@ import { AgeChartsClient as AgeCharts } from '@/components/ClientCharts'
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'VAERS Reports by Age Group — Who Reports Most',
+  title: 'Vaccine Side Effects by Age — Which Age Groups Report the Most to VAERS',
   description: 'Age breakdown of 1.98M VAERS reports. Adults 65+ have 56% of death reports despite 20% of total. Patterns by age group analyzed.'
 }
 
