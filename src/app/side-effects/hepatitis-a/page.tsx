@@ -160,7 +160,177 @@ export default function HepASideEffectsPage() {
         </div>
       </div>
 
-      <div className="border-t border-gray-200 pt-8">
+      
+      {/* 2026 Safety Landscape */}
+      <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>2026 Safety Monitoring Update</h2>
+        <p>
+          As of mid-2026, the hepatitis A vaccine continues to be monitored through VAERS and complementary
+          surveillance systems including the Vaccine Safety Datalink (VSD) and the Clinical Immunization Safety
+          Assessment (CISA) project. No new safety signals have been identified in recent data that would change
+          the established safety profile of this vaccine.
+        </p>
+        <p>
+          The HHS administration&apos;s announced development of AI-powered VAERS analysis tools may provide
+          additional insights into hepatitis A vaccine adverse event patterns. These tools aim to detect
+          subtle signals that traditional statistical methods might miss, though their implementation timeline
+          and methodology remain under development.
+        </p>
+        <p>
+          It&apos;s worth noting that VAERS reporting for routine vaccines like hepatitis A has remained
+          stable through the post-pandemic period. While COVID-19 vaccine reports surged and then declined,
+          reporting patterns for established childhood and adult vaccines have been remarkably consistent,
+          suggesting that the VAERS system continues to function as designed for ongoing safety surveillance.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Understanding VAERS Data for hepatitis A</h2>
+        <p>
+          When interpreting VAERS data for hepatitis A vaccines, several key principles apply:
+        </p>
+        <ul>
+          <li><strong>Reports ≠ Causation:</strong> A VAERS report means an event occurred after vaccination.
+          It does not establish that the vaccine caused the event. Many reported symptoms are common health
+          occurrences that would happen regardless of vaccination.</li>
+          <li><strong>No denominator:</strong> VAERS does not track the number of doses administered. Without
+          knowing how many people received the vaccine, raw report counts cannot be used to calculate risk rates
+          or compare safety across vaccines.</li>
+          <li><strong>Co-administration:</strong> Many vaccines are given at the same visit. When a VAERS report
+          lists multiple vaccines, it&apos;s impossible to determine which vaccine (if any) was responsible for
+          the reported adverse event.</li>
+          <li><strong>Reporting variability:</strong> Healthcare provider awareness, media attention, and public
+          concern all influence how many reports are filed. Changes in report volume may reflect changes in
+          reporting behavior rather than changes in actual safety.</li>
+        </ul>
+
+        <h2 className={playfairDisplay.className}>How to Use This Data Responsibly</h2>
+        <p>
+          VAERS data is most useful as a starting point for conversation with your healthcare provider, not as
+          a basis for medical decisions. If you&apos;re concerned about hepatitis A vaccine side effects:
+        </p>
+        <ul>
+          <li>Discuss your specific risk factors with your doctor or pharmacist</li>
+          <li>Ask about the relative risks of the disease the vaccine prevents vs. the vaccine itself</li>
+          <li>Consider your age, health status, and any previous vaccine reactions</li>
+          <li>Remember that clinical trials and post-market studies provide much stronger safety evidence than VAERS alone</li>
+        </ul>
+        <p>
+          For the most up-to-date safety information, consult the{' '}
+          <a href="https://www.cdc.gov/vaccines/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            CDC&apos;s vaccine information pages
+          </a>{' '}
+          or speak with a qualified healthcare professional.
+        </p>
+      </div>
+
+      {/* Additional Related Links */}
+      <div className="bg-gray-50 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">More Resources</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link href="/analysis/onset-timing" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">When Do Side Effects Start?</div>
+            <div className="text-sm text-gray-500">73% occur within 3 days of vaccination</div>
+          </Link>
+          <Link href="/analysis/serious-outcomes" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Serious vs Non-Serious Outcomes</div>
+            <div className="text-sm text-gray-500">The full severity spectrum in VAERS</div>
+          </Link>
+          <Link href="/report-adverse-event" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Report an Adverse Event</div>
+            <div className="text-sm text-gray-500">How to file a VAERS report</div>
+          </Link>
+          <Link href="/methodology" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Our Methodology</div>
+            <div className="text-sm text-gray-500">How we process VAERS data</div>
+          </Link>
+        </div>
+      </div>
+
+
+      {/* 2026 Safety Landscape */}
+      <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>2026 Safety Monitoring Update</h2>
+        <p>
+          As of mid-2026, the hepatitis A vaccine continues to be monitored through VAERS and complementary
+          surveillance systems including the Vaccine Safety Datalink (VSD) and the Clinical Immunization Safety
+          Assessment (CISA) project. No new safety signals have been identified in recent data that would change
+          the established safety profile of this vaccine.
+        </p>
+        <p>
+          The HHS administration&apos;s announced development of AI-powered VAERS analysis tools may provide
+          additional insights into hepatitis A vaccine adverse event patterns. These tools aim to detect
+          subtle signals that traditional statistical methods might miss, though their implementation timeline
+          and methodology remain under development.
+        </p>
+        <p>
+          It&apos;s worth noting that VAERS reporting for routine vaccines like hepatitis A has remained
+          stable through the post-pandemic period. While COVID-19 vaccine reports surged and then declined,
+          reporting patterns for established childhood and adult vaccines have been remarkably consistent,
+          suggesting that the VAERS system continues to function as designed for ongoing safety surveillance.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Understanding VAERS Data for hepatitis A</h2>
+        <p>
+          When interpreting VAERS data for hepatitis A vaccines, several key principles apply:
+        </p>
+        <ul>
+          <li><strong>Reports ≠ Causation:</strong> A VAERS report means an event occurred after vaccination.
+          It does not establish that the vaccine caused the event. Many reported symptoms are common health
+          occurrences that would happen regardless of vaccination.</li>
+          <li><strong>No denominator:</strong> VAERS does not track the number of doses administered. Without
+          knowing how many people received the vaccine, raw report counts cannot be used to calculate risk rates
+          or compare safety across vaccines.</li>
+          <li><strong>Co-administration:</strong> Many vaccines are given at the same visit. When a VAERS report
+          lists multiple vaccines, it&apos;s impossible to determine which vaccine (if any) was responsible for
+          the reported adverse event.</li>
+          <li><strong>Reporting variability:</strong> Healthcare provider awareness, media attention, and public
+          concern all influence how many reports are filed. Changes in report volume may reflect changes in
+          reporting behavior rather than changes in actual safety.</li>
+        </ul>
+
+        <h2 className={playfairDisplay.className}>How to Use This Data Responsibly</h2>
+        <p>
+          VAERS data is most useful as a starting point for conversation with your healthcare provider, not as
+          a basis for medical decisions. If you&apos;re concerned about hepatitis A vaccine side effects:
+        </p>
+        <ul>
+          <li>Discuss your specific risk factors with your doctor or pharmacist</li>
+          <li>Ask about the relative risks of the disease the vaccine prevents vs. the vaccine itself</li>
+          <li>Consider your age, health status, and any previous vaccine reactions</li>
+          <li>Remember that clinical trials and post-market studies provide much stronger safety evidence than VAERS alone</li>
+        </ul>
+        <p>
+          For the most up-to-date safety information, consult the{' '}
+          <a href="https://www.cdc.gov/vaccines/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            CDC&apos;s vaccine information pages
+          </a>{' '}
+          or speak with a qualified healthcare professional.
+        </p>
+      </div>
+
+      {/* Additional Related Links */}
+      <div className="bg-gray-50 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">More Resources</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link href="/analysis/onset-timing" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">When Do Side Effects Start?</div>
+            <div className="text-sm text-gray-500">73% occur within 3 days of vaccination</div>
+          </Link>
+          <Link href="/analysis/serious-outcomes" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Serious vs Non-Serious Outcomes</div>
+            <div className="text-sm text-gray-500">The full severity spectrum in VAERS</div>
+          </Link>
+          <Link href="/report-adverse-event" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Report an Adverse Event</div>
+            <div className="text-sm text-gray-500">How to file a VAERS report</div>
+          </Link>
+          <Link href="/methodology" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Our Methodology</div>
+            <div className="text-sm text-gray-500">How we process VAERS data</div>
+          </Link>
+        </div>
+      </div>
+
+<div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">More Side Effect Guides</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Link href="/side-effects/hepatitis-b" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">

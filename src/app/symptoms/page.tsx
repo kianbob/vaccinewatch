@@ -166,6 +166,71 @@ export default function SymptomsPage() {
         </div>
       </div>
 
+      {/* How Symptoms Are Coded */}
+      <div className="bg-white border border-gray-200 rounded-xl p-8 mb-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">
+          How VAERS Symptoms Are Coded
+        </h3>
+        <p className="text-gray-600 mb-4">
+          Every symptom in VAERS is coded using MedDRA (Medical Dictionary for Regulatory Activities)
+          Preferred Terms. This standardized medical terminology allows consistent analysis across
+          reports, but it can also create confusion:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Multiple Terms per Report</div>
+            <div className="text-gray-600">
+              A single VAERS report can list multiple symptoms. A person reporting
+              &quot;I felt terrible after my shot&quot; might be coded with headache, fatigue,
+              malaise, and pyrexia — four symptom entries from one experience.
+            </div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Outcomes Coded as Symptoms</div>
+            <div className="text-gray-600">
+              &quot;Death&quot; appears as a MedDRA term because VAERS codes outcomes alongside
+              symptoms. This does not mean the vaccine caused death — it means death was
+              recorded in the report.
+            </div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Administrative Terms</div>
+            <div className="text-gray-600">
+              Terms like &quot;product administered to patient of inappropriate age&quot;
+              or &quot;no adverse event&quot; are coded as symptoms even though they describe
+              administrative events, not medical reactions.
+            </div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Severity Is Not Captured</div>
+            <div className="text-gray-600">
+              MedDRA terms do not encode severity. &quot;Headache&quot; could range from
+              mild and brief to debilitating and persistent. Additional report fields
+              (hospitalization, disability) provide some severity context.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Frequently Asked Questions */}
+      <div className="bg-white border border-gray-200 rounded-xl p-8 mb-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+        <div className="space-y-4 text-sm">
+          <div>
+            <div className="font-semibold text-gray-900">Why does &quot;death&quot; appear as a symptom?</div>
+            <div className="text-gray-600 mt-1">VAERS codes death as a MedDRA Preferred Term alongside other symptoms in the report. It does not mean the vaccine caused the death — it means the outcome was recorded. See our <Link href="/vaccine-deaths" className="text-primary hover:underline">death reports</Link> analysis for full context.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Can I look up a specific symptom for a specific vaccine?</div>
+            <div className="text-gray-600 mt-1">Yes. Click any symptom to see which vaccines are most associated with it, or visit a vaccine&apos;s page to see its top symptoms. You can also use the <Link href="/search" className="text-primary hover:underline">search tool</Link> to find specific combinations.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">What does &quot;severity rate&quot; mean?</div>
+            <div className="text-gray-600 mt-1">Severity rate is the percentage of reports for a given symptom that involve death or hospitalization. A high severity rate means the symptom tends to appear in reports with serious outcomes — not that the symptom itself is severe or vaccine-caused.</div>
+          </div>
+        </div>
+      </div>
+
       {/* Context Box */}
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
         <h3 className="text-lg font-semibold text-blue-900 mb-3">
@@ -196,6 +261,18 @@ export default function SymptomsPage() {
         </div>
       </div>
 
+      {/* Methodology */}
+      <div className="mt-8 bg-white border border-gray-200 rounded-xl p-6">
+        <h3 className="text-lg font-semibold text-gray-900 mb-3">How Symptom Data Is Processed</h3>
+        <p className="text-gray-600 text-sm">
+          Symptoms are extracted from the VAERS SYMPTOMS data file, which uses MedDRA Preferred Terms.
+          Each VAERS report can list up to 5 symptoms. The counts shown here are the number of unique
+          reports mentioning each symptom, not the total number of symptom entries. Reports involving
+          multiple vaccines count the symptom once, not per vaccine. For full methodology details,
+          see our <Link href="/methodology" className="text-primary hover:underline">methodology page</Link>.
+        </p>
+      </div>
+
       {/* Related Pages */}
       <div className="mt-8 bg-gray-50 rounded-xl p-6 border border-gray-200">
         <h3 className="text-lg font-semibold text-gray-900 mb-3">Related VAERS Data</h3>
@@ -207,6 +284,15 @@ export default function SymptomsPage() {
           <Link href="/guillain-barre" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Guillain-Barré</Link>
           <Link href="/analysis/top-symptoms" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Top 20 Symptoms</Link>
           <Link href="/tools/onset-calculator" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Onset Calculator</Link>
+          <Link href="/analysis/top-symptoms" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Top 20 Symptoms</Link>
+          <Link href="/vaccine-deaths" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Death Reports</Link>
+          <Link href="/analysis/recovery-rates" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Recovery Rates</Link>
+          <Link href="/side-effects" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Side Effects Guides</Link>
+          <Link href="/analysis/onset-timing" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Onset Timing</Link>
+          <Link href="/compare" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Compare Vaccines</Link>
+          <Link href="/dashboard" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Dashboard</Link>
+          <Link href="/analysis/reporting-bias" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Reporting Bias</Link>
+          <Link href="/analysis/denominator-problem" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Denominator Problem</Link>
         </div>
       </div>
     </div>

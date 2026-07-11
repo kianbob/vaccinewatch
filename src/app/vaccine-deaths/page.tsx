@@ -231,6 +231,29 @@ export default function VaccineDeathsPage() {
           The vast majority of death reports, upon investigation, are found to be unrelated to vaccination.
         </p>
 
+        <h2 className={playfairDisplay.className}>Historical Context: Confirmed Vaccine-Caused Deaths</h2>
+        <p>
+          While the vast majority of VAERS death reports are coincidental, a small number of
+          vaccine-caused deaths have been confirmed over the decades:
+        </p>
+        <ul>
+          <li><strong>Oral polio vaccine (OPV):</strong> Caused about 8–10 cases of vaccine-derived
+          paralytic polio per year in the U.S., some fatal, before the switch to inactivated
+          polio vaccine (IPV) in 2000</li>
+          <li><strong>J&J COVID-19 vaccine (TTS):</strong> A small number of deaths from
+          thrombosis with thrombocytopenia syndrome, contributing to the vaccine being withdrawn
+          from use</li>
+          <li><strong>Smallpox vaccine:</strong> Rare fatal myocarditis and progressive vaccinia
+          in immunocompromised individuals (military use only)</li>
+          <li><strong>Anaphylaxis:</strong> Extremely rare fatal allergic reactions occur with
+          various vaccines, estimated at fewer than 1 per 10 million doses</li>
+        </ul>
+        <p>
+          These confirmed cases, while tragic, represent an extraordinarily small fraction of
+          the billions of vaccine doses administered. The existence of genuine (but rare) risks
+          is precisely why systems like VAERS exist — to detect and monitor these signals.
+        </p>
+
         <h2 className={playfairDisplay.className}>What the Research Shows</h2>
         <p>
           Large-scale epidemiological studies consistently show that vaccinated populations do 

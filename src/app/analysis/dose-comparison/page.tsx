@@ -67,6 +67,14 @@ export default function DoseComparisonPage() {
 
       {/* Article Content */}
       <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>Why Dose Comparison Matters</h2>
+        <p>
+          Understanding how adverse event patterns change across vaccine doses helps both healthcare
+          providers and patients set appropriate expectations. If second doses are expected to cause
+          stronger reactions, patients can prepare accordingly — and avoid unnecessary alarm when
+          those reactions occur.
+        </p>
+
         <h2 className={playfairDisplay.className}>The "Second Dose Effect"</h2>
         <p>
           Among COVID-19 vaccines, a clear pattern emerges: second doses generate more VAERS reports than first doses. 
@@ -153,11 +161,65 @@ export default function DoseComparisonPage() {
           the timing of rollout, and underlying health conditions rather than inherent differences in vaccine safety by dose.
         </p>
 
+        <h2 className={playfairDisplay.className}>Dose Timing and Interval Effects</h2>
+        <p>
+          Research has shown that the interval between doses can influence both immune response and
+          side effect frequency. Longer intervals between the first and second COVID-19 vaccine doses
+          have been associated with:
+        </p>
+        <ul>
+          <li>Stronger and more durable immune responses</li>
+          <li>Potentially fewer severe side effects after the second dose</li>
+          <li>More balanced antibody and T-cell responses</li>
+        </ul>
+        <p>
+          This finding influenced updated guidance in several countries, where extended intervals
+          of 8–12 weeks were recommended instead of the original 3–4 weeks tested in clinical
+          trials. The VAERS data, while not designed to study dose intervals, is consistent with
+          these findings — reports filed later in the rollout (when longer intervals became more
+          common) showed somewhat different side effect profiles.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Non-COVID Dose Patterns</h2>
+        <p>
+          The dose-dependent reaction pattern is not unique to COVID-19 vaccines. Several other
+          multi-dose vaccines show similar patterns in VAERS:
+        </p>
+        <ul>
+          <li><strong>Shingrix (shingles):</strong> The second dose is known for more intense reactions, particularly in adults over 50</li>
+          <li><strong>HPV vaccines:</strong> Later doses in the series show slightly different symptom profiles</li>
+          <li><strong>Hepatitis B:</strong> Reactogenicity patterns vary across the 3-dose series</li>
+        </ul>
+        <p>
+          These patterns reinforce that dose-dependent reactions are a normal feature of immune
+          system priming, not a COVID-specific phenomenon. Browse dose-level data for any vaccine
+          with the <Link href="/tools/dose-explorer">dose explorer tool</Link>.
+        </p>
+
         <h2 className={playfairDisplay.className}>Clinical Trial vs Real-World Data</h2>
         <p>
           The VAERS pattern aligns with clinical trial findings. In Pfizer and Moderna trials, participants 
           consistently reported more side effects after their second dose. Common symptoms like fatigue, 
           headache, muscle pain, and fever were all more frequent and intense after dose two.
+        </p>
+
+        <h2 className={playfairDisplay.className}>What This Means for Future Vaccines</h2>
+        <p>
+          The dose-dependent pattern observed with COVID-19 vaccines has informed vaccine development
+          strategy going forward. Researchers are investigating:
+        </p>
+        <ul>
+          <li>Whether lower second doses can maintain efficacy while reducing reactogenicity</li>
+          <li>How dose intervals can be optimized for both protection and tolerability</li>
+          <li>Whether mRNA platform modifications can reduce inflammatory responses</li>
+          <li>How prior immunity (from infection or vaccination) affects responses to subsequent doses</li>
+        </ul>
+        <p>
+          These insights from real-world VAERS data and clinical studies are shaping the next
+          generation of vaccines, including updated COVID boosters and novel mRNA vaccines for
+          other diseases. The ability to analyze dose-dependent patterns across millions of
+          real-world vaccinations — something only possible through large-scale surveillance
+          systems like VAERS — provides invaluable data that clinical trials alone cannot capture.
         </p>
       </div>
 
@@ -184,6 +246,35 @@ export default function DoseComparisonPage() {
         </ul>
       </div>
 
+      {/* Denominator context */}
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mb-12">
+        <strong>Denominator context:</strong> Fewer people received boosters than primary doses, which
+        means raw booster report counts must be interpreted carefully. Lower booster report counts may
+        reflect lower uptake rather than fewer side effects per dose. Without precise denominator
+        data for each dose number, comparing raw counts across doses can be misleading. See our{' '}
+        <Link href="/analysis/denominator-problem" className="text-blue-700 underline">denominator problem analysis</Link> for
+        why this matters.
+      </div>
+
+      {/* FAQ */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+        <div className="space-y-4 text-sm">
+          <div>
+            <div className="font-semibold text-gray-900">Should I be worried about second-dose side effects?</div>
+            <div className="text-gray-600 mt-1">Second-dose side effects are generally expected and usually mild (fatigue, headache, fever lasting 1–2 days). They indicate your immune system is responding strongly. If you experienced mild side effects after dose one, you may have slightly stronger reactions after dose two, but serious events remain very rare.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Does the dose pattern apply to updated COVID boosters?</div>
+            <div className="text-gray-600 mt-1">Updated annual COVID boosters tend to produce side effects similar to or milder than the original second dose, particularly for people who have already been vaccinated multiple times. The immune system&apos;s familiarity with the antigen may moderate the response.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Why don&apos;t all multi-dose vaccines show this pattern?</div>
+            <div className="text-gray-600 mt-1">The strength of the dose-dependent effect varies by vaccine technology. mRNA vaccines (Pfizer, Moderna) show a pronounced effect because they trigger strong innate immune activation. Protein subunit and inactivated vaccines may show a subtler pattern.</div>
+          </div>
+        </div>
+      </div>
+
       {/* Related */}
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
@@ -199,6 +290,10 @@ export default function DoseComparisonPage() {
           <Link href="/vaccine-schedule" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">2026 Vaccine Schedule</div>
             <div className="text-sm text-gray-500">Recommended doses and timing by age</div>
+          </Link>
+          <Link href="/analysis/recovery-rates" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Recovery Rates</div>
+            <div className="text-sm text-gray-500">Do side effects resolve by dose?</div>
           </Link>
         </div>
       </div>

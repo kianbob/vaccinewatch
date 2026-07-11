@@ -213,6 +213,54 @@ export default function HowToSearchVAERSPage() {
         </p>
       </div>
 
+      {/* Tips for Interpreting Results */}
+      <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>Tips for Interpreting What You Find</h2>
+        <p>
+          When you search VAERS data, keep these principles in mind to avoid common
+          misinterpretations:
+        </p>
+        <ul>
+          <li><strong>Reports ≠ confirmed adverse events.</strong> A report means something
+          happened after vaccination, not that the vaccine caused it.</li>
+          <li><strong>More reports often means more doses given.</strong> COVID-19 vaccines have
+          the most reports because they were given to the most people. See our{' '}
+          <Link href="/analysis/denominator-problem">denominator problem analysis</Link>.</li>
+          <li><strong>Sort by severity rate, not just raw count.</strong> A symptom with 100,000
+          reports and 0.5% severity is less clinically significant than one with 500 reports
+          and 50% severity.</li>
+          <li><strong>Look at timing patterns.</strong> Reactions within 0–3 days of vaccination
+          are more likely to be vaccine-related than events occurring weeks later.</li>
+          <li><strong>Compare with background rates.</strong> If 3–4% of all births involve
+          defects regardless of vaccination, birth defect reports after vaccination are expected.</li>
+          <li><strong>Check multiple sources.</strong> VAERS is one tool. Confirmed vaccine
+          safety information comes from clinical trials, VSD studies, and expert review.</li>
+        </ul>
+      </div>
+
+      {/* Data Coverage */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-semibold text-gray-900 mb-3">What&apos;s in VaccineWatch&apos;s Database</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <div>
+            <div className="font-bold text-gray-900 text-2xl">104</div>
+            <div className="text-gray-600">Vaccines tracked</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900 text-2xl">500+</div>
+            <div className="text-gray-600">Symptoms indexed</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900 text-2xl">50+</div>
+            <div className="text-gray-600">States &amp; territories</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900 text-2xl">85,000+</div>
+            <div className="text-gray-600">Searchable pages</div>
+          </div>
+        </div>
+      </div>
+
       {/* Popular searches */}
       <div className="mb-12">
         <h2 className={`text-2xl font-bold text-gray-900 mb-6 ${playfairDisplay.className}`}>

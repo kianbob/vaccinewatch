@@ -195,6 +195,36 @@ export default function VaccineSchedulePage() {
       </div>
 
       <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>How Many Shots Does a Child Get?</h2>
+        <p>
+          Parents often wonder about the total number of injections. By age 2, a child following
+          the CDC schedule receives approximately 20–25 doses protecting against 14 diseases. While
+          this sounds like a lot, several factors reduce the actual number of needle sticks:
+        </p>
+        <ul>
+          <li><strong>Combination vaccines</strong> like Pediarix (DTaP + IPV + HepB) and ProQuad
+          (MMR + varicella) combine multiple vaccines into single shots</li>
+          <li><strong>Oral vaccines</strong> like rotavirus are drops, not injections</li>
+          <li><strong>Spread across visits:</strong> Doses are distributed over 6–7 well-child visits
+          in the first 2 years, averaging 2–3 injections per visit</li>
+        </ul>
+        <p>
+          Each vaccine in the table below links to its VAERS adverse event data, so you can review
+          reported side effects for any specific vaccine.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Vaccines Not on the Routine Schedule</h2>
+        <p>
+          Some vaccines are recommended only for specific populations or situations:
+        </p>
+        <ul>
+          <li><strong>Yellow fever:</strong> Required for travel to certain countries in Africa and South America</li>
+          <li><strong>Rabies:</strong> Pre-exposure for veterinarians, animal handlers, and certain travelers</li>
+          <li><strong>Japanese encephalitis:</strong> For travelers to endemic areas in Asia</li>
+          <li><strong>Anthrax &amp; smallpox:</strong> Military and select laboratory personnel</li>
+          <li><strong>Meningococcal B:</strong> Shared clinical decision-making for ages 16–23</li>
+        </ul>
+
         <h2 className={playfairDisplay.className}>About This Schedule</h2>
         <p>
           This schedule follows the CDC&apos;s recommended immunization schedule, which is reviewed 
@@ -257,6 +287,14 @@ export default function VaccineSchedulePage() {
             <div className="text-sm text-gray-500">All 104 vaccines</div>
           </Link>
         </div>
+      </div>
+      {/* Disclaimer */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+        <strong>⚠️ Important:</strong> This schedule is a simplified summary for educational purposes.
+        It does not replace the official CDC immunization schedule. Actual timing may vary based on
+        your medical history, prior vaccinations, and health conditions. Always consult your
+        healthcare provider for personalized vaccination guidance. The official schedule is available
+        at <a href="https://www.cdc.gov/vaccines/schedules/" target="_blank" rel="noopener noreferrer" className="text-amber-900 underline">cdc.gov/vaccines/schedules</a>.
       </div>
     </div>
   )

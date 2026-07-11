@@ -209,6 +209,44 @@ export default function WhoReportsPage() {
           <li>Military populations have more systematic reporting through dedicated healthcare systems</li>
         </ul>
 
+        <h2 className={playfairDisplay.className}>The Rise of Pharmacy Reporting</h2>
+        <p>
+          One significant trend in recent years has been the growth of pharmacy-based vaccination.
+          During the COVID-19 pandemic, pharmacies became primary vaccination sites for millions of
+          Americans. This shift has implications for VAERS reporting:
+        </p>
+        <ul>
+          <li>Pharmacists may have different reporting patterns than physicians</li>
+          <li>Pharmacy systems may facilitate more standardized reporting</li>
+          <li>Patients vaccinated at pharmacies may be less likely to have adverse events
+          followed up by a primary care provider</li>
+          <li>The convenience of pharmacy vaccination has increased overall vaccination rates,
+          which in turn increases VAERS report volume</li>
+        </ul>
+        <p>
+          As pharmacy vaccination expands beyond flu and COVID-19 to include shingles, RSV, and
+          other adult vaccines, understanding pharmacy reporting patterns becomes increasingly
+          important for interpreting VAERS data.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Patient Self-Reporting</h2>
+        <p>
+          A growing share of VAERS reports comes from patients and their families rather than
+          healthcare providers. Patient reports are valuable because they capture events that
+          providers might not learn about, but they also tend to:
+        </p>
+        <ul>
+          <li>Use less precise medical terminology</li>
+          <li>Include more subjective symptom descriptions</li>
+          <li>Be influenced by media coverage and online discussion</li>
+          <li>Lack supporting medical documentation</li>
+        </ul>
+        <p>
+          Neither patient nor provider reports are inherently more reliable — they complement
+          each other. Provider reports offer clinical precision; patient reports capture the
+          lived experience.
+        </p>
+
         <h2 className={playfairDisplay.className}>Implications for Data Interpretation</h2>
         <p>
           Understanding who reports helps interpret VAERS data more accurately:

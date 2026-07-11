@@ -202,6 +202,67 @@ export default function StatesPage() {
         <StatesList states={statesWithNames} />
       </div>
 
+      {/* Per Capita Analysis */}
+      <div className="bg-white border border-gray-200 rounded-xl p-8 mb-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">Understanding Per-Capita Rates</h3>
+        <p className="text-gray-600 mb-4">
+          Per-capita reporting rates (reports per 100,000 residents) normalize for population size and
+          reveal differences in reporting behavior across states. However, even per-capita rates have
+          significant limitations:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Vaccination Rate Differences</div>
+            <div className="text-gray-600">
+              States with higher vaccination rates will naturally have more reports per capita.
+              A state where 90% of residents are vaccinated will generate more reports than one
+              where 70% are vaccinated, even if both have identical adverse event rates per dose.
+            </div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Healthcare Infrastructure</div>
+            <div className="text-gray-600">
+              States with more healthcare providers per capita and stronger public health
+              infrastructure tend to have higher reporting rates. This reflects better surveillance,
+              not more adverse events.
+            </div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Military &amp; Federal Facilities</div>
+            <div className="text-gray-600">
+              States with major military bases or federal healthcare facilities may show elevated
+              reporting because military and federal providers have systematic reporting protocols.
+            </div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">COVID-19 Rollout Timing</div>
+            <div className="text-gray-600">
+              States that began COVID-19 vaccination earlier saw reporting spikes months before
+              others, creating temporary geographic distortions in cumulative data.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Frequently Asked Questions */}
+      <div className="bg-white border border-gray-200 rounded-xl p-8 mb-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+        <div className="space-y-4 text-sm">
+          <div>
+            <div className="font-semibold text-gray-900">Does my state having more VAERS reports mean vaccines are less safe here?</div>
+            <div className="text-gray-600 mt-1">No. Higher report counts reflect larger populations, higher vaccination rates, and stronger reporting culture — not regional differences in vaccine safety. The same vaccine given in California and Wyoming is equally safe.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Why is &quot;Unknown&quot; so high in the state data?</div>
+            <div className="text-gray-600 mt-1">VAERS does not require state information. Manufacturer-submitted reports (which account for a significant portion of total reports) rarely include geographic data, and some patient-submitted reports leave the field blank.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Can I see vaccine requirements for my state?</div>
+            <div className="text-gray-600 mt-1">Yes — see our <Link href="/analysis/state-vaccine-requirements-2026" className="text-primary hover:underline">2026 state vaccine requirements guide</Link> for an overview of school entry laws and exemption types by state.</div>
+          </div>
+        </div>
+      </div>
+
       {/* Context */}
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
         <h3 className="text-lg font-semibold text-blue-900 mb-3">Understanding State Data</h3>
@@ -225,6 +286,16 @@ export default function StatesPage() {
             vaccine requirements by state for 2026
           </Link>.
         </p>
+      </div>
+      {/* Related */}
+      <div className="mt-8 bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <h3 className="text-lg font-semibold text-gray-900 mb-3">Explore More</h3>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/analysis/geographic-patterns" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Geographic Patterns</Link>
+          <Link href="/analysis/state-vaccine-requirements-2026" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">State Requirements 2026</Link>
+          <Link href="/dashboard" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Full Dashboard</Link>
+          <Link href="/analysis/reporting-bias" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Reporting Bias</Link>
+        </div>
       </div>
     </div>
   )

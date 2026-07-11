@@ -151,11 +151,76 @@ export default function DisclaimerPage() {
           this site. For authoritative, current information, always defer to the CDC, FDA, and your healthcare provider.
         </p>
 
+        <h2 className={`${playfairDisplay.className}`}>Data Currency and Updates</h2>
+        <p>
+          VaccineWatch processes VAERS data that is released publicly by the CDC and FDA, typically on a
+          weekly basis. There may be a delay between when a report is submitted to VAERS and when it
+          appears in public data downloads. Aggregate statistics shown on this site reflect the most
+          recent data processing cycle and may differ slightly from real-time VAERS counts. Historical
+          data may also be revised as the CDC updates previously submitted reports with follow-up
+          information.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>Children&apos;s Data and Sensitive Populations</h2>
+        <p>
+          VAERS data includes reports for infants, children, pregnant women, and other sensitive
+          populations. Reports for these groups require especially careful interpretation because
+          background health event rates differ substantially by age, because coincidental events are
+          common in infancy (e.g., SIDS during the peak vaccination window), and because reporting
+          patterns may be influenced by heightened parental concern. Nothing on this site should be
+          used to make vaccination decisions for children or during pregnancy without consulting a
+          qualified healthcare provider.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>Use of Statistical Terms</h2>
+        <p>
+          Throughout this site we use terms like &ldquo;rate,&rdquo; &ldquo;percentage,&rdquo; and
+          &ldquo;severity rate.&rdquo; Unless explicitly stated otherwise, these refer to proportions
+          within the VAERS report set — for example, the share of reports for a given vaccine that
+          mention hospitalization. They are <strong>not</strong> population-based incidence or
+          prevalence rates, because VAERS lacks the denominator (total doses administered) needed for
+          such calculations. For a deeper explanation, see our{' '}
+          <Link href="/analysis/denominator-problem">denominator problem analysis</Link>.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>International Users</h2>
+        <p>
+          VAERS is a United States reporting system. While some reports originate from outside the U.S.
+          (particularly manufacturer reports), the data primarily reflects the American healthcare
+          system, vaccination schedule, and reporting culture. International visitors should consult
+          their own country&apos;s pharmacovigilance authority for locally relevant safety data.
+        </p>
+
         <h2 className={`${playfairDisplay.className}`}>External Links and Third Parties</h2>
         <p>
           This site links to external resources, including official government pages and our sister data projects. We do
           not control and are not responsible for the content, accuracy, or availability of third-party websites. Links
           are provided for convenience and do not imply endorsement.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>Changes to This Disclaimer</h2>
+        <p>
+          We may update this disclaimer periodically to reflect changes in the data, our methodology,
+          or applicable standards. Material changes will be noted on this page. Your continued use of
+          VaccineWatch after any update constitutes acceptance of the revised terms. We encourage you
+          to review this page periodically.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>Contact and Feedback</h2>
+        <p>
+          If you believe any content on VaccineWatch is inaccurate, misleading, or presented without
+          sufficient context, we welcome your feedback. Our goal is to present VAERS data as
+          transparently and responsibly as possible, and we take corrections seriously. Visit our{' '}
+          <Link href="/about">About page</Link> for contact information.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>Scope of Information</h2>
+        <p>
+          VaccineWatch covers adverse event reports submitted to VAERS for vaccines administered in the
+          United States. We do not cover pharmaceutical drugs, medical devices, or non-vaccine biological
+          products. Our analysis is limited to the data fields available in public VAERS data files and
+          does not include confidential medical records, autopsy reports, or follow-up investigations
+          that may be conducted by the CDC or FDA.
         </p>
 
         <h2 className={`${playfairDisplay.className}`}>Our Commitment</h2>
@@ -187,8 +252,41 @@ export default function DisclaimerPage() {
                 VAERS Data Use Guide
               </a> — Official guidance on interpreting VAERS data
             </li>
+            <li>
+              <a href="https://www.fda.gov/vaccines-blood-biologics/vaccines" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                FDA Vaccine Information
+              </a> — Regulatory oversight and approvals
+            </li>
           </ul>
         </div>
+
+        <h2 className={`${playfairDisplay.className}`}>Accessibility</h2>
+        <p>
+          VaccineWatch is committed to making vaccine safety data accessible to all users. We strive
+          to follow web accessibility best practices and welcome feedback on how to improve the
+          experience for users with disabilities. If you encounter barriers to accessing any content
+          on this site, please let us know.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>Data Retention and Privacy</h2>
+        <p>
+          VaccineWatch does not collect personally identifiable information from visitors. The VAERS
+          data displayed on this site has been de-identified by the CDC and FDA before public release.
+          No individual patient can be identified from the aggregate statistics and analyses presented
+          here. For details on how the CDC handles VAERS data privacy, refer to the official{' '}
+          <a href="https://vaers.hhs.gov" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            VAERS website
+          </a>.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>Governing Law</h2>
+        <p>
+          This disclaimer and your use of VaccineWatch are governed by applicable United States law.
+          Any disputes arising from the use of this site shall be resolved in accordance with
+          applicable federal and state law. By accessing and using VaccineWatch, you acknowledge
+          that you have read, understood, and agree to be bound by this disclaimer and all
+          applicable terms.
+        </p>
 
         <p className="text-gray-500 text-sm mt-8">
           Built by{' '}

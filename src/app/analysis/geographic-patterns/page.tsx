@@ -156,7 +156,137 @@ export default function GeographicPatternsPage() {
         </ul>
       </div>
 
-      <div className="border-t border-gray-200 pt-8">
+      
+      {/* 2026 Data Context */}
+      <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>2026 Data Context</h2>
+        <p>
+          As VAERS reporting normalizes following the COVID-19 pandemic surge, the data landscape for geographic variation in reporting
+          is shifting. Annual VAERS reports in 2025-2026 have returned to the 35,000-45,000 range typical of
+          the pre-pandemic era (2015-2019), making year-over-year comparisons more meaningful again.
+        </p>
+        <p>
+          The HHS administration has signaled increased focus on vaccine safety data analysis, including
+          the development of AI-powered tools for pattern detection in VAERS reports. While these tools
+          are still under development, they represent a potential evolution in how adverse event data
+          is analyzed and interpreted.
+        </p>
+        <p>
+          New vaccines entering the market — including RSV vaccines for older adults and pregnant women,
+          updated COVID-19 formulations, and potential H5N1 avian flu vaccines — continue to add new
+          data streams to VAERS. Each new vaccine type provides additional context for understanding
+          geographic variation in reporting across the full spectrum of vaccine safety surveillance.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Limitations of This Analysis</h2>
+        <p>
+          This analysis is based entirely on VAERS passive surveillance data, which carries important
+          limitations that must be understood:
+        </p>
+        <ul>
+          <li><strong>Underreporting:</strong> Studies estimate that only 1-10% of adverse events are
+          reported to VAERS. This means the true number of events is likely much higher than what
+          appears in the data.</li>
+          <li><strong>Stimulated reporting:</strong> Media coverage and public awareness can temporarily
+          increase reporting rates for specific vaccines, independent of any change in actual safety.</li>
+          <li><strong>No control group:</strong> VAERS does not include a comparison group of unvaccinated
+          individuals, making it impossible to determine whether reported events occurred at a higher
+          rate than expected.</li>
+          <li><strong>Variable data quality:</strong> VAERS reports range from detailed medical records
+          submitted by healthcare providers to brief descriptions from patients. Not all reports
+          are verified for medical accuracy.</li>
+          <li><strong>Duplicate reports:</strong> The same event may be reported by multiple people
+          (patient, doctor, manufacturer), and some duplicates may remain in the data.</li>
+        </ul>
+        <p>
+          For these reasons, VAERS data is best used for signal detection — identifying potential safety
+          concerns that warrant further investigation — rather than for definitive risk assessment. When
+          VAERS surfaces a potential signal, it is investigated using more rigorous systems like the
+          Vaccine Safety Datalink (VSD) and controlled epidemiological studies.
+        </p>
+      </div>
+
+      {/* Data Sources */}
+      <div className="bg-gray-50 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-3">About This Data</h3>
+        <p className="text-gray-600 text-sm mb-3">
+          All data on VaccineWatch comes from the official VAERS public-use datasets published by the CDC and FDA.
+          Our current dataset covers reports from 1990 through early 2026. We process the raw data without
+          filtering or editorializing — every metric is a transparent aggregation of official government data.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/methodology" className="text-sm text-primary hover:underline font-medium">Our Methodology →</Link>
+          <Link href="/faq" className="text-sm text-primary hover:underline font-medium">FAQ →</Link>
+          <Link href="/disclaimer" className="text-sm text-primary hover:underline font-medium">Disclaimer →</Link>
+        </div>
+      </div>
+
+
+      {/* 2026 Data Context */}
+      <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>2026 Data Context</h2>
+        <p>
+          As VAERS reporting normalizes following the COVID-19 pandemic surge, the data landscape for geographic variation in reporting
+          is shifting. Annual VAERS reports in 2025-2026 have returned to the 35,000-45,000 range typical of
+          the pre-pandemic era (2015-2019), making year-over-year comparisons more meaningful again.
+        </p>
+        <p>
+          The HHS administration has signaled increased focus on vaccine safety data analysis, including
+          the development of AI-powered tools for pattern detection in VAERS reports. While these tools
+          are still under development, they represent a potential evolution in how adverse event data
+          is analyzed and interpreted.
+        </p>
+        <p>
+          New vaccines entering the market — including RSV vaccines for older adults and pregnant women,
+          updated COVID-19 formulations, and potential H5N1 avian flu vaccines — continue to add new
+          data streams to VAERS. Each new vaccine type provides additional context for understanding
+          geographic variation in reporting across the full spectrum of vaccine safety surveillance.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Limitations of This Analysis</h2>
+        <p>
+          This analysis is based entirely on VAERS passive surveillance data, which carries important
+          limitations that must be understood:
+        </p>
+        <ul>
+          <li><strong>Underreporting:</strong> Studies estimate that only 1-10% of adverse events are
+          reported to VAERS. This means the true number of events is likely much higher than what
+          appears in the data.</li>
+          <li><strong>Stimulated reporting:</strong> Media coverage and public awareness can temporarily
+          increase reporting rates for specific vaccines, independent of any change in actual safety.</li>
+          <li><strong>No control group:</strong> VAERS does not include a comparison group of unvaccinated
+          individuals, making it impossible to determine whether reported events occurred at a higher
+          rate than expected.</li>
+          <li><strong>Variable data quality:</strong> VAERS reports range from detailed medical records
+          submitted by healthcare providers to brief descriptions from patients. Not all reports
+          are verified for medical accuracy.</li>
+          <li><strong>Duplicate reports:</strong> The same event may be reported by multiple people
+          (patient, doctor, manufacturer), and some duplicates may remain in the data.</li>
+        </ul>
+        <p>
+          For these reasons, VAERS data is best used for signal detection — identifying potential safety
+          concerns that warrant further investigation — rather than for definitive risk assessment. When
+          VAERS surfaces a potential signal, it is investigated using more rigorous systems like the
+          Vaccine Safety Datalink (VSD) and controlled epidemiological studies.
+        </p>
+      </div>
+
+      {/* Data Sources */}
+      <div className="bg-gray-50 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-3">About This Data</h3>
+        <p className="text-gray-600 text-sm mb-3">
+          All data on VaccineWatch comes from the official VAERS public-use datasets published by the CDC and FDA.
+          Our current dataset covers reports from 1990 through early 2026. We process the raw data without
+          filtering or editorializing — every metric is a transparent aggregation of official government data.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/methodology" className="text-sm text-primary hover:underline font-medium">Our Methodology →</Link>
+          <Link href="/faq" className="text-sm text-primary hover:underline font-medium">FAQ →</Link>
+          <Link href="/disclaimer" className="text-sm text-primary hover:underline font-medium">Disclaimer →</Link>
+        </div>
+      </div>
+
+<div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Link href="/states" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">

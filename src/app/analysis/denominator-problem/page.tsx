@@ -198,6 +198,29 @@ export default function DenominatorProblemPage() {
           <li>The complexity of rate calculations makes them less &quot;clickable&quot; than raw numbers</li>
         </ul>
 
+        <h2 className={playfairDisplay.className}>How VaccineWatch Addresses the Denominator Problem</h2>
+        <p>
+          Throughout this site, we take several approaches to provide denominator context where
+          possible:
+        </p>
+        <ul>
+          <li><strong>Estimated dose data:</strong> For major vaccines like COVID-19 and influenza,
+          we include publicly available estimates of total doses administered</li>
+          <li><strong>Per-dose rate calculations:</strong> Where denominator estimates are available,
+          we show rates per million or per 100,000 doses alongside raw counts</li>
+          <li><strong>Within-VAERS ratios:</strong> We use ratios like deaths per 1,000 reports to
+          compare patterns <em>within</em> the reporting system, while noting these are not
+          population risk rates</li>
+          <li><strong>Prominent disclaimers:</strong> Every page reminds readers that raw counts
+          are not risk rates</li>
+        </ul>
+        <p>
+          These approaches are imperfect — estimated denominators carry their own uncertainties —
+          but they provide far better context than raw numbers alone. Our{' '}
+          <Link href="/tools/reporting-rates">reporting rate calculator</Link> lets you explore
+          these calculations interactively.
+        </p>
+
         <h2 className={playfairDisplay.className}>Why This Article Matters Most</h2>
         <p>
           Understanding the denominator problem is perhaps the most important concept for anyone 
@@ -234,6 +257,25 @@ export default function DenominatorProblemPage() {
         </ul>
       </div>
 
+      {/* Interactive */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">See the Denominator Problem in Action</h3>
+        <p className="text-gray-600 text-sm mb-4">
+          Our interactive tools let you explore how denominators change the picture.
+          Try adjusting estimated dose counts to see how rates shift.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <Link href="/tools/reporting-rates" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">Reporting Rate Calculator →</div>
+            <div className="text-sm text-gray-500">Calculate rates with your own denominators</div>
+          </Link>
+          <Link href="/tools/risk-context" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">Risk Context Calculator →</div>
+            <div className="text-sm text-gray-500">Put vaccine risks in everyday perspective</div>
+          </Link>
+        </div>
+      </div>
+
       {/* Related */}
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
@@ -249,6 +291,10 @@ export default function DenominatorProblemPage() {
           <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">The COVID-19 Impact on VAERS</div>
             <div className="text-sm text-gray-500">Why 2021 report counts exploded</div>
+          </Link>
+          <Link href="/analysis/lot-analysis" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Lot Analysis</div>
+            <div className="text-sm text-gray-500">The denominator problem at lot level</div>
           </Link>
         </div>
       </div>

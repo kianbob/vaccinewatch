@@ -86,6 +86,13 @@ export default function BirthDefectsPage() {
 
       {/* Article Content */}
       <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>Why This Analysis Is Necessary</h2>
+        <p>
+          Birth defect reports in VAERS are among the most emotionally charged data points in
+          vaccine safety. This analysis provides the statistical and clinical context needed to
+          interpret these reports accurately and responsibly.
+        </p>
+
         <h2 className={playfairDisplay.className}>Critical Context: Background Birth Defect Rates</h2>
         <p>
           Before analyzing any birth defect reports in VAERS, it&apos;s essential to understand the baseline: 
@@ -192,6 +199,27 @@ export default function BirthDefectsPage() {
           <li><strong>Individual factors:</strong> Medical history, exposure risks, and personal circumstances</li>
         </ul>
 
+        <h2 className={playfairDisplay.className}>COVID-19 Vaccines and Pregnancy</h2>
+        <p>
+          COVID-19 vaccination during pregnancy has been extensively studied, with data from
+          hundreds of thousands of pregnant women:
+        </p>
+        <ul>
+          <li><strong>v-safe pregnancy registry:</strong> Over 35,000 pregnant participants showed
+          no increase in adverse pregnancy outcomes compared to background rates</li>
+          <li><strong>No increase in birth defects:</strong> Multiple large studies found birth
+          defect rates consistent with the expected 3–4% background rate</li>
+          <li><strong>Maternal protection:</strong> COVID-19 infection during pregnancy carries
+          significantly higher risks of preterm birth, preeclampsia, and ICU admission than
+          vaccination</li>
+          <li><strong>Neonatal protection:</strong> Maternal antibodies transfer to the baby,
+          providing early-life protection against severe COVID-19</li>
+        </ul>
+        <p>
+          The CDC and ACOG (American College of Obstetricians and Gynecologists) both recommend
+          COVID-19 vaccination during pregnancy based on this evidence.
+        </p>
+
         <h2 className={playfairDisplay.className}>What the Evidence Actually Shows</h2>
         <p>
           Large-scale studies of vaccines recommended during pregnancy have consistently found:
@@ -231,6 +259,21 @@ export default function BirthDefectsPage() {
         </ul>
       </div>
 
+      {/* FAQ */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+        <div className="space-y-4 text-sm">
+          <div>
+            <div className="font-semibold text-gray-900">Should I avoid all vaccines during pregnancy?</div>
+            <div className="text-gray-600 mt-1">No. Certain vaccines are specifically recommended during pregnancy (Tdap, flu, and RSV) because they protect both the mother and newborn. Live vaccines (MMR, varicella) should be avoided during pregnancy. Always discuss with your OB/GYN.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">If I was vaccinated before I knew I was pregnant, should I worry?</div>
+            <div className="text-gray-600 mt-1">Inadvertent vaccination during early pregnancy is not uncommon and studies have not shown increased risk of birth defects. If you received a live vaccine (like MMR) before knowing you were pregnant, inform your healthcare provider but the risk is theoretical, not demonstrated.</div>
+          </div>
+        </div>
+      </div>
+
       {/* Related */}
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
@@ -246,6 +289,14 @@ export default function BirthDefectsPage() {
           <Link href="/vaccine-schedule" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">2026 Vaccine Schedule</div>
             <div className="text-sm text-gray-500">Recommended vaccines by age and during pregnancy</div>
+          </Link>
+          <Link href="/analysis/recovery-rates" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Recovery Rates</div>
+            <div className="text-sm text-gray-500">Outcome patterns across vaccines</div>
+          </Link>
+          <Link href="/analysis/who-reports" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Who Reports to VAERS?</div>
+            <div className="text-sm text-gray-500">How reporting sources shape the data</div>
           </Link>
         </div>
       </div>

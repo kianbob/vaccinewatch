@@ -253,6 +253,37 @@ export default function GlossaryPage() {
         })}
       </div>
 
+      {/* How to Use This Glossary */}
+      <div className="mt-12 bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-3">How to Use This Glossary</h3>
+        <div className="text-blue-800 space-y-2 text-sm">
+          <p>
+            This glossary is designed to help you navigate VaccineWatch and interpret VAERS data
+            correctly. Key concepts to understand before exploring the data:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div className="bg-white/80 rounded-xl p-4">
+              <div className="font-semibold text-blue-900 mb-1">Start Here</div>
+              <div className="text-blue-800">
+                If you&apos;re new to VAERS, read the definitions for <strong>Adverse Event</strong>,{' '}
+                <strong>Passive Surveillance</strong>, <strong>Causation vs Correlation</strong>,
+                and <strong>Denominator Problem</strong>. These four concepts are essential for
+                understanding everything else on this site.
+              </div>
+            </div>
+            <div className="bg-white/80 rounded-xl p-4">
+              <div className="font-semibold text-blue-900 mb-1">For Deeper Analysis</div>
+              <div className="text-blue-800">
+                Terms like <strong>PRR</strong>, <strong>Stimulated Reporting</strong>,{' '}
+                <strong>Confidence Interval</strong>, and <strong>Epidemiology</strong> help
+                you understand how researchers analyze VAERS data and why raw counts can be
+                misleading. Many terms link to full analysis articles with charts and examples.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* CTA */}
       <div className="mt-12 border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Explore More</h3>

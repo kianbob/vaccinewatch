@@ -59,6 +59,14 @@ export default function ReportingBiasPage() {
 
       {/* Article Content */}
       <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>Why Understanding Bias Is Essential</h2>
+        <p>
+          Reporting bias is arguably the most important concept for anyone interpreting VAERS data.
+          Without understanding how and why reporting rates change, raw VAERS numbers can lead to
+          dangerously wrong conclusions about vaccine safety. This analysis provides the framework
+          needed to interpret VAERS data responsibly.
+        </p>
+
         <h2 className={playfairDisplay.className}>What is Reporting Bias?</h2>
         <p>
           VAERS is a passive surveillance system that depends on voluntary reporting. This creates multiple 
@@ -168,6 +176,40 @@ export default function ReportingBiasPage() {
           <li><strong>Setting expectations:</strong> Healthcare providers need to understand that VAERS data reflect reporting behavior as much as actual event rates</li>
         </ul>
 
+        <h2 className={playfairDisplay.className}>Underreporting: The Other Side of Bias</h2>
+        <p>
+          While stimulated reporting inflates numbers for some vaccines, underreporting reduces
+          counts for others. Studies estimate that VAERS captures only a fraction of actual adverse
+          events:
+        </p>
+        <ul>
+          <li><strong>Mild events (soreness, low-grade fever):</strong> estimated 1–5% reporting rate</li>
+          <li><strong>Moderate events (high fever, extended fatigue):</strong> estimated 5–25% reporting rate</li>
+          <li><strong>Serious events (hospitalization, disability):</strong> estimated 25–50% reporting rate</li>
+          <li><strong>Deaths:</strong> highest reporting rate, but still not 100%</li>
+        </ul>
+        <p>
+          This means that VAERS simultaneously overcounts some events (through stimulated reporting of
+          coincidental events) and undercounts others (through failure to report genuine reactions).
+          The net effect varies by vaccine, time period, and event type — making raw VAERS counts
+          unreliable for estimating true adverse event rates.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Correcting for Bias: What Researchers Do</h2>
+        <p>
+          Researchers use several techniques to account for reporting bias when analyzing VAERS data:
+        </p>
+        <ul>
+          <li><strong>Proportional Reporting Ratios (PRR):</strong> Compare reporting patterns across
+          vaccines to identify disproportionate signals, controlling for overall reporting volume</li>
+          <li><strong>Empirical Bayesian methods:</strong> Statistical techniques that adjust for
+          baseline reporting differences between vaccines and time periods</li>
+          <li><strong>Multi-source triangulation:</strong> Cross-referencing VAERS signals with active
+          surveillance systems (VSD, BEST) that have known denominators</li>
+          <li><strong>Historical comparisons:</strong> Analyzing whether current reporting for a
+          vaccine deviates from historical patterns for similar vaccines</li>
+        </ul>
+
         <h2 className={playfairDisplay.className}>Why This Matters for Credibility</h2>
         <p>
           Acknowledging and explaining reporting bias is crucial for maintaining VAERS credibility. 
@@ -179,6 +221,16 @@ export default function ReportingBiasPage() {
           <li>It reduces misuse of VAERS data for inappropriate purposes</li>
           <li>It highlights the importance of active surveillance and controlled studies</li>
         </ul>
+      </div>
+
+      {/* Historical context */}
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mb-12">
+        <strong>Historical perspective:</strong> Stimulated reporting is not unique to COVID-19.
+        The 1976 swine flu vaccination campaign saw a similar (though smaller) spike in VAERS
+        predecessor reports after media coverage of Guillain-Barré cases. The 1998 autism-vaccine
+        controversy also increased reporting of developmental symptoms after childhood vaccination.
+        In each case, reporting rates eventually returned to baseline as media attention faded — a
+        pattern consistent with stimulated reporting rather than genuine changes in vaccine safety.
       </div>
 
       {/* Key Takeaways */}
@@ -204,6 +256,25 @@ export default function ReportingBiasPage() {
         </ul>
       </div>
 
+      {/* Explore More */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Tools for Understanding Bias</h3>
+        <p className="text-gray-600 text-sm mb-4">
+          Use these tools to see reporting bias in action — compare reporting rates across
+          vaccines and time periods to understand how bias shapes the numbers.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <Link href="/tools/reporting-rates" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">Reporting Rate Calculator →</div>
+            <div className="text-sm text-gray-500">See how rates differ by vaccine and era</div>
+          </Link>
+          <Link href="/tools/signal-detection" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">Safety Signal Detection →</div>
+            <div className="text-sm text-gray-500">How real signals are distinguished from noise</div>
+          </Link>
+        </div>
+      </div>
+
       {/* Related */}
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
@@ -219,6 +290,10 @@ export default function ReportingBiasPage() {
           <Link href="/analysis/who-reports" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Who Files VAERS Reports?</div>
             <div className="text-sm text-gray-500">How reporting sources shape the data</div>
+          </Link>
+          <Link href="/analysis/reporting-trends" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">35 Years of VAERS Reporting</div>
+            <div className="text-sm text-gray-500">Historical reporting trends</div>
           </Link>
         </div>
       </div>

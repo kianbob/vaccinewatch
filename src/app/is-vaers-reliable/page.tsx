@@ -96,6 +96,14 @@ export default function IsVAERSReliablePage() {
           <li><strong>Guillain-Barré from flu vaccines:</strong> Ongoing monitoring of this rare association</li>
         </ul>
 
+        <h2 className={playfairDisplay.className}>A Brief History of VAERS</h2>
+        <p>
+          VAERS was established by the National Childhood Vaccine Injury Act of 1986, the same
+          legislation that created the Vaccine Injury Compensation Program (VICP). It has been
+          collecting reports since 1990. Over 35 years, VAERS has proven its value by detecting
+          multiple genuine safety signals that led to changes in vaccine policy.
+        </p>
+
         <h2 className={playfairDisplay.className}>The Strengths of VAERS</h2>
         
         <h3>1. Anyone Can Report</h3>
@@ -189,6 +197,28 @@ export default function IsVAERSReliablePage() {
           whether the signal is real.
         </p>
 
+        <h2 className={playfairDisplay.className}>International Comparisons</h2>
+        <p>
+          VAERS is not unique — many countries maintain similar passive surveillance systems. Comparing
+          these systems provides useful perspective:
+        </p>
+        <ul>
+          <li><strong>Yellow Card (UK):</strong> The UK&apos;s equivalent system, run by the MHRA. Similar
+          structure to VAERS with similar strengths and limitations.</li>
+          <li><strong>EudraVigilance (EU):</strong> The European Medicines Agency&apos;s system for
+          collecting adverse reaction reports across EU member states.</li>
+          <li><strong>VigiBase (WHO):</strong> The WHO&apos;s global database of individual case safety
+          reports, aggregating data from over 150 countries.</li>
+          <li><strong>CAEFISS (Canada):</strong> Canada&apos;s adverse events following immunization
+          surveillance system.</li>
+        </ul>
+        <p>
+          When safety signals are detected independently across multiple countries&apos; surveillance
+          systems — as happened with myocarditis after mRNA vaccines — it increases confidence
+          that the signal is real. Conversely, signals that appear in one system but not others
+          may reflect reporting artifacts rather than true safety concerns.
+        </p>
+
         <h2 className={playfairDisplay.className}>The Bottom Line</h2>
         <p>
           VAERS is a valuable and necessary part of vaccine safety monitoring. It&apos;s reliable 
@@ -199,6 +229,25 @@ export default function IsVAERSReliablePage() {
           The best approach: take VAERS data seriously, but interpret it with context. That&apos;s 
           exactly what VaccineWatch aims to provide.
         </p>
+      </div>
+
+      {/* FAQ */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+        <div className="space-y-4 text-sm">
+          <div>
+            <div className="font-semibold text-gray-900">If VAERS has so many limitations, why does it exist?</div>
+            <div className="text-gray-600 mt-1">Because casting a wide net to catch rare signals is worth the trade-off of capturing noise. VAERS has detected real safety issues (myocarditis, TTS, intussusception) that were too rare to find in clinical trials. No other system can do this as quickly or cheaply.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Has anyone been prosecuted for filing a false VAERS report?</div>
+            <div className="text-gray-600 mt-1">Filing a false VAERS report is a federal crime punishable by fine and imprisonment. While enforcement is rare, the legal penalty exists to deter deliberate misinformation. Most inaccuracies in VAERS are unintentional, not malicious.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Can I trust the data on VaccineWatch?</div>
+            <div className="text-gray-600 mt-1">VaccineWatch presents the same underlying VAERS data available through the official CDC WONDER system. We add context, visualizations, and analysis to help you interpret it correctly. We do not alter the underlying data.</div>
+          </div>
+        </div>
       </div>
 
       <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
@@ -239,6 +288,14 @@ export default function IsVAERSReliablePage() {
             <div className="text-sm text-gray-500">VAERS terminology</div>
           </Link>
         </div>
+      </div>
+
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+        <strong>The bottom line for data users:</strong> When you encounter VAERS data on VaccineWatch
+        or elsewhere, ask yourself three questions: (1) What is the denominator? (2) Could stimulated
+        reporting or reporting bias explain the pattern? (3) Has this signal been confirmed by active
+        surveillance or controlled studies? If you can&apos;t answer these questions, treat the data as
+        hypothesis-generating, not as evidence of harm.
       </div>
     </div>
   )

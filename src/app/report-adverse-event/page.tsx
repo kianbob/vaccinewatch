@@ -150,7 +150,157 @@ export default function ReportAdverseEventPage() {
       </div>
 
       {/* Related Pages */}
-      <div className="border-t border-gray-200 pt-8">
+      
+      {/* Additional Tips */}
+      <div className="prose prose-lg max-w-4xl mb-10">
+        <h2 className={playfairDisplay.className}>Common Questions About Filing VAERS Reports</h2>
+        <p>
+          <strong>Do I need a doctor to file a report?</strong><br/>
+          No. While healthcare providers are the most common reporters, anyone can file a VAERS report.
+          Patient-submitted reports provide valuable data, especially for events that occur days or weeks
+          after vaccination when the patient may not see their doctor.
+        </p>
+        <p>
+          <strong>Will filing a report get the vaccine recalled?</strong><br/>
+          No. Individual reports do not trigger vaccine recalls. VAERS uses statistical analysis to identify
+          patterns across many reports. A safety signal requires a consistent pattern, not a single report.
+          When a signal is detected, it is investigated through more rigorous studies before any action is taken.
+        </p>
+        <p>
+          <strong>Is there a time limit for filing?</strong><br/>
+          There is no strict time limit, but reports are most useful when filed as soon as possible after
+          the adverse event. Healthcare providers are required to report certain events within specific
+          timeframes.
+        </p>
+        <p>
+          <strong>Can I file a report for someone else?</strong><br/>
+          Yes. Parents, caregivers, family members, and other representatives can file reports on behalf
+          of the person who received the vaccine and experienced the adverse event.
+        </p>
+        <p>
+          <strong>What if I don&apos;t have all the information?</strong><br/>
+          Submit what you have. Partial reports are accepted and still contribute to safety monitoring.
+          Key information includes the vaccine name, vaccination date, symptom onset date, and a description
+          of the event. The lot number is helpful but not required.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Vaccine Injury Compensation</h2>
+        <p>
+          If you believe you or a family member was injured by a vaccine, you may be eligible for compensation
+          through the <Link href="/vaccine-injuries">National Vaccine Injury Compensation Program (VICP)</Link>.
+          Filing a VAERS report is separate from filing a VICP claim, but VAERS reports can be used as
+          supporting documentation.
+        </p>
+        <p>
+          The VICP covers vaccines routinely recommended for children and includes a Vaccine Injury Table
+          listing specific conditions and time frames. Claims must typically be filed within 3 years of
+          the first symptom. An attorney is not required but may be helpful for complex cases.
+        </p>
+        <p>
+          For COVID-19 vaccines administered under Emergency Use Authorization, compensation is handled
+          through the separate Countermeasures Injury Compensation Program (CICP), which has different
+          requirements and timelines.
+        </p>
+      </div>
+
+      <div className="bg-gray-50 rounded-xl p-6 mb-10 max-w-4xl">
+        <h3 className="text-lg font-bold text-gray-900 mb-3">VAERS by the Numbers (2026)</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div>
+            <div className="text-2xl font-bold text-primary">1.98M+</div>
+            <div className="text-xs text-gray-500">Total Reports</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-primary">35+</div>
+            <div className="text-xs text-gray-500">Years of Data</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-primary">104</div>
+            <div className="text-xs text-gray-500">Vaccine Types</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-primary">50</div>
+            <div className="text-xs text-gray-500">States + Territories</div>
+          </div>
+        </div>
+      </div>
+
+
+      {/* Additional Tips */}
+      <div className="prose prose-lg max-w-4xl mb-10">
+        <h2 className={playfairDisplay.className}>Common Questions About Filing VAERS Reports</h2>
+        <p>
+          <strong>Do I need a doctor to file a report?</strong><br/>
+          No. While healthcare providers are the most common reporters, anyone can file a VAERS report.
+          Patient-submitted reports provide valuable data, especially for events that occur days or weeks
+          after vaccination when the patient may not see their doctor.
+        </p>
+        <p>
+          <strong>Will filing a report get the vaccine recalled?</strong><br/>
+          No. Individual reports do not trigger vaccine recalls. VAERS uses statistical analysis to identify
+          patterns across many reports. A safety signal requires a consistent pattern, not a single report.
+          When a signal is detected, it is investigated through more rigorous studies before any action is taken.
+        </p>
+        <p>
+          <strong>Is there a time limit for filing?</strong><br/>
+          There is no strict time limit, but reports are most useful when filed as soon as possible after
+          the adverse event. Healthcare providers are required to report certain events within specific
+          timeframes.
+        </p>
+        <p>
+          <strong>Can I file a report for someone else?</strong><br/>
+          Yes. Parents, caregivers, family members, and other representatives can file reports on behalf
+          of the person who received the vaccine and experienced the adverse event.
+        </p>
+        <p>
+          <strong>What if I don&apos;t have all the information?</strong><br/>
+          Submit what you have. Partial reports are accepted and still contribute to safety monitoring.
+          Key information includes the vaccine name, vaccination date, symptom onset date, and a description
+          of the event. The lot number is helpful but not required.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Vaccine Injury Compensation</h2>
+        <p>
+          If you believe you or a family member was injured by a vaccine, you may be eligible for compensation
+          through the <Link href="/vaccine-injuries">National Vaccine Injury Compensation Program (VICP)</Link>.
+          Filing a VAERS report is separate from filing a VICP claim, but VAERS reports can be used as
+          supporting documentation.
+        </p>
+        <p>
+          The VICP covers vaccines routinely recommended for children and includes a Vaccine Injury Table
+          listing specific conditions and time frames. Claims must typically be filed within 3 years of
+          the first symptom. An attorney is not required but may be helpful for complex cases.
+        </p>
+        <p>
+          For COVID-19 vaccines administered under Emergency Use Authorization, compensation is handled
+          through the separate Countermeasures Injury Compensation Program (CICP), which has different
+          requirements and timelines.
+        </p>
+      </div>
+
+      <div className="bg-gray-50 rounded-xl p-6 mb-10 max-w-4xl">
+        <h3 className="text-lg font-bold text-gray-900 mb-3">VAERS by the Numbers (2026)</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div>
+            <div className="text-2xl font-bold text-primary">1.98M+</div>
+            <div className="text-xs text-gray-500">Total Reports</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-primary">35+</div>
+            <div className="text-xs text-gray-500">Years of Data</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-primary">104</div>
+            <div className="text-xs text-gray-500">Vaccine Types</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-primary">50</div>
+            <div className="text-xs text-gray-500">States + Territories</div>
+          </div>
+        </div>
+      </div>
+
+<div className="border-t border-gray-200 pt-8">
         <h2 className={`text-xl font-bold text-gray-900 mb-6 ${playfairDisplay.className}`}>Related Resources</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <Link href="/adverse-events" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all">

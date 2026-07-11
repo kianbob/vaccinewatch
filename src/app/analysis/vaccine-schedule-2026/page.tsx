@@ -190,6 +190,28 @@ export default function VaccineSchedule2026Page() {
           <li><strong>PCV20 pathway:</strong> a single-dose pneumococcal option that simplifies adult vaccination.</li>
         </ul>
 
+        <h2 className={playfairDisplay.className}>The Childhood Schedule: Why So Many, So Early?</h2>
+        <p>
+          Parents sometimes question why the infant schedule is so dense. The medical rationale is
+          straightforward: infants are most vulnerable to many infectious diseases during their first
+          year of life, when maternal antibodies are waning and their own immune systems are still
+          developing. Delaying vaccines leaves children unprotected during their highest-risk period.
+        </p>
+        <p>
+          Key facts about the childhood schedule:
+        </p>
+        <ul>
+          <li><strong>Multiple vaccines at one visit is safe and well-studied.</strong> Co-administration
+          studies are required before vaccines can be recommended together. See our{' '}
+          <Link href="/analysis/multi-vaccine">multi-vaccine analysis</Link>.</li>
+          <li><strong>Combination vaccines reduce injections.</strong> Products like Pediarix (DTaP + IPV +
+          HepB) and ProQuad (MMR + varicella) combine multiple antigens into single shots.</li>
+          <li><strong>The immune system can handle it.</strong> Infants encounter far more antigens from
+          everyday environmental exposure than from all childhood vaccines combined.</li>
+          <li><strong>Catch-up schedules exist.</strong> Children who fall behind can follow CDC catch-up
+          guidance with adjusted intervals to get back on track.</li>
+        </ul>
+
         <h2 className={playfairDisplay.className}>Understanding Side Effects for Every Vaccine</h2>
         <p>
           Every vaccine in the schedule has an expected side effect profile — most commonly soreness at the
@@ -220,6 +242,33 @@ export default function VaccineSchedule2026Page() {
         </div>
       </div>
 
+      {/* Key Takeaways */}
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
+        <ul className="space-y-3 text-gray-700">
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">1.</span>
+            <span>The 2026 schedule covers vaccines from birth through 65+ across all life stages</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">2.</span>
+            <span>Key 2026 updates include expanded RSV vaccines, Penbraya for adolescents, and simplified PCV20</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">3.</span>
+            <span>The infant schedule is dense because babies are most vulnerable to serious infections</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">4.</span>
+            <span>Co-administration is standard practice, safe, and well-studied</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">5.</span>
+            <span>Every vaccine in the schedule links to VAERS adverse event data on VaccineWatch</span>
+          </li>
+        </ul>
+      </div>
+
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Explore More</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -238,6 +287,14 @@ export default function VaccineSchedule2026Page() {
           <Link href="/analysis/elderly" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">The 65+ Age Group →</div>
             <div className="text-sm text-gray-500">Why senior report rates are higher</div>
+          </Link>
+          <Link href="/analysis/state-vaccine-requirements-2026" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">State Requirements 2026 →</div>
+            <div className="text-sm text-gray-500">School entry laws by state</div>
+          </Link>
+          <Link href="/analysis/multi-vaccine" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Multi-Vaccine Analysis →</div>
+            <div className="text-sm text-gray-500">Co-administration safety data</div>
           </Link>
         </div>
       </div>

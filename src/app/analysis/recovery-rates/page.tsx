@@ -82,19 +82,42 @@ export default function RecoveryRatesPage() {
 
       {/* Article Content */}
       <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>Why Recovery Data Matters</h2>
+        <p>
+          Recovery status is one of the most commonly cited — and most commonly misunderstood —
+          fields in VAERS. Anti-vaccine advocates sometimes highlight the &quot;not recovered&quot;
+          count as evidence of permanent vaccine damage. This analysis provides the context needed
+          to understand what these numbers actually represent.
+        </p>
+
         <h2 className={playfairDisplay.className}>Understanding Recovery Status</h2>
         <p>
-          VAERS tracks whether people recover from reported adverse events, but this data comes with important caveats. 
+          VAERS tracks whether people recover from reported adverse events, but this data comes with
+          important caveats that are essential for correct interpretation. The recovery field is one of
+          the most frequently misrepresented aspects of VAERS data.
+        </p>
+        <p>
           Of {formatNumber(totalWithStatus)} reports with recovery status information:
         </p>
         <ul>
-          <li><strong>Recovered:</strong> {formatNumber(totalRecovered)} ({recoveredPercent}%)</li>
-          <li><strong>Not recovered:</strong> {formatNumber(totalNotRecovered)} ({notRecoveredPercent}%)</li>
-          <li><strong>Unknown:</strong> {formatNumber(totalUnknown)} ({unknownPercent}%)</li>
+          <li><strong>Recovered (Y):</strong> {formatNumber(totalRecovered)} ({recoveredPercent}%) — the person
+          recovered from the reported adverse event</li>
+          <li><strong>Not recovered (N):</strong> {formatNumber(totalNotRecovered)} ({notRecoveredPercent}%) —
+          symptoms were ongoing at the time the report was filed (see context below)</li>
+          <li><strong>Unknown (U):</strong> {formatNumber(totalUnknown)} ({unknownPercent}%) — recovery status
+          was not provided or follow-up was not available</li>
         </ul>
         <p>
           However, "not recovered" doesn&apos;t necessarily mean permanent injury. It often means the condition 
           was ongoing at the time the report was filed, which could be days, weeks, or months after vaccination.
+        </p>
+
+        <h2 className={playfairDisplay.className}>The Follow-Up Gap</h2>
+        <p>
+          A key limitation of VAERS recovery data is that reporters are not required to submit
+          updates. Someone who reports &quot;not recovered&quot; on day 3 and then fully recovers
+          by day 7 will permanently show as &quot;not recovered&quot; in the database unless they
+          voluntarily submit a follow-up report — which most people do not do.
         </p>
 
         <h2 className={playfairDisplay.className}>What "Not Recovered" Really Means</h2>
@@ -161,6 +184,35 @@ export default function RecoveryRatesPage() {
           conditions that would eventually resolve.
         </p>
 
+        <h2 className={playfairDisplay.className}>Recovery by Symptom Type</h2>
+        <p>
+          Recovery rates also vary significantly by the type of adverse event reported:
+        </p>
+        <ul>
+          <li><strong>Local reactions</strong> (injection site pain, swelling): near-universal recovery
+          within days, though often not updated in VAERS because reporters consider them trivial</li>
+          <li><strong>Systemic reactions</strong> (fever, fatigue, headache): typically resolve within
+          1–3 days; high recovery rates in clinical trial data</li>
+          <li><strong>Allergic reactions</strong> (anaphylaxis, urticaria): most recover fully with
+          treatment, though some may have lingering anxiety about future vaccinations</li>
+          <li><strong>Neurological events</strong> (GBS, Bell&apos;s palsy): recovery rates vary;
+          GBS patients typically improve over weeks to months, with most regaining full function</li>
+          <li><strong>Cardiac events</strong> (myocarditis): vaccine-associated myocarditis shows
+          favorable recovery, with most patients having normal cardiac function at follow-up</li>
+        </ul>
+
+        <h2 className={playfairDisplay.className}>What Families Should Know</h2>
+        <p>
+          If you or a family member experiences an adverse event after vaccination:
+        </p>
+        <ul>
+          <li>Seek medical attention for any concerning symptoms, especially chest pain, difficulty
+          breathing, severe allergic reactions, or neurological changes</li>
+          <li>Most common side effects (soreness, fever, fatigue) resolve within 48 hours</li>
+          <li>Report the event to VAERS at <a href="https://vaers.hhs.gov" target="_blank" rel="noopener noreferrer">vaers.hhs.gov</a> — this helps monitor vaccine safety</li>
+          <li>Discuss future vaccination plans with your healthcare provider</li>
+        </ul>
+
         <h2 className={playfairDisplay.className}>Clinical Context</h2>
         <p>
           Clinical trials and active surveillance studies generally show higher recovery rates than 
@@ -175,6 +227,17 @@ export default function RecoveryRatesPage() {
           The controlled environment of clinical trials allows for better tracking of symptom resolution 
           compared to the voluntary, passive VAERS system.
         </p>
+      </div>
+
+      {/* V-safe comparison */}
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mb-12">
+        <strong>Active surveillance comparison:</strong> The CDC&apos;s V-safe program, which actively
+        followed up with COVID-19 vaccine recipients via smartphone, found that the vast majority of
+        reported side effects resolved within 7 days. V-safe data consistently shows higher recovery
+        rates than VAERS because it systematically checks in with participants, capturing resolution
+        that VAERS misses. This reinforces that VAERS &quot;not recovered&quot; rates are inflated by
+        the lack of follow-up, not by genuinely poor recovery outcomes. For more on how VAERS
+        compares to active surveillance, see <Link href="/is-vaers-reliable" className="text-blue-700 underline">Is VAERS Reliable?</Link>
       </div>
 
       {/* Key Takeaways */}
@@ -198,6 +261,25 @@ export default function RecoveryRatesPage() {
             <span>Clinical studies show higher recovery rates than suggested by VAERS data alone</span>
           </li>
         </ul>
+      </div>
+
+      {/* FAQ */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+        <div className="space-y-4 text-sm">
+          <div>
+            <div className="font-semibold text-gray-900">If someone doesn&apos;t recover, does that mean permanent injury?</div>
+            <div className="text-gray-600 mt-1">Usually not. &quot;Not recovered&quot; in VAERS most often means symptoms were ongoing when the report was filed. Many people recover after their report is submitted but never update VAERS. True permanent injuries from vaccines are rare.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Can VAERS recovery data be updated?</div>
+            <div className="text-gray-600 mt-1">Yes, but updates are voluntary and infrequent. VAERS allows follow-up reports, but most reporters do not submit them. This creates a systematic bias toward &quot;not recovered&quot; in the data.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Where can I find more reliable recovery data?</div>
+            <div className="text-gray-600 mt-1">Clinical trials and active surveillance systems (like V-safe and VSD) provide more accurate recovery information because they systematically follow up with participants. These consistently show higher recovery rates than VAERS suggests.</div>
+          </div>
+        </div>
       </div>
 
       {/* Related */}

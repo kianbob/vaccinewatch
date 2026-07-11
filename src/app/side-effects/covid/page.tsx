@@ -217,6 +217,26 @@ export default function CovidSideEffectsPage() {
           Read our full <Link href="/analysis/myocarditis">myocarditis analysis</Link> for detailed data.
         </p>
 
+        <h2 className={playfairDisplay.className}>Long-Term Safety Data</h2>
+        <p>
+          With over four years of real-world use and hundreds of millions of doses administered,
+          COVID-19 vaccines now have extensive long-term safety data:
+        </p>
+        <ul>
+          <li><strong>No new safety signals</strong> have emerged beyond what was identified in
+          the first year (myocarditis, TTS, anaphylaxis)</li>
+          <li><strong>Large-scale studies</strong> with 3–4 years of follow-up confirm the
+          safety profile established in clinical trials</li>
+          <li><strong>All-cause mortality</strong> in vaccinated populations is equal to or
+          lower than in unvaccinated populations</li>
+          <li><strong>Fertility and pregnancy outcomes</strong> show no adverse effects from
+          COVID-19 vaccination</li>
+        </ul>
+        <p>
+          For a comprehensive review, see our{' '}
+          <Link href="/analysis/covid-long-term-safety">COVID-19 vaccine long-term safety analysis</Link>.
+        </p>
+
         <h2 className={playfairDisplay.className}>The Bottom Line</h2>
         <p>
           COVID-19 vaccines have the most VAERS reports of any vaccine by far, but this reflects 

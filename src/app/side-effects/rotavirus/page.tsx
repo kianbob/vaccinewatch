@@ -73,6 +73,20 @@ export default function RotavirusSideEffectsPage() {
         </div>
       </div>
 
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+        <h2 className={`text-xl font-bold text-amber-900 mb-4 ${playfairDisplay.className}`}>💡 Key Insights</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-900">
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>Rotavirus vaccine has prevented an estimated 40,000–50,000 hospitalizations per year</strong> in U.S. children since its introduction in 2006 — one of the most dramatic impacts of any childhood vaccine.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="font-bold text-amber-600 mt-0.5">→</span>
+            <span><strong>VAERS death reports in this age group primarily reflect SIDS timing.</strong> Rotavirus vaccine is given during the same months as the peak SIDS window (2–4 months), making temporal coincidence expected.</span>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mb-8">
         <strong>ℹ️ Historical context:</strong> The first rotavirus vaccine (RotaShield) was withdrawn 
         in 1999 due to an association with intussusception. Current vaccines (RotaTeq, approved 2006; 
@@ -163,6 +177,90 @@ export default function RotavirusSideEffectsPage() {
         for medical advice.
       </div>
 
+      <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>How Effective Is the Rotavirus Vaccine?</h2>
+        <p>
+          Before the introduction of rotavirus vaccines in 2006, rotavirus caused an estimated 400,000
+          doctor visits, 200,000 emergency room visits, 55,000–70,000 hospitalizations, and 20–60 deaths
+          in children under 5 each year in the United States alone. Since routine vaccination began,
+          hospitalizations for rotavirus gastroenteritis have dropped by more than 80%.
+        </p>
+        <p>
+          Clinical trials showed RotaTeq prevented about 74% of all rotavirus gastroenteritis cases and
+          98% of severe cases. Rotarix showed similar efficacy. The vaccines also provide indirect
+          protection to unvaccinated older children and adults through reduced community transmission —
+          a benefit confirmed in post-licensure studies.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Timing and Administration</h2>
+        <p>
+          Rotavirus vaccines have a strict age window that is important to understand:
+        </p>
+        <ul>
+          <li><strong>First dose:</strong> must be given by 14 weeks and 6 days of age</li>
+          <li><strong>Final dose:</strong> must be completed by 8 months and 0 days of age</li>
+          <li><strong>Minimum interval:</strong> at least 4 weeks between doses</li>
+        </ul>
+        <p>
+          These age restrictions exist because the risk of intussusception from rotavirus vaccine
+          is highest when vaccination is delayed beyond the recommended window. Providers should not
+          initiate the series if an infant is older than 15 weeks.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Global Impact of Rotavirus Vaccination</h2>
+        <p>
+          Rotavirus remains a major killer of children worldwide, causing an estimated 128,500 deaths
+          per year among children under 5, primarily in low-income countries. The WHO recommends
+          rotavirus vaccination for all infants globally. As of 2026, over 120 countries have
+          incorporated rotavirus vaccines into their national immunization programs, contributing
+          to significant declines in childhood diarrhea mortality worldwide.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Frequently Asked Questions</h2>
+        <p><strong>Can a baby who received the rotavirus vaccine still get rotavirus?</strong></p>
+        <p>
+          Yes, but vaccinated children who get rotavirus typically have much milder illness. The
+          vaccine is most effective at preventing severe, dehydrating gastroenteritis that leads
+          to hospitalization.
+        </p>
+        <p><strong>Can the rotavirus vaccine spread to other family members?</strong></p>
+        <p>
+          The vaccine contains live, weakened virus, so vaccinated infants can shed virus in their
+          stool for several days after vaccination. Standard hand hygiene (especially after diaper
+          changes) is recommended but no special precautions are needed for healthy household
+          contacts. Caution is advised around severely immunocompromised individuals.
+        </p>
+        <p><strong>What if a baby spits up or vomits the dose?</strong></p>
+        <p>
+          If a significant amount of the dose is spit up or vomited, a replacement dose may be
+          given at the same visit. The decision is made by the healthcare provider based on the
+          circumstances. Regardless, the schedule should continue as planned.
+        </p>
+      </div>
+
+      {/* Key Takeaways */}
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
+        <ul className="space-y-3 text-gray-700">
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">1.</span>
+            <span>Rotavirus vaccines have reduced hospitalizations for severe gastroenteritis by over 80%</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">2.</span>
+            <span>Intussusception risk is very small (1–5 per 100,000) and much lower than the previous RotaShield vaccine</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">3.</span>
+            <span>Strict age windows exist to minimize the small intussusception risk</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">4.</span>
+            <span>Death reports in young infants primarily reflect the coincident age window for SIDS, not vaccine causation</span>
+          </li>
+        </ul>
+      </div>
+
       <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Explore This Data</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -197,6 +295,15 @@ export default function RotavirusSideEffectsPage() {
             <div className="text-sm text-gray-500">All 104 vaccines compared</div>
           </Link>
         </div>
+      </div>
+
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+        <strong>Data note:</strong> Rotavirus vaccine data in VAERS should be interpreted with special
+        attention to the infant population receiving these vaccines. The 2–8 month age window overlaps
+        with the peak period for SIDS, febrile seizures, and other infant health events that occur
+        regardless of vaccination. For this reason, temporal associations with rotavirus vaccination are
+        particularly prone to coincidental events. For a detailed look at infant-age VAERS data, see our{' '}
+        <Link href="/analysis/pediatric" className="text-blue-700 underline">pediatric analysis</Link>.
       </div>
     </div>
   )

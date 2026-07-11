@@ -128,7 +128,179 @@ export default function MethodologyPage() {
       </div>
 
       {/* Explore More */}
-      <div className="border-t border-gray-200 pt-8">
+      
+      {/* Data Quality */}
+      <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>Data Quality Considerations</h2>
+        <p>
+          Working with VAERS data requires awareness of several data quality issues that affect analysis:
+        </p>
+        <ul>
+          <li><strong>Character encoding:</strong> Raw VAERS CSV files sometimes contain encoding inconsistencies,
+          particularly in free-text symptom descriptions and narrative fields. Our pipeline normalizes these
+          to UTF-8 during processing.</li>
+          <li><strong>Date parsing:</strong> VAERS dates can appear in multiple formats across different year files.
+          We standardize all dates to ISO 8601 format during import.</li>
+          <li><strong>Vaccine type standardization:</strong> The same vaccine may appear under different type codes
+          across years (e.g., COVID vaccines use COVID19 and COVID19-2). We map these to canonical vaccine types
+          for consistent aggregation.</li>
+          <li><strong>Symptom coding:</strong> Symptoms are coded using MedDRA Preferred Terms, which are standardized
+          medical terminology. However, the same clinical condition may be coded differently by different reporters.
+          We use the MedDRA codes as-is without additional normalization.</li>
+          <li><strong>Missing data:</strong> Many VAERS reports have missing fields — age, sex, state, and onset date
+          are frequently blank. We include reports with missing data in our totals but exclude them from
+          analyses where the missing field is required (e.g., age-group breakdowns exclude reports with unknown age).</li>
+        </ul>
+
+        <h2 className={playfairDisplay.className}>What We Don&apos;t Do</h2>
+        <p>
+          Transparency requires being clear about what we don&apos;t do as much as what we do:
+        </p>
+        <ul>
+          <li><strong>We don&apos;t filter reports.</strong> All reports in the public VAERS dataset appear on VaccineWatch,
+          regardless of severity, plausibility, or verification status.</li>
+          <li><strong>We don&apos;t add causal interpretation.</strong> We never claim that a vaccine caused any
+          reported event. Our language consistently uses &quot;reported after,&quot; &quot;associated with,&quot;
+          and &quot;temporal association&quot; rather than causal language.</li>
+          <li><strong>We don&apos;t make medical recommendations.</strong> VaccineWatch is an educational data
+          transparency tool, not a medical advice service.</li>
+          <li><strong>We don&apos;t de-duplicate reports.</strong> Some events may be reported by multiple people.
+          We leave the data as the CDC/FDA published it.</li>
+          <li><strong>We don&apos;t estimate denominators.</strong> While dose administration data exists from other
+          sources, we do not attempt to calculate per-dose rates because the population denominators from VAERS
+          are unreliable.</li>
+        </ul>
+
+        <h2 className={playfairDisplay.className}>Technical Architecture</h2>
+        <p>
+          VaccineWatch is built as a static site for maximum performance and reliability:
+        </p>
+        <ul>
+          <li><strong>Framework:</strong> Next.js with static generation (SSG) for all data pages</li>
+          <li><strong>Data format:</strong> Pre-computed JSON files served from the edge</li>
+          <li><strong>Charts:</strong> Recharts for interactive client-side data visualization</li>
+          <li><strong>Hosting:</strong> Edge-deployed for sub-100ms response times globally</li>
+          <li><strong>Search:</strong> Client-side search index for instant vaccine and symptom lookup</li>
+        </ul>
+        <p>
+          This architecture ensures that VaccineWatch remains fast and accessible even during traffic spikes.
+          There is no database to query at runtime — all data is pre-computed during our processing pipeline
+          and served as static assets.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Frequently Asked Questions About Our Data</h2>
+        <p>
+          <strong>Q: Can I verify your numbers against the original VAERS data?</strong><br/>
+          A: Yes. All our data comes from the official public-use VAERS datasets at vaers.hhs.gov. Our methodology
+          page documents the exact processing steps, so anyone can reproduce our numbers.
+        </p>
+        <p>
+          <strong>Q: How quickly do you update after VAERS releases new data?</strong><br/>
+          A: We typically process new VAERS releases within a few days of publication. The current dataset was
+          last processed on February 25, 2026.
+        </p>
+        <p>
+          <strong>Q: Do you use any AI or machine learning in your analysis?</strong><br/>
+          A: Our current pipeline uses straightforward data processing and aggregation — no AI or ML models.
+          All metrics are direct counts and simple ratios. We may incorporate AI-assisted analysis in the future,
+          but any such additions will be clearly documented.
+        </p>
+        <p>
+          <strong>Q: Why don&apos;t you show per-dose risk rates?</strong><br/>
+          A: VAERS does not include dose administration data. While dose counts exist from other sources (CDC
+          immunization surveys, manufacturer reports), combining them with VAERS data introduces significant
+          methodological challenges. We prefer to present the data we have accurately rather than create
+          potentially misleading calculated rates.
+        </p>
+      </div>
+
+
+      {/* Data Quality */}
+      <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>Data Quality Considerations</h2>
+        <p>
+          Working with VAERS data requires awareness of several data quality issues that affect analysis:
+        </p>
+        <ul>
+          <li><strong>Character encoding:</strong> Raw VAERS CSV files sometimes contain encoding inconsistencies,
+          particularly in free-text symptom descriptions and narrative fields. Our pipeline normalizes these
+          to UTF-8 during processing.</li>
+          <li><strong>Date parsing:</strong> VAERS dates can appear in multiple formats across different year files.
+          We standardize all dates to ISO 8601 format during import.</li>
+          <li><strong>Vaccine type standardization:</strong> The same vaccine may appear under different type codes
+          across years (e.g., COVID vaccines use COVID19 and COVID19-2). We map these to canonical vaccine types
+          for consistent aggregation.</li>
+          <li><strong>Symptom coding:</strong> Symptoms are coded using MedDRA Preferred Terms, which are standardized
+          medical terminology. However, the same clinical condition may be coded differently by different reporters.
+          We use the MedDRA codes as-is without additional normalization.</li>
+          <li><strong>Missing data:</strong> Many VAERS reports have missing fields — age, sex, state, and onset date
+          are frequently blank. We include reports with missing data in our totals but exclude them from
+          analyses where the missing field is required (e.g., age-group breakdowns exclude reports with unknown age).</li>
+        </ul>
+
+        <h2 className={playfairDisplay.className}>What We Don&apos;t Do</h2>
+        <p>
+          Transparency requires being clear about what we don&apos;t do as much as what we do:
+        </p>
+        <ul>
+          <li><strong>We don&apos;t filter reports.</strong> All reports in the public VAERS dataset appear on VaccineWatch,
+          regardless of severity, plausibility, or verification status.</li>
+          <li><strong>We don&apos;t add causal interpretation.</strong> We never claim that a vaccine caused any
+          reported event. Our language consistently uses &quot;reported after,&quot; &quot;associated with,&quot;
+          and &quot;temporal association&quot; rather than causal language.</li>
+          <li><strong>We don&apos;t make medical recommendations.</strong> VaccineWatch is an educational data
+          transparency tool, not a medical advice service.</li>
+          <li><strong>We don&apos;t de-duplicate reports.</strong> Some events may be reported by multiple people.
+          We leave the data as the CDC/FDA published it.</li>
+          <li><strong>We don&apos;t estimate denominators.</strong> While dose administration data exists from other
+          sources, we do not attempt to calculate per-dose rates because the population denominators from VAERS
+          are unreliable.</li>
+        </ul>
+
+        <h2 className={playfairDisplay.className}>Technical Architecture</h2>
+        <p>
+          VaccineWatch is built as a static site for maximum performance and reliability:
+        </p>
+        <ul>
+          <li><strong>Framework:</strong> Next.js with static generation (SSG) for all data pages</li>
+          <li><strong>Data format:</strong> Pre-computed JSON files served from the edge</li>
+          <li><strong>Charts:</strong> Recharts for interactive client-side data visualization</li>
+          <li><strong>Hosting:</strong> Edge-deployed for sub-100ms response times globally</li>
+          <li><strong>Search:</strong> Client-side search index for instant vaccine and symptom lookup</li>
+        </ul>
+        <p>
+          This architecture ensures that VaccineWatch remains fast and accessible even during traffic spikes.
+          There is no database to query at runtime — all data is pre-computed during our processing pipeline
+          and served as static assets.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Frequently Asked Questions About Our Data</h2>
+        <p>
+          <strong>Q: Can I verify your numbers against the original VAERS data?</strong><br/>
+          A: Yes. All our data comes from the official public-use VAERS datasets at vaers.hhs.gov. Our methodology
+          page documents the exact processing steps, so anyone can reproduce our numbers.
+        </p>
+        <p>
+          <strong>Q: How quickly do you update after VAERS releases new data?</strong><br/>
+          A: We typically process new VAERS releases within a few days of publication. The current dataset was
+          last processed on February 25, 2026.
+        </p>
+        <p>
+          <strong>Q: Do you use any AI or machine learning in your analysis?</strong><br/>
+          A: Our current pipeline uses straightforward data processing and aggregation — no AI or ML models.
+          All metrics are direct counts and simple ratios. We may incorporate AI-assisted analysis in the future,
+          but any such additions will be clearly documented.
+        </p>
+        <p>
+          <strong>Q: Why don&apos;t you show per-dose risk rates?</strong><br/>
+          A: VAERS does not include dose administration data. While dose counts exist from other sources (CDC
+          immunization surveys, manufacturer reports), combining them with VAERS data introduces significant
+          methodological challenges. We prefer to present the data we have accurately rather than create
+          potentially misleading calculated rates.
+        </p>
+      </div>
+
+<div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Explore More</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Link href="/about" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">

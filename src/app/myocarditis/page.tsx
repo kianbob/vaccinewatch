@@ -189,6 +189,43 @@ export default function MyocarditisLandingPage() {
           <li><strong>Deaths are extremely rare</strong> — a handful of cases among millions vaccinated</li>
         </ul>
 
+        <h2 className={playfairDisplay.className}>Long-Term Follow-Up Data</h2>
+        <p>
+          As of 2026, several years of follow-up data are available for patients who experienced
+          vaccine-associated myocarditis. The evidence is reassuring:
+        </p>
+        <ul>
+          <li><strong>Cardiac MRI normalization:</strong> The majority of patients show resolution of
+          inflammation on follow-up imaging within 3–6 months</li>
+          <li><strong>Exercise tolerance:</strong> Most patients return to full physical activity,
+          including competitive sports, after an appropriate recovery period</li>
+          <li><strong>Recurrence:</strong> Recurrent myocarditis after subsequent vaccination is rare,
+          though most guidelines recommend caution with additional mRNA doses</li>
+          <li><strong>Ongoing monitoring:</strong> Long-term cardiac outcome studies continue to track
+          patients for any delayed effects, with results so far showing favorable outcomes</li>
+        </ul>
+        <p>
+          These long-term findings contrast with myocarditis from COVID-19 infection, which tends
+          to cause more persistent cardiac changes and longer recovery times.
+        </p>
+
+        <h2 className={playfairDisplay.className}>How Myocarditis Was Detected</h2>
+        <p>
+          The detection of vaccine-associated myocarditis is a case study in how vaccine safety
+          monitoring is supposed to work:
+        </p>
+        <ul>
+          <li><strong>April 2021:</strong> Israel reported early signals of myocarditis in young males</li>
+          <li><strong>May 2021:</strong> VAERS reports flagged a disproportionate number of myocarditis cases</li>
+          <li><strong>June 2021:</strong> CDC confirmed the signal after reviewing VSD and clinical data</li>
+          <li><strong>Ongoing:</strong> Updated guidance issued, including extended dose intervals for young males</li>
+        </ul>
+        <p>
+          This timeline — from signal detection to confirmed risk in roughly 2 months — demonstrates
+          VAERS working exactly as designed. For more on how VAERS detects safety signals, see{' '}
+          <Link href="/is-vaers-reliable">Is VAERS Reliable?</Link>
+        </p>
+
         <h2 className={playfairDisplay.className}>Current Guidance</h2>
         <p>Based on the data, current guidance includes:</p>
         <ul>
@@ -222,6 +259,21 @@ export default function MyocarditisLandingPage() {
         </div>
       </div>
 
+      {/* FAQ */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+        <div className="space-y-4 text-sm">
+          <div>
+            <div className="font-semibold text-gray-900">Should young males avoid mRNA COVID vaccines?</div>
+            <div className="text-gray-600 mt-1">CDC still recommends COVID vaccination for everyone. While young males have a slightly elevated myocarditis risk from the vaccine, the risk of myocarditis from COVID infection is 5–10× higher. Extended dose intervals (8+ weeks between doses) can reduce the risk.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Can I get another COVID vaccine after myocarditis?</div>
+            <div className="text-gray-600 mt-1">This should be discussed with a cardiologist. Current guidance suggests that people who experienced myocarditis after an mRNA dose should consult their doctor before receiving additional mRNA vaccines. Alternative vaccine types may be considered.</div>
+          </div>
+        </div>
+      </div>
+
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -238,6 +290,13 @@ export default function MyocarditisLandingPage() {
             <div className="text-sm text-gray-500">Do side effects resolve?</div>
           </Link>
         </div>
+      </div>
+
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+        <strong>Data note:</strong> Myocarditis is one of the few vaccine safety signals where VAERS
+        data has been confirmed by independent active surveillance systems worldwide. This makes it
+        an instructive example of VAERS working as intended — detecting a rare signal quickly, which
+        was then confirmed through controlled studies, leading to updated clinical guidance.
       </div>
     </div>
   )

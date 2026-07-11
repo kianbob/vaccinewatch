@@ -70,6 +70,15 @@ export default function HospitalStaysPage() {
 
       {/* Article Content */}
       <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>Why Duration Data Matters</h2>
+        <p>
+          Hospitalization is flagged as a &quot;serious outcome&quot; in VAERS, but the clinical
+          reality of hospitalizations varies enormously — from a few hours of precautionary
+          observation to weeks of intensive treatment. Duration data helps distinguish between
+          these scenarios and provides more nuanced context than a simple &quot;hospitalized
+          or not&quot; binary.
+        </p>
+
         <h2 className={playfairDisplay.className}>The Pattern of Brief Stays</h2>
         <p>
           When VAERS reports indicate hospitalization after vaccination, the duration data reveals 
@@ -165,6 +174,42 @@ export default function HospitalStaysPage() {
           adverse events and effective clinical management protocols.
         </p>
 
+        <h2 className={playfairDisplay.className}>Age-Related Patterns</h2>
+        <p>
+          Hospitalization duration varies by age group. Infants and elderly patients tend to have
+          longer stays, which reflects both the vulnerability of these populations and clinical
+          caution:
+        </p>
+        <ul>
+          <li><strong>Infants (0–2 years):</strong> Often observed longer due to limited ability to
+          communicate symptoms and higher clinical concern for young patients</li>
+          <li><strong>Adults (18–64):</strong> Shortest average stays, often for observation after
+          allergic reactions or vasovagal episodes</li>
+          <li><strong>Elderly (65+):</strong> Longer stays reflecting complex medical histories and
+          conservative management of symptoms in patients with comorbidities</li>
+        </ul>
+        <p>
+          These patterns mirror general hospitalization trends in the U.S. healthcare system and
+          do not suggest age-specific vaccine safety concerns. For more on how age affects VAERS
+          reporting, see the <Link href="/analysis/pediatric">pediatric analysis</Link> and{' '}
+          <Link href="/analysis/elderly">65+ age group analysis</Link>.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Frequently Asked Questions</h2>
+        <p><strong>Does hospitalization mean the vaccine caused a serious injury?</strong></p>
+        <p>
+          Not necessarily. Many hospitalizations in VAERS are precautionary — overnight
+          observation after a fainting episode or allergic reaction that resolves quickly.
+          Hospitalization in VAERS is flagged as a &quot;serious&quot; outcome, but the clinical
+          reality ranges from brief observation to genuine medical emergencies.
+        </p>
+        <p><strong>Are vaccine-related hospitalizations getting longer or shorter?</strong></p>
+        <p>
+          Duration patterns have remained relatively stable over time. The COVID-19 era did not
+          significantly change the distribution of hospital stay lengths for vaccine-related
+          reports, despite the dramatic increase in total report volume.
+        </p>
+
         <h2 className={playfairDisplay.className}>Limitations and Considerations</h2>
         <p>
           Several factors should be considered when interpreting hospitalization duration data:
@@ -175,6 +220,18 @@ export default function HospitalStaysPage() {
           <li>Duration may be influenced by hospital policies and insurance considerations</li>
           <li>Reporting patterns may vary by healthcare provider and institution</li>
         </ul>
+      </div>
+
+      {/* Insurance note */}
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mb-12">
+        <strong>Important note:</strong> Hospitalization in VAERS is a binary flag — it indicates
+        that a hospital stay occurred but provides limited detail about the clinical reason for
+        admission. Some hospitalizations are for observation and monitoring (e.g., after an allergic
+        reaction), while others involve active treatment for serious conditions. The duration data
+        helps distinguish between these scenarios, but clinical context from the individual report
+        narrative (not available in aggregate analysis) would provide the most complete picture.
+        For a broader view of how serious outcomes are classified, see our{' '}
+        <Link href="/analysis/serious-outcomes" className="text-blue-700 underline">serious outcomes analysis</Link>.
       </div>
 
       {/* Key Takeaways */}
@@ -200,6 +257,26 @@ export default function HospitalStaysPage() {
         </ul>
       </div>
 
+      {/* Explore Tools */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Explore Hospital Duration Data</h3>
+        <p className="text-gray-600 text-sm mb-4">
+          Use our interactive tools to explore hospitalization patterns for any vaccine in the
+          VAERS database. Filter by vaccine type, age group, and time period to see how
+          duration distributions vary.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <Link href="/tools/hospital-duration" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">Hospital Duration Tool →</div>
+            <div className="text-sm text-gray-500">Interactive hospitalization analysis</div>
+          </Link>
+          <Link href="/tools/severity-profile" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">Severity Profile Tool →</div>
+            <div className="text-sm text-gray-500">Compare outcome severity across vaccines</div>
+          </Link>
+        </div>
+      </div>
+
       {/* Related */}
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Analysis</h3>
@@ -215,6 +292,10 @@ export default function HospitalStaysPage() {
           <Link href="/analysis/death-reports" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Understanding Death Reports</div>
             <div className="text-sm text-gray-500">What death reports actually mean</div>
+          </Link>
+          <Link href="/analysis/elderly" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">The 65+ Age Group</div>
+            <div className="text-sm text-gray-500">Why older adults have longer stays</div>
           </Link>
         </div>
       </div>

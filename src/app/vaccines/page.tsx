@@ -194,6 +194,68 @@ export default function VaccinesPage() {
         </div>
       </div>
 
+      {/* Vaccine Categories */}
+      <div className="bg-white border border-gray-200 rounded-xl p-8 mt-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">
+          Vaccine Categories
+        </h3>
+        <p className="text-gray-600 mb-6">
+          Vaccines in VAERS span several categories, from routine childhood immunizations to
+          specialized travel and occupational vaccines.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Routine Childhood</div>
+            <div className="text-gray-600">DTaP, IPV, MMR, varicella, hepatitis B, Hib, PCV, and
+            rotavirus — given to nearly every child in the U.S. These generate substantial VAERS
+            volume because of the large number of doses administered annually.</div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Adolescent &amp; Adult</div>
+            <div className="text-gray-600">Tdap, HPV, meningococcal, shingles (Shingrix), and
+            pneumococcal vaccines. These often show higher severity rates in VAERS because they
+            are given to older populations with more complex medical histories.</div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Seasonal &amp; Pandemic</div>
+            <div className="text-gray-600">Influenza and COVID-19 vaccines dominate VAERS by volume.
+            Flu has 11 formulation types tracked separately; COVID-19 generated more reports than
+            all other vaccines combined due to mass vaccination and stimulated reporting.</div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Specialty &amp; Travel</div>
+            <div className="text-gray-600">Rabies, yellow fever, anthrax, smallpox, and Japanese
+            encephalitis vaccines are given to small populations. Low report counts make
+            statistical analysis unreliable for these vaccines.</div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ */}
+      <div className="bg-white border border-gray-200 rounded-xl p-8 mt-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+        <div className="space-y-4 text-sm">
+          <div>
+            <div className="font-semibold text-gray-900">Why are some vaccines listed multiple times with different codes?</div>
+            <div className="text-gray-600 mt-1">VAERS uses specific codes for different formulations. For example, flu has separate codes for trivalent (FLU3), quadrivalent (FLU4), nasal spray (FLUN), and other variants. Each formulation may have a different manufacturer, ingredient list, or target population.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Which vaccine has the highest death rate in VAERS?</div>
+            <div className="text-gray-600 mt-1">Death rates within VAERS reports vary by vaccine, but high rates typically reflect the age of the recipient population (elderly patients have higher baseline mortality) rather than vaccine danger. See our <Link href="/vaccine-deaths" className="text-primary hover:underline">death reports analysis</Link> for full context.</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Inactive / Historical vaccines */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800 mt-8">
+        <strong>Note on historical vaccines:</strong> VAERS includes data for vaccines no longer in use,
+        such as the original RotaShield rotavirus vaccine (withdrawn in 1999), the oral polio vaccine
+        (replaced by IPV in 2000), and the J&amp;J COVID-19 vaccine (withdrawn in 2023). These appear
+        in the database because VAERS retains all historical reports. Low recent report counts for
+        a vaccine may indicate it is no longer being administered, not that it is safer than
+        higher-volume vaccines.
+      </div>
+
       {/* Context Box */}
       <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
         <h3 className="text-lg font-semibold text-blue-900 mb-2">
@@ -205,6 +267,18 @@ export default function VaccinesPage() {
           <li>• VAERS captures <strong>temporal associations</strong>, not proven causal relationships</li>
           <li>• Always consider <strong>background rates</strong> and <strong>reporting incentives</strong></li>
         </ul>
+      </div>
+
+      {/* Methodology Note */}
+      <div className="mt-8 bg-white border border-gray-200 rounded-xl p-6">
+        <h3 className="text-lg font-semibold text-gray-900 mb-3">How This Data Is Processed</h3>
+        <p className="text-gray-600 text-sm mb-2">
+          VaccineWatch processes the same raw VAERS data files available from the CDC. Vaccines are
+          categorized by their VAERS type code (e.g., COVID19, FLU3, MMR). Reports listing multiple
+          vaccines are counted under each vaccine listed. Death, hospitalization, and ER visit counts
+          are derived from outcome flags in the VAERS data files. For full details, see our{' '}
+          <Link href="/methodology" className="text-primary hover:underline">methodology page</Link>.
+        </p>
       </div>
 
       {/* Related Pages */}
@@ -219,6 +293,8 @@ export default function VaccinesPage() {
           <Link href="/tools/signal-detection" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Safety Signal Detection</Link>
           <Link href="/dashboard" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Dashboard</Link>
           <Link href="/vaccine-deaths" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Death Reports</Link>
+          <Link href="/vaccine-schedule" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Vaccine Schedule</Link>
+          <Link href="/analysis" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Analysis Articles</Link>
         </div>
       </div>
     </div>

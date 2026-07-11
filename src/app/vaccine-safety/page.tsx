@@ -277,6 +277,25 @@ export default function VaccineSafetyPage() {
         </div>
       </div>
 
+      {/* Related Analysis */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">2026 Vaccine Safety Topics</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <Link href="/analysis/covid-long-term-safety" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">COVID Long-Term Safety →</div>
+            <div className="text-sm text-gray-500">4 years of real-world data</div>
+          </Link>
+          <Link href="/analysis/bird-flu-h5n1-vaccine" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">H5N1 Bird Flu Vaccine →</div>
+            <div className="text-sm text-gray-500">Pandemic preparedness</div>
+          </Link>
+          <Link href="/analysis/vaccine-hesitancy-2026" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">Vaccine Hesitancy 2026 →</div>
+            <div className="text-sm text-gray-500">Public confidence trends</div>
+          </Link>
+        </div>
+      </div>
+
       <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Dive Deeper</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">

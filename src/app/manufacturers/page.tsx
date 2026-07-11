@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber, formatManufacturer } from '@/lib/utils'
@@ -173,6 +174,56 @@ export default function ManufacturersPage() {
         </div>
       </div>
 
+      {/* Manufacturer Mergers and Name Changes */}
+      <div className="bg-white border border-gray-200 rounded-xl p-8 mb-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">Understanding Manufacturer Names</h3>
+        <p className="text-gray-600 mb-4">
+          Vaccine manufacturer names in VAERS can be confusing because of mergers, acquisitions,
+          and name changes over 35 years of data:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Pfizer-BioNTech</div>
+            <div className="text-gray-600">COVID-19 vaccine jointly developed. Reports may list
+            either company or both. Pfizer also manufactures Prevnar (pneumococcal) and other
+            non-COVID vaccines.</div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Merck &amp; Co</div>
+            <div className="text-gray-600">One of the oldest vaccine manufacturers. Produces
+            MMR, varicella, HPV (Gardasil), rotavirus (RotaTeq), shingles (Zostavax),
+            and hepatitis vaccines.</div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">GSK (GlaxoSmithKline)</div>
+            <div className="text-gray-600">Produces Shingrix, hepatitis vaccines, Rotarix,
+            and the Arexvy RSV vaccine. Historically operated as SmithKline Beecham before
+            merging.</div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="font-semibold text-gray-900 mb-1">Sanofi Pasteur</div>
+            <div className="text-gray-600">Major producer of flu vaccines, DTaP, polio,
+            and meningococcal vaccines. Reports may list Sanofi, Sanofi Pasteur, or
+            historical names like Aventis Pasteur.</div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ */}
+      <div className="bg-white border border-gray-200 rounded-xl p-8 mb-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+        <div className="space-y-4 text-sm">
+          <div>
+            <div className="font-semibold text-gray-900">Can I choose which manufacturer&apos;s vaccine I get?</div>
+            <div className="text-gray-600 mt-1">For some vaccines, yes — particularly flu and COVID-19 vaccines where multiple products are available. For most childhood vaccines, a single product dominates the market. Discuss preferences with your healthcare provider.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Does a manufacturer with fewer reports make safer vaccines?</div>
+            <div className="text-gray-600 mt-1">Not necessarily. Fewer reports typically mean fewer doses administered, not a safer product. All FDA-approved vaccines meet the same safety standards regardless of manufacturer.</div>
+          </div>
+        </div>
+      </div>
+
       {/* Context Boxes */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
@@ -231,6 +282,19 @@ export default function ManufacturersPage() {
               </span>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Related */}
+      <div className="mt-8 bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <h3 className="text-lg font-semibold text-gray-900 mb-3">Explore More VAERS Data</h3>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/vaccines" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">104 Vaccines</Link>
+          <Link href="/analysis/manufacturer-landscape" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Manufacturer Analysis</Link>
+          <Link href="/analysis/lot-analysis" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Lot Analysis</Link>
+          <Link href="/dashboard" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Dashboard</Link>
+          <Link href="/compare" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Compare Vaccines</Link>
+          <Link href="/tools/reporting-rates" className="text-sm px-4 py-2 bg-white border border-gray-200 rounded-full hover:border-primary/30 hover:text-primary transition-colors">Reporting Rates</Link>
         </div>
       </div>
     </div>

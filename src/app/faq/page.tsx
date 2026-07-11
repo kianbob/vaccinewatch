@@ -149,7 +149,173 @@ export default function FAQPage() {
         </Link>
       </div>
 
-      <div className="mt-8 bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
+      
+      {/* Understanding VAERS Section */}
+      <div className="mt-8 prose prose-lg max-w-none">
+        <h2 className={playfairDisplay.className}>Understanding VAERS in Context</h2>
+        <p>
+          VAERS is one component of a larger vaccine safety monitoring ecosystem. Understanding how these
+          systems work together helps put VAERS data in perspective:
+        </p>
+        <ul>
+          <li><strong>VAERS (Passive Surveillance):</strong> The broadest net — accepts reports from anyone about
+          any adverse event following vaccination. Excels at detecting unexpected patterns but cannot determine
+          causation or calculate risk rates.</li>
+          <li><strong>Vaccine Safety Datalink (VSD):</strong> Active surveillance system covering ~12 million people
+          across 9 healthcare organizations. Can compare health outcomes in vaccinated vs. unvaccinated populations,
+          enabling actual risk calculations.</li>
+          <li><strong>Clinical Immunization Safety Assessment (CISA):</strong> Expert clinical review of complex
+          individual cases. Healthcare providers can submit cases for evaluation by vaccine safety specialists.</li>
+          <li><strong>v-safe:</strong> Smartphone-based active surveillance deployed for COVID-19 vaccines, collecting
+          health check-ins from over 10 million participants.</li>
+        </ul>
+        <p>
+          When VAERS detects a potential safety signal, it is investigated using these more rigorous systems.
+          The myocarditis signal after mRNA COVID-19 vaccines is a perfect example: VAERS detected the pattern,
+          VSD confirmed the elevated risk, and clinical studies characterized the condition and its outcomes.
+        </p>
+      </div>
+
+      <div className="mt-8 bg-gray-50 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Key Vocabulary</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <div className="font-bold text-gray-900">Adverse Event</div>
+            <div className="text-gray-600">Any health problem that occurs after vaccination, regardless of cause</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Side Effect</div>
+            <div className="text-gray-600">A health problem shown to be caused by a vaccine through scientific study</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Safety Signal</div>
+            <div className="text-gray-600">A pattern in data suggesting a possible vaccine-event connection worth investigating</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Causation vs Correlation</div>
+            <div className="text-gray-600">Events happening after vaccination (correlation) vs events caused by vaccination (causation)</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Passive Surveillance</div>
+            <div className="text-gray-600">A system that relies on voluntary reporting rather than active data collection</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Denominator</div>
+            <div className="text-gray-600">The total number of vaccine doses administered — needed to calculate actual risk rates</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Stimulated Reporting</div>
+            <div className="text-gray-600">Increased VAERS reporting driven by media attention or public awareness rather than actual safety changes</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Background Rate</div>
+            <div className="text-gray-600">How often a health event occurs in the general population regardless of vaccination</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-8 border-t border-gray-200 pt-8">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Explore VaccineWatch</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Link href="/vaccines" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Browse All Vaccines</div>
+            <div className="text-sm text-gray-500">104 vaccine types with VAERS data</div>
+          </Link>
+          <Link href="/symptoms" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Browse All Symptoms</div>
+            <div className="text-sm text-gray-500">500+ adverse event categories</div>
+          </Link>
+          <Link href="/analysis" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Analysis Hub</div>
+            <div className="text-sm text-gray-500">Deep dives into VAERS patterns</div>
+          </Link>
+        </div>
+      </div>
+
+
+      {/* Understanding VAERS Section */}
+      <div className="mt-8 prose prose-lg max-w-none">
+        <h2 className={playfairDisplay.className}>Understanding VAERS in Context</h2>
+        <p>
+          VAERS is one component of a larger vaccine safety monitoring ecosystem. Understanding how these
+          systems work together helps put VAERS data in perspective:
+        </p>
+        <ul>
+          <li><strong>VAERS (Passive Surveillance):</strong> The broadest net — accepts reports from anyone about
+          any adverse event following vaccination. Excels at detecting unexpected patterns but cannot determine
+          causation or calculate risk rates.</li>
+          <li><strong>Vaccine Safety Datalink (VSD):</strong> Active surveillance system covering ~12 million people
+          across 9 healthcare organizations. Can compare health outcomes in vaccinated vs. unvaccinated populations,
+          enabling actual risk calculations.</li>
+          <li><strong>Clinical Immunization Safety Assessment (CISA):</strong> Expert clinical review of complex
+          individual cases. Healthcare providers can submit cases for evaluation by vaccine safety specialists.</li>
+          <li><strong>v-safe:</strong> Smartphone-based active surveillance deployed for COVID-19 vaccines, collecting
+          health check-ins from over 10 million participants.</li>
+        </ul>
+        <p>
+          When VAERS detects a potential safety signal, it is investigated using these more rigorous systems.
+          The myocarditis signal after mRNA COVID-19 vaccines is a perfect example: VAERS detected the pattern,
+          VSD confirmed the elevated risk, and clinical studies characterized the condition and its outcomes.
+        </p>
+      </div>
+
+      <div className="mt-8 bg-gray-50 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Key Vocabulary</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <div className="font-bold text-gray-900">Adverse Event</div>
+            <div className="text-gray-600">Any health problem that occurs after vaccination, regardless of cause</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Side Effect</div>
+            <div className="text-gray-600">A health problem shown to be caused by a vaccine through scientific study</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Safety Signal</div>
+            <div className="text-gray-600">A pattern in data suggesting a possible vaccine-event connection worth investigating</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Causation vs Correlation</div>
+            <div className="text-gray-600">Events happening after vaccination (correlation) vs events caused by vaccination (causation)</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Passive Surveillance</div>
+            <div className="text-gray-600">A system that relies on voluntary reporting rather than active data collection</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Denominator</div>
+            <div className="text-gray-600">The total number of vaccine doses administered — needed to calculate actual risk rates</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Stimulated Reporting</div>
+            <div className="text-gray-600">Increased VAERS reporting driven by media attention or public awareness rather than actual safety changes</div>
+          </div>
+          <div>
+            <div className="font-bold text-gray-900">Background Rate</div>
+            <div className="text-gray-600">How often a health event occurs in the general population regardless of vaccination</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-8 border-t border-gray-200 pt-8">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Explore VaccineWatch</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Link href="/vaccines" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Browse All Vaccines</div>
+            <div className="text-sm text-gray-500">104 vaccine types with VAERS data</div>
+          </Link>
+          <Link href="/symptoms" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Browse All Symptoms</div>
+            <div className="text-sm text-gray-500">500+ adverse event categories</div>
+          </Link>
+          <Link href="/analysis" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Analysis Hub</div>
+            <div className="text-sm text-gray-500">Deep dives into VAERS patterns</div>
+          </Link>
+        </div>
+      </div>
+
+<div className="mt-8 bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
         <h3 className="text-lg font-bold text-gray-900 mb-2">Still have questions?</h3>
         <p className="text-gray-600 mb-4">Learn more about our data sources and methodology.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

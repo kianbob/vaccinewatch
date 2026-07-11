@@ -81,6 +81,14 @@ export default function StateVaccineRequirements2026Page() {
       </div>
 
       <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>Why This Matters</h2>
+        <p>
+          Understanding state vaccine requirements is important for parents enrolling children in
+          school, families moving between states, healthcare providers counseling patients, and
+          anyone trying to understand why vaccination coverage — and VAERS reporting patterns —
+          vary geographically. Requirements shape behavior, and behavior shapes the data.
+        </p>
+
         <h2 className={playfairDisplay.className}>How State Requirements Work</h2>
         <p>
           Every state and the District of Columbia require certain vaccinations for children to attend public
@@ -171,6 +179,40 @@ export default function StateVaccineRequirements2026Page() {
           raw counts require careful interpretation.
         </p>
 
+        <h2 className={playfairDisplay.className}>College and University Requirements</h2>
+        <p>
+          In addition to K–12 requirements, many colleges and universities mandate additional
+          vaccines for incoming students, including:
+        </p>
+        <ul>
+          <li><strong>Meningococcal (MenACWY):</strong> required or strongly recommended at most
+          four-year residential colleges, with a booster at age 16 if the first dose was given before 16.</li>
+          <li><strong>MMR:</strong> two documented doses, often stricter than K–12 requirements.</li>
+          <li><strong>COVID-19:</strong> some institutions continue to require updated COVID vaccination,
+          though mandates have been rolled back at many schools since 2023.</li>
+          <li><strong>Meningococcal B:</strong> increasingly recommended but rarely required.</li>
+        </ul>
+        <p>
+          College requirements are typically set by the institution (not the state), meaning students
+          attending private universities in states with broad exemptions may still face strict vaccine
+          requirements.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Exemption Trends and Public Health Implications</h2>
+        <p>
+          Rising exemption rates in some states have contributed to localized outbreaks of
+          vaccine-preventable diseases. Measles outbreaks in 2019 and pertussis clusters in subsequent
+          years have been concentrated in areas with high non-medical exemption rates. Public health
+          experts track exemption rates as a leading indicator of community vulnerability, and several
+          states have responded by tightening exemption procedures — for example, requiring physician
+          counseling before granting a philosophical exemption.
+        </p>
+        <p>
+          The tension between parental autonomy and community disease prevention remains one of the
+          most debated areas of vaccine policy. VaccineWatch presents the data without taking a
+          position on these policy questions.
+        </p>
+
         <h2 className={playfairDisplay.className}>How to Confirm Your State&apos;s Rules</h2>
         <p>
           Requirements are published by each state&apos;s department of health and by individual school
@@ -194,6 +236,33 @@ export default function StateVaccineRequirements2026Page() {
         </div>
       </div>
 
+      {/* Key Takeaways */}
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
+        <ul className="space-y-3 text-gray-700">
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">1.</span>
+            <span>All 50 states require certain vaccines for school entry, but the exact list and exemptions vary</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">2.</span>
+            <span>Three exemption types exist: medical (all states), religious (most states), and philosophical (minority of states)</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">3.</span>
+            <span>States with stricter requirements tend to have higher vaccination coverage and fewer outbreaks</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">4.</span>
+            <span>College and university requirements add another layer beyond K–12 mandates</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">5.</span>
+            <span>Always confirm current requirements with your state health department before enrollment</span>
+          </li>
+        </ul>
+      </div>
+
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Explore More</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -212,6 +281,18 @@ export default function StateVaccineRequirements2026Page() {
           <Link href="/analysis/geographic-patterns" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Geographic Patterns →</div>
             <div className="text-sm text-gray-500">How reports vary by location</div>
+          </Link>
+          <Link href="/analysis/vaccine-hesitancy-2026" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Vaccine Hesitancy 2026 →</div>
+            <div className="text-sm text-gray-500">Public confidence trends</div>
+          </Link>
+          <Link href="/analysis/reporting-bias" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Reporting Bias →</div>
+            <div className="text-sm text-gray-500">Why report counts vary by region</div>
+          </Link>
+          <Link href="/side-effects" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Side Effects Guides →</div>
+            <div className="text-sm text-gray-500">Required vaccine side effect data</div>
           </Link>
         </div>
       </div>

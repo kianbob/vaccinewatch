@@ -93,6 +93,14 @@ export default function FluSideEffectsPage() {
       </div>
 
       <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>Understanding the Flu Vaccine Landscape</h2>
+        <p>
+          The flu vaccine is unique in VAERS because it has been tracked continuously for over
+          35 years with annual administration to hundreds of millions of Americans. This provides
+          one of the most robust baselines in the entire VAERS database for understanding
+          normal adverse event reporting patterns.
+        </p>
+
         <h2 className={playfairDisplay.className}>Most Common Flu Vaccine Side Effects</h2>
         <p>
           The most frequently reported side effects from flu vaccines are consistent with known, 
@@ -174,6 +182,36 @@ export default function FluSideEffectsPage() {
           <li>High fever lasting more than 48 hours</li>
         </ul>
 
+        <h2 className={playfairDisplay.className}>Flu Vaccine and Older Adults</h2>
+        <p>
+          Adults 65 and older are recommended to receive enhanced flu vaccine formulations that
+          may produce stronger immune responses and, correspondingly, more noticeable side effects:
+        </p>
+        <ul>
+          <li><strong>High-dose flu vaccine (Fluzone HD):</strong> Contains 4x the antigen of
+          standard-dose vaccines. More local reactions (soreness, redness) but significantly
+          better protection in seniors</li>
+          <li><strong>Adjuvanted flu vaccine (Fluad):</strong> Contains MF59 adjuvant to boost
+          immune response. May cause more injection site reactions</li>
+          <li><strong>Recombinant flu vaccine (Flublok):</strong> Made without eggs or live virus.
+          Similar side effect profile to standard vaccines</li>
+        </ul>
+        <p>
+          The higher VAERS death reporting rate for flu vaccines reflects the elderly population that
+          receives them, not the vaccine&apos;s safety profile. Elderly adults have high baseline
+          mortality rates, and temporal coincidence with vaccination is expected. See our{' '}
+          <Link href="/analysis/elderly">analysis of the 65+ age group</Link> for more context.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Egg Allergies and Flu Vaccines</h2>
+        <p>
+          Most flu vaccines are produced using eggs, which historically raised concerns for people
+          with egg allergies. Current CDC guidance states that people with egg allergies can receive
+          any age-appropriate flu vaccine without additional precautions beyond the standard 15-minute
+          observation period. For those with severe egg allergies, cell-based (Flucelvax) and
+          recombinant (Flublok) options are available that do not use eggs in production.
+        </p>
+
         <h2 className={playfairDisplay.className}>Flu vs COVID Vaccine Reports</h2>
         <p>
           Comparing flu and COVID vaccine VAERS reports is a common but misleading exercise. 
@@ -211,6 +249,29 @@ export default function FluSideEffectsPage() {
         </div>
       </div>
 
+      {/* FAQ */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+        <div className="space-y-4 text-sm">
+          <div>
+            <div className="font-semibold text-gray-900">Can the flu shot give me the flu?</div>
+            <div className="text-gray-600 mt-1">No. Injectable flu vaccines contain inactivated virus and cannot cause influenza. Mild symptoms after the shot (fatigue, low-grade fever) are signs of your immune system responding, not actual flu infection. The nasal spray contains weakened live virus but also cannot cause true flu.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Why do I need a flu shot every year?</div>
+            <div className="text-gray-600 mt-1">Influenza viruses mutate rapidly, and the dominant strains change each season. The annual vaccine is reformulated to match the strains most likely to circulate that year. Additionally, immunity from the flu vaccine wanes over several months.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">When is the best time to get a flu shot?</div>
+            <div className="text-gray-600 mt-1">September or October is ideal for most people, providing protection through the peak flu season (December–February). Getting vaccinated later is still beneficial — flu activity can persist into May.</div>
+          </div>
+          <div>
+            <div className="font-semibold text-gray-900">Can I get the flu shot and COVID vaccine at the same time?</div>
+            <div className="text-gray-600 mt-1">Yes. CDC allows co-administration of flu and COVID vaccines. Side effects may be slightly more noticeable but are generally the same as getting either vaccine alone. See our <Link href="/analysis/multi-vaccine" className="text-primary hover:underline">multi-vaccine analysis</Link>.</div>
+          </div>
+        </div>
+      </div>
+
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">More Side Effect Guides</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -227,6 +288,15 @@ export default function FluSideEffectsPage() {
             <div className="text-sm text-gray-500">Often given with flu vaccine</div>
           </Link>
         </div>
+      </div>
+
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+        <strong>Reporting context:</strong> Flu vaccines have one of the longest track records in VAERS,
+        with data spanning the full 35-year history of the system. Annual administration to hundreds of
+        millions of people provides a robust baseline for comparison. When evaluating flu vaccine VAERS
+        data, remember that the elderly population receiving high-dose formulations has higher baseline
+        rates of serious health events, which inflates severity metrics for flu vaccines compared to
+        vaccines given primarily to young, healthy populations.
       </div>
     </div>
   )

@@ -108,6 +108,32 @@ const articles = [
     color: 'accent',
   },
   
+  // Timely 2026 analysis
+  {
+    slug: 'bird-flu-h5n1-vaccine',
+    title: 'H5N1 Bird Flu Vaccine: What We Know in 2026',
+    subtitle: 'Tracking the pandemic-potential virus and vaccine preparedness',
+    keyFinding: 'Pre-pandemic H5N1 vaccine stockpiles and candidate vaccines are being updated as avian flu spreads in dairy cattle',
+    readTime: 8,
+    color: 'danger',
+  },
+  {
+    slug: 'covid-long-term-safety',
+    title: 'COVID-19 Vaccine Long-Term Safety Data',
+    subtitle: 'What four years of real-world data show about lasting effects',
+    keyFinding: 'Large-scale studies with 3-4 years of follow-up confirm the safety profile established in clinical trials',
+    readTime: 9,
+    color: 'primary',
+  },
+  {
+    slug: 'vaccine-hesitancy-2026',
+    title: 'Vaccine Hesitancy in 2026: Trends & Data',
+    subtitle: 'How public confidence in vaccines has shifted since the pandemic',
+    keyFinding: 'Childhood vaccination rates have partially recovered but remain below pre-pandemic levels in many states',
+    readTime: 7,
+    color: 'accent',
+  },
+
   // Original analysis articles
   {
     slug: 'age-patterns',

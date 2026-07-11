@@ -92,6 +92,15 @@ export default function RsvVaccine2026Page() {
       </div>
 
       <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>A Historic Development</h2>
+        <p>
+          The approval of RSV vaccines in 2023–2024 represented a decades-long effort to develop
+          protection against a virus that has eluded vaccine developers since the 1960s. An early
+          attempt at an RSV vaccine in the 1960s actually made disease worse in vaccinated children
+          (a phenomenon called vaccine-enhanced disease), setting back RSV vaccine research by
+          decades. Modern RSV vaccines use fundamentally different approaches that avoid this risk.
+        </p>
+
         <h2 className={playfairDisplay.className}>Why RSV Matters</h2>
         <p>
           RSV is a common respiratory virus that causes cold-like symptoms in most people but can be
@@ -173,6 +182,39 @@ export default function RsvVaccine2026Page() {
           <Link href="/is-vaers-reliable">is VAERS reliable?</Link>
         </p>
 
+        <h2 className={playfairDisplay.className}>Real-World Effectiveness Data</h2>
+        <p>
+          Since RSV vaccines became widely available in the 2023–2024 season, real-world data has
+          begun to confirm the clinical trial findings. Key observations from the first two seasons of
+          use include:
+        </p>
+        <ul>
+          <li><strong>RSV hospitalization rates among vaccinated adults 60+ have dropped significantly</strong>
+          compared to pre-vaccine seasons, consistent with the 70–83% efficacy seen in trials</li>
+          <li><strong>Nirsevimab has been effective in reducing infant RSV hospitalizations</strong> in
+          the states and countries where it has been widely deployed</li>
+          <li><strong>Maternal vaccination uptake</strong> has been slower than expected, partly due to
+          timing logistics (the vaccine is administered seasonally during a narrow pregnancy window)
+          and partly due to general hesitancy around new vaccines during pregnancy</li>
+          <li><strong>No unexpected safety signals</strong> have emerged beyond what was identified in
+          clinical trials, though the Guillain-Barré monitoring continues</li>
+        </ul>
+
+        <h2 className={playfairDisplay.className}>RSV Seasonality and Timing</h2>
+        <p>
+          RSV season in most of the continental United States typically runs from October through March,
+          with peak activity in December and January. This seasonality matters because:
+        </p>
+        <ul>
+          <li>Adult RSV vaccination should ideally occur before the season starts (September–October)</li>
+          <li>Maternal vaccination is timed to 32–36 weeks of gestation during the season</li>
+          <li>Nirsevimab for infants is given just before or during the RSV season</li>
+        </ul>
+        <p>
+          Some southern states and tropical regions experience earlier or longer RSV seasons, and
+          healthcare providers in those areas may adjust timing accordingly.
+        </p>
+
         <h2 className={playfairDisplay.className}>The Bottom Line</h2>
         <p>
           For the first time, effective RSV prevention is available across the age spectrum — from newborns
@@ -196,6 +238,33 @@ export default function RsvVaccine2026Page() {
         </div>
       </div>
 
+      {/* Key Takeaways */}
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Key Takeaways</h3>
+        <ul className="space-y-3 text-gray-700">
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">1.</span>
+            <span>RSV vaccines (Arexvy, Abrysvo) are now available for adults 60+ and pregnant women</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">2.</span>
+            <span>Nirsevimab (Beyfortus) provides passive protection for infants through their first RSV season</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">3.</span>
+            <span>Clinical trials showed 70–83% efficacy against RSV-associated lower respiratory tract disease</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">4.</span>
+            <span>Real-world data from the first two seasons confirms clinical trial findings</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary font-bold mr-2">5.</span>
+            <span>The adult RSV vaccine is currently a single dose, not annual like flu or COVID</span>
+          </li>
+        </ul>
+      </div>
+
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Explore More</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -214,6 +283,18 @@ export default function RsvVaccine2026Page() {
           <Link href="/analysis/vaccine-schedule-2026" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">2026 Vaccine Schedule Guide →</div>
             <div className="text-sm text-gray-500">Everything new this year</div>
+          </Link>
+          <Link href="/guillain-barre" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Guillain-Barré Syndrome →</div>
+            <div className="text-sm text-gray-500">Monitored with RSV vaccines</div>
+          </Link>
+          <Link href="/analysis/covid-long-term-safety" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">COVID Long-Term Safety →</div>
+            <div className="text-sm text-gray-500">Comparison with newer vaccines</div>
+          </Link>
+          <Link href="/analysis/pediatric" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Pediatric Analysis →</div>
+            <div className="text-sm text-gray-500">Infant vaccination data in context</div>
           </Link>
         </div>
       </div>

@@ -82,6 +82,14 @@ export default function LotAnalysisPage() {
 
       {/* Article Content */}
       <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>Why This Topic Is So Important</h2>
+        <p>
+          &quot;Hot lot&quot; claims are among the most viral and persistent misuses of VAERS data.
+          This analysis explains exactly why comparing lots by raw report count is not just
+          uninformative — it&apos;s actively misleading and can erode public confidence in
+          vaccines that are actually performing normally.
+        </p>
+
         <h2 className={playfairDisplay.className}>The Critical Context Missing from VAERS</h2>
         <p>
           When analyzing vaccine lot numbers, we immediately encounter what epidemiologists call "the denominator problem." 
@@ -169,6 +177,42 @@ export default function LotAnalysisPage() {
           long before patterns became apparent in VAERS.
         </p>
 
+        <h2 className={playfairDisplay.className}>Manufacturing Quality Controls</h2>
+        <p>
+          Understanding how vaccine lots are produced and tested provides important context:
+        </p>
+        <ul>
+          <li><strong>Good Manufacturing Practices (GMP):</strong> Vaccine production facilities follow
+          strict FDA-regulated GMP standards that ensure consistency across lots</li>
+          <li><strong>Lot release testing:</strong> The FDA&apos;s Center for Biologics Evaluation and
+          Research (CBER) independently tests samples from each lot before it can be distributed</li>
+          <li><strong>Potency, purity, and sterility:</strong> Every lot must meet specifications for
+          active ingredient content, absence of contaminants, and sterility</li>
+          <li><strong>Cold chain monitoring:</strong> Temperature-sensitive vaccines are tracked from
+          manufacturing through administration to ensure they remain within specified ranges</li>
+        </ul>
+        <p>
+          This rigorous quality system means that true manufacturing defects are extremely rare.
+          When they do occur — as in historical cases of contaminated polio vaccine or improperly
+          stored flu vaccine — they are detected and addressed through recalls.
+        </p>
+
+        <h2 className={playfairDisplay.className}>Frequently Asked Questions</h2>
+        <p><strong>Should I check my vaccine lot number in VAERS?</strong></p>
+        <p>
+          You can, using our <Link href="/tools/lot-lookup">lot lookup tool</Link>, but interpreting
+          the results requires caution. Finding reports for your lot number does not mean there is a
+          problem with that lot — it means events were reported after doses from that lot, which
+          is expected for any widely distributed lot.
+        </p>
+        <p><strong>Has a vaccine lot ever been recalled due to VAERS signals?</strong></p>
+        <p>
+          VAERS can contribute to identifying lot-specific issues, but recalls are typically triggered
+          by manufacturing quality investigations, not VAERS data alone. VAERS reports may prompt
+          regulators to investigate a specific lot, but the actual recall decision is based on
+          laboratory testing and manufacturing records.
+        </p>
+
         <h2 className={playfairDisplay.className}>The Harm of Misinterpreting Lot Data</h2>
         <p>
           Misinterpreting lot data has real-world consequences:
@@ -179,6 +223,16 @@ export default function LotAnalysisPage() {
           <li>Public confidence in vaccine safety systems can be undermined</li>
           <li>Resources may be diverted from real safety monitoring to investigate false signals</li>
         </ul>
+      </div>
+
+      {/* Context note */}
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mb-12">
+        <strong>Why this matters:</strong> &quot;Hot lot&quot; claims are among the most persistent
+        misuses of VAERS data. Social media posts frequently highlight lots with high report counts
+        as evidence of dangerous batches. This analysis explains why such claims are unfounded without
+        denominator data. If you encounter lot-level claims online, remember: a lot with more reports
+        is almost certainly just a lot that was distributed more widely. The FDA tests every lot before
+        release and has robust recall procedures for any genuine quality issues.
       </div>
 
       {/* Key Takeaways */}
@@ -202,6 +256,26 @@ export default function LotAnalysisPage() {
             <span>Regulatory systems already monitor lot safety through proper statistical methods</span>
           </li>
         </ul>
+      </div>
+
+      {/* Explore */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-12">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Explore Lot Data Responsibly</h3>
+        <p className="text-gray-600 text-sm mb-4">
+          Our lot lookup tool lets you search specific lot numbers while providing the context
+          needed for responsible interpretation. Remember: high report counts for a lot likely
+          reflect wide distribution, not safety problems.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <Link href="/tools/lot-lookup" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">Lot Lookup Tool →</div>
+            <div className="text-sm text-gray-500">Search by lot number with context</div>
+          </Link>
+          <Link href="/tools/reporting-rates" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">Reporting Rates →</div>
+            <div className="text-sm text-gray-500">Why denominators matter for lots too</div>
+          </Link>
+        </div>
       </div>
 
       {/* Related */}
