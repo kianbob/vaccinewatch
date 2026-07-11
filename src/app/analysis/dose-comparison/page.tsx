@@ -10,8 +10,12 @@ import { DoseComparisonChartsClient as DoseComparisonCharts } from '@/components
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: '1st vs 2nd Dose vs Booster — VAERS Analysis',
-  description: 'COVID-19 vaccine dose comparison: 2nd doses generate 130% more VAERS reports than 1st doses. Adverse event patterns by dose number.'
+  title: '1st vs 2nd Dose vs Booster — VAERS Vaccine Side Effect Analysis',
+  description: 'COVID-19 vaccine dose comparison in VAERS: 2nd doses generate 130% more adverse event reports than 1st doses. Side effect patterns by dose number explained.',
+  openGraph: {
+    title: '1st vs 2nd Dose vs Booster — VAERS Vaccine Side Effect Analysis',
+    description: 'COVID-19 vaccine dose comparison in VAERS: 2nd doses generate 130% more adverse event reports than 1st doses. Side effect patterns by dose number explained.',
+  },
 }
 
 export default function DoseComparisonPage() {
@@ -191,6 +195,10 @@ export default function DoseComparisonPage() {
           <Link href="/tools/dose-comparison" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Dose Comparison Tool</div>
             <div className="text-sm text-gray-500">Interactive dose comparisons</div>
+          </Link>
+          <Link href="/vaccine-schedule" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">2026 Vaccine Schedule</div>
+            <div className="text-sm text-gray-500">Recommended doses and timing by age</div>
           </Link>
         </div>
       </div>

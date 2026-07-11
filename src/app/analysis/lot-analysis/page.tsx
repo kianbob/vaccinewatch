@@ -10,8 +10,12 @@ import { LotAnalysisChartsClient as LotAnalysisCharts } from '@/components/Clien
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Lot Number Analysis — VAERS Data',
-  description: '4,414 COVID vaccine lots tracked in VAERS. Why lot-level analysis is misleading without manufacturing and distribution context.'
+  title: 'Vaccine Lot Number Analysis — VAERS Data & the "Hot Lots" Myth 2026',
+  description: '4,414 COVID vaccine lots tracked in VAERS. Why lot-level adverse event counts mislead without manufacturing, distribution, and dose-volume context.',
+  openGraph: {
+    title: 'Vaccine Lot Number Analysis — VAERS Data & the "Hot Lots" Myth 2026',
+    description: '4,414 COVID vaccine lots tracked in VAERS. Why lot-level adverse event counts mislead without manufacturing, distribution, and dose-volume context.',
+  },
 }
 
 export default function LotAnalysisPage() {
@@ -211,6 +215,10 @@ export default function LotAnalysisPage() {
           <Link href="/tools/lot-lookup" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Lot Lookup Tool</div>
             <div className="text-sm text-gray-500">Search specific lot numbers</div>
+          </Link>
+          <Link href="/analysis/manufacturer-landscape" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">The Manufacturer Landscape</div>
+            <div className="text-sm text-gray-500">Who dominates VAERS reporting</div>
           </Link>
         </div>
       </div>

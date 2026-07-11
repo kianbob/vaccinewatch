@@ -10,8 +10,12 @@ import { CovidVsFluChartsClient as CovidVsFluCharts } from '@/components/ClientC
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'COVID Vaccine vs Flu Vaccine Side Effects — VAERS Data Compared',
-  description: 'Side-by-side VAERS comparison of COVID-19 vs influenza vaccines. Report counts, death rates, and why scale matters for context.'
+  title: 'COVID vs Flu Vaccine Side Effects 2026 — VAERS Data Compared',
+  description: 'Side-by-side VAERS comparison of COVID-19 vs influenza vaccine adverse events. Report counts, death rates, and why dose scale and demographics matter.',
+  openGraph: {
+    title: 'COVID vs Flu Vaccine Side Effects 2026 — VAERS Data Compared',
+    description: 'Side-by-side VAERS comparison of COVID-19 vs influenza vaccine adverse events. Report counts, death rates, and why dose scale and demographics matter.',
+  },
 }
 
 export default function CovidVsFluPage() {
@@ -159,6 +163,10 @@ export default function CovidVsFluPage() {
           <Link href="/analysis/reporting-trends" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">35 Years of Reporting</div>
             <div className="text-sm text-gray-500">Historical trends</div>
+          </Link>
+          <Link href="/analysis/vaccine-schedule-2026" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">The 2026 Vaccine Schedule</div>
+            <div className="text-sm text-gray-500">Which vaccines are recommended, and when</div>
           </Link>
         </div>
       </div>

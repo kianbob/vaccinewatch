@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Tdap Vaccine Side Effects — Boostrix & Adacel VAERS Data',
-  description: 'VAERS analysis of Tdap vaccine side effects (tetanus, diphtheria, pertussis). 52,000+ reports including pregnancy data.',
+  title: 'Tdap Vaccine Side Effects 2026 — Boostrix & Adacel VAERS Data',
+  description: 'VAERS analysis of Tdap vaccine side effects and adverse events (tetanus, diphtheria, pertussis). 52,000+ reports, including pregnancy data, with full context.',
+  openGraph: {
+    title: 'Tdap Vaccine Side Effects — VAERS Data Analysis',
+    description: '52,000+ Tdap vaccine adverse event reports analyzed from VAERS data, including pregnancy safety context.',
+  },
 }
 
 export default function TdapSideEffectsPage() {
@@ -120,6 +124,11 @@ export default function TdapSideEffectsPage() {
           <li>Guillain-Barré Syndrome (very rare, about 1 per million)</li>
           <li>Severe allergic reaction</li>
         </ul>
+        <p>
+          Tdap is recommended for adolescents, adults, and during every pregnancy. See timing on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link> and our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>.
+        </p>
       </div>
 
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800 mb-12">

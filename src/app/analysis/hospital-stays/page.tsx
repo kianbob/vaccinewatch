@@ -10,8 +10,12 @@ import { HospitalStaysChartsClient as HospitalStaysCharts } from '@/components/C
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Hospitalization Duration — VAERS Data',
-  description: '72% of vaccine-related hospitalizations last 3 days or fewer. Duration patterns across 100+ vaccines in VAERS analyzed.'
+  title: 'Vaccine Hospitalization Duration — VAERS Adverse Event Data 2026',
+  description: '72% of vaccine-related hospitalizations in VAERS last 3 days or fewer. Hospital stay duration patterns across 100+ vaccines analyzed in full context.',
+  openGraph: {
+    title: 'Vaccine Hospitalization Duration — VAERS Adverse Event Data 2026',
+    description: '72% of vaccine-related hospitalizations in VAERS last 3 days or fewer. Hospital stay duration patterns across 100+ vaccines analyzed in full context.',
+  },
 }
 
 export default function HospitalStaysPage() {
@@ -207,6 +211,10 @@ export default function HospitalStaysPage() {
           <Link href="/analysis/recovery-rates" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Do Vaccine Side Effects Go Away?</div>
             <div className="text-sm text-gray-500">Recovery patterns and outcomes</div>
+          </Link>
+          <Link href="/analysis/death-reports" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Understanding Death Reports</div>
+            <div className="text-sm text-gray-500">What death reports actually mean</div>
           </Link>
         </div>
       </div>

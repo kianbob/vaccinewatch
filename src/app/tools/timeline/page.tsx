@@ -5,8 +5,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import TimelineClient from './TimelineClient'
 
 export const metadata: Metadata = {
-  title: 'VAERS Timeline — 35 Years of Reports',
-  description: 'Interactive VAERS timeline from 1990 to 2026. Explore yearly trends in reports, deaths, hospitalizations, and ER visits across 104 vaccines.'
+  title: 'VAERS Timeline 2026 — 35 Years of Vaccine Adverse Event Reports',
+  description: 'Interactive VAERS timeline from 1990 to 2026. Explore yearly trends in vaccine adverse event reports, deaths, hospitalizations, and ER visits across 104 vaccines.',
+  openGraph: {
+    title: 'VAERS Timeline — 35 Years of Vaccine Adverse Event Reports',
+    description: 'Explore yearly VAERS trends from 1990 to 2026: reports, deaths, hospitalizations, and ER visits across 104 vaccines.',
+  },
 }
 
 export default function TimelinePage() {

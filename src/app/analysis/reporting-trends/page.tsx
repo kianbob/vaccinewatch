@@ -11,7 +11,11 @@ import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
   title: 'VAERS Reporting Trends 1990–2026 — 35 Years of Vaccine Safety Data',
-  description: '35 years of VAERS data: from 2,214 reports in 1990 to 768K in 2021. Historical trends, COVID surge, and return to baseline.'
+  description: '35 years of VAERS data: from 2,214 reports in 1990 to 768K in 2021. Historical vaccine adverse event trends, the COVID surge, and the return to baseline.',
+  openGraph: {
+    title: 'VAERS Reporting Trends 1990–2026 — 35 Years of Vaccine Safety Data',
+    description: '35 years of VAERS data: from 2,214 reports in 1990 to 768K in 2021. Historical vaccine adverse event trends, the COVID surge, and the return to baseline.',
+  },
 }
 
 export default function ReportingTrendsPage() {
@@ -147,6 +151,10 @@ export default function ReportingTrendsPage() {
           <Link href="/analysis/top-symptoms" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Top Symptoms</div>
             <div className="text-sm text-gray-500">Most commonly reported adverse events</div>
+          </Link>
+          <Link href="/analysis/reporting-bias" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Understanding VAERS Reporting Bias</div>
+            <div className="text-sm text-gray-500">What drives reporting spikes</div>
           </Link>
         </div>
       </div>

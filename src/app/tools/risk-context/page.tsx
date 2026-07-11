@@ -5,8 +5,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import RiskContextClient from './RiskContextClient'
 
 export const metadata: Metadata = {
-  title: 'VAERS Risk Context Calculator',
-  description: 'Put VAERS numbers in perspective. Calculate reports per million doses and compare to background disease rates for proper context.'
+  title: 'VAERS Risk Context Calculator 2026 — Vaccine Safety in Perspective',
+  description: 'Put VAERS vaccine adverse event numbers in perspective. Calculate reports per million doses and compare to background disease rates for proper safety context.',
+  openGraph: {
+    title: 'VAERS Risk Context Calculator — Vaccine Safety in Perspective',
+    description: 'Contextualize raw VAERS numbers by comparing adverse event reports per million doses to background disease rates.',
+  },
 }
 
 export default function RiskContextPage() {

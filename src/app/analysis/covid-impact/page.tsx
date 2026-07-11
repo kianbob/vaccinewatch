@@ -10,8 +10,12 @@ import { CovidImpactChartsClient as CovidImpactCharts } from '@/components/Clien
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'COVID-19 Impact on VAERS Reporting',
-  description: '768,706 VAERS reports in 2021 alone — more than the previous 10 years combined. How COVID-19 transformed vaccine safety reporting.'
+  title: 'COVID-19 Vaccine Impact on VAERS — 768K Adverse Event Reports Explained',
+  description: 'How COVID-19 transformed vaccine safety reporting: 768,706 VAERS reports in 2021 alone, more than the prior decade combined. The data and essential context.',
+  openGraph: {
+    title: 'COVID-19 Vaccine Impact on VAERS — 768K Adverse Event Reports Explained',
+    description: 'How COVID-19 transformed vaccine safety reporting: 768,706 VAERS reports in 2021 alone, more than the prior decade combined. The data and essential context.',
+  },
 }
 
 export default function CovidImpactPage() {
@@ -155,6 +159,10 @@ export default function CovidImpactPage() {
           <Link href="/analysis/death-reports" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Understanding Death Reports</div>
             <div className="text-sm text-gray-500">What death reports actually mean</div>
+          </Link>
+          <Link href="/analysis/myocarditis" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Myocarditis Deep Dive</div>
+            <div className="text-sm text-gray-500">The most closely-watched COVID-era safety signal</div>
           </Link>
         </div>
       </div>

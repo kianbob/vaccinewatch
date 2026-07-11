@@ -25,43 +25,45 @@ export default function AdverseEventsPage() {
   const totalER = stats?.totalER || 356123
   const totalDisabled = stats?.totalDisabled || 37185
 
+  const faqs = [
+    {
+      question: 'What is a vaccine adverse event?',
+      answer: 'A vaccine adverse event is any health problem that happens after vaccination. It may or may not be caused by the vaccine. VAERS collects reports of these events to look for potential safety signals.',
+    },
+    {
+      question: 'How many vaccine adverse events are reported each year?',
+      answer: `VAERS receives approximately 30,000-60,000 reports per year in normal years. In 2021, during the COVID-19 vaccination campaign, VAERS received over 768,000 reports. The total database contains ${totalReports.toLocaleString()} reports from 1990 to present.`,
+    },
+    {
+      question: 'Does a VAERS report mean the vaccine caused the adverse event?',
+      answer: 'No. VAERS reports show correlation, not causation. Many reported events are coincidental — they would have happened regardless of vaccination. Only controlled studies can determine whether a vaccine actually causes a specific adverse event.',
+    },
+    {
+      question: 'What are the most common vaccine adverse events?',
+      answer: 'The most commonly reported adverse events in VAERS include headache, fever, pain at the injection site, fatigue, chills, nausea, and dizziness. These are typically mild and resolve within days.',
+    },
+    {
+      question: 'What is the difference between an adverse event and a side effect?',
+      answer: 'A side effect is a health problem that has been shown to be caused by a vaccine. An adverse event is anything that happens after vaccination, whether or not the vaccine caused it. Because VAERS records adverse events by timing rather than by proven cause, most reports are not confirmed side effects.',
+    },
+    {
+      question: 'Who can report a vaccine adverse event to VAERS?',
+      answer: 'Anyone can submit a VAERS report — patients, parents, caregivers, healthcare providers, and manufacturers. Healthcare providers are legally required to report certain serious events. This openness helps capture rare signals but means reports are unverified and vary in quality.',
+    },
+    {
+      question: 'What counts as a serious adverse event?',
+      answer: 'VAERS classifies an adverse event as serious if it results in death, a life-threatening condition, hospitalization or prolonged hospitalization, permanent disability, or a congenital anomaly/birth defect. Serious reports are a small share of the total, and being classified as serious does not confirm the vaccine as the cause.',
+    },
+  ]
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What is a vaccine adverse event?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'A vaccine adverse event is any health problem that happens after vaccination. It may or may not be caused by the vaccine. VAERS collects reports of these events to look for potential safety signals.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'How many vaccine adverse events are reported each year?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `VAERS receives approximately 30,000-60,000 reports per year in normal years. In 2021, during the COVID-19 vaccination campaign, VAERS received over 768,000 reports. The total database contains ${totalReports.toLocaleString()} reports from 1990 to present.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Does a VAERS report mean the vaccine caused the adverse event?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'No. VAERS reports show correlation, not causation. Many reported events are coincidental — they would have happened regardless of vaccination. Only controlled studies can determine whether a vaccine actually causes a specific adverse event.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What are the most common vaccine adverse events?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'The most commonly reported adverse events in VAERS include headache, fever, pain at the injection site, fatigue, chills, nausea, and dizziness. These are typically mild and resolve within days.',
-        },
-      },
-    ],
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
   }
 
   return (
@@ -212,6 +214,66 @@ export default function AdverseEventsPage() {
           <li><strong>Most reports describe non-serious events</strong> — Over 85% of VAERS reports describe symptoms that resolve without lasting effects.</li>
           <li><strong>Death reports require context</strong> — The {formatNumber(totalDied)} death reports don&apos;t mean vaccines caused those deaths. <Link href="/vaccine-deaths" className="text-primary hover:underline">Learn about death report context →</Link></li>
         </ul>
+      </div>
+
+      {/* How Reporting Works */}
+      <div className="prose prose-lg max-w-4xl mb-10">
+        <h2 className={`${playfairDisplay.className}`}>How Adverse Events Are Reported</h2>
+        <p>
+          A VAERS report can be filed online or by mail, and anyone may submit one — the person who was vaccinated, a
+          parent or caregiver, a healthcare provider, or a vaccine manufacturer. Healthcare providers are{' '}
+          <strong>required by law</strong> to report certain events, such as those listed in the VAERS Table of
+          Reportable Events Following Vaccination, and any adverse event listed in a vaccine&apos;s package insert as a
+          contraindication. Manufacturers must report all adverse events brought to their attention.
+        </p>
+        <p>
+          Each report captures the person&apos;s age and sex, the vaccine(s) given, the date of vaccination and the date
+          symptoms began, a free-text description of what happened, and a set of outcome checkboxes. The symptoms are then
+          coded by trained staff using <strong>MedDRA</strong>, a standardized medical dictionary, so that similar events
+          can be grouped and searched. Importantly, VAERS staff do <strong>not</strong> investigate or confirm reports
+          before accepting them — the system is intentionally open so that potential signals are not filtered out at the
+          door. This is why raw reports must always be read as unverified and why they cannot, on their own, establish
+          that a vaccine caused an event. For more on this, see our{' '}
+          <Link href="/methodology" className="text-primary hover:underline">methodology</Link> and{' '}
+          <Link href="/glossary" className="text-primary hover:underline">glossary</Link>.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>Severity Categories in VAERS</h2>
+        <p>
+          VAERS records several outcome flags that describe how serious a reported event was. A single report can carry
+          more than one flag, so these categories overlap and should not be added together:
+        </p>
+        <ul>
+          <li><strong>Death</strong> — the report noted that the person died. In this dataset there are {formatNumber(totalDied)} such reports, but a death reported to VAERS is not a confirmed vaccine-caused death.</li>
+          <li><strong>Hospitalization</strong> — an inpatient hospital stay was reported ({formatNumber(totalHosp)} reports).</li>
+          <li><strong>Emergency room / doctor visit</strong> — the event led to urgent care ({formatNumber(totalER)} reports).</li>
+          <li><strong>Permanent disability</strong> — a lasting disability was reported ({formatNumber(totalDisabled)} reports).</li>
+          <li><strong>Life-threatening</strong> — the reporter believed the person was at immediate risk of death at the time.</li>
+        </ul>
+        <p>
+          A report is classified as a <strong>serious adverse event</strong> if it involves any of death, a
+          life-threatening condition, hospitalization, permanent disability, or a birth defect. The great majority of
+          VAERS reports fall <em>outside</em> these categories and describe mild, self-limiting reactions. Even for
+          serious reports, classification reflects what was reported — not a determination that the vaccine was
+          responsible. Explore how outcomes differ across vaccines in our{' '}
+          <Link href="/dashboard" className="text-primary hover:underline">dashboard</Link> or by browsing{' '}
+          <Link href="/symptoms" className="text-primary hover:underline">specific symptoms</Link>.
+        </p>
+      </div>
+
+      {/* FAQ */}
+      <div className="max-w-4xl mb-10">
+        <h2 className={`text-2xl font-bold text-gray-900 mb-6 ${playfairDisplay.className}`}>
+          Adverse Events FAQ
+        </h2>
+        <div className="space-y-4">
+          {faqs.map((faq, i) => (
+            <div key={i} className="bg-white border border-gray-200 rounded-xl p-6">
+              <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Explore the Data */}

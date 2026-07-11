@@ -5,8 +5,8 @@ import { playfairDisplay } from '@/lib/fonts'
 import CompareClient from './CompareClient'
 
 export const metadata: Metadata = {
-  title: 'Compare Vaccines — Side-by-Side VAERS Data',
-  description: 'Compare 2-3 vaccines side by side: report counts, death rates, hospitalizations, and trends from 1.98M VAERS reports.',
+  title: 'Compare Vaccines 2026 — Side-by-Side VAERS Safety Data',
+  description: 'Compare 2-3 vaccines side by side: adverse event counts, death rates, hospitalizations, and yearly trends drawn from 1.98M VAERS reports and vaccine safety data.',
   openGraph: {
     title: 'Compare Vaccines — Side-by-Side VAERS Safety Data',
     description: 'Compare adverse event reports between vaccines side by side. Select 2-3 vaccines to see report counts, death rates, hospitalizations, and yearly trends from VAERS data.',

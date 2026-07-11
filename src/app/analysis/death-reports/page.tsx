@@ -10,8 +10,12 @@ import { DeathReportsChartsClient as DeathReportsCharts } from '@/components/Cli
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Deaths in VAERS — 27,732 Reports Explained (What They Mean & Don\'t)',
-  description: 'What "death reported to VAERS" actually means. 27,732 cases analyzed with critical context on causation vs correlation.'
+  title: 'Vaccine Deaths in VAERS — 27,732 Reports Explained (2026 Data)',
+  description: 'What "death reported to VAERS" actually means. 27,732 vaccine death reports analyzed with critical context on causation vs correlation and reporting limits.',
+  openGraph: {
+    title: 'Vaccine Deaths in VAERS — 27,732 Reports Explained (2026 Data)',
+    description: 'What "death reported to VAERS" actually means. 27,732 vaccine death reports analyzed with critical context on causation vs correlation and reporting limits.',
+  },
 }
 
 export default function DeathReportsPage() {
@@ -163,6 +167,10 @@ export default function DeathReportsPage() {
           <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">COVID-19 Impact</div>
             <div className="text-sm text-gray-500">The pandemic&apos;s effect on VAERS</div>
+          </Link>
+          <Link href="/analysis/serious-outcomes" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Serious vs Non-Serious Outcomes</div>
+            <div className="text-sm text-gray-500">The full severity spectrum in VAERS</div>
           </Link>
         </div>
       </div>

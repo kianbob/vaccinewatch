@@ -10,8 +10,12 @@ import { SeriousOutcomesChartsClient as SeriousOutcomesCharts } from '@/componen
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Serious vs Non-Serious VAERS Outcomes',
-  description: 'Deaths, hospitalizations, ER visits, and disabilities in VAERS. How serious outcomes compare across 104 vaccines.'
+  title: 'Serious vs Non-Serious VAERS Outcomes — Vaccine Adverse Event Severity 2026',
+  description: 'Deaths, hospitalizations, ER visits, and disabilities in VAERS. How serious vaccine adverse outcomes compare across 104 vaccines, with essential context.',
+  openGraph: {
+    title: 'Serious vs Non-Serious VAERS Outcomes — Vaccine Adverse Event Severity 2026',
+    description: 'Deaths, hospitalizations, ER visits, and disabilities in VAERS. How serious vaccine adverse outcomes compare across 104 vaccines, with essential context.',
+  },
 }
 
 export default function SeriousOutcomesPage() {
@@ -160,6 +164,10 @@ export default function SeriousOutcomesPage() {
           <Link href="/analysis/elderly" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Elderly Analysis</div>
             <div className="text-sm text-gray-500">65+ outcomes deep dive</div>
+          </Link>
+          <Link href="/analysis/hospital-stays" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Hospitalization Duration</div>
+            <div className="text-sm text-gray-500">How long serious cases last</div>
           </Link>
         </div>
       </div>

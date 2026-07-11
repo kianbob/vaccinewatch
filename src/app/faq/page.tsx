@@ -4,8 +4,12 @@ import { playfairDisplay } from '@/lib/fonts'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'VAERS FAQ — Top Questions About Vaccine Adverse Events Answered',
-  description: 'Answers to common questions about VAERS data, vaccine adverse events, how to search reports, and what the numbers mean.'
+  title: 'VAERS FAQ — Top Questions About Vaccine Adverse Events Answered (2026)',
+  description: 'Answers to common questions about VAERS data, vaccine adverse events, how to search reports, causation vs correlation, and what the 2026 numbers really mean.',
+  openGraph: {
+    title: 'VAERS FAQ — Vaccine Adverse Event Questions Answered',
+    description: 'Clear answers about VAERS data, vaccine safety, reporting, causation, and how to interpret vaccine adverse event numbers.',
+  },
 }
 
 const faqs = [
@@ -56,6 +60,34 @@ const faqs = [
   {
     question: 'What are "sister sites"?',
     answer: 'VaccineWatch is part of TheDataProject.ai, a collection of data transparency tools. Our sister sites include OpenMedicaid, OpenFeds, OpenSpending, OpenMedicare, and OpenLobby — all focused on making government data accessible and understandable.',
+  },
+  {
+    question: 'What is the difference between an adverse event and a side effect?',
+    answer: 'A side effect is a health problem that has been shown to be caused by a vaccine. An adverse event is any health problem that happens after vaccination, whether or not the vaccine caused it. VAERS collects adverse events, so most reports are not confirmed side effects — they are events that occurred in the time window after a vaccine was given.',
+  },
+  {
+    question: 'How do I search VAERS reports on VaccineWatch?',
+    answer: 'You can browse by vaccine, by symptom, by U.S. state, or by manufacturer, and compare vaccines side by side. Start from the vaccines directory to see reports and outcomes for each vaccine, or use the symptoms directory to find which vaccines are most associated with a given symptom. Our search tool lets you find specific vaccines and symptoms quickly.',
+  },
+  {
+    question: 'What do the outcome categories (died, hospitalized, ER, disabled) mean?',
+    answer: 'These come directly from checkbox fields on the VAERS report form. "Died" means the report noted a death, "hospitalized" means an inpatient stay, "ER" means an emergency room or doctor visit, and "disabled" means a permanent disability was reported. A single report can carry more than one flag, and none of these flags confirm that the vaccine caused the outcome.',
+  },
+  {
+    question: 'Can I download or verify the underlying VAERS data?',
+    answer: 'Yes. All of our figures come from the official public-use VAERS datasets published by the CDC and FDA at vaers.hhs.gov. You can download the same raw CSV files, and our methodology page documents exactly how we process them, so anyone can reproduce our numbers.',
+  },
+  {
+    question: 'Does a higher number of reported deaths mean a vaccine is dangerous?',
+    answer: 'No. Death reports in VAERS are not confirmed vaccine-caused deaths. When hundreds of millions of people are vaccinated, some will die of unrelated causes in the days afterward purely by coincidence, and those deaths may be reported to VAERS. Determining whether a vaccine actually increases the risk of death requires controlled studies that compare vaccinated and unvaccinated populations, not raw report counts.',
+  },
+  {
+    question: 'What is a safety signal, and how is one investigated?',
+    answer: 'A safety signal is a pattern in the data that suggests a possible link between a vaccine and an adverse event and warrants a closer look. VAERS is designed to detect these signals. Once a signal appears, it is investigated with more rigorous systems such as the Vaccine Safety Datalink (VSD) and the Clinical Immunization Safety Assessment (CISA) project, which can actually test for causation.',
+  },
+  {
+    question: 'Is my personal information safe if I file a VAERS report?',
+    answer: 'VAERS removes personally identifying information before reports are made public. The public-use files we work with do not contain names or contact details. VaccineWatch only uses these already-de-identified public datasets and does not collect or store any individual report submissions.',
   },
 ]
 

@@ -10,8 +10,12 @@ import { ElderlyChartsClient as ElderlyCharts } from '@/components/ClientCharts'
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Side Effects in Seniors — VAERS Data for Adults 65 and Older',
-  description: 'Adults 65+ account for 56% of VAERS death reports. Deep dive into adverse events, serious outcomes, and vaccine patterns for seniors.'
+  title: 'Vaccine Side Effects in Seniors 2026 — VAERS Data for Adults 65+',
+  description: 'Adults 65+ account for 56% of VAERS death reports. Deep dive into vaccine adverse events, serious outcomes, and safety patterns for older adults in context.',
+  openGraph: {
+    title: 'Vaccine Side Effects in Seniors 2026 — VAERS Data for Adults 65+',
+    description: 'Adults 65+ account for 56% of VAERS death reports. Deep dive into vaccine adverse events, serious outcomes, and safety patterns for older adults in context.',
+  },
 }
 
 export default function ElderlyPage() {
@@ -133,6 +137,10 @@ export default function ElderlyPage() {
           <Link href="/analysis/death-reports" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Understanding Death Reports</div>
             <div className="text-sm text-gray-500">What death reports mean</div>
+          </Link>
+          <Link href="/vaccine-schedule" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">2026 Vaccine Schedule</div>
+            <div className="text-sm text-gray-500">Recommended vaccines for older adults</div>
           </Link>
         </div>
       </div>

@@ -5,8 +5,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import SeverityProfileClient from './SeverityProfileClient'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Severity Profile — Outcome Breakdown',
-  description: 'Severity profile for any vaccine: recovery, hospitalization, death, and ER rates compared to the average across all 104 vaccines.'
+  title: 'Vaccine Severity Profile 2026 — VAERS Outcome Breakdown',
+  description: 'Severity profile for any vaccine: recovery, hospitalization, death, and ER rates from VAERS, compared to the average across all 104 vaccines for safety context.',
+  openGraph: {
+    title: 'Vaccine Severity Profile — VAERS Outcome Breakdown',
+    description: 'Break down recovery, hospitalization, death, and ER rates for any vaccine and compare them to the VAERS average across 104 vaccines.',
+  },
 }
 
 export default function SeverityProfilePage() {

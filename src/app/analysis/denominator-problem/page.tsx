@@ -10,8 +10,12 @@ import { DenominatorProblemChartsClient as DenominatorProblemCharts } from '@/co
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'VAERS Denominator Problem — Why Raw Counts Mislead',
-  description: 'Raw VAERS counts are meaningless without dose data. 670M+ COVID doses vs 10M other doses — why rates matter more than counts.'
+  title: 'VAERS Denominator Problem — Why Raw Vaccine Report Counts Mislead',
+  description: 'Raw VAERS counts are meaningless without dose data. 670M+ COVID doses vs millions of other doses show why rates, not counts, reveal true safety signals.',
+  openGraph: {
+    title: 'VAERS Denominator Problem — Why Raw Vaccine Report Counts Mislead',
+    description: 'Raw VAERS counts are meaningless without dose data. 670M+ COVID doses vs millions of other doses show why rates, not counts, reveal true safety signals.',
+  },
 }
 
 export default function DenominatorProblemPage() {
@@ -241,6 +245,10 @@ export default function DenominatorProblemPage() {
           <Link href="/tools/risk-context" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Risk Context Calculator</div>
             <div className="text-sm text-gray-500">Put VAERS numbers in perspective</div>
+          </Link>
+          <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">The COVID-19 Impact on VAERS</div>
+            <div className="text-sm text-gray-500">Why 2021 report counts exploded</div>
           </Link>
         </div>
       </div>

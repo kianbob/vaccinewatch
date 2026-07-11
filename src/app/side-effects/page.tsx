@@ -8,11 +8,11 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Side Effects — VAERS Data by Vaccine',
-  description: 'Explore side effects for 14 major vaccines from 1.98M VAERS reports. Data-driven guides with context on what the numbers mean.',
+  title: 'Vaccine Side Effects 2026 — VAERS Data for 14 Major Vaccines',
+  description: 'Explore vaccine side effects and adverse events from 1.98M VAERS reports across 14 major vaccines. Data-driven 2026 guides with context on what the numbers really mean.',
   openGraph: {
-    title: 'Vaccine Side Effects — Complete VAERS Database Analysis',
-    description: 'Explore 1.98M reported vaccine adverse events across 104 vaccines with full context.',
+    title: 'Vaccine Side Effects 2026 — Complete VAERS Database Analysis',
+    description: 'Explore 1.98M reported vaccine adverse events across 104 vaccines, with full context on VAERS data and what it does and does not prove.',
   },
 }
 
@@ -68,6 +68,22 @@ export default function SideEffectsPage() {
                 acceptedAnswer: {
                   '@type': 'Answer',
                   text: 'COVID-19 vaccines have the most VAERS reports due to the massive vaccination campaign (670M+ US doses). This does not mean they are less safe — more doses and public awareness lead to more reporting.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What is VAERS and how does it work?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'VAERS (the Vaccine Adverse Event Reporting System) is a national early-warning system co-managed by the CDC and FDA. It is a passive system: anyone — patients, parents, doctors, or manufacturers — can submit a report of any health event that happens after vaccination. Reports are not verified before being published and do not, on their own, prove the vaccine caused the event.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Does a VAERS report prove a vaccine caused a side effect?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'No. A VAERS report only shows that a health event occurred after vaccination, not because of it. Establishing causation requires controlled studies that compare vaccinated and unvaccinated groups. VAERS is best used to detect unusual patterns that scientists then investigate with more rigorous methods.'
                 }
               }
             ]
@@ -305,6 +321,12 @@ export default function SideEffectsPage() {
           For a deeper understanding, read our articles on the{' '}
           <Link href="/analysis/denominator-problem">denominator problem</Link> and{' '}
           <Link href="/analysis/reporting-bias">reporting bias</Link>.
+        </p>
+        <p>
+          Wondering which vaccines are recommended and when? See the full{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link> and our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>{' '}
+          for how these vaccines fit into routine immunization across every age group.
         </p>
       </div>
 

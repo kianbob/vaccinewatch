@@ -10,6 +10,11 @@ import ShareButtons from '@/components/ShareButtons'
 export const metadata: Metadata = {
   title: 'Are Vaccines Safe? 1.98M VAERS Reports Analyzed (2026 Update)',
   description: 'Comprehensive look at vaccine safety through VAERS data. 1.98 million reports analyzed across 104 vaccines with full context on what the data means and doesn\'t mean.',
+  alternates: { canonical: 'https://www.vaccinewatch.org/vaccine-safety' },
+  openGraph: {
+    title: 'Vaccine Safety — What 1.98M VAERS Reports Show',
+    description: 'How vaccine safety is monitored through clinical trials, VAERS, VSD, CISA and ACIP — and what the 2026 VAERS data does and does not tell us.',
+  },
 }
 
 export default function VaccineSafetyPage() {
@@ -17,15 +22,23 @@ export default function VaccineSafetyPage() {
   const vaccineIndex = readJsonFile('vaccine-index.json')
   const topVaccines = [...vaccineIndex].sort((a: any, b: any) => b.reports - a.reports).slice(0, 10)
 
+  const faqs = [
+    { question: 'Are vaccines safe?', answer: 'Vaccines undergo rigorous testing before approval and are continuously monitored through systems like VAERS. While no medical intervention is 100% risk-free, the scientific consensus is that approved vaccines are safe and effective. VAERS data shows that the vast majority of reported adverse events are mild and self-limiting.' },
+    { question: 'What does VAERS tell us about vaccine safety?', answer: 'VAERS is an early warning system that detects potential safety signals. It collects reports of adverse events after vaccination, but reports alone don\'t prove causation. VAERS is valuable for identifying patterns that warrant further investigation, not for determining whether vaccines cause specific adverse events.' },
+    { question: 'How many adverse events are reported to VAERS?', answer: `As of 2026, VAERS contains ${stats?.totalReports?.toLocaleString() || '1,983,260'} reports across 104 vaccines spanning 35 years (1990-2026). The vast majority of these reports describe mild, expected reactions like injection site pain, fever, and fatigue.` },
+    { question: 'Why are there so many VAERS reports for COVID vaccines?', answer: 'COVID-19 vaccines were administered to hundreds of millions of people in a very short timeframe during a period of intense public scrutiny. This led to dramatically higher reporting rates — a well-documented phenomenon called stimulated reporting. More reports does not mean more risk per dose.' },
+    { question: 'How is vaccine safety monitored in the United States?', answer: 'Vaccine safety is monitored through a layered system. Before approval, vaccines go through preclinical testing and three phases of clinical trials. After approval, VAERS provides early warning signals, the Vaccine Safety Datalink (VSD) compares outcomes in vaccinated and unvaccinated people using electronic health records, the Clinical Immunization Safety Assessment (CISA) project offers expert case review, and the FDA\'s BEST system runs large-scale active surveillance. The ACIP reviews this evidence to guide recommendations.' },
+    { question: 'Do more VAERS reports mean a vaccine is less safe?', answer: 'No. Report volume is driven mainly by how many doses were given, public awareness, media attention, and mandatory reporting rules — not by how safe a vaccine is. Because VAERS has no denominator (the number of doses administered), raw report counts cannot be used to compare risk between vaccines.' },
+  ]
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Are vaccines safe?', acceptedAnswer: { '@type': 'Answer', text: 'Vaccines undergo rigorous testing before approval and are continuously monitored through systems like VAERS. While no medical intervention is 100% risk-free, the scientific consensus is that approved vaccines are safe and effective. VAERS data shows that the vast majority of reported adverse events are mild and self-limiting.' }},
-      { '@type': 'Question', name: 'What does VAERS tell us about vaccine safety?', acceptedAnswer: { '@type': 'Answer', text: 'VAERS is an early warning system that detects potential safety signals. It collects reports of adverse events after vaccination, but reports alone don\'t prove causation. VAERS is valuable for identifying patterns that warrant further investigation, not for determining whether vaccines cause specific adverse events.' }},
-      { '@type': 'Question', name: 'How many adverse events are reported to VAERS?', acceptedAnswer: { '@type': 'Answer', text: `As of 2026, VAERS contains ${stats?.totalReports?.toLocaleString() || '1,983,260'} reports across 104 vaccines spanning 35 years (1990-2026). The vast majority of these reports describe mild, expected reactions like injection site pain, fever, and fatigue.` }},
-      { '@type': 'Question', name: 'Why are there so many VAERS reports for COVID vaccines?', acceptedAnswer: { '@type': 'Answer', text: 'COVID-19 vaccines were administered to hundreds of millions of people in a very short timeframe during a period of intense public scrutiny. This led to dramatically higher reporting rates — a well-documented phenomenon called stimulated reporting. More reports does not mean more risk per dose.' }},
-    ],
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
   }
 
   return (
@@ -207,6 +220,61 @@ export default function VaccineSafetyPage() {
         <strong>⚠️ Important:</strong> This page presents VAERS data with context for educational purposes. 
         It is not medical advice. Vaccination decisions should be made in consultation with qualified 
         healthcare providers who can consider your individual medical history and risk factors.
+      </div>
+
+      <div className="prose prose-lg max-w-none mb-12">
+        <h2 className={playfairDisplay.className}>How Vaccine Safety Is Monitored</h2>
+        <p>
+          Vaccine safety is not established once and forgotten — it is monitored continuously across the entire life
+          of a vaccine, from the laboratory through decades of real-world use. Understanding this layered system helps
+          put VAERS in perspective: it is one early-warning component of a much larger apparatus.
+        </p>
+        <h3 className={playfairDisplay.className}>Before Approval: Clinical Trials</h3>
+        <p>
+          Every vaccine begins with preclinical laboratory and animal studies, followed by three phases of human
+          clinical trials. <strong>Phase 1</strong> tests safety and dosing in a small group of volunteers.{' '}
+          <strong>Phase 2</strong> expands to hundreds of people to refine dosing and further assess safety and immune
+          response. <strong>Phase 3</strong> enrolls thousands to tens of thousands of participants, comparing the
+          vaccinated group against a placebo group to measure both effectiveness and the rate of adverse events. Only
+          after this evidence is reviewed by the FDA — and, for recommendations, by the Advisory Committee on
+          Immunization Practices (ACIP) — does a vaccine reach the public.
+        </p>
+        <h3 className={playfairDisplay.className}>After Approval: Post-Market Surveillance</h3>
+        <p>
+          Clinical trials, even large ones, cannot detect extremely rare events that occur in fewer than one in tens of
+          thousands of people. That is the job of post-market surveillance, which includes several complementary systems:
+        </p>
+        <ul>
+          <li><strong>VAERS</strong> — a passive early-warning system where anyone can report an event after vaccination. It is over-inclusive by design so that rare signals are not missed.</li>
+          <li><strong>Vaccine Safety Datalink (VSD)</strong> — an active surveillance network using the electronic health records of several large healthcare organizations, covering millions of people, to compare event rates in vaccinated and unvaccinated populations.</li>
+          <li><strong>Clinical Immunization Safety Assessment (CISA)</strong> — a network of medical experts who evaluate complex individual cases and help clinicians manage adverse events.</li>
+          <li><strong>FDA BEST</strong> — the Biologics Effectiveness and Safety system, a large-scale active surveillance program drawing on claims and electronic health data.</li>
+          <li><strong>ACIP</strong> — the expert committee that reviews accumulated safety and effectiveness evidence and updates vaccine recommendations accordingly.</li>
+        </ul>
+        <p>
+          This system has repeatedly proven it works. VAERS and its partner systems detected the rare clotting signal
+          after the J&amp;J vaccine, the myocarditis signal after mRNA vaccines, and the intussusception signal after an
+          early rotavirus vaccine — each of which led to updated guidance or product changes. For a candid look at what
+          VAERS can and cannot do, see <Link href="/is-vaers-reliable">is VAERS reliable?</Link> and our{' '}
+          <Link href="/methodology">methodology</Link>. You can also explore the underlying reports in the{' '}
+          <Link href="/vaers-database">VAERS database</Link> and review vaccine-specific{' '}
+          <Link href="/side-effects">side effects guides</Link>.
+        </p>
+      </div>
+
+      {/* FAQ */}
+      <div className="mb-12">
+        <h2 className={`text-2xl font-bold text-gray-900 mb-6 ${playfairDisplay.className}`}>
+          Vaccine Safety FAQ
+        </h2>
+        <div className="space-y-4">
+          {faqs.map((faq, i) => (
+            <div key={i} className="bg-white border border-gray-200 rounded-xl p-6">
+              <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">

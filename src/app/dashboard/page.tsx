@@ -7,8 +7,8 @@ import ShareButtons from '@/components/ShareButtons'
 import DashboardClient from './DashboardClient'
 
 export const metadata: Metadata = {
-  title: 'VAERS Dashboard — 104 Vaccines Compared',
-  description: 'Interactive dashboard comparing 104 vaccines in VAERS. Sort by reports, deaths, hospitalizations, ER visits, and disability rates.',
+  title: 'VAERS Data Dashboard 2026 — 104 Vaccines Compared',
+  description: 'Interactive VAERS dashboard comparing 104 vaccines by adverse events. Sort by reports, deaths, hospitalizations, ER visits, and disability rates for vaccine safety.',
   openGraph: {
     title: 'Vaccine Safety Dashboard — Every Vaccine at a Glance',
     description: 'Interactive dashboard comparing all 104 vaccines in VAERS with sortable statistics.',

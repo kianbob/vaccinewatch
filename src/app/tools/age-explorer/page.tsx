@@ -5,8 +5,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import AgeExplorerClient from './AgeExplorerClient'
 
 export const metadata: Metadata = {
-  title: 'VAERS Age Explorer — Reports by Age Group',
-  description: 'Explore how vaccine adverse events vary by age. Interactive age distributions for any of 104 vaccines in the VAERS database.'
+  title: 'VAERS Age Explorer 2026 — Vaccine Adverse Events by Age Group',
+  description: 'Explore how vaccine adverse events vary by age group. Interactive VAERS age distributions and vaccine safety patterns for any of 104 vaccines in the database.',
+  openGraph: {
+    title: 'VAERS Age Explorer — Vaccine Adverse Events by Age Group',
+    description: 'See how vaccine adverse event reports are distributed across age groups. Interactive VAERS age analysis for 104 vaccines.',
+  },
 }
 
 export default function AgeExplorerPage() {

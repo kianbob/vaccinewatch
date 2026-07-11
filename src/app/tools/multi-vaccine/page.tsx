@@ -6,8 +6,12 @@ import ShareButtons from '@/components/ShareButtons'
 import MultiVaccineClient from './MultiVaccineClient'
 
 export const metadata: Metadata = {
-  title: 'Multi-Vaccine Interaction Explorer — VAERS',
-  description: '1,514 vaccine combinations in VAERS. See which vaccines are given together most and their combined adverse event profiles.',
+  title: 'Multi-Vaccine Interaction Explorer 2026 — VAERS Data',
+  description: 'Explore 1,514 vaccine combinations in VAERS. See which vaccines are given together most often and their combined adverse event and safety profiles.',
+  openGraph: {
+    title: 'Multi-Vaccine Interaction Explorer — VAERS Data',
+    description: 'See which vaccines are co-administered most often and their combined VAERS adverse event profiles across 1,514 combinations.',
+  },
 }
 
 export default function MultiVaccinePage() {

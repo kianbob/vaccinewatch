@@ -6,8 +6,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Safety Timeline — 1955 to Present',
-  description: 'Major vaccine safety events from the 1955 Cutter Incident to COVID-19 myocarditis detection. How US vaccine safety monitoring evolved.',
+  title: 'Vaccine Safety Timeline — 1955 to 2026 Key Events',
+  description: 'Major vaccine safety events from the 1955 Cutter Incident to COVID-19 myocarditis detection and 2026. How US vaccine safety monitoring and VAERS evolved over time.',
+  openGraph: {
+    title: 'Vaccine Safety Timeline — Key Events, 1955 to 2026',
+    description: 'A timeline of major US vaccine safety events, from the 1955 Cutter Incident to COVID-19 myocarditis detection — showing how VAERS and modern safety monitoring evolved.',
+  },
   alternates: { canonical: 'https://www.vaccinewatch.org/vaccine-safety-timeline' },
 }
 

@@ -181,6 +181,11 @@ export default function FluSideEffectsPage() {
           requirements, heightened public awareness, and the emergency use context. Our{' '}
           <Link href="/analysis/covid-vs-flu">COVID vs Flu comparison</Link> explores this in detail.
         </p>
+        <p>
+          The flu shot is recommended annually for nearly everyone over 6 months old. See where it fits on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link> and our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>.
+        </p>
       </div>
 
       {/* Related */}

@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Pneumonia Vaccine Side Effects — Pneumovax & Prevnar VAERS Data',
-  description: 'VAERS analysis of pneumonia vaccine side effects (Pneumovax, Prevnar 13, Prevnar 20). 100,000+ reports analyzed with context for elderly recipients.',
+  title: 'Pneumonia Vaccine Side Effects 2026 — Pneumovax & Prevnar Data',
+  description: 'VAERS analysis of pneumonia (pneumococcal) vaccine side effects and adverse events for Pneumovax, Prevnar 13, and Prevnar 20, with context for elderly recipients.',
+  openGraph: {
+    title: 'Pneumonia Vaccine Side Effects — VAERS Data Analysis',
+    description: 'Pneumococcal vaccine adverse event reports analyzed from VAERS data, covering Pneumovax and the Prevnar series.',
+  },
 }
 
 export default function PneumoniaSideEffectsPage() {
@@ -112,8 +116,13 @@ export default function PneumoniaSideEffectsPage() {
         <p>
           Pneumonia vaccines are primarily given to elderly adults (65+) and people with 
           chronic health conditions. This population has a naturally higher mortality rate, 
-          so many death reports in VAERS reflect the background death rate of the recipient 
+          so many death reports in VAERS reflect the background death rate of the recipient
           population rather than vaccine-related events.
+        </p>
+        <p>
+          Pneumococcal vaccines are recommended for young children and adults 65+. See timing on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link> and our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>.
         </p>
       </div>
 

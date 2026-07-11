@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Shingrix Side Effects — Shingles Vaccine Reactions & VAERS Safety Data',
-  description: 'VAERS analysis of shingles vaccine side effects for both Zostavax and Shingrix. 140,000+ reports analyzed with context.',
+  title: 'Shingrix Side Effects 2026 — Shingles Vaccine VAERS Safety Data',
+  description: 'VAERS analysis of shingles vaccine side effects and adverse events for both Zostavax and Shingrix. 140,000+ reports analyzed with full context and disclaimers.',
+  openGraph: {
+    title: 'Shingles Vaccine Side Effects — Zostavax & Shingrix VAERS Data',
+    description: '140,000+ shingles vaccine adverse event reports analyzed from VAERS data, with context on Shingrix reactogenicity.',
+  },
 }
 
 export default function ShinglesSideEffectsPage() {
@@ -118,8 +122,14 @@ export default function ShinglesSideEffectsPage() {
         <p>
           The high VAERS report count for shingles vaccines reflects both the strong reactogenicity 
           of Shingrix and the older age of recipients. Older adults may be more likely to seek medical 
-          attention for side effects, and healthcare providers may be more likely to report events 
+          attention for side effects, and healthcare providers may be more likely to report events
           in elderly patients.
+        </p>
+        <p>
+          Shingrix is recommended as two doses for adults 50 and older. See where it fits on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link>, review our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>, and explore{' '}
+          <Link href="/analysis/elderly">VAERS patterns in adults 65+</Link>.
         </p>
       </div>
 

@@ -8,11 +8,11 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'VAERS Database Search — 1.98M Reports Online',
-  description: 'Search 1.98M VAERS adverse event reports (1990-2026). 104 vaccines, 1,000+ symptoms — all searchable with interactive tools and context.',
+  title: 'VAERS Database Search 2026 — 1.98M Vaccine Adverse Event Reports',
+  description: 'Search the VAERS database: 1.98M vaccine adverse event reports (1990-2026) across 104 vaccines and 1,000+ symptoms, with interactive tools and context.',
   openGraph: {
-    title: 'VAERS Database — Search & Explore Vaccine Safety Data',
-    description: '1.98M vaccine adverse event reports made searchable, sortable, and understandable.',
+    title: 'VAERS Database — Search & Explore Vaccine Safety Data (2026)',
+    description: '1.98M vaccine adverse event reports (1990-2026) made searchable, sortable, and understandable — with the context needed to interpret VAERS data correctly.',
   },
 }
 
@@ -58,6 +58,30 @@ export default function VAERSDatabasePage() {
                 acceptedAnswer: {
                   '@type': 'Answer',
                   text: 'Yes, VAERS data is fully public. Anyone can access it through the CDC WONDER system or through tools like VaccineWatch that make the data easier to explore and understand.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What is VAERS?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'VAERS (the Vaccine Adverse Event Reporting System) is a national passive surveillance system co-managed by the CDC and FDA. Created in 1990 under the National Childhood Vaccine Injury Act, it collects reports of adverse health events that occur after vaccination in the United States.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Does a VAERS report prove a vaccine caused an adverse event?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'No. VAERS is a signal-detection system, not a proof system. A report means an event was recorded after vaccination, not that the vaccine caused it. Reports are unverified, anyone can submit them, and establishing causation requires controlled epidemiological studies.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How many reports are in the VAERS database?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'As of 2026, the VAERS database contains roughly 1.98 million adverse event reports spanning 1990 to 2026, covering every vaccine licensed in the United States and more than 1,000 distinct reported symptoms.'
                 }
               }
             ]

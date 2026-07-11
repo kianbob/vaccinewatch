@@ -10,8 +10,12 @@ import { RecoveryRatesChartsClient as RecoveryRatesCharts } from '@/components/C
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Side Effect Recovery Rates — VAERS',
-  description: '68% of VAERS reports indicate recovery. What "not recovered" means and how often vaccine side effects resolve by vaccine type.'
+  title: 'Do Vaccine Side Effects Go Away? — VAERS Recovery Rate Data 2026',
+  description: '68% of VAERS reports indicate recovery. What "not recovered" really means and how often vaccine side effects resolve, broken down by vaccine type.',
+  openGraph: {
+    title: 'Do Vaccine Side Effects Go Away? — VAERS Recovery Rate Data 2026',
+    description: '68% of VAERS reports indicate recovery. What "not recovered" really means and how often vaccine side effects resolve, broken down by vaccine type.',
+  },
 }
 
 export default function RecoveryRatesPage() {
@@ -207,6 +211,10 @@ export default function RecoveryRatesPage() {
           <Link href="/analysis/onset-timing" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">When Do Side Effects Start?</div>
             <div className="text-sm text-gray-500">Timing patterns and recovery</div>
+          </Link>
+          <Link href="/analysis/hospital-stays" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Hospitalization Duration</div>
+            <div className="text-sm text-gray-500">How long serious cases last</div>
           </Link>
         </div>
       </div>

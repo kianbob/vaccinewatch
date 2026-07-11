@@ -4,10 +4,14 @@ import { playfairDisplay } from '@/lib/fonts'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Disclaimer',
-  description: 'Important disclaimer about the limitations of VAERS data presented on VaccineWatch.',
+  title: 'Disclaimer — VAERS Data Limitations & Not Medical Advice (2026)',
+  description: 'Important disclaimer on the limitations of VAERS vaccine adverse event data. Reports do not prove causation, this is not medical advice, and raw counts are not risk rates.',
   alternates: {
     canonical: 'https://www.vaccinewatch.org/disclaimer',
+  },
+  openGraph: {
+    title: 'Disclaimer — Understanding VAERS Data Limitations',
+    description: 'Why VAERS reports do not prove causation, why this site is not medical advice, and how to interpret vaccine adverse event data responsibly.',
   },
 }
 
@@ -110,6 +114,48 @@ export default function DisclaimerPage() {
           When VAERS detects a signal, it is investigated further using more rigorous methods such as the
           Vaccine Safety Datalink (VSD), the Clinical Immunization Safety Assessment (CISA) project, or other
           controlled studies that can actually determine causation.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>Not Medical, Legal, or Professional Advice</h2>
+        <p>
+          The content on VaccineWatch is provided for <strong>general informational and educational purposes only</strong>.
+          It is not intended to be, and must not be relied upon as, medical, clinical, legal, or professional advice.
+          Nothing on this site creates a doctor-patient relationship, and no material here should be used to diagnose,
+          treat, cure, or prevent any disease or health condition. Decisions about vaccination — for yourself, your
+          child, or anyone in your care — should always be made in consultation with a qualified, licensed healthcare
+          professional who can evaluate your individual medical history, risk factors, and circumstances. If you are
+          experiencing a medical emergency, call your local emergency number or seek immediate in-person care.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>Raw Counts Are Not Risk Rates</h2>
+        <p>
+          Throughout this site we display report counts, outcome counts, and simple ratios drawn directly from VAERS.
+          <strong> These figures are not risk rates and must not be read as such.</strong> Because VAERS does not record
+          how many doses of each vaccine were administered, there is no denominator with which to calculate the
+          probability that a vaccinated person will experience a given event. Two vaccines with identical report counts
+          can have wildly different true rates if one was given ten times as often as the other. Any percentage shown on
+          VaccineWatch (for example, a &ldquo;serious outcome rate&rdquo;) describes the composition of the reports
+          themselves, not the likelihood of harm from a vaccine. See our{' '}
+          <Link href="/methodology">methodology</Link> and our{' '}
+          <Link href="/analysis/denominator-problem">denominator problem analysis</Link> for details.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>Accuracy, Completeness, and No Warranty</h2>
+        <p>
+          We strive to reproduce the official VAERS data faithfully, but the underlying reports are unverified and may
+          be incomplete, inaccurate, coincidental, or unverifiable. VaccineWatch provides this information{' '}
+          <strong>&ldquo;as is&rdquo; and &ldquo;as available,&rdquo; without warranties of any kind</strong>, express
+          or implied, including but not limited to accuracy, completeness, fitness for a particular purpose, or
+          non-infringement. To the fullest extent permitted by law, VaccineWatch and TheDataProject.ai disclaim all
+          liability for any loss, injury, or damage arising from the use of, or reliance on, information presented on
+          this site. For authoritative, current information, always defer to the CDC, FDA, and your healthcare provider.
+        </p>
+
+        <h2 className={`${playfairDisplay.className}`}>External Links and Third Parties</h2>
+        <p>
+          This site links to external resources, including official government pages and our sister data projects. We do
+          not control and are not responsible for the content, accuracy, or availability of third-party websites. Links
+          are provided for convenience and do not imply endorsement.
         </p>
 
         <h2 className={`${playfairDisplay.className}`}>Our Commitment</h2>

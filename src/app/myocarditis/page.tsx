@@ -6,11 +6,11 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Myocarditis After COVID Vaccine — VAERS Data',
-  description: 'Myocarditis reports after COVID-19 vaccination in VAERS. Risk by age and sex, clinical outcomes, and research context for this confirmed safety signal.',
+  title: 'Myocarditis After COVID Vaccine — VAERS Data & Risk (2026)',
+  description: 'Myocarditis reports after COVID-19 vaccination in VAERS: risk by age and sex, clinical outcomes, and research context for this confirmed vaccine safety signal.',
   openGraph: {
-    title: 'Myocarditis and COVID Vaccine — VAERS Data & Research',
-    description: 'Myocarditis after COVID vaccination: VAERS data, risk factors, and clinical outcomes.',
+    title: 'Myocarditis and COVID Vaccine — VAERS Data & Research (2026)',
+    description: 'Myocarditis after COVID vaccination: VAERS adverse event data, who is most at risk, clinical outcomes, and how the vaccine risk compares to COVID infection.',
   },
 }
 

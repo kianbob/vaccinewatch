@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import ReportingRatesWrapper from './ReportingRatesWrapper';
 
 export const metadata: Metadata = {
-  title: 'VAERS Reporting Rate Calculator — Per Dose',
-  description: 'Calculate adverse event rates per million doses for any vaccine. Uses CDC dose estimates to contextualize raw VAERS report counts.',
+  title: 'VAERS Reporting Rate Calculator 2026 — Adverse Events Per Dose',
+  description: 'Calculate vaccine adverse event rates per million doses for any vaccine. Uses CDC dose estimates to contextualize raw VAERS report counts and vaccine safety data.',
   openGraph: {
     title: 'Reporting Rate Calculator — VaccineWatch',
     description: 'Calculate and compare VAERS reporting rates per dose for every major vaccine.',

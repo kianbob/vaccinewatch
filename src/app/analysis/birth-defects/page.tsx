@@ -10,8 +10,12 @@ import { BirthDefectsChartsClient as BirthDefectsCharts } from '@/components/Cli
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Birth Defect Reports — VAERS Data',
-  description: '41 vaccines with birth defect reports in VAERS. Context on prenatal vaccination, 3-4% background rate, and correlation vs causation.'
+  title: 'Vaccine Birth Defect Reports — VAERS Data & Pregnancy Safety Context 2026',
+  description: 'VAERS birth defect reports across 41 vaccines explained. Context on prenatal vaccination, the 3-4% background rate, and why correlation is not causation.',
+  openGraph: {
+    title: 'Vaccine Birth Defect Reports — VAERS Data & Pregnancy Safety Context 2026',
+    description: 'VAERS birth defect reports across 41 vaccines explained. Context on prenatal vaccination, the 3-4% background rate, and why correlation is not causation.',
+  },
 }
 
 export default function BirthDefectsPage() {
@@ -238,6 +242,10 @@ export default function BirthDefectsPage() {
           <Link href="/analysis/denominator-problem" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Why Raw VAERS Numbers Can Be Misleading</div>
             <div className="text-sm text-gray-500">Understanding background rates</div>
+          </Link>
+          <Link href="/vaccine-schedule" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">2026 Vaccine Schedule</div>
+            <div className="text-sm text-gray-500">Recommended vaccines by age and during pregnancy</div>
           </Link>
         </div>
       </div>

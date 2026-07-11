@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'HPV Vaccine (Gardasil) Side Effects — VAERS Reports & Safety Data',
-  description: 'Complete VAERS analysis of HPV vaccine (Gardasil) side effects. 44,000+ adverse event reports with full context and disclaimers.',
+  title: 'HPV Vaccine (Gardasil) Side Effects 2026 — VAERS Safety Data',
+  description: 'Complete VAERS analysis of HPV vaccine (Gardasil) side effects and adverse events. 44,000+ reports covering fainting, injection site pain, and rare outcomes, with context.',
+  openGraph: {
+    title: 'HPV Vaccine (Gardasil) Side Effects — VAERS Data Analysis',
+    description: '44,000+ HPV vaccine adverse event reports analyzed from VAERS data, with full context on Gardasil safety.',
+  },
 }
 
 export default function HpvSideEffectsPage() {
@@ -126,6 +130,11 @@ export default function HpvSideEffectsPage() {
           This is likely because the vaccine is given to adolescents, who are more prone to 
           vasovagal responses. The CDC recommends a 15-minute observation period after HPV vaccination. 
           Many VAERS reports for HPV are fainting-related rather than indicating serious adverse effects.
+        </p>
+        <p>
+          HPV vaccination is routinely recommended starting at ages 11-12. See where it fits on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link> and our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>.
         </p>
       </div>
 

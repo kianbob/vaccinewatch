@@ -10,8 +10,12 @@ import { GenderChartsClient as GenderCharts } from '@/components/ClientCharts'
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Gender Differences in Vaccine Side Effects — Why Women Report 59% of Cases',
-  description: 'Women file 59% of all VAERS vaccine adverse event reports. Data on gender disparities in vaccine reactions, immune response differences, and reporting patterns across 104 vaccines.'
+  title: 'Gender Differences in Vaccine Side Effects — Why Women File 59% of VAERS Reports',
+  description: 'Women file 59% of all VAERS vaccine adverse event reports. Data on gender disparities in reactions, immune-response differences, and reporting patterns.',
+  openGraph: {
+    title: 'Gender Differences in Vaccine Side Effects — Why Women File 59% of VAERS Reports',
+    description: 'Women file 59% of all VAERS vaccine adverse event reports. Data on gender disparities in reactions, immune-response differences, and reporting patterns.',
+  },
 }
 
 export default function GenderPatternsPage() {
@@ -122,6 +126,10 @@ export default function GenderPatternsPage() {
           <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">COVID-19 Impact</div>
             <div className="text-sm text-gray-500">The pandemic&apos;s effect on reporting</div>
+          </Link>
+          <Link href="/analysis/top-symptoms" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Most Reported Symptoms</div>
+            <div className="text-sm text-gray-500">The 20 most common adverse events</div>
           </Link>
         </div>
       </div>

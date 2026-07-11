@@ -8,8 +8,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { ManufacturerBarChartClient as ManufacturerBarChart, ManufacturerPieChartClient as ManufacturerPieChart } from '@/components/ClientCharts'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Manufacturers — VAERS Reports by Company',
-  description: 'Compare Pfizer, Moderna, Merck, and 20+ manufacturers by VAERS adverse event reports, deaths, hospitalizations, and market share.',
+  title: 'Vaccine Manufacturers 2026 — VAERS Reports by Company',
+  description: 'Compare Pfizer, Moderna, Merck, and 20+ vaccine manufacturers by VAERS adverse event reports, deaths, hospitalizations, safety data, and market share.',
   openGraph: {
     title: 'Vaccine Manufacturers — VAERS Safety Reports by Company',
     description: 'VAERS adverse event reports by vaccine manufacturer. Compare Pfizer, Moderna, Merck, and more. Market share analysis, death reports, and hospitalization data.',

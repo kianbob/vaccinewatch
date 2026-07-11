@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'MMR Vaccine Side Effects — Measles, Mumps & Rubella',
-  description: 'Complete VAERS analysis of MMR vaccine side effects. 89,000+ adverse event reports covering measles, mumps, and rubella vaccination.',
+  title: 'MMR Vaccine Side Effects 2026 — Measles, Mumps & Rubella Data',
+  description: 'Complete VAERS analysis of MMR vaccine side effects and adverse events. 89,000+ reports covering measles, mumps, and rubella, plus the debunked autism claim.',
+  openGraph: {
+    title: 'MMR Vaccine Side Effects — VAERS Data Analysis',
+    description: '89,000+ MMR vaccine adverse event reports analyzed from VAERS data, with full context on measles, mumps, and rubella vaccination.',
+  },
 }
 
 export default function MmrSideEffectsPage() {
@@ -126,6 +130,12 @@ export default function MmrSideEffectsPage() {
           <li>Temporary low platelet count (about 1 in 25,000)</li>
           <li>Allergic reaction (very rare)</li>
         </ul>
+        <p>
+          MMR is given in two doses in early childhood. See exactly when each is due on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link>, review our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>, and explore{' '}
+          <Link href="/analysis/pediatric">pediatric VAERS patterns</Link>.
+        </p>
       </div>
 
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800 mb-12">

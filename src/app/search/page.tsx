@@ -3,8 +3,8 @@ import { Suspense } from 'react'
 import SearchClient from './SearchClient'
 
 export const metadata: Metadata = {
-  title: 'Search VAERS Data — Vaccines & Symptoms',
-  description: 'Search 104 vaccines and 500+ symptoms in VAERS. Find adverse event reports, safety data, and analysis instantly.',
+  title: 'Search VAERS Data 2026 — Vaccines, Symptoms & Side Effects',
+  description: 'Search 104 vaccines and 500+ symptoms in VAERS. Find vaccine adverse event reports, side effects, safety data, and analysis instantly across the full database.',
   openGraph: {
     title: 'Search VAERS Data — Find Vaccines & Symptoms',
     description: 'Search across 104 vaccines and 500+ symptoms in the VAERS database. Find adverse event reports, safety data, and analysis for any vaccine or symptom.',

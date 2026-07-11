@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Meningococcal Vaccine Side Effects — Menactra & Menveo VAERS Data',
-  description: 'VAERS analysis of meningococcal vaccine side effects. 36,000+ reports covering Menactra, Menveo, and MenB vaccines.',
+  title: 'Meningococcal Vaccine Side Effects — Menactra & Menveo (2026)',
+  description: 'VAERS analysis of meningococcal vaccine side effects and adverse events. 36,000+ reports covering Menactra, Menveo, and MenB vaccines, with full context.',
+  openGraph: {
+    title: 'Meningococcal Vaccine Side Effects — VAERS Data Analysis',
+    description: '36,000+ meningococcal vaccine adverse event reports analyzed from VAERS data, with context on adolescent immunization.',
+  },
 }
 
 export default function MeningococcalSideEffectsPage() {
@@ -134,8 +138,13 @@ export default function MeningococcalSideEffectsPage() {
         <p>
           Meningococcal disease is rare (about 300-400 cases/year in the U.S.) but devastating — 
           10-15% of cases are fatal, and up to 20% of survivors have permanent complications like 
-          limb amputation, hearing loss, or brain damage. The vaccine has dramatically reduced cases 
+          limb amputation, hearing loss, or brain damage. The vaccine has dramatically reduced cases
           in the age groups most at risk.
+        </p>
+        <p>
+          MenACWY is routine at ages 11-12 with a booster at 16. See where meningococcal vaccines fit on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link> and our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>.
         </p>
       </div>
 

@@ -10,8 +10,12 @@ import { TopSymptomsChartClient as TopSymptomsChart } from '@/components/ClientC
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Most Common Vaccine Side Effects — Top 20 Symptoms Reported to VAERS',
-  description: 'The 20 most reported vaccine adverse event symptoms in VAERS. Fever, headache, pain, fatigue and more — with clinical context.'
+  title: 'Most Common Vaccine Side Effects — Top 20 Symptoms Reported to VAERS 2026',
+  description: 'The 20 most reported vaccine adverse event symptoms in VAERS: fever, headache, pain, fatigue and more, each with clinical context on what they mean.',
+  openGraph: {
+    title: 'Most Common Vaccine Side Effects — Top 20 Symptoms Reported to VAERS 2026',
+    description: 'The 20 most reported vaccine adverse event symptoms in VAERS: fever, headache, pain, fatigue and more, each with clinical context on what they mean.',
+  },
 }
 
 interface Symptom {
@@ -147,6 +151,10 @@ export default function TopSymptomsPage() {
           <Link href="/symptoms" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">All 500 Symptoms</div>
             <div className="text-sm text-gray-500">Browse the complete symptom database</div>
+          </Link>
+          <Link href="/analysis/onset-timing" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">When Do Side Effects Start?</div>
+            <div className="text-sm text-gray-500">Onset timing of common symptoms</div>
           </Link>
         </div>
       </div>

@@ -5,8 +5,12 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'VAERS Analysis Tools — 15 Free Explorers',
-  description: '15 free interactive tools for VAERS data: reporting rates, signal detection, onset timing, lot lookup, dose comparison, and more.'
+  title: 'VAERS Data Analysis Tools 2026 — 15 Free Vaccine Safety Explorers',
+  description: '15 free interactive tools to explore VAERS vaccine adverse event data: reporting rates, signal detection, onset timing, lot lookup, dose comparison, and more.',
+  openGraph: {
+    title: 'VAERS Data Analysis Tools — 15 Free Vaccine Safety Explorers',
+    description: 'Explore VAERS vaccine adverse event data with 15 free interactive tools: reporting rates, signal detection, onset timing, lot lookup, dose comparison, and more.',
+  },
 }
 
 const tools = [

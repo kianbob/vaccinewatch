@@ -10,8 +10,12 @@ import { ManufacturerLandscapeChartsClient as ManufacturerLandscapeCharts } from
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Manufacturers Ranked by VAERS Reports — Pfizer, Moderna, J&J Data',
-  description: 'Which vaccine manufacturers dominate VAERS reports? Market share analysis showing how a few companies account for most adverse events.'
+  title: 'Vaccine Manufacturers Ranked by VAERS Reports — Pfizer, Moderna, J&J Data 2026',
+  description: 'Which vaccine manufacturers dominate VAERS adverse event reports? Market-share analysis showing how a few companies account for most reports, in context.',
+  openGraph: {
+    title: 'Vaccine Manufacturers Ranked by VAERS Reports — Pfizer, Moderna, J&J Data 2026',
+    description: 'Which vaccine manufacturers dominate VAERS adverse event reports? Market-share analysis showing how a few companies account for most reports, in context.',
+  },
 }
 
 export default function ManufacturerLandscapePage() {
@@ -129,6 +133,10 @@ export default function ManufacturerLandscapePage() {
           <Link href="/manufacturers" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">All Manufacturers</div>
             <div className="text-sm text-gray-500">Browse all manufacturer data</div>
+          </Link>
+          <Link href="/analysis/covid-vs-flu" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">COVID-19 vs Influenza Vaccines</div>
+            <div className="text-sm text-gray-500">Comparing the two largest categories</div>
           </Link>
         </div>
       </div>

@@ -5,8 +5,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import HospitalDurationClient from './HospitalDurationClient'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Hospitalization Duration Explorer',
-  description: 'How long are vaccine-related hospital stays? Most are 1-3 days. Compare hospitalization duration across 100+ vaccines in VAERS.'
+  title: 'Vaccine Hospitalization Duration Explorer 2026 — VAERS Data',
+  description: 'How long are vaccine-related hospital stays? Most are 1-3 days. Compare hospitalization duration across 100+ vaccines using VAERS adverse event data.',
+  openGraph: {
+    title: 'Vaccine Hospitalization Duration Explorer — VAERS Data',
+    description: 'Compare vaccine-related hospital stay lengths across 100+ vaccines. Most VAERS-reported hospitalizations last just 1-3 days.',
+  },
 }
 
 export default function HospitalDurationPage() {

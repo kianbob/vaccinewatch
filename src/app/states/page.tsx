@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { playfairDisplay } from '@/lib/fonts'
 import { readJsonFile } from '@/lib/server-utils'
 import { formatNumber } from '@/lib/utils'
@@ -7,8 +8,12 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'VAERS Reports by State — Per-Capita Data',
-  description: 'Vaccine adverse event reports by U.S. state. Per-capita rates, top reporting states, and geographic patterns across 50 states.'
+  title: 'VAERS Data by State 2026 — Reports & Vaccine Requirements by State',
+  description: 'Explore VAERS vaccine adverse event data by state: per-capita reporting rates, top reporting states, geographic patterns, and vaccine requirements by state for 2026.',
+  openGraph: {
+    title: 'VAERS Data by State — Reports & Vaccine Requirements by State',
+    description: 'Vaccine adverse event reports by U.S. state, with per-capita rates, top reporting states, geographic patterns, and vaccine requirements by state.',
+  },
 }
 
 const STATE_NAMES: Record<string, string> = {
@@ -214,6 +219,12 @@ export default function StatesPage() {
             <span><strong>Reporting culture:</strong> Some states may have higher reporting rates due to healthcare provider awareness or mandate requirements</span>
           </div>
         </div>
+        <p className="text-sm text-blue-800 mt-4">
+          Curious how mandates differ across the country? See our guide to{' '}
+          <Link href="/analysis/state-vaccine-requirements-2026" className="font-semibold text-blue-700 underline hover:text-blue-900">
+            vaccine requirements by state for 2026
+          </Link>.
+        </p>
       </div>
     </div>
   )

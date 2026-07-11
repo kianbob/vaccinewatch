@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'DTaP Vaccine Side Effects — Diphtheria, Tetanus, Pertussis VAERS Data',
-  description: 'VAERS analysis of DTaP vaccine side effects in children. 66,000+ reports covering fever, fussiness, and rare serious outcomes.',
+  title: 'DTaP Vaccine Side Effects — Diphtheria, Tetanus & Pertussis (2026)',
+  description: 'VAERS analysis of DTaP vaccine side effects and adverse events in children. 66,000+ reports covering fever, fussiness, and rare serious outcomes, with full context.',
+  openGraph: {
+    title: 'DTaP Vaccine Side Effects — VAERS Data Analysis',
+    description: '66,000+ DTaP vaccine adverse event reports analyzed from VAERS data, with context on childhood immunization.',
+  },
 }
 
 export default function DTaPSideEffectsPage() {
@@ -134,8 +138,13 @@ export default function DTaPSideEffectsPage() {
         <h2 className={playfairDisplay.className}>Co-Administration Context</h2>
         <p>
           DTaP is almost always given alongside other vaccines (Hib, IPV, PCV13, hepatitis B, rotavirus) 
-          at the 2, 4, and 6-month visits. This means many VAERS reports listing DTaP also list other 
+          at the 2, 4, and 6-month visits. This means many VAERS reports listing DTaP also list other
           vaccines — making it impossible to attribute symptoms to DTaP alone from VAERS data.
+        </p>
+        <p>
+          DTaP is given as a 5-dose series in early childhood. See exactly when each dose is due on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link> and our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>.
         </p>
       </div>
 

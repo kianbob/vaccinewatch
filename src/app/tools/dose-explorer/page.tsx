@@ -5,8 +5,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import DoseExplorerClient from './DoseExplorerClient'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Dose Series Explorer — VAERS',
-  description: 'Compare 1st, 2nd, and 3rd dose adverse event reports for any vaccine. Interactive dose series analysis from VAERS data.'
+  title: 'Vaccine Dose Series Explorer 2026 — VAERS Data',
+  description: 'Compare 1st, 2nd, and 3rd dose adverse event reports for any vaccine. Interactive VAERS dose series analysis and vaccine safety data by dose number.',
+  openGraph: {
+    title: 'Vaccine Dose Series Explorer — VAERS Data',
+    description: 'Compare adverse event reports across the 1st, 2nd, and 3rd dose for any vaccine with interactive VAERS dose series analysis.',
+  },
 }
 
 export default function DoseExplorerPage() {

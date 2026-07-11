@@ -8,8 +8,8 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Side Effect Symptoms — 500 in VAERS',
-  description: 'Browse 500 symptoms reported in VAERS after vaccination. Sort by frequency, deaths, hospitalizations, and severity. From fever to myocarditis.',
+  title: 'Vaccine Side Effect Symptoms 2026 — 500 in VAERS Data',
+  description: 'Browse 500 vaccine side effects and symptoms reported in VAERS after vaccination. Sort by frequency, deaths, hospitalizations, and severity — from fever to myocarditis.',
   openGraph: {
     title: 'All 500 Symptoms Reported After Vaccination — VAERS Data',
     description: 'Browse all 500 symptoms reported in VAERS after vaccination. Sortable by frequency, deaths, hospitalizations, and severity rate. From pyrexia to myocarditis.',

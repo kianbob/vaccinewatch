@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Hepatitis B Vaccine Side Effects — VAERS Data Analysis',
-  description: 'VAERS analysis of hepatitis B vaccine side effects. 73,000+ reports analyzed — given at birth, this vaccine generates reports across all ages.',
+  title: 'Hepatitis B Vaccine Side Effects 2026 — VAERS Data Analysis',
+  description: 'VAERS analysis of hepatitis B vaccine side effects and adverse events. 73,000+ reports analyzed — given at birth, this vaccine generates reports across all ages.',
+  openGraph: {
+    title: 'Hepatitis B Vaccine Side Effects — VAERS Data Analysis',
+    description: '73,000+ hepatitis B vaccine adverse event reports analyzed from VAERS data, spanning 35 years of universal infant vaccination.',
+  },
 }
 
 export default function HepatitisBSideEffectsPage() {
@@ -113,8 +117,13 @@ export default function HepatitisBSideEffectsPage() {
           <li>Temporary joint pain</li>
         </ul>
         <p>
-          Hepatitis B vaccine is considered one of the safest and best-studied vaccines available. 
+          Hepatitis B vaccine is considered one of the safest and best-studied vaccines available.
           It has been administered billions of times worldwide since its introduction in 1982.
+        </p>
+        <p>
+          The birth dose is just the first of a multi-dose series. See when each dose is due on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link> and our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>.
         </p>
       </div>
 

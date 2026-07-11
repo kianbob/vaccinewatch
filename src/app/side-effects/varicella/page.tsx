@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Varicella (Chickenpox) Vaccine Side Effects — Varivax VAERS Data',
-  description: 'VAERS analysis of varicella (chickenpox) vaccine side effects. 93,000+ reports for Varivax including rash, fever, and rare serious outcomes.',
+  title: 'Chickenpox (Varicella) Vaccine Side Effects 2026 — Varivax Data',
+  description: 'VAERS analysis of varicella (chickenpox) vaccine side effects and adverse events. 93,000+ reports for Varivax covering rash, fever, and rare serious outcomes.',
+  openGraph: {
+    title: 'Varicella (Chickenpox) Vaccine Side Effects — VAERS Data',
+    description: '93,000+ chickenpox vaccine adverse event reports analyzed from VAERS data, with full context on Varivax safety.',
+  },
 }
 
 export default function VaricellaSideEffectsPage() {
@@ -126,8 +130,14 @@ export default function VaricellaSideEffectsPage() {
           the risks of reported adverse events.
         </p>
         <p>
-          Many VAERS reports for varicella involve co-administered vaccines (given at the same visit), 
+          Many VAERS reports for varicella involve co-administered vaccines (given at the same visit),
           making it difficult to attribute symptoms to any single vaccine.
+        </p>
+        <p>
+          The chickenpox vaccine is given in two childhood doses. See exactly when each is due on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link>, review our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>, and explore{' '}
+          <Link href="/analysis/pediatric">pediatric VAERS patterns</Link>.
         </p>
       </div>
 

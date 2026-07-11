@@ -26,6 +26,27 @@ export const metadata: Metadata = {
 
 const recentArticles = [
   {
+    slug: 'vaccine-schedule-2026',
+    title: '2026 Vaccine Schedule: Complete CDC Guide',
+    subtitle: 'Every recommended vaccine from birth to 65+ — plus new COVID boosters, RSV, Penbraya, and PCV20',
+    readTime: 9,
+    date: 'Jul 2026',
+  },
+  {
+    slug: 'rsv-vaccine-2026',
+    title: 'RSV Vaccine 2026: Who Should Get It',
+    subtitle: 'Arexvy, Abrysvo, and nirsevimab explained — efficacy, side effects, and CDC recommendations',
+    readTime: 8,
+    date: 'Jul 2026',
+  },
+  {
+    slug: 'state-vaccine-requirements-2026',
+    title: 'State Vaccine Requirements 2026',
+    subtitle: 'School entry laws and medical, religious, and philosophical exemptions — state by state',
+    readTime: 8,
+    date: 'Jul 2026',
+  },
+  {
     slug: 'denominator-problem',
     title: 'Why Raw VAERS Numbers Can Be Misleading',
     subtitle: 'The most critical limitation: 670M+ COVID doses make raw counts meaningless without context',

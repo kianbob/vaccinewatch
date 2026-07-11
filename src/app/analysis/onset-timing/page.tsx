@@ -10,8 +10,12 @@ import { OnsetTimingChartsClient as OnsetTimingCharts } from '@/components/Clien
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Side Effect Onset Timing — VAERS Data',
-  description: '73% of vaccine adverse events start within 3 days. Onset timing analysis by vaccine type and outcome severity from VAERS.'
+  title: 'Vaccine Side Effect Onset Timing — When Reactions Start (VAERS Data)',
+  description: '73% of vaccine adverse events start within 3 days of vaccination. VAERS onset-timing analysis by vaccine type and outcome severity, with full context.',
+  openGraph: {
+    title: 'Vaccine Side Effect Onset Timing — When Reactions Start (VAERS Data)',
+    description: '73% of vaccine adverse events start within 3 days of vaccination. VAERS onset-timing analysis by vaccine type and outcome severity, with full context.',
+  },
 }
 
 export default function OnsetTimingPage() {
@@ -165,6 +169,10 @@ export default function OnsetTimingPage() {
           <Link href="/tools/onset-calculator" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Onset Calculator Tool</div>
             <div className="text-sm text-gray-500">Interactive onset timing by vaccine</div>
+          </Link>
+          <Link href="/analysis/dose-comparison" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">First vs Second Dose vs Booster</div>
+            <div className="text-sm text-gray-500">How onset patterns shift by dose</div>
           </Link>
         </div>
       </div>

@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Hepatitis A Vaccine Side Effects — Havrix & Vaqta VAERS Data',
-  description: 'VAERS analysis of hepatitis A vaccine side effects. 48,000+ reports for Havrix and Vaqta including injection site reactions and rare outcomes.',
+  title: 'Hepatitis A Vaccine Side Effects 2026 — Havrix & Vaqta VAERS Data',
+  description: 'VAERS analysis of hepatitis A vaccine side effects and adverse events. 48,000+ reports for Havrix and Vaqta covering injection site reactions and rare outcomes.',
+  openGraph: {
+    title: 'Hepatitis A Vaccine Side Effects — VAERS Data Analysis',
+    description: '48,000+ hepatitis A vaccine adverse event reports analyzed from VAERS data, with full context.',
+  },
 }
 
 export default function HepASideEffectsPage() {
@@ -123,6 +127,12 @@ export default function HepASideEffectsPage() {
           of VAERS reports compared to the hundreds of millions of doses administered reflects a 
           favorable safety profile. Natural hepatitis A infection, by contrast, causes weeks of 
           illness and can be fatal in older adults and people with chronic liver disease.
+        </p>
+        <p>
+          Hepatitis A vaccination is routine for children at age 1 and for at-risk adults. See where it fits on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link>, review our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>, and compare with{' '}
+          <Link href="/analysis/pediatric">pediatric VAERS patterns</Link>.
         </p>
       </div>
 

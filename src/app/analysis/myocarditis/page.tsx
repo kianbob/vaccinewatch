@@ -10,8 +10,12 @@ import { MyocarditisChartsClient as MyocarditisCharts } from '@/components/Clien
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Myocarditis After COVID Vaccine — VAERS Data, Rates & Risk by Age',
-  description: 'The most closely-watched COVID-era safety signal. Myocarditis VAERS reports by age, sex, vaccine brand, and clinical outcomes.'
+  title: 'Myocarditis After COVID Vaccine — VAERS Data, Rates & Risk by Age 2026',
+  description: 'The most closely-watched COVID-era vaccine safety signal. Myocarditis VAERS reports analyzed by age, sex, vaccine brand, and clinical outcomes in context.',
+  openGraph: {
+    title: 'Myocarditis After COVID Vaccine — VAERS Data, Rates & Risk by Age 2026',
+    description: 'The most closely-watched COVID-era vaccine safety signal. Myocarditis VAERS reports analyzed by age, sex, vaccine brand, and clinical outcomes in context.',
+  },
 }
 
 export default function MyocarditisPage() {
@@ -148,6 +152,10 @@ export default function MyocarditisPage() {
           <Link href="/symptoms/myocarditis" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Myocarditis Symptom Page</div>
             <div className="text-sm text-gray-500">Full data for myocarditis reports</div>
+          </Link>
+          <Link href="/analysis/dose-comparison" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">First vs Second Dose vs Booster</div>
+            <div className="text-sm text-gray-500">Dose-related adverse event patterns</div>
           </Link>
         </div>
       </div>

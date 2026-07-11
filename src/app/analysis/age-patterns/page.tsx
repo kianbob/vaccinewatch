@@ -10,8 +10,12 @@ import { AgeChartsClient as AgeCharts } from '@/components/ClientCharts'
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Side Effects by Age — Which Age Groups Report the Most to VAERS',
-  description: 'Age breakdown of 1.98M VAERS reports. Adults 65+ have 56% of death reports despite 20% of total. Patterns by age group analyzed.'
+  title: 'Vaccine Side Effects by Age 2026 — VAERS Adverse Events by Age Group',
+  description: 'Age breakdown of 1.98M VAERS vaccine adverse event reports. Adults 65+ hold 56% of death reports despite just 20% of total. Age-group patterns in context.',
+  openGraph: {
+    title: 'Vaccine Side Effects by Age 2026 — VAERS Adverse Events by Age Group',
+    description: 'Age breakdown of 1.98M VAERS vaccine adverse event reports. Adults 65+ hold 56% of death reports despite just 20% of total. Age-group patterns in context.',
+  },
 }
 
 export default function AgePatternsPage() {
@@ -145,6 +149,10 @@ export default function AgePatternsPage() {
           <Link href="/analysis/gender-patterns" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Gender Disparities</div>
             <div className="text-sm text-gray-500">Why women report more often</div>
+          </Link>
+          <Link href="/analysis/elderly" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">The 65+ Age Group</div>
+            <div className="text-sm text-gray-500">Why older adults have the highest serious-outcome rates</div>
           </Link>
         </div>
       </div>

@@ -225,8 +225,13 @@ export default function CovidSideEffectsPage() {
           administered, the adverse event rates are consistent with clinical trial data.
         </p>
         <p>
-          This page presents the raw data transparently. For medical advice about COVID vaccination, 
+          This page presents the raw data transparently. For medical advice about COVID vaccination,
           consult your healthcare provider.
+        </p>
+        <p>
+          To see how COVID-19 boosters fit alongside other recommended shots, review the full{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link> and our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>.
         </p>
       </div>
 

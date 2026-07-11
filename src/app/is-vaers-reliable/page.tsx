@@ -7,10 +7,10 @@ import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
   title: 'Is VAERS Reliable? Strengths, Limitations & What the Data Really Shows (2026)',
-  description: 'Honest assessment of VAERS reliability. What VAERS can and cannot tell us about vaccine safety, and how to interpret reports correctly.',
+  description: 'An honest 2026 assessment of VAERS reliability: what VAERS adverse event data can and cannot tell us about vaccine safety, and how to interpret reports correctly.',
   openGraph: {
-    title: 'Is VAERS Reliable? — Honest Assessment',
-    description: 'What VAERS can and cannot tell us about vaccine safety.',
+    title: 'Is VAERS Reliable? — Honest 2026 Assessment',
+    description: 'What VAERS vaccine adverse event data can and cannot tell us about vaccine safety, why reports do not prove causation, and how to interpret them correctly.',
   },
 }
 

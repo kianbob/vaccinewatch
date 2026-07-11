@@ -10,8 +10,12 @@ import { GeographicChartsClient as GeographicCharts } from '@/components/ClientC
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'VAERS Reports by State — Geographic Patterns',
-  description: 'State-level VAERS analysis: which states report most, per-capita rates, and what drives geographic variation in adverse events.'
+  title: 'VAERS Reports by State 2026 — Geographic Vaccine Safety Patterns',
+  description: 'State-level VAERS analysis: which states report the most vaccine adverse events, per-capita rates, and what drives geographic variation in reporting.',
+  openGraph: {
+    title: 'VAERS Reports by State 2026 — Geographic Vaccine Safety Patterns',
+    description: 'State-level VAERS analysis: which states report the most vaccine adverse events, per-capita rates, and what drives geographic variation in reporting.',
+  },
 }
 
 const STATE_NAMES: Record<string, string> = {
@@ -162,6 +166,10 @@ export default function GeographicPatternsPage() {
           <Link href="/analysis/reporting-trends" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">35 Years of Reporting</div>
             <div className="text-sm text-gray-500">National trend analysis</div>
+          </Link>
+          <Link href="/analysis/who-reports" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Who Files VAERS Reports?</div>
+            <div className="text-sm text-gray-500">The reporting sources behind the data</div>
           </Link>
         </div>
       </div>

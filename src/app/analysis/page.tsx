@@ -5,8 +5,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import DisclaimerBanner from '@/components/DisclaimerBanner'
 
 export const metadata: Metadata = {
-  title: 'VAERS Data Analysis — Vaccine Safety Insights',
-  description: 'In-depth analysis of 1.98M VAERS reports: COVID-19 impact, myocarditis, age patterns, death reports, and geographic trends with full context.'
+  title: 'VAERS Data Analysis 2026 — Vaccine Safety & Adverse Event Insights',
+  description: 'In-depth 2026 analysis of 1.98M VAERS reports: COVID-19 impact, myocarditis, age and gender patterns, death reports, and geographic trends in full context.',
+  openGraph: {
+    title: 'VAERS Data Analysis 2026 — Vaccine Safety & Adverse Event Insights',
+    description: 'In-depth 2026 analysis of 1.98M VAERS reports: COVID-19 impact, myocarditis, age and gender patterns, death reports, and geographic trends in full context.',
+  },
 }
 
 const articles = [

@@ -4,8 +4,12 @@ import { playfairDisplay } from '@/lib/fonts'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'About VaccineWatch — VAERS Data Methodology',
-  description: 'Our methodology, data sources, and update process for 1.98M VAERS reports across 104 vaccines. Built by TheDataProject.ai.'
+  title: 'About VaccineWatch — Transparent VAERS Vaccine Safety Data (2026)',
+  description: 'How VaccineWatch makes 1.98M VAERS vaccine adverse event reports across 104 vaccines accessible and contextualized. Our mission, data sources, and neutral stance.',
+  openGraph: {
+    title: 'About VaccineWatch — Transparent VAERS Vaccine Safety Data',
+    description: 'Our mission, data sources, and methodology for making 1.98M VAERS vaccine adverse event reports accessible and understandable. Pro-transparency, not pro- or anti-vaccine.',
+  },
 }
 
 const sisterSites = [
@@ -76,6 +80,57 @@ export default function AboutPage() {
         <p>
           VAERS serves as one of several systems used to monitor vaccine safety. It is designed to detect possible signals
           that may indicate a potential safety concern, which can then be studied further through more rigorous methods.
+        </p>
+      </section>
+
+      {/* Why VaccineWatch Exists */}
+      <section className="prose prose-lg max-w-none mb-12">
+        <h2 className={`text-2xl font-bold text-gray-900 ${playfairDisplay.className}`}>Why VaccineWatch Exists</h2>
+        <p>
+          The raw VAERS data is public, but it is not easy to use. The official files are large CSV downloads that
+          require technical skill to open, join, and interpret, and the government query tool (VAERS WONDER) is
+          powerful but unintuitive for most people. As a result, VAERS numbers are frequently pulled out of context
+          and shared without the caveats that make them meaningful. VaccineWatch was built to close that gap: to make
+          this important public health dataset <strong>searchable, visual, and honestly contextualized</strong> for
+          journalists, researchers, patients, and anyone trying to understand vaccine adverse event data.
+        </p>
+        <p>
+          We believe transparency and context are not in tension. Hiding data breeds distrust, but presenting raw
+          numbers without explanation breeds misinformation. Our answer is to show <em>all</em> of the data while
+          consistently explaining what it can and cannot tell you. Every page carries the reminder that a report is
+          not proof of causation, and our <Link href="/methodology">methodology</Link> is documented openly so anyone
+          can verify how our figures are produced.
+        </p>
+
+        <h2 className={`text-2xl font-bold text-gray-900 ${playfairDisplay.className}`}>Our Editorial Stance</h2>
+        <p>
+          VaccineWatch is <strong>neither pro-vaccine nor anti-vaccine — we are pro-transparency</strong>. We do not
+          make vaccination recommendations, and we do not use the data to argue for or against any vaccine. We report
+          the numbers as the CDC and FDA publish them, and we add only the interpretive context that public health
+          agencies and epidemiologists themselves attach to VAERS: that it is a passive, over-inclusive early warning
+          system, and that <strong>a report describes a temporal association, not a proven cause</strong>. When we
+          discuss known safety findings — such as myocarditis after mRNA vaccines or the rare clotting signal after the
+          J&amp;J vaccine — we describe them the way the underlying science does, including how common or rare they are.
+        </p>
+        <p>
+          For decisions about your own health or your family&apos;s, this site is a starting point for understanding
+          the data, not a substitute for professional medical advice. Always consult a qualified healthcare provider
+          who knows your history. You can read more in our{' '}
+          <Link href="/faq">frequently asked questions</Link>, our{' '}
+          <Link href="/glossary">glossary of terms</Link>, and our full{' '}
+          <Link href="/disclaimer">disclaimer</Link>.
+        </p>
+
+        <h2 className={`text-2xl font-bold text-gray-900 ${playfairDisplay.className}`}>Where Our Data Comes From</h2>
+        <p>
+          Every figure on VaccineWatch traces back to the official VAERS public-use datasets published by the CDC and
+          FDA. We combine the three linked files VAERS releases — the report-level data, the vaccine data, and the
+          MedDRA-coded symptom data — joined on each report&apos;s unique VAERS ID. We do not add outside data, we do
+          not remove reports, and we do not reweight the figures. The result is a faithful aggregation of the public
+          record. You can explore it yourself through our{' '}
+          <Link href="/vaers-database">VAERS database</Link> and{' '}
+          <Link href="/side-effects">side effects guides</Link>, or read exactly how the numbers are computed on our{' '}
+          <Link href="/methodology">methodology page</Link>.
         </p>
       </section>
 

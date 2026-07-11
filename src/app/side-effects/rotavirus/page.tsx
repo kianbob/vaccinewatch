@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Rotavirus Vaccine Side Effects — RotaTeq & Rotarix VAERS Data',
-  description: 'VAERS analysis of rotavirus vaccine side effects. 25,000+ reports for RotaTeq (RV5) and Rotarix (RV1) including intussusception risk data.',
+  title: 'Rotavirus Vaccine Side Effects 2026 — RotaTeq & Rotarix Data',
+  description: 'VAERS analysis of rotavirus vaccine side effects and adverse events. 25,000+ reports for RotaTeq (RV5) and Rotarix (RV1), including intussusception risk data.',
+  openGraph: {
+    title: 'Rotavirus Vaccine Side Effects — VAERS Data Analysis',
+    description: '25,000+ rotavirus vaccine adverse event reports analyzed from VAERS data, with context on intussusception risk.',
+  },
 }
 
 export default function RotavirusSideEffectsPage() {
@@ -145,6 +149,11 @@ export default function RotavirusSideEffectsPage() {
           to very young infants (2-8 months) during the peak window for SIDS (Sudden Infant Death 
           Syndrome). Large-scale studies have found no increased risk of death from rotavirus vaccination 
           — the temporal association with SIDS is coincidental.
+        </p>
+        <p>
+          Rotavirus vaccine has a strict age window and is given orally in infancy. See exact timing on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link> and our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>.
         </p>
       </div>
 

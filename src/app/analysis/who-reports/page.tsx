@@ -10,8 +10,12 @@ import { WhoReportsChartsClient as WhoReportsCharts } from '@/components/ClientC
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Who Files VAERS Reports? — Source Analysis',
-  description: 'VAERS reporting sources analyzed: private doctors, public health, military, pharmacies. Who submits reports and reporting mandates.'
+  title: 'Who Files VAERS Reports? — Vaccine Adverse Event Source Analysis 2026',
+  description: 'VAERS reporting sources analyzed: private doctors, public health, military, and pharmacies. Who submits vaccine adverse event reports and why mandates matter.',
+  openGraph: {
+    title: 'Who Files VAERS Reports? — Vaccine Adverse Event Source Analysis 2026',
+    description: 'VAERS reporting sources analyzed: private doctors, public health, military, and pharmacies. Who submits vaccine adverse event reports and why mandates matter.',
+  },
 }
 
 export default function WhoReportsPage() {
@@ -251,6 +255,10 @@ export default function WhoReportsPage() {
           <Link href="/analysis/geographic-patterns" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Geographic Patterns</div>
             <div className="text-sm text-gray-500">State-level reporting variations</div>
+          </Link>
+          <Link href="/analysis/denominator-problem" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Why Raw VAERS Numbers Mislead</div>
+            <div className="text-sm text-gray-500">The denominator problem explained</div>
           </Link>
         </div>
       </div>

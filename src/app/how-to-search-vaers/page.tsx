@@ -7,7 +7,11 @@ import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
   title: 'How to Search VAERS in 2026 — Easy Step-by-Step Guide (No Coding Required)',
-  description: 'The easiest way to search VAERS data. Browse vaccines, symptoms, states, and manufacturers with interactive tools — no complex queries needed.',
+  description: 'Search VAERS vaccine adverse event data the easy way in 2026. Browse vaccines, symptoms, states, and manufacturers with interactive tools — no complex queries.',
+  openGraph: {
+    title: 'How to Search VAERS Data — Easy 2026 Guide, No Coding',
+    description: 'The simplest way to search VAERS vaccine adverse event data. Browse by vaccine, symptom, state, or manufacturer with interactive tools and built-in context.',
+  },
 }
 
 export default function HowToSearchVAERSPage() {
@@ -15,6 +19,18 @@ export default function HowToSearchVAERSPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Article","headline":"How to Search VAERS — Easy Guide to Vaccine Safety Data","description":"The easiest way to search VAERS data. No complex queries needed — browse vaccines, symptoms, states, and manufacturers with interactive tools and proper context.","url":"https://www.vaccinewatch.org/how-to-search-vaers","datePublished":"2026-02-25","dateModified":"2026-02-25","publisher":{"@type":"Organization","name":"VaccineWatch","url":"https://www.vaccinewatch.org"}}'}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'How do I search VAERS data?', acceptedAnswer: { '@type': 'Answer', text: 'You can search VAERS in two main ways. VaccineWatch lets you browse and click through pre-built pages for every vaccine, symptom, state, and manufacturer — no query syntax required. Alternatively, the official CDC WONDER system provides raw, query-based access to the full dataset for custom searches.' } },
+          { '@type': 'Question', name: 'Can I search VAERS by symptom?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. VaccineWatch indexes more than 1,000 reported symptoms. Each symptom page shows which vaccines are associated with it and how frequently it has been reported, so you can explore a specific adverse event across all vaccines.' } },
+          { '@type': 'Question', name: 'How do I search VAERS for a specific vaccine like COVID-19?', acceptedAnswer: { '@type': 'Answer', text: 'Open the vaccine you want from the vaccines index (for example, the COVID-19 vaccine page). Each vaccine profile shows total reports, top symptoms, age distribution, yearly trends, and manufacturer breakdowns, all drawn directly from VAERS.' } },
+          { '@type': 'Question', name: 'What is the difference between VaccineWatch and CDC WONDER?', acceptedAnswer: { '@type': 'Answer', text: 'CDC WONDER is the official query interface with full raw-data access but a steep learning curve and table-only output. VaccineWatch processes the same underlying VAERS files into browsable, chart-rich pages with built-in context. Use VaccineWatch for exploring and understanding the data, and CDC WONDER for custom raw queries.' } },
+          { '@type': 'Question', name: 'Is searching VAERS data free?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. VAERS data is fully public and free to access, both through the official CDC WONDER system and through tools like VaccineWatch that make it easier to browse and interpret.' } },
+          { '@type': 'Question', name: 'Does a VAERS report mean a vaccine caused the event?', acceptedAnswer: { '@type': 'Answer', text: 'No. VAERS is a passive reporting system, so a report only means an event occurred after vaccination. It does not prove the vaccine caused the event, and raw counts should be interpreted with context such as doses administered and reporting patterns.' } },
+        ],
+      }) }} />
       <Breadcrumbs items={[{ label: 'How to Search VAERS' }]} />
 
       <div className="mb-8">

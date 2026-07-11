@@ -10,8 +10,12 @@ import { MultiVaccineChartsClient as MultiVaccineCharts } from '@/components/Cli
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Multiple Vaccines at Once — VAERS Safety Data',
-  description: '1,514 vaccine combinations in VAERS. Safety patterns when multiple vaccines are given together and common co-administration combos.'
+  title: 'Multiple Vaccines at Once — VAERS Co-Administration Safety Data 2026',
+  description: '1,514 vaccine combinations tracked in VAERS. Safety patterns when multiple vaccines are given together and the most common co-administration combos.',
+  openGraph: {
+    title: 'Multiple Vaccines at Once — VAERS Co-Administration Safety Data 2026',
+    description: '1,514 vaccine combinations tracked in VAERS. Safety patterns when multiple vaccines are given together and the most common co-administration combos.',
+  },
 }
 
 export default function MultiVaccinePage() {
@@ -201,6 +205,10 @@ export default function MultiVaccinePage() {
           <Link href="/analysis/serious-outcomes" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Serious vs Non-Serious Outcomes</div>
             <div className="text-sm text-gray-500">Understanding adverse event severity</div>
+          </Link>
+          <Link href="/analysis/vaccine-schedule-2026" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">The 2026 Vaccine Schedule</div>
+            <div className="text-sm text-gray-500">Why vaccines are co-administered</div>
           </Link>
         </div>
       </div>

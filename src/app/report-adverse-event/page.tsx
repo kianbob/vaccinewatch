@@ -5,11 +5,11 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Report a Vaccine Adverse Event to VAERS',
-  description: 'Step-by-step guide to filing a VAERS report. Who can report, what to include, and what happens after you submit.',
+  title: 'How to Report a Vaccine Adverse Event to VAERS — 2026 Guide',
+  description: 'Step-by-step 2026 guide to filing a VAERS report for a vaccine side effect or adverse event: who can report, what to include, and what happens after you submit.',
   openGraph: {
-    title: 'How to Report a Vaccine Adverse Event to VAERS',
-    description: 'Step-by-step guide to reporting a vaccine adverse event to VAERS. Who can report, what to include, and what happens after you file. Plus: how reports become the data on VaccineWatch.',
+    title: 'How to Report a Vaccine Adverse Event to VAERS (2026)',
+    description: 'Step-by-step guide to reporting a vaccine adverse event to VAERS: who can report, what to include, and what happens after you file — plus how reports become VaccineWatch data.',
   },
   alternates: { canonical: 'https://www.vaccinewatch.org/report-adverse-event' },
 }

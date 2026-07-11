@@ -8,8 +8,8 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'All 104 Vaccines in VAERS — Safety Report Data',
-  description: 'Browse 104 vaccines in VAERS sorted by reports, deaths, hospitalizations, and ER visits. Compare adverse event data across all vaccine types.',
+  title: 'All 104 Vaccines in VAERS 2026 — Adverse Event & Safety Data',
+  description: 'Browse all 104 vaccines in VAERS sorted by reports, deaths, hospitalizations, and ER visits. Compare vaccine adverse events and safety data across every vaccine type.',
   openGraph: {
     title: 'All 104 Vaccines in VAERS — Adverse Event Reports',
     description: 'Browse all 104 vaccines with VAERS adverse event reports. Sortable by total reports, deaths, hospitalizations, and ER visits. See which vaccines have the most reports.',

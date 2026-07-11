@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Polio Vaccine Side Effects — IPV & OPV VAERS Data',
-  description: 'VAERS analysis of polio vaccine side effects. Both inactivated (IPV/IPOL) and oral (OPV) polio vaccines analyzed with historical context.',
+  title: 'Polio Vaccine Side Effects 2026 — IPV & OPV VAERS Data',
+  description: 'VAERS analysis of polio vaccine side effects and adverse events. Both inactivated (IPV/IPOL) and oral (OPV) polio vaccines analyzed with historical context.',
+  openGraph: {
+    title: 'Polio Vaccine Side Effects — VAERS Data Analysis',
+    description: 'Polio vaccine adverse event reports analyzed from VAERS data, covering both the current IPV and historical OPV.',
+  },
 }
 
 export default function PolioSideEffectsPage() {
@@ -115,6 +119,11 @@ export default function PolioSideEffectsPage() {
           polio (VAPP) — about 1 case per 2.4 million doses. This is why the U.S. switched 
           exclusively to IPV in 2000. OPV is still used in some countries for its ability to 
           provide intestinal immunity and stop wild poliovirus transmission.
+        </p>
+        <p>
+          IPV is given as a multi-dose series in childhood. See when each dose is due on the{' '}
+          <Link href="/vaccine-schedule">CDC vaccine schedule</Link> and our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>.
         </p>
       </div>
 

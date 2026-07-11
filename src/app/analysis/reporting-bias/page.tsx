@@ -10,8 +10,12 @@ import { ReportingBiasChartsClient as ReportingBiasCharts } from '@/components/C
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'VAERS Reporting Bias — Key Factors Explained',
-  description: 'Stimulated reporting, awareness bias, and media influence on VAERS data. 2021 saw a 25x reporting spike from COVID awareness.'
+  title: 'VAERS Reporting Bias Explained — Stimulated Reporting & Media Effects',
+  description: 'Stimulated reporting, awareness bias, and media influence on VAERS data. 2021 saw a 25x spike in reports, showing how bias shapes vaccine safety numbers.',
+  openGraph: {
+    title: 'VAERS Reporting Bias Explained — Stimulated Reporting & Media Effects',
+    description: 'Stimulated reporting, awareness bias, and media influence on VAERS data. 2021 saw a 25x spike in reports, showing how bias shapes vaccine safety numbers.',
+  },
 }
 
 export default function ReportingBiasPage() {
@@ -211,6 +215,10 @@ export default function ReportingBiasPage() {
           <Link href="/analysis/covid-impact" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">The COVID-19 Impact on VAERS</div>
             <div className="text-sm text-gray-500">How the pandemic changed reporting</div>
+          </Link>
+          <Link href="/analysis/who-reports" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Who Files VAERS Reports?</div>
+            <div className="text-sm text-gray-500">How reporting sources shape the data</div>
           </Link>
         </div>
       </div>

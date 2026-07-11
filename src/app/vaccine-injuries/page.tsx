@@ -8,8 +8,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButtons from '@/components/ShareButtons'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Injuries — VAERS Adverse Event Reports & VICP Compensation Data',
-  description: 'Understanding vaccine injuries: VAERS adverse event data, the Vaccine Injury Compensation Program (VICP), and what the data shows about serious vaccine reactions.',
+  title: 'Vaccine Injuries 2026 — VAERS Adverse Event & VICP Compensation Data',
+  description: 'Understand vaccine injuries in 2026: VAERS adverse event data, the Vaccine Injury Compensation Program (VICP), and what the data shows about serious vaccine reactions.',
+  openGraph: {
+    title: 'Vaccine Injuries — VAERS Data & VICP Compensation (2026)',
+    description: 'What VAERS adverse event data and the Vaccine Injury Compensation Program (VICP) reveal about serious vaccine reactions, injury rates, and how to interpret them.',
+  },
 }
 
 export default function VaccineInjuriesPage() {
@@ -103,8 +107,10 @@ export default function VaccineInjuriesPage() {
           <li><strong>Vaccine injuries:</strong> Health problems actually caused by the vaccine (rare, requires medical/legal determination)</li>
         </ul>
         <p>
-          VAERS captures <em>adverse events</em> — not confirmed vaccine injuries. The difference 
-          matters enormously for interpreting the data.
+          VAERS captures <em>adverse events</em> — not confirmed vaccine injuries. The difference
+          matters enormously for interpreting the data. For a fuller explanation of how adverse
+          events are defined, reported, and analyzed, see our{' '}
+          <Link href="/adverse-events">guide to vaccine adverse events</Link>.
         </p>
 
         <h2 className={playfairDisplay.className}>Known Vaccine Injuries</h2>

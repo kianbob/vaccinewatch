@@ -6,8 +6,12 @@ import ShareButtons from '@/components/ShareButtons'
 import AdminRoutesClient from './AdminRoutesClient'
 
 export const metadata: Metadata = {
-  title: 'Vaccine Administration Routes — VAERS Data',
-  description: 'Who gives vaccines and how? Explore administration routes (IM, oral, subcutaneous) and settings (doctors, pharmacies, military) in VAERS.',
+  title: 'Vaccine Administration Routes 2026 — VAERS Data Explorer',
+  description: 'Who gives vaccines and how? Explore administration routes (IM, oral, subcutaneous) and settings (doctors, pharmacies, military) in VAERS adverse event data.',
+  openGraph: {
+    title: 'Vaccine Administration Routes — VAERS Data Explorer',
+    description: 'Explore how and where vaccines are administered — routes (IM, oral, subcutaneous) and settings (doctors, pharmacies, military) across VAERS reports.',
+  },
 }
 
 export default function AdminRoutesPage() {

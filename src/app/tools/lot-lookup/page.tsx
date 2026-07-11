@@ -5,8 +5,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import LotLookupClient from './LotLookupClient'
 
 export const metadata: Metadata = {
-  title: 'COVID Vaccine Lot Number Lookup — VAERS',
-  description: 'Search 4,414 COVID-19 vaccine lot numbers in VAERS. Reports per lot with context on why raw counts don\'t determine safety.'
+  title: 'COVID Vaccine Lot Number Lookup 2026 — VAERS Data',
+  description: 'Search 4,414 COVID-19 vaccine lot numbers in VAERS. See adverse event reports per lot, with key context on why raw counts don\'t determine vaccine safety.',
+  openGraph: {
+    title: 'COVID Vaccine Lot Number Lookup — VAERS Data',
+    description: 'Look up COVID-19 vaccine lot numbers and their VAERS adverse event report counts, with context on interpreting the data.',
+  },
 }
 
 export default function LotLookupPage() {

@@ -127,6 +127,18 @@ export default function VaccineSchedulePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <DisclaimerBanner />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What is the 2026 CDC recommended vaccine schedule?', acceptedAnswer: { '@type': 'Answer', text: 'The CDC recommended immunization schedule lists the vaccines advised for each age group, from birth through adulthood, and is reviewed annually by the Advisory Committee on Immunization Practices (ACIP). It covers routine childhood shots (DTaP, MMR, polio, hepatitis B, and more), adolescent vaccines (Tdap, HPV, meningococcal), and adult vaccines (influenza, shingles, pneumococcal, COVID-19, and RSV).' } },
+          { '@type': 'Question', name: 'What vaccines does a child need by age 2?', acceptedAnswer: { '@type': 'Answer', text: 'By age 2, the CDC schedule recommends completing series for hepatitis B, DTaP, Hib, pneumococcal (PCV), polio (IPV), and rotavirus, plus first doses of MMR, varicella, and hepatitis A, and an annual influenza vaccine from 6 months of age. Exact timing may vary based on medical history, so consult your healthcare provider.' } },
+          { '@type': 'Question', name: 'Can vaccines be given on a delayed or catch-up schedule?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Children who miss doses may follow a CDC catch-up schedule with adjusted intervals, and adults who were never vaccinated may need certain childhood vaccines. The CDC publishes detailed catch-up guidance at cdc.gov/vaccines/schedules.' } },
+          { '@type': 'Question', name: 'Which vaccines are recommended during pregnancy?', acceptedAnswer: { '@type': 'Answer', text: 'The CDC recommends Tdap during every pregnancy (typically 27 to 36 weeks), an influenza vaccine in any trimester, and a seasonal RSV vaccine (around 32 to 36 weeks) to protect newborns. Always confirm timing with your obstetric provider.' } },
+          { '@type': 'Question', name: 'What vaccines do adults over 65 need?', acceptedAnswer: { '@type': 'Answer', text: 'Adults 65 and older are generally recommended to receive a high-dose annual influenza vaccine, pneumococcal vaccination (PCV20 or PCV15 plus PPSV23), a seasonal RSV vaccine, shingles vaccination (Shingrix), and updated COVID-19 vaccines.' } },
+          { '@type': 'Question', name: 'Where can I see side effect and VAERS data for scheduled vaccines?', acceptedAnswer: { '@type': 'Answer', text: 'Each vaccine in the schedule links to its VAERS adverse event profile on VaccineWatch, showing reported symptoms, age distributions, and yearly trends. Remember that VAERS is a passive reporting system and a report does not prove the vaccine caused the event.' } },
+        ],
+      }) }} />
       <Breadcrumbs items={[{ label: 'Vaccine Schedule' }]} />
 
       <div className="mb-8">
@@ -207,12 +219,34 @@ export default function VaccineSchedulePage() {
         </p>
       </div>
 
+      <div className="prose prose-lg max-w-none mb-12">
+        <p>
+          For deeper context on how the routine schedule has changed for 2026, see our{' '}
+          <Link href="/analysis/vaccine-schedule-2026">2026 vaccine schedule analysis</Link>. To review
+          the newest addition to the schedule for infants, pregnant people, and older adults, read our{' '}
+          <Link href="/analysis/rsv-vaccine-2026">2026 RSV vaccine analysis</Link>. You can also browse
+          detailed side-effect guides for specific shots, including{' '}
+          <Link href="/side-effects/covid">COVID-19</Link>,{' '}
+          <Link href="/side-effects/flu">influenza</Link>,{' '}
+          <Link href="/side-effects/mmr">MMR</Link>, and{' '}
+          <Link href="/side-effects/hpv">HPV</Link> vaccines.
+        </p>
+      </div>
+
       <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Explore More</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           <Link href="/side-effects" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
             <div className="font-medium text-gray-900">Side Effects Guide →</div>
             <div className="text-sm text-gray-500">All vaccines covered</div>
+          </Link>
+          <Link href="/analysis/vaccine-schedule-2026" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">2026 Schedule Analysis →</div>
+            <div className="text-sm text-gray-500">What changed this year</div>
+          </Link>
+          <Link href="/analysis/rsv-vaccine-2026" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
+            <div className="font-medium text-gray-900">2026 RSV Vaccine →</div>
+            <div className="text-sm text-gray-500">New seasonal recommendation</div>
           </Link>
           <Link href="/analysis/pediatric" className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-gray-200">
             <div className="font-medium text-gray-900">Pediatric Analysis →</div>

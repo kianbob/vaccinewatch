@@ -5,9 +5,13 @@ import DisclaimerBanner from '@/components/DisclaimerBanner'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'VAERS Glossary — Vaccine Safety Terms & Definitions Explained Simply',
-  description: 'Clear definitions of VAERS terminology, vaccine safety terms, and adverse event reporting concepts. Understand the data with plain-language explanations.',
-  keywords: 'VAERS glossary, adverse event definition, vaccine safety terms, what is VAERS, what does VAERS stand for, vaccine adverse event reporting system explained'
+  title: 'VAERS Glossary — Vaccine Safety Terms & Definitions Explained (2026)',
+  description: 'Clear definitions of 35+ VAERS and vaccine safety terms — adverse event, causality, temporal association, PRR, denominator, ACIP, EUA, reactogenicity, and more.',
+  keywords: 'VAERS glossary, adverse event definition, vaccine safety terms, what is VAERS, what does VAERS stand for, vaccine adverse event reporting system explained, PRR, ACIP, EUA, reactogenicity, temporal association',
+  openGraph: {
+    title: 'VAERS Glossary — Vaccine Safety Terms Defined',
+    description: 'Plain-language definitions of 35+ VAERS and vaccine safety terms to help you interpret vaccine adverse event data correctly.',
+  },
 }
 
 const terms = [
@@ -132,6 +136,59 @@ const terms = [
   {
     term: 'Post-Marketing Surveillance',
     definition: 'The monitoring of vaccine safety after a vaccine has been approved and is being used in the general population. VAERS is one of several post-marketing surveillance tools.',
+  },
+  {
+    term: 'Causality',
+    definition: 'The determination that one thing actually caused another. Establishing causality between a vaccine and an adverse event requires controlled studies, biological plausibility, consistency across data sources, and evidence that the event occurs more often in vaccinated than unvaccinated people. A single VAERS report cannot establish causality.',
+  },
+  {
+    term: 'Temporal Association',
+    definition: 'The observation that two events happened close together in time — for example, an adverse event occurring shortly after vaccination. VAERS captures temporal associations. A temporal association is a starting point for investigation, not proof that the vaccine caused the event.',
+  },
+  {
+    term: 'PRR (Proportional Reporting Ratio)',
+    definition: 'A statistical measure used in pharmacovigilance to detect disproportionate reporting. It compares how often a specific adverse event is reported for one vaccine versus all other vaccines. A high PRR flags an event for further review but, on its own, does not prove the vaccine caused it.',
+  },
+  {
+    term: 'Denominator',
+    definition: 'The number of people (or doses) at risk — the bottom of a rate calculation. VAERS provides only numerators (report counts) and no denominator, which is why raw VAERS counts cannot be turned into rates or used to compare risk between vaccines.',
+    link: '/analysis/denominator-problem',
+  },
+  {
+    term: 'ACIP (Advisory Committee on Immunization Practices)',
+    definition: 'A group of medical and public health experts that advises the CDC on the use of vaccines in the U.S. population. ACIP reviews safety and effectiveness data — including signals detected through VAERS — and makes recommendations on who should receive which vaccines and when.',
+  },
+  {
+    term: 'EUA (Emergency Use Authorization)',
+    definition: 'A mechanism the FDA uses to allow the use of a medical product during a public health emergency before full approval, based on the best available evidence. The COVID-19 vaccines were first made available under EUA before receiving full licensure.',
+  },
+  {
+    term: 'Reactogenicity',
+    definition: 'The expected, generally short-lived reactions to a vaccine that reflect the immune system responding — such as sore arm, fever, fatigue, and headache. Reactogenicity is a normal part of vaccination and is distinct from rare, serious adverse events.',
+  },
+  {
+    term: 'Seroconversion',
+    definition: 'The point at which a person develops detectable antibodies in their blood in response to a vaccine or infection. Seroconversion is a measure of immune response and is used to evaluate whether a vaccine is generating the intended protection.',
+  },
+  {
+    term: 'Contraindication',
+    definition: 'A specific situation in which a vaccine should not be given because the risk outweighs the benefit — for example, a severe allergic reaction to a previous dose or a vaccine component. Contraindications are identified during clinical trials and refined through ongoing safety monitoring.',
+  },
+  {
+    term: 'Epidemiology',
+    definition: 'The study of how diseases and health-related events are distributed in populations and what factors influence them. Epidemiological studies — comparing outcomes in vaccinated and unvaccinated groups — are what actually determine whether a vaccine causes a given adverse event, something VAERS alone cannot do.',
+  },
+  {
+    term: 'Confidence Interval',
+    definition: 'A range of values, derived from data, that is likely to contain the true value of a measure such as a risk estimate. Wider intervals mean more uncertainty. Confidence intervals help distinguish a real effect from statistical noise in vaccine safety studies.',
+  },
+  {
+    term: 'Pharmacovigilance',
+    definition: 'The science and activities involved in detecting, assessing, understanding, and preventing adverse effects of medical products, including vaccines. VAERS is a pharmacovigilance tool used for early signal detection.',
+  },
+  {
+    term: 'Life-Threatening Event',
+    definition: 'A VAERS outcome category indicating the reporter believed the person was at immediate risk of death from the adverse event at the time it occurred. Like other VAERS outcome flags, it reflects the reporter\'s assessment and does not confirm the vaccine as the cause.',
   },
 ]
 
