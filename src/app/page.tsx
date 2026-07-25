@@ -26,6 +26,20 @@ export const metadata: Metadata = {
 
 const recentArticles = [
   {
+    slug: 'h5n1-vaccine-update',
+    title: 'H5N1 Vaccine Update: July 2026',
+    subtitle: 'FDA fast tracks mRNA vaccine, nasal spray breakthrough, multispecies vaccine — latest developments',
+    readTime: 10,
+    date: 'Jul 2026',
+  },
+  {
+    slug: 'bird-flu-vaccine-2026',
+    title: 'Bird Flu Vaccine 2026: Status & Availability',
+    subtitle: 'Complete guide to H5N1 vaccine candidates, human trials, stockpile, and when a public vaccine may arrive',
+    readTime: 12,
+    date: 'Jul 2026',
+  },
+  {
     slug: 'vaccine-schedule-2026',
     title: '2026 Vaccine Schedule: Complete CDC Guide',
     subtitle: 'Every recommended vaccine from birth to 65+ — plus new COVID boosters, RSV, Penbraya, and PCV20',

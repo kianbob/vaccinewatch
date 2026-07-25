@@ -110,11 +110,27 @@ const articles = [
   
   // Timely 2026 analysis
   {
+    slug: 'h5n1-vaccine-update',
+    title: 'H5N1 Vaccine Update: July 2026',
+    subtitle: 'FDA fast tracks mRNA vaccine, nasal spray breakthrough, multispecies vaccine developments',
+    keyFinding: 'FDA grants fast track to self-amplifying mRNA H5N1 vaccine; nasal spray outperforms traditional flu shots in animal tests',
+    readTime: 10,
+    color: 'danger',
+  },
+  {
+    slug: 'bird-flu-vaccine-2026',
+    title: 'Bird Flu Vaccine 2026: Status & Availability',
+    subtitle: 'Complete guide to H5N1 vaccine candidates, trials, and when a public vaccine may arrive',
+    keyFinding: '4+ candidates in development, Phase 2/3 trials underway, 10M+ doses stockpiled, FDA fast track granted',
+    readTime: 12,
+    color: 'danger',
+  },
+  {
     slug: 'bird-flu-h5n1-vaccine',
-    title: 'H5N1 Bird Flu Vaccine: What We Know in 2026',
-    subtitle: 'Tracking the pandemic-potential virus and vaccine preparedness',
-    keyFinding: 'Pre-pandemic H5N1 vaccine stockpiles and candidate vaccines are being updated as avian flu spreads in dairy cattle',
-    readTime: 8,
+    title: 'H5N1 Bird Flu Vaccine: Full Development Tracker',
+    subtitle: 'Comprehensive tracker of all H5N1 vaccine candidates and clinical data',
+    keyFinding: 'Pre-pandemic stockpiles ready for deployment; mRNA, nasal spray, and multispecies candidates advancing',
+    readTime: 10,
     color: 'danger',
   },
   {

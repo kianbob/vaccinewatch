@@ -8,11 +8,12 @@ import ShareButtons from '@/components/ShareButtons'
 import ArticleSchema from '@/components/ArticleSchema'
 
 export const metadata: Metadata = {
-  title: 'Bird Flu H5N1 Vaccine Development 2026: Status, Candidates & What to Know',
-  description: 'H5N1 bird flu vaccine tracker for 2026: outbreak scope, human cases, vaccine candidates from CSL Seqirus, Sanofi, and Moderna, stockpile status, FDA pre-pandemic approvals, and VAERS monitoring plans.',
+  title: 'H5N1 Bird Flu Vaccine Tracker 2026: All Candidates, Trials & Stockpile Status',
+  description: 'H5N1 bird flu vaccine tracker for 2026: mRNA trials, nasal spray breakthrough, FDA fast track, 10M+ stockpiled doses, 73 human cases. Complete guide to every vaccine candidate, clinical data, and pandemic readiness.',
+  keywords: ['H5N1 vaccine', 'bird flu vaccine', 'avian influenza vaccine', 'H5N1 bird flu', 'bird flu vaccine development', 'H5N1 vaccine candidates', 'bird flu vaccine tracker'],
   openGraph: {
-    title: 'Bird Flu H5N1 Vaccine Development 2026: Status, Candidates & What to Know',
-    description: 'A comprehensive guide to H5N1 avian influenza vaccine development in 2026 — outbreak data, candidate vaccines, stockpile readiness, and what it means for public health.',
+    title: 'H5N1 Bird Flu Vaccine Tracker 2026: All Candidates, Trials & Stockpile Status',
+    description: 'Complete H5N1 vaccine tracker — mRNA trials, nasal spray breakthrough, FDA fast track, stockpile status, and pandemic readiness for 2026.',
   },
 }
 
@@ -278,15 +279,51 @@ export default function BirdFluH5N1VaccinePage() {
           capacity.
         </p>
 
+        <h2 className={playfairDisplay.className}>July 2026 Update: New Developments</h2>
+        <p>
+          Several significant developments have occurred since this page was first published:
+        </p>
+        <ul>
+          <li>
+            <strong>FDA Fast Track (January 2026):</strong> The FDA granted fast track designation to
+            ARCT-2304, a self-amplifying mRNA vaccine from Arcturus Therapeutics. This enables rolling
+            review and potential priority approval.
+          </li>
+          <li>
+            <strong>Nasal Spray Breakthrough (February 2026):</strong> A nasal spray H5N1 vaccine
+            outperformed traditional injected flu shots in animal studies, potentially offering superior
+            mucosal immunity that could block infection at the respiratory entry point.
+          </li>
+          <li>
+            <strong>Multispecies Vaccine (April 2026):</strong> University of Nebraska researchers
+            developed a vaccine protecting both mice and dairy calves — a first for H5N1, addressing
+            the outbreak in both humans and the agricultural reservoir.
+          </li>
+          <li>
+            <strong>Human Trials Expand (May 2026):</strong> An mRNA bird flu vaccine is being trialed
+            in high-risk groups including poultry workers and older adults.
+          </li>
+          <li>
+            <strong>VAERS Data Expansion (May 2025):</strong> CDC and FDA expanded public VAERS data
+            access through the WONDER database, providing more complete adverse event reporting for
+            future vaccine monitoring.
+          </li>
+        </ul>
+        <p>
+          For more details, see our <Link href="/analysis/h5n1-vaccine-update">H5N1 Vaccine Update: July 2026</Link> and{' '}
+          <Link href="/analysis/bird-flu-vaccine-2026">Bird Flu Vaccine 2026: Complete Guide</Link>.
+        </p>
+
         <h2 className={playfairDisplay.className}>The Bottom Line</h2>
         <p>
           H5N1 has not become a pandemic, and the current risk to the general public remains low. But
           the virus&apos;s unprecedented spread through U.S. dairy cattle, continued poultry outbreaks,
           and sporadic human infections have elevated preparedness planning to a level not seen since
           the early days of COVID-19. Multiple vaccine candidates are ready or nearly ready for rapid
-          deployment, the stockpile provides a first-wave buffer, and surveillance systems are in place
-          to monitor safety if vaccination begins. The situation bears watching — and VaccineWatch will
-          track any H5N1 vaccine VAERS data as it becomes available.
+          deployment — with mRNA and nasal spray technologies adding new options beyond traditional
+          approaches. The stockpile provides a first-wave buffer, and enhanced surveillance systems
+          including expanded VAERS access are in place to monitor safety if vaccination begins.
+          VaccineWatch will track any H5N1 vaccine VAERS data as it becomes available.
         </p>
       </div>
 
@@ -305,17 +342,17 @@ export default function BirdFluH5N1VaccinePage() {
       <div className="border-t border-gray-200 pt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Explore More</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link href="/analysis/bird-flu-vaccine-2026" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">Bird Flu Vaccine 2026: Complete Guide →</div>
+            <div className="text-sm text-gray-500">Status, trials, availability, and what to expect</div>
+          </Link>
+          <Link href="/analysis/h5n1-vaccine-update" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+            <div className="font-medium text-gray-900">H5N1 Vaccine Update: July 2026 →</div>
+            <div className="text-sm text-gray-500">Latest developments in bird flu vaccine research</div>
+          </Link>
           <Link href="/vaccines/flu" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Flu Vaccine VAERS Data →</div>
             <div className="text-sm text-gray-500">Seasonal influenza adverse event reports</div>
-          </Link>
-          <Link href="/vaccine-schedule" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-            <div className="font-medium text-gray-900">Vaccine Schedule by Age →</div>
-            <div className="text-sm text-gray-500">CDC-recommended immunization timeline</div>
-          </Link>
-          <Link href="/analysis/denominator-problem" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-            <div className="font-medium text-gray-900">The Denominator Problem →</div>
-            <div className="text-sm text-gray-500">Why raw VAERS counts need context</div>
           </Link>
           <Link href="/is-vaers-reliable" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="font-medium text-gray-900">Is VAERS Reliable? →</div>
