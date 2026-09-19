@@ -16,6 +16,7 @@ const sisterSites = [
     { name: 'AutoPilotWatch', url: 'https://www.autopilotwatch.com', description: 'Autonomous vehicle safety tracker' },    { name: 'TariffTax', url: 'https://www.tarifftax.org', description: 'Tariff impact tracker' },
     { name: 'ShelterScope', url: 'https://www.shelterscope.com', description: 'Housing crisis tracker' },
     { name: 'PermitCore', url: 'https://permitcore.io', description: 'Construction permit intelligence' },
+    { name: 'American Factbook', url: 'https://americanfactbook.org', description: 'U.S. data encyclopedia' },
     { name: 'OpenPrices', url: 'https://openprices.thedataproject.ai', description: 'Healthcare price transparency' },
     { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]

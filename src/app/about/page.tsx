@@ -19,6 +19,7 @@ const sisterSites = [
   { name: 'OpenMedicare', url: 'https://www.openmedicare.us', description: 'Medicare data analysis' },
   { name: 'OpenLobby', url: 'https://www.openlobby.us', description: 'Lobbying transparency' },
   { name: 'PermitCore', url: 'https://permitcore.io', description: 'Construction permit intelligence' },
+  { name: 'American Factbook', url: 'https://americanfactbook.org', description: 'U.S. data encyclopedia' },
   { name: 'TheDataProject.ai', url: 'https://thedataproject.ai', description: 'Data-driven transparency tools' },
 ]
 
