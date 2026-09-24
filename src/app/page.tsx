@@ -676,6 +676,7 @@ export default function HomePage() {
                   <strong>Anyone can report to VAERS</strong> — healthcare providers, vaccine manufacturers, patients,
                   or family members. This openness is both a strength (captures a wide range of potential signals)
                   and a limitation (reports aren&apos;t verified).
+                  For broader U.S. health data and trends, explore the <a href="https://americanfactbook.org/health" className="text-primary font-semibold hover:underline">American Factbook health dashboard</a>.
                 </p>
                 <p>
                   <strong>Key limitations:</strong> Reports alone don&apos;t prove causation. They might be coincidental,
